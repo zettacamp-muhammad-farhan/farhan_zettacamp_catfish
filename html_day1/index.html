@@ -9,7 +9,7 @@
 </head>
 <style>
     .content .box {
-        background-color: rgb(227, 247, 255);
+        background-color: rgba(227, 247, 255, 0);
         width: 100%;
         margin: 20px;
         border: 0px solid rgba(170, 137, 137, 0.383);
@@ -25,23 +25,50 @@
     .img-me img {
         width: 100%;
         border-radius: 20px;
-        box-shadow: 10px 10px 5px 5px lightblue;
+        box-shadow: 5px 5px 5px 3px #add8e659;
+    }
+    .diagonal-split-background{
+        background-color: #013A6B;
+        background-image: -webkit-linear-gradient(30deg, #dedafb 50%, #7953ac 50%);
+    }
+    .first-box{
+        background: url("img/bg-center.png") no-repeat center center;
+        position: relative;
+    }
+    .second-box{
+        background: url("img/bg-center-2.png") no-repeat center center;
+        position: relative;
+    }
+    .quote {
+        position: absolute;
+        bottom: 5px;
+        font-weight:bolder;
+        background-color: #0000002a;
+        color: rgb(63, 59, 59);
+        padding: 10px; padding-top: 15px;
+        border-radius: 10px;
     }
 </style>
 <body>
     <ul class="nav">
+        <img class="logo" src="img/logo-f.png" alt="">
         <li><a class="active" href="#">Home</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="about.html">About Me</a></li>
     </ul>
-    <h2 style="text-align: center ;" >Home</h2>
-    <div class="content">
-        <div class="box">
+    <!-- <h2 style="text-align: center ;" >Home</h2> -->
+    <div style="margin-top: 50px ;" class="content diagonal-split-background">
+        <div class="box first-box">
             <p>This is me, </p>
             <h1>Muhmmad Farhan</h1>
             <p style="width: 60% ;" >" I'm Muhammad Farhan Anato, you can call me Farhan. i'm Developer especially Frontend Developer"</p>
+
+            <div class="quote" >
+                <q>Keep leraning everyday, keep growing inside everyday, keep progressing each day keep becoming better version of yourself every second</q> <br>
+                <p style="font-weight:bold; ;" >- Unknown </p>
+            </div>
         </div>
-        <div class="box">
+        <div class="box second-box">
             <div class="img-me" >
                 <img src="img/me.jpg" alt="">
         </div>

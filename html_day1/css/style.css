@@ -72,3 +72,7 @@ li .active:hover{
 .img-contact img {
     width:100%
 }
+.nav .logo {
+    width:50px;
+    float:right
+}
