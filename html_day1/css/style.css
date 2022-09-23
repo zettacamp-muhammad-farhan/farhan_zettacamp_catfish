@@ -1,0 +1,70 @@
+/* navbar */
+body {
+    margin: 10px; margin-top: 0;
+}
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(10, 115, 172);
+}
+.nav li {
+    float: left;
+}
+li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: aqua;
+    
+}
+.active{
+    background-color: brown;
+    color: aqua;
+}
+
+.container {
+    width : 90%;
+    margin-left : auto; margin-right : auto; margin-top : 10px;
+    background-color : rgb(224, 243, 245);
+    padding : 20px
+}
+.container .desc {
+    width : 70%;
+    margin-left : auto ; margin-right:auto;
+}
+
+/* styling flex content */
+.content {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(227, 247, 255);
+    width:90%; padding:20px;
+    margin-left:auto; margin-right:auto
+}
+.content .box {
+    background-color: rgb(224, 243, 245);
+    width: 100%;
+    margin: 20px;
+    border: 1px solid rgba(170, 137, 137, 0.383);
+    padding: 10px;
+    
+}
+.box .title-about {
+    text-align:center;
+    font-weight:bold;
+    font-size:20px
+}
+.img-contact {
+    width:90px;
+    margin: 0 30px;
+    display: inline-block;
+}
+.img-contact img {
+    width:100%
+}

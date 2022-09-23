@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+
+    /* styling box content  */
+    .content {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: rgb(227, 247, 255);
+    }
+    .content .box {
+        background-color: rgb(224, 243, 245);
+        width: 100%;
+        margin: 20px;
+        border: 1px solid rgba(170, 137, 137, 0.383);
+        padding: 10px;
+        
+    } 
+    .contact {
+        margin: 35px;
+    }
+    .contact a {
+        text-decoration: none;
+    }
+    .button {
+        width: 537px;
+        background-color: rgb(97, 104, 230);
+        border: 0 ;
+        color: white;
+    }
+</style>
+<body>
+    <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="#">Contact</a></li>
+        <li><a href="about.html">About Me</a></li>
+    </ul>
+    <div>
+        <h2 style="text-align: center ;" >My Contact</h2>
+    </div>
+    <div class="content">
+        <div class="box">
+            <div class="contact" ><span style="font-weight: bold ;" >Send email to me :  </span></div>
+            <div class="contact" >
+                <textarea name="" id="" cols="70" rows="5" placeholder="farhan.fcbar@gmail.com" ></textarea>
+                <button class="button" style="display: block ;" >Send</button>
+            </div>
+            <div class="contact" >
+                <span>Call Me directly at</span>
+                <h3>08995137653</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="contact">
+                <h2>You can also found me at</h2>
+            </div>
+            <div class="">
+                <div class="img-contact">
+                    <a href="https://www.linkedin.com/in/muhammad-farhan-543845231/">
+                        <img src="img/linkedin.png" alt="">
+                    </a>
+                </div>
+
+                <div class="img-contact">
+                    <a href="https://www.facebook.com/farhan.fcbar/">
+                        <img src="img/facebook.png" alt="">
+                    </a>
+                </div>
+
+                <div class="img-contact">
+                    <a href="https://www.instagram.com/farhan_twist/">
+                        <img src="img/instagram.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="contact">
+                <a href="">LinkedIn</a>
+            </div>
+            <div class="contact">
+                <a href="">Facebook</a>
+            </div>
+            <div class="contact">
+                <a href="">Instagram</a>
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>

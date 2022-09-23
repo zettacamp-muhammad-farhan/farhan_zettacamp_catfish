@@ -4,60 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-
-    <style>
-        *{
-            margin: 15px;
-        }
-    </style>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    .content .box {
+        background-color: rgb(227, 247, 255);
+        width: 100%;
+        margin: 20px;
+        border: 0px solid rgba(170, 137, 137, 0.383);
+        padding: 10px;
+        
+    }
+    .img-me {
+        border: 1px dashed blue;
+        width: 50%;
+        border-radius: 20px;
+
+    }
+    .img-me img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 10px 10px 5px 5px lightblue;
+    }
+</style>
 <body>
-    <div class="container">
-        <h2 style="text-align:center ; margin-bottom: 50px" >My Profile</h2>
-        <table border="0" style="width: 50% ; margin-left: auto; margin-right: auto;">
-            <tr>
-                <td>Name</td>
-                <td> : </td>
-                <td><p>Muhammad Farhan Ananto</p></td>
-            </tr>
-            <tr>
-                <td>Birthday</td>
-                <td> : </td>
-                <td><p>23 March 2000</p></td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td> : </td>
-                <td><p>St.Munggur, Condongcatur</p></td>
-            </tr>
-            <tr>
-                <td>Hobby</td>
-                <td> : </td>
-                <td><p>Basketball, Hiking, Trip, Draw</p></td>
-            </tr>
-            <tr>
-                <td>About Me</td>
-                <td> : </td>
-                <td>
-                    <p>Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at <span style="font-weight: bold ;" >frontend</span> web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau </p>
-                </td>
-            </tr>
-            <tr>
-                <td style="min-width: 200px ;" >My Social Media</td>
-                <td> : </td>
-                <td>
-                    <p>Instagram : farhan_twist</p>
-                    <p>Facebook : <a href="https://www.facebook.com/farhan.fcbar/" target="_blank">Muhammad Farhan</a></p>
-                    <p>LinkedIn : <a href="https://www.linkedin.com/in/muhammad-farhan-543845231/" target="_blank">Muhammad Farhan</a> </p>
-                </td>
-            </tr>
-        </table>
+    <ul class="nav">
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About Me</a></li>
+    </ul>
+    <h2 style="text-align: center ;" >Home</h2>
+    <div class="content">
+        <div class="box">
+            <p>This is me, </p>
+            <h1>Muhmmad Farhan</h1>
+            <p style="width: 60% ;" >" I'm Muhammad Farhan Anato, you can call me Farhan. i'm Developer especially Frontend Developer"</p>
+        </div>
+        <div class="box">
+            <div class="img-me" >
+                <img src="img/me.jpg" alt="">
+            </div>
+        </div>
     </div>
+
 </body>
-<footer style="position: absolute ; bottom: 0; transform: translate(-50%, -50%); left: 50%;">
-    <div>
-        Muhammad Farhan  - <span style="font-weight: bold ;">2022</span>
-    </div>
-</footer>
 </html>
