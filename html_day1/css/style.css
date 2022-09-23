@@ -10,7 +10,11 @@ body {
     background-color: rgb(10, 115, 172);
 }
 .nav li {
-    float: left;
+    float: right;
+}
+.nav .logo {
+    width:50px;
+    float:left
 }
 li a {
     display: block;
@@ -22,11 +26,14 @@ li a {
 li a:hover {
     background-color: aqua;
     color:#111;
+    border-radius:15px;
+
     
 }
 .active{
     background-color: #576078;
     color: aqua;
+    border-radius:15px;
 }
 li .active:hover{
     color: black;
@@ -72,7 +79,4 @@ li .active:hover{
 .img-contact img {
     width:100%
 }
-.nav .logo {
-    width:50px;
-    float:right
-}
+
