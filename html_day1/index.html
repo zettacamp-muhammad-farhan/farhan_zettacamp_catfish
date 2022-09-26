@@ -7,14 +7,111 @@
     <title>My Profile</title>
 
     <style>
-        *{
+        body {
             margin: 15px;
+        }
+        .row {
+            display: flex;
+            flex: auto;
+        }
+        .box {
+            width: 100%;
+            margin: 20px;
+            padding: 20px;
+        }
+        .banner {
+            background-image: -webkit-linear-gradient(30deg, #dedafb 50%, #7953ac 50%);
+        }
+        .container {
+            width: 95%;
+            /* background-color: rgb(187, 187, 221); */
+            margin-left: auto; margin-right: auto;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 30px;
+        }
+        .img-box {
+            width: 50%;
+            margin-left: auto; margin-right: auto;
+            border-radius: 10px;
+        }
+        .img-box img {
+            width: 100%; 
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px #aaaaaa25;
+
+        }
+        .contact-me {
+            width: 200px;
+            background-color: #6F38C5;
+            border: none;
+            border-radius: 20px;
+            padding: 5px;
+            margin-top: 20px;
+            margin-left: auto; margin-right: auto;
+            color: #fff;
+        }
+        .about-me {
+            background-color: rgba(149, 149, 208, 0.404) ;
+        }
+        #contact {
+            background-color: #87A2FB;
+            color: white;
+        }
+        .email-box {
+            background-color: #adddd097;
+            width: 60%;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .email-box textarea {
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            resize: none;
+        }
+        .email-box textarea:focus {
+            border: none;
+            outline: none;
+        }
+        .send {
+            border: none;
+            background-color: #6e38c5be;
+            color: white;
+            padding: 10px;
+            width: 66%;
+            margin-top: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2 style="text-align:center ; margin-bottom: 50px" >My Profile</h2>
+    <div class="container banner">
+        <div class="row">
+            <div style="background-color: rgba(161, 147, 228, 0.153) ;" class="box">
+                <section>
+                    <p>This is me, </p>
+                    <h1>Muhammad Farhan</h1>
+
+                </section>
+                <section style="width: 60% ;" >
+                    <small>Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at frontend web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau</small>
+
+                    <a href="#contact"><button class="contact-me" >
+                        Contact Me
+                    </button></a>
+                </section>
+
+            </div>
+            <div style="background-color: rgba(0, 128, 0, 0.143) ;" class="box">
+                <div class="img-box">
+                    <img src="./assets//img/profile.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container about-me">
+        <h2 style="text-align:center ; margin-bottom: 50px" >About Me</h2>
         <table border="0" style="width: 50% ; margin-left: auto; margin-right: auto;">
             <tr>
                 <td>Name</td>
@@ -54,10 +151,26 @@
             </tr>
         </table>
     </div>
-</body>
-<footer style="position: absolute ; bottom: 0; transform: translate(-50%, -50%); left: 50%;">
-    <div>
-        Muhammad Farhan  - <span style="font-weight: bold ;">2022</span>
+
+    <div id="contact" class="container">
+        <h2 style="text-align:center ; margin-bottom: 50px" >Contact</h2>
+        <div class="row">
+            <div class="box" style="margin-top: -35px ;">
+                <p>Text some email to me, </p>
+                <div class="email-box">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="type email to me ... "></textarea>
+                </div>
+                <button class="send" >Send</button>
+            </div>
+            <div class="box">
+
+            </div>
+        </div>
     </div>
+</body>
+<footer>
+    <!-- <div>
+        Muhammad Farhan  - <span style="font-weight: bold ;">2022</span>
+    </div> -->
 </footer>
 </html>
