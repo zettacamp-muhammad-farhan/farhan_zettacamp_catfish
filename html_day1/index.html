@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile</title>
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+
     <style>
         body {
             margin: 15px;
+            padding-top: 30px;
         }
         .row {
             display: flex;
@@ -65,12 +68,14 @@
             padding: 20px;
             margin-bottom: 25px;
             box-shadow: 10px 10px 5px #aaaaaa72;
+            color: white;
         }
         .email-box textarea, input {
             border: none;
             background-color: transparent;
             width: 100%;
             resize: none;
+            color: rgb(255, 252, 252);
         }
         .email-box textarea:focus, input:focus {
             border: none;
@@ -101,7 +106,13 @@
     </style>
 </head>
 <body>
-    <div class="container banner">
+    <ul class="nav">
+        <img class="logo" src="img/logo-f.png" alt="">
+        <li><a class="contact" href="#contact">Contact</a></li>
+        <li><a class="about" href="#about-me">About Me</a></li>
+        <li><a class="active home" href="#home">Home</a></li>
+    </ul>
+    <div class="container banner" id="home">
         <div class="row">
             <div style="background-color: rgba(161, 147, 228, 0.153) ;" class="box">
                 <section>
@@ -110,7 +121,7 @@
 
                 </section>
                 <section style="width: 60% ;" >
-                    <small>Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at frontend web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau</small>
+                    <small> &quot; Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at frontend web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau &quot; </small>
 
                     <a href="#contact"><button class="contact-me" >
                         Contact Me
@@ -125,46 +136,39 @@
             </div>
         </div>
     </div>
-    <div class="container about-me">
-        <h2 style="text-align:center ; margin-bottom: 50px" >About Me</h2>
-        <table border="0" style="width: 50% ; margin-left: auto; margin-right: auto;">
-            <tr>
-                <td>Name</td>
-                <td> : </td>
-                <td><p>Muhammad Farhan Ananto</p></td>
-            </tr>
-            <tr>
-                <td>Birthday</td>
-                <td> : </td>
-                <td><p>23 March 2000</p></td>
-            </tr>
-            <tr>
-                <td>Address</td>
-                <td> : </td>
-                <td><p>St.Munggur, Condongcatur</p></td>
-            </tr>
-            <tr>
-                <td>Hobby</td>
-                <td> : </td>
-                <td><p>Basketball, Hiking, Trip, Draw</p></td>
-            </tr>
-            <tr>
-                <td>About Me</td>
-                <td> : </td>
-                <td>
-                    <p>Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at <span style="font-weight: bold ;" >frontend</span> web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau </p>
-                </td>
-            </tr>
-            <tr>
-                <td style="min-width: 200px ;" >My Social Media</td>
-                <td> : </td>
-                <td>
-                    <p>Instagram : farhan_twist</p>
-                    <p>Facebook : <a href="https://www.facebook.com/farhan.fcbar/" target="_blank">Muhammad Farhan</a></p>
-                    <p>LinkedIn : <a href="https://www.linkedin.com/in/muhammad-farhan-543845231/" target="_blank">Muhammad Farhan</a> </p>
-                </td>
-            </tr>
-        </table>
+    <div class="container about-me" id="about-me">
+        <h2 style="text-align:center ; margin-bottom: 10px" >About Me</h2>
+        <div class="row">
+            <div class="box">
+                <div class="img-box">
+                    <img src="./assets//img/profile.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <table border="0" style="width: 50% ; margin-left: auto; margin-right: auto;">
+                    <tr>
+                        <td>Name</td>
+                        <td> : </td>
+                        <td><p>Muhammad Farhan Ananto</p></td>
+                    </tr>
+                    <tr>
+                        <td>Birthday</td>
+                        <td> : </td>
+                        <td><p>23 March 2000</p></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td> : </td>
+                        <td><p>St.Munggur, Condongcatur</p></td>
+                    </tr>
+                    <tr>
+                        <td>Hobby</td>
+                        <td> : </td>
+                        <td><p>Basketball, Hiking, Trip, Draw</p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div id="contact" class="container">
@@ -195,15 +199,36 @@
                     </div>
                 </div>
                 <div class="row contact-logo">
-                    <div class="box"><img class="logo" src="./assets/img/linkedin.png" alt=""></div>
-                    <div class="box"><img class="logo" src="./assets/img/facebook.png" alt=""></div>
-                    <div class="box"><img class="logo" src="./assets/img/instagram.png" alt=""></div>
-                    <div class="box"><img class="logo" src="./assets/img/twitter.png" alt=""></div>
+                    <div class="box"><a href="https://www.linkedin.com/in/muhammad-farhan-543845231/"><img class="logo" src="./assets/img/linkedin.png" alt=""></a></div>
+                    <div class="box"><a href="https://www.facebook.com/farhan.fcbar/"><img class="logo" src="./assets/img/facebook.png" alt=""></a></div>
+                    <div class="box"><a href="https://www.instagram.com/farhan_twist"><img class="logo" src="./assets/img/instagram.png" alt=""></a></div>
+                    <div class="box"><a href="https://www.twitter.com/"><img class="logo" src="./assets/img/twitter.png" alt=""></a></div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+    let home = document.querySelector('.home')
+    let about = document.querySelector('.about')
+    let contact = document.querySelector('.contact')
+    home.addEventListener('click', function(){
+        about.classList.remove('active')
+        contact.classList.remove('active')
+        home.classList.add('active')
+    })
+    about.addEventListener('click', function(){
+        about.classList.add('active')
+        contact.classList.remove('active')
+        home.classList.remove('active')
+    })
+    contact.addEventListener('click', function(){
+        about.classList.remove('active')
+        contact.classList.add('active')
+        home.classList.remove('active')
+    })
+</script>
 <footer>
     <!-- <div>
         Muhammad Farhan  - <span style="font-weight: bold ;">2022</span>

@@ -1,0 +1,41 @@
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(10, 115, 172);
+    border-radius: 20px;
+    padding-right: 20px;
+    position: fixed;
+    width: 97%;
+    top: 5px
+}
+.nav li {
+    float: right;
+}
+.nav .logo {
+    width:50px;
+    float:left
+}
+li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: aqua;
+    color:#111;
+    border-radius:15px;
+
+    
+}
+.active{
+    background-color: #576078;
+    color: aqua;
+    border-radius:15px;
+}
+li .active:hover{
+    color: black;
+}
