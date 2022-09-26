@@ -116,15 +116,26 @@
             position: absolute;
             bottom: -30px;
         }
+        .session2{
+            background-image: url(./assets/img/session2-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <ul class="nav">
-        <img class="logo" src="img/logo-f.png" alt="">
         <li><a class="contact" href="#contact">Contact</a></li>
         <li><a class="about" href="#about-me">About Me</a></li>
         <li><a class="active home" href="#home">Home</a></li>
     </ul>
+
+    <!-- <div id="particles-js"></div> -->
+
     <div class="container banner" id="home">
         <div class="row">
             <div style="background-color: rgba(161, 147, 228, 0.153) ;" class="box">
@@ -149,7 +160,7 @@
             </div>
         </div>
     </div>
-    <div class="container about-me" id="about-me">
+    <div class="container session2 about-me" id="about-me">
         <!-- <h2 style="text-align:center ; margin-bottom: 10px" >About Me</h2> -->
         <div class="row">
             <div class="box">
@@ -166,22 +177,22 @@
                 <div class="card-box">
                     <table border="0" style="width: 100% ;">
                         <tr>
-                            <td>Name</td>
+                            <td><strong>Name</strong></td>
                             <td> : </td>
                             <td><p>Muhammad Farhan Ananto</p></td>
                         </tr>
                         <tr>
-                            <td>Birthday</td>
+                            <td><strong>Birthday</strong></td>
                             <td> : </td>
                             <td><p>23 March 2000</p></td>
                         </tr>
                         <tr>
-                            <td>Address</td>
+                            <td><strong>Address</strong></td>
                             <td> : </td>
                             <td><p>St.Munggur, Condongcatur</p></td>
                         </tr>
                         <tr>
-                            <td>Hobby</td>
+                            <td><strong>Hobby</strong></td>
                             <td> : </td>
                             <td><p>Basketball, Hiking, Trip, Draw</p></td>
                         </tr>
@@ -249,9 +260,21 @@
         home.classList.remove('active')
     })
 </script>
+
+<!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
+<script src="assets/js/particles.js"></script>
+
+
+<script>
+    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+    particlesJS.load('particles-js', 'assets/js/particles-js.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
+
 <footer>
-    <!-- <div>
+    <div>
         Muhammad Farhan  - <span style="font-weight: bold ;">2022</span>
-    </div> -->
+    </div>
 </footer>
 </html>
