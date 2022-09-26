@@ -28,6 +28,9 @@
         }
         .banner {
             background-image: -webkit-linear-gradient(30deg, #dedafb 50%, #7953ac 50%);
+            background-image: url(./assets/img/cloud.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .container {
             width: 95%;
@@ -121,9 +124,18 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .session3{
+            background-image: url(./assets/img/footer2.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
         footer {
             text-align: center;
             margin-top: 20px;
+        }
+        .profile {
+            box-shadow: 14px 10px 5px #4d4a4a7e;
         }
     </style>
 </head>
@@ -131,21 +143,21 @@
     <ul class="nav">
         <li><a class="contact" href="#contact">Contact</a></li>
         <li><a class="about" href="#about-me">About Me</a></li>
-        <li><a class="active home" href="#home">Home</a></li>
+        <li><a class="active home" href="#">Home</a></li>
     </ul>
 
     <!-- <div id="particles-js"></div> -->
 
     <div class="container banner" id="home">
         <div class="row">
-            <div style="background-color: rgba(161, 147, 228, 0.153) ;" class="box">
+            <div style="background-color: rgba(20, 15, 45, 0.151) ; border-radius: 20px; color: rgba(4, 4, 4, 0.703);" class="box">
                 <section>
                     <p>This is me, </p>
                     <h1>Muhammad Farhan</h1>
 
                 </section>
                 <section style="width: 60% ;" >
-                    <p> &quot; Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. i'm a developer especially at frontend web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau &quot; </p>
+                    <p> &quot; Hi, i'm farhan, i'm fresh graduate Informatic Universitas Amikom Yogyakarta. I'm a developer especially at frontend web Developer. I have finished some project like Kartu Nikah, LMS Lumintu Liberate, Expert System gastric disease, and Tabungan Hijau &quot; </p>
 
                     <a href="#contact"><button class="contact-me" >
                         Contact Me
@@ -153,9 +165,9 @@
                 </section>
 
             </div>
-            <div style="background-color: rgba(0, 128, 0, 0.143) ;" class="box">
+            <div class="box">
                 <div class="img-box">
-                    <img src="./assets//img/profile.jpg" alt="">
+                    <img class="profile" src="./assets//img/profile.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -202,21 +214,23 @@
         </div>
     </div>
 
-    <div id="contact" class="container">
+    <div id="contact" class="container session3">
         <!-- <h2 style="text-align:center ; margin-bottom: 50px" >Contact</h2> -->
         <div class="row">
             <div class="box">
-                <p>Text some email to me, </p>
-                <div class="email-box">
-                    <input type="text" placeholder="Full Name">
-                </div>
-                <div class="email-box">
-                    <input type="text" placeholder="Email">
-                </div>
-                <div class="email-box">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="type email to me ... "></textarea>
-                </div>
-                <button class="send" >Send</button>
+                <form action="#">
+                    <p>Text some email to me, </p>
+                    <div class="email-box">
+                        <input type="text" placeholder="Full Name">
+                    </div>
+                    <div class="email-box">
+                        <input type="text" placeholder="Email">
+                    </div>
+                    <div class="email-box">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="type email to me ... "></textarea>
+                    </div>
+                    <button type="submit" class="send" >Send</button>
+                </form>
             </div>
             <div class="box contact">
                 <h2>My Address</h2>
