@@ -175,8 +175,8 @@
 
     <div class="banner">
         <div class="quote">
-            <q><em>"Whoever said money can't buy happiness simply didn't know where to go shopping."</em></q>
-            <p>- Gertrude Stein.</p>
+            <q><em>Whoever said money can't buy happiness simply didn't know where to go shopping.</em></q>
+            <p>- <b>Gertrude Stein.</b></p>
         </div>
         <div class="content">
             <h1>SHOPPING LIST</h1>
@@ -245,6 +245,7 @@
                     <td>
                         <dl>
                             <dt><strong>Samyang Noddle</strong></dt>
+                            <dd><small>instant noodles from Korea</small></dd>
                         </dl>
                         <ul>
                             <li>Samyang Original</li>
@@ -282,6 +283,7 @@
                     <td>
                         <dl>
                             <dt><strong>Sprite</strong></dt>
+                            <dd><small>soft drink with some flavors</small></dd>
                         </dl>
                         <ul>
                             <li>Sprite Orange</li>
@@ -299,6 +301,7 @@
                     <td>
                         <dl>
                             <dt><strong>Carrot</strong></dt>
+                            <dd><small>Healthy Vegetable</small></dd>
                         </dl>
                         <ul>
                             <!-- <li>Fanta Orange</li>
@@ -488,7 +491,7 @@
 
     <!-- shopping list -->
     <div id="shoping-list" class="shoping-list hide">
-        <div class="close" style="color: white ;">X</div>
+        <div class="close" style="color: white ; cursor: pointer;">X</div>
         <h3>Categories</h3>
         <hr>
         <a id="bfood" href="#food"><div class="list-category">Food</div></a>
@@ -528,18 +531,22 @@
     bfood.addEventListener('click', function(){
         sl.classList.add('hide')
         categories.style.right='-75px';
+        categories.style.display='block';
+
 
     })
 
     btoilet.addEventListener('click', function(){
         sl.classList.add('hide')
         categories.style.right='-75px';
+        categories.style.display='block';
 
     })
 
     bstation.addEventListener('click', function(){
         sl.classList.add('hide')
         categories.style.right='-75px';
+        categories.style.display='block';
 
     })
 
