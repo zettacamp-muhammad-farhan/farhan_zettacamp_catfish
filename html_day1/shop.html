@@ -7,6 +7,10 @@
     <title>Shoping List</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <style>
+        /* smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
         .container {
             width: 90%;
             background-color: rgba(135, 207, 235, 0.516);
@@ -46,6 +50,10 @@
         }
         tbody tr {
             color: rgb(110, 87, 87);
+        }
+        tbody tr:hover {
+            background-color: rgba(2, 12, 20, 0.382);
+            color: white;
         }
         tr td:first-child {
             width: 270px;
@@ -90,6 +98,71 @@
             text-align: center;
             margin-top: 20px;
         }
+        .sub-title {
+            background-color: rgba(0, 0, 0, 0.333);
+            font-size: 20px;
+            text-align: center;
+            color: white;
+        }
+        .categories {
+            background-color: rgba(0, 0, 255, 0.53);
+            width: 200px;
+            text-align: center;
+            color: white;
+            padding: 2px;
+            border-radius: 10px 10px 0 0;
+            /* rotate */
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            transform: rotate(270deg);
+            /* position */
+            position: fixed;
+            right: -75px;
+            top: 300px;
+
+        }
+        .shoping-list {
+            background-color: rgba(37, 17, 208, 0.357);
+            padding: 20px;
+            width: 400px;
+            /* height: 400px; */
+            border-radius: 10px 0 0 10px;
+            /* position */
+            position: fixed;
+            right: -175px;
+            top: 210px;
+            color: rgba(80, 76, 76, 0.953);
+            animation-name: appear-sl;
+            animation-duration: 2s;
+        }
+        @keyframes appear-sl {
+            from {right: -400px;}
+            to {right: -175px;}
+        }
+        .list-category {
+            background-color: rgba(253, 253, 253, 0.426);
+            color: rgb(59, 54, 54);
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .hide {
+            right: -500px;
+            animation-name: dissappear-sl;
+            animation-duration: 3s;
+        }
+        @keyframes dissappear-sl {
+            from {right: -170px;}
+            to {right: -600px;}
+        }
+        .show {
+            display: block;
+        }
+        .shoping-list a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -113,7 +186,7 @@
 
     <div class="container">
         <dl>
-            <dd><h1>Shopping List</h1></dd>
+            <dd><h1 id="food">Shopping List</h1></dd>
         </dl>
         <table class="tb-1" cellspacing="0" cellpadding="0" style="width: 90% ;" >
             <thead>
@@ -127,6 +200,9 @@
             </thead>
 
             <tbody>
+                <tr>
+                    <td class="sub-title" colspan="5" ><strong>Food</strong></td>
+                </tr>
                 <tr>
                     <td>
                         <dl>
@@ -238,7 +314,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <dl>
+                        <dl id="toilet">
                             <dt><strong>Egg</strong></dt>
                         </dl>
                         <ul>
@@ -252,6 +328,9 @@
                     <td>Rp. 24000/ <sub>kg</sub> </td>
                     <td>1 Kg</td>
                     <td>Rp. 24000</td>
+                </tr>
+                <tr>
+                    <td class="sub-title" colspan="5" ><strong>Toiletries</strong></td>
                 </tr>
                 <tr>
                     <td>
@@ -306,7 +385,7 @@
                     <td>Rp. 21000</td>
                 </tr>
                 <tr>
-                    <td>
+                    <td id="station">
                         <dl>
                             <dt><strong>Tooth Brush</strong></dt>
                         </dl>
@@ -323,17 +402,152 @@
                     <td>3</td>
                     <td>Rp. 27000</td>
                 </tr>
+                <tr>
+                    <td class="sub-title" colspan="5" ><strong>Stationary</strong></td>
+                </tr>
+                <tr>
+                    <td>
+                        <dl>
+                            <dt><strong>Book</strong></dt>
+                        </dl>
+                        <ul>
+                            <li>Drawing Book</li>
+                            <li>Note Book</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <img class="img-product" src="https://pngimg.com/uploads/notebook/notebook_PNG19226.png" alt="">
+                    </td>
+                    <td>Rp. 2500 </td>
+                    <td>12</td>
+                    <td>Rp. 30000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <dl>
+                            <dt><strong>Pencils</strong></dt>
+                        </dl>
+                        <ul>
+                            <li>Pencil 2B</li>
+                            <li>Pencil HB</li>
+                            <li>Pencil 3B</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <img class="img-product" src="https://purepng.com/public/uploads/large/purepng.com-pencilpencilnarrowsolid-pigment-corecharcoal-pencilsgreyblack-1421526585133gvgag.png" alt="">
+                    </td>
+                    <td>Rp. 3000 </td>
+                    <td>3</td>
+                    <td>Rp. 9000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <dl>
+                            <dt><strong>Eraser</strong></dt>
+                        </dl>
+                        <ul>
+                            <!-- <li>Pencil</li>
+                            <li>Pencil HB</li>
+                            <li>Pencil 3B</li> -->
+                        </ul>
+                    </td>
+                    <td>
+                        <img class="img-product" src="https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-1421526504923jaacw.png" alt="">
+                    </td>
+                    <td>Rp. 4000 </td>
+                    <td>1</td>
+                    <td>Rp. 4000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <dl>
+                            <dt><strong>Pen</strong></dt>
+                        </dl>
+                        <ul>
+                            <li>Pen blue ink</li>
+                            <li>Pen black ink</li>
+                            <li>Pen red ink</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <img class="img-product" src="https://pngimg.com/uploads/pen/pen_PNG7397.png" alt="">
+                    </td>
+                    <td>Rp. 4000 </td>
+                    <td>3</td>
+                    <td>Rp. 12000</td>
+                </tr>
             </tbody>
         </table>
         
     </div>
 
+    <!-- categories -->
+    <div class="categories">
+        <p>CATEGORIES</p>
+    </div>
+
+    <!-- categories -->
+    <div id="categories" class="categories">
+        <p>CATEGORIES</p>
+    </div>
+
+    <!-- shopping list -->
+    <div id="shoping-list" class="shoping-list hide">
+        <div class="close" style="color: white ;">X</div>
+        <h3>Categories</h3>
+        <hr>
+        <a id="bfood" href="#food"><div class="list-category">Food</div></a>
+        <a id="btoilet" href="#toilet"><div class="list-category">Toiletries</div></a>
+        <a id="bstation" href="#station"><div class="list-category">Stationary</div></a>
+    </div>
+
 </body>
+
+
 
 <footer>
     <div>
         Muhammad Farhan <sup> &copy; </sup>  - <span style="font-weight: bold ;">2022</span>
     </div>
 </footer>
+
+<script>
+    let categories = document.getElementById('categories');
+    let sl = document.querySelector('#shoping-list');
+    categories.addEventListener('click', function(){
+        sl.classList.remove('hide')
+        categories.style.right="-600px";
+    })
+
+    let close = document.querySelector(".close");
+    close.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+
+    })
+
+    let bfood = document.querySelector('#bfood')
+    let btoilet = document.querySelector('#btoilet')
+    let bstation = document.querySelector('#bstation')
+
+    bfood.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+
+    })
+
+    btoilet.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+
+    })
+
+    bstation.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+
+    })
+
+</script>
     
 </html>
