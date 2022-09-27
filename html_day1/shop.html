@@ -10,9 +10,12 @@
         .container {
             width: 90%;
             background-color: rgba(135, 207, 235, 0.516);
+            /* background-image: url(./assets/img/bg-shoop-bt.jpg); */
+            background-repeat: no-repeat;
+            /* background-size: cover; */
             border-radius: 20px;
             padding: 60px 20px;
-            margin-top: 70px;
+            margin-top: 20px; margin-bottom: 40px;
             margin-left: auto; margin-right: auto;
         }
         .body {
@@ -51,6 +54,41 @@
         img.img-product{
             width: 100px;
         }
+        .banner {
+            width: 100%;
+            background-image: url('./assets/img/bg-shoop.jpg');
+            /* background-image: url(https://t3.ftcdn.net/jpg/01/17/33/22/360_F_117332203_ekwDZkViF6M3itApEFRIH4844XjJ7zEb.jpg); */
+            margin-top: 70px;
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: -1;
+        }
+        .banner .content {
+            position: absolute;
+            top: 36%;
+            transform: translateY(-50%);
+            left: 50%;
+            transform: translateX(-50%);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgba(239, 226, 226, 0.804);
+        }
+        .quote {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.166);
+            padding: 40px 20px;
+            top: 130px;
+            left: 60px;
+            color: rgba(255, 255, 255, 0.424);
+            border-radius: 20px 0 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -61,8 +99,18 @@
         <li><a class="home" href="/#">Home</a></li>
     </ul>
 
+    <div class="banner">
+        <div class="quote">
+            <q><em>"Whoever said money can't buy happiness simply didn't know where to go shopping."</em></q>
+            <p>- Gertrude Stein.</p>
+        </div>
+        <div class="content">
+            <h1>SHOPPING LIST</h1>
+            <p> - 2022 - </p>
+        </div>
+    </div>
+
     <div class="container">
-        <h2 style="text-align: center ;" >Shoping List</h2>
         <table class="tb-1" cellspacing="0" cellpadding="0" style="width: 90% ;" >
             <thead>
                 <tr>
@@ -112,6 +160,25 @@
                     <td>Rp. 3000</td>
                     <td>3</td>
                     <td>Rp. 9000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <dl>
+                            <dt><strong>Samyang Noddle</strong></dt>
+                        </dl>
+                        <ul>
+                            <li>Samyang Original</li>
+                            <li>Samyang Cheese</li>
+                            <li>Samyang Buldak</li>
+                            <li>Samyang Green</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <img src="https://www.pngkey.com/png/full/114-1145966_samyang-hot-chicken-stew-ramen-instant-noodles-hot.png" alt="" class="img-product">
+                    </td>
+                    <td>Rp. 18000</td>
+                    <td>4</td>
+                    <td>Rp. 72000</td>
                 </tr>
                 <tr>
                     <td>
@@ -187,5 +254,11 @@
     </div>
 
 </body>
+
+<footer>
+    <div>
+        Muhammad Farhan <sup> &copy; </sup>  - <span style="font-weight: bold ;">2022</span>
+    </div>
+</footer>
     
 </html>
