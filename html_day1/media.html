@@ -8,167 +8,18 @@
 </head>
 <link rel="stylesheet" href="./assets/css/media.css">
 <style>
-    body {
-        background-color: #4C0027;
+    tr:nth-child(even) {
+        background-color: #0000003e;
     }
-    .row {
-        display: flex;
-        flex: auto;
-    }
-    .box {
-        width: 100%;
-        margin: 20px;
-        padding: 20px;
-    }
-    .container {
-        width: 80%;
-        margin-left: auto; margin-right: auto;
-        margin-bottom: 40px;
-        padding: 20px 50px;
-        background-color: #570530;
-        border-radius: 20px;
-        color: rgb(213, 199, 199);
-    }
-    .music {
-        margin-bottom: 20px;
-    }
-    .music audio {
-        width: 100%;
-        background-color: rgb(28, 24, 24);
-        color: white;
-    }
-    .box video {
-        border-radius: 20px;
-        width: 100%;
-        overflow: hidden;
-    }
-    .img-gall {
-        border-radius: 10px;
-        overflow: hidden;
-        height: 400px;
-    }
-    .img-gall img {
-        width: 100%;
-        height: 370px;
-    }
-    /* .music audio::-webkit-media-controls-play-button,
-     audio::-webkit-media-controls-panel {
-        background-color: #000;
-        color: rgb(255, 255, 255);
-     }  */
-     .banner {
-        background-image: url('./assets/img/bg-mmd.jpg');
-        /* background-image: url(https://t3.ftcdn.net/jpg/01/17/33/22/360_F_117332203_ekwDZkViF6M3itApEFRIH4844XjJ7zEb.jpg); */
-        margin-top: 70px;
-        height: 400px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: white;
-        text-align: center;
-        position: relative;
-        z-index: -1;
-    }
-    .banner .content {
-        position: absolute;
-        top: 36%;
-        transform: translateY(-50%);
-        left: 50%;
-        transform: translateX(-50%);
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        color: rgba(239, 226, 226, 0.927);
-    }
-    .content div {
-        background-color: rgba(0, 0, 0, 0.321);
-        color: #fcfcfcde;
-        width: 600px;
-    }
-    form .name {
-        display: inline;
-        width: 50%;
-        background-color: rgba(0, 0, 0, 0.416);
-        padding: 7px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        margin-right: 30px;
-    }
-    form .name input {
-        /* width: 100%; */
-        background-color: transparent;
+    table {
         border: none;
-    }
-    form .name input:focus {
-        /* border: none; */
-        outline: none;
-        color: rgb(197, 185, 185);
-    }
-    form .form-in {
-        display: block;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.416);
-        margin-bottom: 20px;
-        padding: 7px;
-        border-radius: 10px;
-
+        color: rgba(255, 255, 255, 0.732);
     }
-    form .form-in input{
-        width: 100%;
-        background-color: transparent;
-        border: none;
+    tr td:first-child {
+        width: 160px;
+        padding: 10px;
     }
-    form .form-in input:focus{
-        outline: none;
-        color: rgb(197, 185, 185);
-    }
-    form .form-txt {
-        display: block;
-        width: 100%;
-        height: 100px;
-        background-color: rgba(0, 0, 0, 0.416);
-        margin-bottom: 20px;
-        padding: 7px;
-        border-radius: 10px;
-
-    }
-    form .form-txt input{
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        height: 100%;
-    }
-    form .form-txt input:focus{
-        outline: none;
-        color: rgb(197, 185, 185);
-    }
-    form .form-choose {
-        margin-bottom: 20px;
-    }
-    form .form-choose input {
-        margin-left: 40px;
-    }
-    form .form-choose select {
-        display: block;
-        width: 50%;
-        background-color: rgba(0, 0, 0, 0.416);
-        margin-bottom: 20px;
-        padding: 7px;
-        border-radius: 10px;
-        color: rgba(255, 255, 255, 0.4);
-        border: none;
-    }
-    button#submit {
-        background-color: rgba(102, 91, 108, 0.59);
-        cursor: pointer;
-        color: rgb(195, 180, 180);
-        width: 102%;
-        margin-left: auto; margin-right: auto;
-        border: none;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    button#submit:hover {
-        background-color: rgba(0, 0, 0, 0.208);
-    }
-
 </style>
 <body>
     <div class="container banner">
@@ -278,13 +129,39 @@
         <h2>Let Me Know About Yourself ...</h2>
         <div class="row">
             <div class="box">
-                <form action="">
-                    <div class="name" >
-                        <input type="text" placeholder="First Name">
+                <h2>Fill the form and click submit</h2> <br>
+                <form action="#">
+                    <div class="row-form">
+                        <div class="box-form">
+                            <div class="name" >
+                                <input type="text" id="first-name" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="box-form">
+                            <div class="name">
+                                <input type="text" id="last-name" placeholder="Last Name">
+                            </div>
+                        </div>
                     </div>
-                    <div class="name">
-                        <input type="text" placeholder="Last Name">
+
+                    <div class="row-form">
+                        <div class="box-form">
+                            <div class="form-in">
+                                <input type="number" placeholder="Age" id="age">      
+                            </div>
+                        </div>
+                        <div class="box-form">
+                            <div class="form-choose">
+                                <select name="gender" id="gender">
+                                    <option value="Unknow">Select Your Gender</option>
+                                    <option value="Man">Man</option>
+                                    <option value="Woman">Woman</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="form-choose">
                         <p>Country</p>
                         <input type="radio" name="country" value="Argentina"> Argentina
@@ -293,39 +170,128 @@
                     </div>
                     <div class="form-choose">
                         <p>Hobby</p>
-                        <input type="checkbox" name="hobby" value="Basketball"> Basketball
-                        <input type="checkbox" name="hobby" value="Swimming"> Swimming
-                        <input type="checkbox" name="hobby" value="Football"> Football
-                    </div>
-                    <div class="form-choose">
-                        <select name="gender" id="">
-                            <option value="0">Select Your Gender</option>
-                            <option value="Man">Man</option>
-                            <option value="Woman">Woman</option>
-                            <option value="Other">Other</option>
-                        </select>
+                        <input type="checkbox" name="hobby" id="hobby1" value="Basketball"> Basketball
+                        <input type="checkbox" name="hobby" id="hobby1" value="Swimming"> Swimming
+                        <input type="checkbox" name="hobby" id="hobby1" value="Football"> Football
                     </div>
                     <!-- Gender
                     Hobby -->
                     <div class="form-in">
-                        <input type="text" placeholder="Email">      
+                        <input type="email" placeholder="Email" id="email">      
                     </div>
                     <div class="form-in">
-                        <input type="text" placeholder="Address">      
+                        <input type="text" placeholder="Address" id="address">      
                     </div>
                     <div class="form-in">
-                        <input type="text" placeholder="Phone">      
+                        <input type="text" placeholder="Phone" id="phone">      
+                    </div>
+                    <div class="form-in">
+                        <input type="url" placeholder="Your facebook (url)" id="url">      
                     </div>
                     <div class="form-txt">
-                        <input width="100%" type="textarea" placeholder="Describe About You ... ">
+                        <input width="100%" type="textarea" placeholder="Describe About You ... " id="describe">
                     </div>
                     <button type="submit" id="submit" >SUBMIT</button>
                 </form>
             </div>
             <div class="box">
-
+                <h2>Your Profile</h2>
+                
+                <div class="profile">
+                    <table cellspacing="0">
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td id="fullname" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>:</td>
+                            <td class="age" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td>:</td>
+                            <td class="country" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Hobby</td>
+                            <td>:</td>
+                            <td class="hobby" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>:</td>
+                            <td class="gender" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td class="email" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td class="address" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>:</td>
+                            <td class="phone" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>About Me</td>
+                            <td>:</td>
+                            <td class="describe" > ,,, </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+    $('#submit').click(function(e){
+        e.preventDefault()
+        let fn = $('#first-name').val()
+        let ln = $('#last-name').val()
+        $('#fullname').html(`${fn} ${ln}`)
+
+        let age = $('#age').val()
+        $('.age').html(`${age}`)
+
+        let gender = $('#gender').val()
+        $('.gender').html(`${gender}`)
+
+        let email = $('#email').val()
+        $('.email').html(`${email}`)
+
+        let address = $('#address').val()
+        $('.address').html(`${address}`)
+
+        let phone = $('#phone').val()
+        $('.phone').html(`${phone}`)
+
+        let describe = $('#describe').val()
+        $('.describe').html(`${describe}`)
+
+        let hobby = [];
+        $.each($("input[name='hobby']:checked"), function(){
+            hobby.push($(this).val());
+        });
+        $('.hobby').html(hobby.join(", "))  
+
+        let country = $('input[name="country"]:checked').val()
+        if(country){
+            $('.country').html(`${country}`)
+        }
+
+
+    })
+
+</script>
 </body>
 </html>
