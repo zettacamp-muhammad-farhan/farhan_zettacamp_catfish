@@ -14,9 +14,6 @@
         .container {
             width: 90%;
             background-color: rgba(135, 207, 235, 0.516);
-            /* background-image: url(./assets/img/bg-shoop-bt.jpg); */
-            background-repeat: no-repeat;
-            /* background-size: cover; */
             border-radius: 20px;
             padding: 60px 20px;
             margin-top: 20px; margin-bottom: 40px;
@@ -93,6 +90,7 @@
             left: 60px;
             color: rgba(255, 255, 255, 0.424);
             border-radius: 20px 0 20px 0;
+            width: 350px;
         }
         footer {
             text-align: center;
@@ -123,6 +121,9 @@
             top: 300px;
             cursor: pointer;
         }
+        .categories:hover {
+            background-color: rgba(61, 61, 239, 0.757);
+        }
         .shoping-list {
             background-color: rgba(36, 17, 208, 0.884);
             padding: 20px;
@@ -147,6 +148,9 @@
             padding: 5px;
             border-radius: 5px;
             margin-bottom: 10px;
+        }
+        .list-category:hover{
+            background-color: rgba(253, 253, 253, 0.599);
         }
         .hide {
             right: -500px;
@@ -209,11 +213,16 @@
                             <dt><strong>Indomie Noddle</strong></dt>
                             <dd><small>instant noodles from Indonesia</small></dd>
                         </dl>
-                        <ul>
-                            <li>Indomie goreng original</li>
-                            <li>Indomie goreng rendang</li>
-                            <li>Indomie rebus ayam bawang</li>
-                            <li>Indomie rebus kari ayam</li>
+                        <ul><li>Fried Noddle</li>
+                            <ul>
+                                <li>Indomie <em>goreng original</em></li>
+                                <li>Indomie <em>goreng rendang</em></li>
+                            </ul>
+                            <li>Boiled Noddle</li>
+                            <ul>
+                                <li>Indomie <em>rebus ayam bawang</em></li>
+                                <li>Indomie <em>rebus kari ayam</em></li>
+                            </ul>
                         </ul>
                     </td>
                     <td>
@@ -226,7 +235,7 @@
                 <tr>
                     <td>
                         <dl>
-                            <dt><strong>Milk Indomilk</strong></dt>
+                            <dt><strong>Indomilk Milk</strong></dt>
                         </dl>
                         <ul>
                             <li>Indomilk Vanilla</li>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+</head>
+<link rel="stylesheet" href="./assets/css/media.css">
+<style>
+    body {
+        background-color: #4C0027;
+    }
+    .row {
+        display: flex;
+        flex: auto;
+    }
+    .box {
+        width: 100%;
+        margin: 20px;
+        padding: 20px;
+    }
+    .container {
+        width: 80%;
+        margin-left: auto; margin-right: auto;
+        margin-bottom: 40px;
+        padding: 20px 50px;
+        background-color: #570530;
+        border-radius: 20px;
+        color: rgb(213, 199, 199);
+    }
+    .music {
+        margin-bottom: 20px;
+    }
+    .music audio {
+        width: 100%;
+        background-color: rgb(28, 24, 24);
+        color: white;
+    }
+    .box video {
+        border-radius: 20px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .img-gall {
+        border-radius: 10px;
+        overflow: hidden;
+        height: 400px;
+    }
+    .img-gall img {
+        width: 100%;
+        height: 370px;
+    }
+    /* .music audio::-webkit-media-controls-play-button,
+     audio::-webkit-media-controls-panel {
+        background-color: #000;
+        color: rgb(255, 255, 255);
+     }  */
+     .banner {
+        background-image: url('./assets/img/bg-mmd.jpg');
+        /* background-image: url(https://t3.ftcdn.net/jpg/01/17/33/22/360_F_117332203_ekwDZkViF6M3itApEFRIH4844XjJ7zEb.jpg); */
+        margin-top: 70px;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: -1;
+    }
+    .banner .content {
+        position: absolute;
+        top: 36%;
+        transform: translateY(-50%);
+        left: 50%;
+        transform: translateX(-50%);
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: rgba(239, 226, 226, 0.927);
+    }
+    .content div {
+        background-color: rgba(0, 0, 0, 0.321);
+        color: #fcfcfcde;
+        width: 600px;
+    }
+    form .name {
+        display: inline;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.416);
+        padding: 7px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+    form .name input {
+        /* width: 100%; */
+        background-color: transparent;
+        border: none;
+    }
+    form .name input:focus {
+        /* border: none; */
+        outline: none;
+        color: rgb(197, 185, 185);
+    }
+    form .form-in {
+        display: block;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.416);
+        margin-bottom: 20px;
+        padding: 7px;
+        border-radius: 10px;
+
+    }
+    form .form-in input{
+        width: 100%;
+        background-color: transparent;
+        border: none;
+    }
+    form .form-in input:focus{
+        outline: none;
+        color: rgb(197, 185, 185);
+    }
+    form .form-txt {
+        display: block;
+        width: 100%;
+        height: 100px;
+        background-color: rgba(0, 0, 0, 0.416);
+        margin-bottom: 20px;
+        padding: 7px;
+        border-radius: 10px;
+
+    }
+    form .form-txt input{
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        height: 100%;
+    }
+    form .form-txt input:focus{
+        outline: none;
+        color: rgb(197, 185, 185);
+    }
+    form .form-choose {
+        margin-bottom: 20px;
+    }
+    form .form-choose input {
+        margin-left: 40px;
+    }
+    form .form-choose select {
+        display: block;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.416);
+        margin-bottom: 20px;
+        padding: 7px;
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.4);
+        border: none;
+    }
+    button#submit {
+        background-color: rgba(102, 91, 108, 0.59);
+        cursor: pointer;
+        color: rgb(195, 180, 180);
+        width: 102%;
+        margin-left: auto; margin-right: auto;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    button#submit:hover {
+        background-color: rgba(0, 0, 0, 0.208);
+    }
+
+</style>
+<body>
+    <div class="container banner">
+        <div class="content">
+            <div><h1>MULTIMEDIA</h1></div>
+            <p> - 2022 - </p>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Listen The Music ...</h2>
+        <div class="music">
+            <p>Black Pink - Shut Down</p>
+            <audio controls>
+                <source src="./assets/audio/bp_s.mp3" type="audio/mpeg" >
+            </audio>
+        </div>
+        <div class="music">
+            <p>Avenged Sevenfold - Little Piece Of Heaven</p>
+            <audio controls>
+                <source src="./assets/audio/av-lp.mp3" type="audio/mpeg" >
+            </audio>
+        </div>
+        <div class="music">
+            <p>Eminem - Won't Back Down</p>
+            <audio controls>
+                <source src="./assets/audio/em-wb.mp3" type="audio/mpeg" >
+            </audio>
+        </div>
+        <div class="music">
+            <p>Black Pink - Pink Venom</p>
+            <audio controls>
+                <source src="./assets/audio/bp-pv.mp3" type="audio/mpeg" >
+            </audio>
+        </div>
+        <div class="music">
+            <p>Lil Nas X - STAR WALKIN</p>
+            <audio controls>
+                <source src="./assets/audio/ln-lol.mp3" type="audio/mpeg" >
+            </audio>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Watch the videos ...</h2>
+        <div class="row">
+            <div class="box">
+                <p>Black Pink - Pink Shutdown</p>
+                <video width="100%" controls >
+                    <source src="./assets/video/bp_s.mp4" type="video/mp4" >
+                </video>
+            </div>
+            <div class="box">
+                <p>The Smashing Pumpkins - Beguiled</p>
+                <video width="100%" controls >
+                    <source src="./assets/video/tsp.mp4" type="video/mp4" >
+                </video>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <p>Eminem - Won't Back Down</p>
+                <video width="100%" controls >
+                    <source src="./assets/video/em-wb.mp4" type="video/mp4" >
+                </video>
+            </div>
+            <div class="box">
+                <p>Lil Nas X - STAR WALKIN</p>
+                <video width="100%" controls >
+                    <source src="./assets/video/ln-sw.mp4" type="video/mp4" >
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <dl>
+            <dt><h2>My Gallery</h2></dt>
+            <dd><p>Enjoy it ...</p></dd>
+        </dl>
+        <div class="row">
+            <div class="box">
+                <div class="img-gall">
+                    <img src="https://images5.alphacoders.com/406/thumb-1920-406088.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="img-gall">
+                    <img src="https://images.hdqwalls.com/download/blackpink-pubg-2020-ka-1920x1080.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box">
+                <div class="img-gall">
+                    <img src="https://www.gannett-cdn.com/authoring/2013/08/07/NJOS/ghows-IP-f15576a7-1c04-4402-9cb8-452de3f64397-79e29114.jpeg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="img-gall">
+                    <img src="https://wallpaperaccess.com/full/1099677.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Let Me Know About Yourself ...</h2>
+        <div class="row">
+            <div class="box">
+                <form action="">
+                    <div class="name" >
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div class="name">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                    <div class="form-choose">
+                        <p>Country</p>
+                        <input type="radio" name="country" value="Argentina"> Argentina
+                        <input type="radio" name="country" value="Indonesia"> Indonesia
+                        <input type="radio" name="country" value="Singapore"> Singapore
+                    </div>
+                    <div class="form-choose">
+                        <p>Hobby</p>
+                        <input type="checkbox" name="hobby" value="Basketball"> Basketball
+                        <input type="checkbox" name="hobby" value="Swimming"> Swimming
+                        <input type="checkbox" name="hobby" value="Football"> Football
+                    </div>
+                    <div class="form-choose">
+                        <select name="gender" id="">
+                            <option value="0">Select Your Gender</option>
+                            <option value="Man">Man</option>
+                            <option value="Woman">Woman</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <!-- Gender
+                    Hobby -->
+                    <div class="form-in">
+                        <input type="text" placeholder="Email">      
+                    </div>
+                    <div class="form-in">
+                        <input type="text" placeholder="Address">      
+                    </div>
+                    <div class="form-in">
+                        <input type="text" placeholder="Phone">      
+                    </div>
+                    <div class="form-txt">
+                        <input width="100%" type="textarea" placeholder="Describe About You ... ">
+                    </div>
+                    <button type="submit" id="submit" >SUBMIT</button>
+                </form>
+            </div>
+            <div class="box">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
