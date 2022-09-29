@@ -8,27 +8,21 @@
 </head>
 <link rel="stylesheet" href="./assets/css/media.css">
 <style>
-    tr:nth-child(even) {
-        background-color: #0000003e;
-    }
-    table {
-        border: none;
-        width: 100%;
-        color: rgba(255, 255, 255, 0.732);
-    }
-    tr td:first-child {
-        width: 160px;
-        padding: 10px;
-    }
+black {
+    background-color: rgba(66, 63, 70, 0.729);
+}
+
 </style>
 <body>
     <div class="container banner">
         <div class="content">
-            <div><h1>MULTIMEDIA</h1></div>
-            <p> - 2022 - </p>
+            <div>
+                <h1>MULTIMEDIA</h1>
+                <p><strong> - 2022 - </strong></p>
+            </div>
         </div>
     </div>
-    <div class="container">
+    <div id="music" class="container">
         <h2>Listen The Music ...</h2>
         <div class="music">
             <p>Black Pink - Shut Down</p>
@@ -62,7 +56,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="videos" class="container">
         <h2>Watch the videos ...</h2>
         <div class="row">
             <div class="box">
@@ -94,18 +88,20 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="gallery" class="container">
         <dl>
             <dt><h2>My Gallery</h2></dt>
             <dd><p>Enjoy it ...</p></dd>
         </dl>
         <div class="row">
             <div class="box">
+                <h3>Eminem</h3>
                 <div class="img-gall">
                     <img src="https://images5.alphacoders.com/406/thumb-1920-406088.jpg" alt="">
                 </div>
             </div>
             <div class="box">
+                <h3>Black Pink</h3>
                 <div class="img-gall">
                     <img src="https://images.hdqwalls.com/download/blackpink-pubg-2020-ka-1920x1080.jpg" alt="">
                 </div>
@@ -113,11 +109,13 @@
         </div>
         <div class="row">
             <div class="box">
+                <h3>Avenged Sevenfold</h3>
                 <div class="img-gall">
                     <img src="https://www.gannett-cdn.com/authoring/2013/08/07/NJOS/ghows-IP-f15576a7-1c04-4402-9cb8-452de3f64397-79e29114.jpeg" alt="">
                 </div>
             </div>
             <div class="box">
+                <h3>Black Pink</h3>
                 <div class="img-gall">
                     <img src="https://wallpaperaccess.com/full/1099677.jpg" alt="">
                 </div>
@@ -125,7 +123,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div id="profile" class="container">
         <h2>Let Me Know About Yourself ...</h2>
         <div class="row">
             <div class="box">
@@ -189,7 +187,8 @@
                         <input type="url" placeholder="Your facebook (url)" id="url">      
                     </div>
                     <div class="form-txt">
-                        <input width="100%" type="textarea" placeholder="Describe About You ... " id="describe">
+                        <!-- <textarea width="100%"  type="textarea" placeholder="Describe About You ... " id="describe"></textarea> -->
+                        <input type="textarea" id="describe">
                     </div>
                     <button type="submit" id="submit" >SUBMIT</button>
                 </form>
@@ -250,6 +249,21 @@
         </div>
     </div>
 
+    <!-- categories -->
+    <div id="categories" class="categories">
+        <p>CATEGORIES</p>
+    </div>
+
+    <!-- media list -->
+    <div id="shoping-list" class="shoping-list hide">
+        <div class="close" style="color: white ; cursor: pointer;">X</div>
+        <h3>Categories</h3>
+        <hr>
+        <a id="bmusic" href="#music"><div class="list-category">Music</div></a>
+        <a id="bvideo" href="#videos"><div class="list-category">Videos</div></a>
+        <a id="bgallery" href="#gallery"><div class="list-category">Gallery</div></a>
+        <a id="bprofile" href="#profile"><div class="list-category">Profile</div></a>
+    </div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -293,5 +307,63 @@
     })
 
 </script>
+
+<script>
+    let categories = document.getElementById('categories');
+    let sl = document.querySelector('#shoping-list');
+    categories.addEventListener('click', function(){
+        sl.classList.remove('hide')
+        categories.style.display="none";
+    })
+
+    let close = document.querySelector(".close");
+    close.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.display='block';
+
+    })
+
+    let bmusic = document.querySelector('#bmusic')
+    let bvideo = document.querySelector('#bvideo')
+    let bgallery = document.querySelector('#bgallery')
+    let bprofile = document.querySelector('#bprofile')
+
+    bmusic.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+        categories.style.display='block';
+
+
+    })
+
+    bvideo.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+        categories.style.display='block';
+
+    })
+
+    bgallery.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+        categories.style.display='block';
+
+    })
+
+    bprofile.addEventListener('click', function(){
+        sl.classList.add('hide')
+        categories.style.right='-75px';
+        categories.style.display='block';
+
+    })
+
+</script>
 </body>
+
+<footer>
+    <div>
+        Muhammad Farhan <sup> &copy; </sup>  - <span style="font-weight: bold ;">2022</span>
+    </div>
+</footer>
+
 </html>

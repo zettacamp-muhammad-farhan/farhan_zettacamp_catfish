@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<link rel="stylesheet" href="./assets/css/style.css">
+<style>
+    body {
+        margin-top: 70px;
+    }
+    ul.nav {
+        background-color: #D0B8A8;
+        border-radius: 5px;
+    }
+    .nav .active {
+        background-color: transparent;
+        color: black;
+        text-decoration:underline;
+        font-weight: bolder;
+    }
+    .container {
+        width: 90%;
+        background-color: #c196963c;
+        margin-left: auto; margin-right: auto;
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid rgb(189, 162, 162);
+    }
+    .banner {
+        background-image: url();
+    }
+    td img  {
+        width: 100px;
+        margin-top: 20px;
+    }
+    td img:hover {
+        transform: scale(2.7);
+    }
+    table {
+        width: 90%;
+        margin-left: auto; margin-right: auto;
+    }
+    table tbody tr {
+        height: 50px;
+        padding-left: 10px;
+    }
+    tr:nth-child(even) {
+        background-color: #867c7c3e;
+        padding: 10px;
+    }
+    tr:nth-child(odd) {
+        background-color: #cfc2c278;
+        padding: 10px;
+    }
+    tr:hover {
+        background-color: rgba(255, 255, 255, 0.378);
+    }
+    td strong {
+        margin-left: 50px;
+    }
+    .container h1 {
+        text-align: center;
+    }
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .banner {
+        margin-bottom: 30px;
+    }
+</style>
+<body>
+    <nav>
+        <ul class="nav">
+            <li><a class="contact active" href="#">Table</a></li>
+            <li><a class="contact" href="./form-input.html">Input</a></li>
+        </ul>
+    </nav>
+
+    <section class="container banner" >
+        <h1>Table Profile</h1>
+    </section>
+
+    <section class="container">
+            <table border="0" cellspacing="0" cellpading="0" >
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Name</strong></td>
+                        <td>:</td>
+                        <td class="name" >Muhammad Farhan Ananto</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Age</strong></td>
+                        <td>:</td>
+                        <td class="age" >22</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Birthday</Strong></td>
+                        <td>:</td>
+                        <td class="birthday" >23, March 2022</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Country</Strong></td>
+                        <td>:</td>
+                        <td class="country">Indonesia</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Hobby</Strong></td>
+                        <td>:</td>
+                        <td class="hobby">Basket, Hiking, Travelling, Coding</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Gender</Strong></td>
+                        <td>:</td>
+                        <td class="gender">Man</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Email</Strong></td>
+                        <td>:</td>
+                        <td class="email">farhan.fcbar@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Address</Strong></td>
+                        <td>:</td>
+                        <td class="address">Jl.Munggur 113 Sanggrahan Condongcatur</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Phone</Strong></td>
+                        <td>:</td>
+                        <td class="phone">08995137653</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>About Me</Strong></td>
+                        <td>:</td>
+                        <td class="desc">Im Muhammad Farhan some time i play basketball, some time im play game, some time im sleeping beauty</td>
+                    </tr>
+                    <tr>
+                        <td><Strong>Image</Strong></td>
+                        <td>:</td>
+                        <td class="img">
+                            <img src="./assets/img/profile.jpg" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+</body>
+
+<footer>
+    <div>
+        Muhammad Farhan <sup> &copy; </sup>  - <span style="font-weight: bold ;">2022</span>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="./assets/js/table.js"></script>
+</html>

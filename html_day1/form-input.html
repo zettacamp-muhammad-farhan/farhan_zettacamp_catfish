@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+    <link rel="stylesheet" href="./assets/css/form-input.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body {
+            background-color: FFF5E4;
+            margin-top: 70px;
+        }
+        .box {
+            color: black;
+        }
+        test {
+            color : rgba(230, 220, 220, 0.538)
+        }
+        form .form-txt textarea{
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom : 1px solid black;
+            height: 100%;
+            color: rgb(49, 45, 45);
+            margin-bottom: 20px;
+
+        }
+        form .form-text textarea:focus {
+            outline: none;
+            border: none;
+        }
+        form .form-text{
+            margin-bottom: 20px;
+        }
+        button#submit {
+            margin-top: 20px;
+            color: rgb(57, 50, 50);
+            background-color: #FF9494;
+        }
+        button#submit:hover {
+            background-color: #ff94947f;
+        }
+        .date input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(65, 58, 58, 0.458); 
+            color: rgb(78, 70, 70);
+        }
+        .date input:focus {
+            outline: none;
+        }
+
+        .profile {
+            background-color: rgba(255, 255, 255, 0.285);
+            padding: 30px;
+            border-radius: 20px;
+        }
+        .profile table tr {
+            height: 30px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        .box-form .form-in {
+            width: 90%;
+        }
+
+        .box-form .form-choose {
+            width: 190%;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        .row-form {
+            display: flex;
+        }
+        .box-form {
+            width: 100%;
+        }
+
+        tr:nth-child(even) {
+            background-color: #0000003e;
+        }
+        table {
+            border: none;
+            width: 100%;
+            color: rgba(77, 72, 72, 0.732);
+        }
+        tr td:first-child {
+            width: 160px;
+            padding: 10px;
+        }
+
+        td .image {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+        ul.nav {
+            background-color: #D0B8A8;
+            border-radius: 5px;
+        }
+        .nav .active {
+            background-color: transparent;
+            color: black;
+            text-decoration:underline;
+            font-weight: bolder;
+        }
+
+        .banner {
+            height: 100px;
+            color: rgb(99, 86, 86);
+        }
+        .banner h1 {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav">
+            <li><a class="contact" href="./table.html">Table</a></li>
+            <li><a class="contact active" href="#">Input</a></li>
+        </ul>
+    </nav>
+
+    <section class="container banner">
+        <h1>FORM INPUT</h1>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="box">
+                <section>
+                    <form action="#">
+                        <div class="row-form">
+                            <div class="box-form">
+                                <div class="name" >
+                                    <input type="text" id="first-name" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="box-form">
+                                <div class="name">
+                                    <input type="text" id="last-name" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row-form">
+                            <div class="box-form">
+                                <div class="form-in">
+                                    <input type="number" placeholder="Age" id="age">      
+                                </div>
+                            </div>
+                            <div class="box-form">
+                                <div class="form-choose">
+                                    <select name="gender" id="gender">
+                                        <option value="Unknow">Select Your Gender</option>
+                                        <option value="Man">Man</option>
+                                        <option value="Woman">Woman</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-form">
+                            <div class="box-form">
+                                <div class="date">
+                                    <label for="birthday"> Birthday <br>
+                                        <input type="date" name="birthday" id="birthday">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="box-form">
+                                <div class="img-form">
+                                    <label for="">Your Photo </label> <br>
+                                    <input type="file" name="image" id="image" accept="image/png, image/gif, image/jpeg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-choose">
+                            <p>Country</p>
+                            <input type="radio" name="country" value="Argentina"> Argentina
+                            <input type="radio" name="country" value="Indonesia"> Indonesia
+                            <input type="radio" name="country" value="Singapore"> Singapore
+                        </div>
+                        <div class="form-choose">
+                            <p>Hobby</p>
+                            <input type="checkbox" name="hobby" id="hobby1" value="Basketball"> Basketball
+                            <input type="checkbox" name="hobby" id="hobby1" value="Swimming"> Swimming
+                            <input type="checkbox" name="hobby" id="hobby1" value="Football"> Football
+                        </div>
+                        <!-- Gender
+                        Hobby -->
+                        <div class="form-in">
+                            <input type="email" placeholder="Email" id="email">      
+                        </div>
+                        <div class="form-in">
+                            <input type="text" placeholder="Address" id="address">      
+                        </div>
+                        <div class="form-in">
+                            <input type="text" placeholder="Phone" id="phone">      
+                        </div>
+                        <div class="form-in">
+                            <input type="url" placeholder="Your facebook (url)" id="url">      
+                        </div>
+                        <div class="form-txt">
+                            <textarea width="100%"  type="textarea" placeholder="Describe About You ... " id="describe"></textarea>
+                        </div>
+                        <button type="submit" id="submit" >SUBMIT</button>
+                    </form>
+                </section>
+            </div>
+            <div class="box">
+                <div class="profile">
+                    <table cellspacing="0">
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td id="fullname" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>:</td>
+                            <td class="age" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Birthday</td>
+                            <td>:</td>
+                            <td class="birthday" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td>:</td>
+                            <td class="country" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Hobby</td>
+                            <td>:</td>
+                            <td class="hobby" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>:</td>
+                            <td class="gender" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td class="email" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td class="address" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>:</td>
+                            <td class="phone" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Facebook (url)</td>
+                            <td>:</td>
+                            <td class="facebook" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>About Me</td>
+                            <td>:</td>
+                            <td class="describe" > ,,, </td>
+                        </tr>
+                        <tr>
+                            <td>Image</td>
+                            <td>:</td>
+                            <td> <img src="" class="image" alt=""> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./assets/js/form-input.js"></script>
+
+</body>
+
+<footer>
+    <div>
+        Muhammad Farhan <sup> &copy; </sup>  - <span style="font-weight: bold ;">2022</span>
+    </div>
+</footer>
+</html>
