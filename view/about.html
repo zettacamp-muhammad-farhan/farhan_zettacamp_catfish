@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    body {
+        background-color: #16213E;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0F3460;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #E94560;
+    }
+    header {
+        background-color: rgba(255, 255, 255, 0.061) ;
+        background-image: url(../assets/img/banner.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 80%;
+        height: 300px;
+        color: white;
+        padding: 30px;
+        margin-left: auto; margin-right: auto;
+    }  
+    header span {
+        font-size: 20px;
+    }
+    .row {
+        display: flex;
+        flex: auto;
+        padding: 40px;
+    }
+    .box {
+        width: 100%;
+        /* background-color: #0F3460; */
+    }
+    .box .card {
+        background-color: #0F3460;
+        width: 80%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: auto; margin-right: auto;
+        padding: 20px;
+        color: white;
+    }
+
+    footer {
+        width: 100%;
+        background-color: #1B2430;
+    }
+    .img-logo {
+        width: 220px;
+    }
+    .img-logo img {
+        width: 100%;
+    }
+    .line {
+        display: flex;
+        padding: 0;
+    }
+    .contact-logo{
+        width: 60px;
+        display: inline-block;
+        margin-top: 30px;
+        margin: 30px 40px;
+    }
+    .contact-logo img {
+        width: 100%;
+    }
+    .comunity-footer {
+        margin-top: 0px;
+        color: rgba(255, 255, 255, 0.672);
+    }
+    .copyright {
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+    .contact {
+        color: rgba(255, 255, 255, 0.504);
+    }
+</style>
+<body>
+    <nav class="navbar" >
+        <ul>
+            <li><a class="" href="../index.html">Home</a></li>
+            <li><a class="active" href="#">About</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Listen Music as You Like ...</h1>
+        <span>FMusic</span>
+        <p class="desc" >
+            <small> listen to music as you like without any external constraints, from anyone</small>
+        </p>
+
+        <div class="content">
+
+        </div>
+    </header>
+
+    <main>
+        <section class="row" >
+            <div class="box">
+                <div class="card">
+                    <h1>Our Poduct</h1>
+                    <p>we provide a variety of music from any part of the world, we offer a better music listening experience so you can feel satisfied, if you are a music lover we are the solution you need, what are you waiting for join us</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="card">
+                    <h1>Contact Us</h1>
+                    <div class="contact">
+                        <table>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td>flawlessmp3@flaw.com</td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td>:</td>
+                                <td>+628-2974-2948</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>:</td>
+                                <td>Jl.Munggur 999, District Z, Mars</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="line row">
+            <div class="box">
+                <div class="img-logo">
+                    <img src="../assets/img/logo.png" alt="">
+                </div>
+            </div>
+            <div class="box comunity-footer">
+                <div class="row">
+                    <div class="box">
+                        <strong>Comunity</strong>
+                        <p>For artist</p>
+                        <p>Developer</p>
+                        <p>Ads</p>
+                        <p>Vendor</p>  
+                        <p>About</p>  
+                        <p>Other</p> 
+                    </div>
+                    <div class="box">
+                        <strong>Comunity</strong>
+                        <p>Support</p>
+                        <p>Player</p>
+                        <p>Free App</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="box">
+                <div class="contact-logo">
+                    <img src="../assets/img/fb.png" alt="">
+                </div>
+                <div class="contact-logo">
+                    <img src="../assets/img/ig.png" alt="">
+                </div>
+                <div class="contact-logo">
+                    <img src="../assets/img/twitter.png" alt="">
+                </div>
+
+                <div class="contact">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>flawlessmp3@flaw.com</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>:</td>
+                            <td>+628-2974-2948</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td>Jl.Munggur 999, District Z, Mars</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Muhammad Farhan - 2022
+        </div>
+    </footer>
+</body>
+</html>

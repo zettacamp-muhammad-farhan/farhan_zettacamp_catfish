@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    body {
+        background-color: #16213E;
+        margin: 0;
+        padding: 0;
+    }
+    .reg{
+        background-color: rgba(98, 133, 163, 0.327);
+        width: 30%;
+        height: 600px;
+        margin-left: auto; margin-right: auto;
+        border-radius: 20px;
+        padding: 20px;
+        position: absolute;
+        position: absolute;
+        top: 50%;  /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+
+        transform: translate(-50%, -50%); /* This is a shorthand of
+                                            translateX(-50%) and translateY(-50%) */
+    }
+    .reg h1 {
+        text-align: center;
+        color: white;
+    }
+    .form-input input {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        color: rgba(203, 170, 170, 0.57);
+
+    }
+    .form-input input:focus {
+        outline:none;
+        color: rgb(203, 170, 170);
+
+    }
+    .form-input select {
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        color: rgba(203, 170, 170, 0.528);
+
+    }
+    .form-input select:focus {
+        outline:none;
+        color: rgb(203, 170, 170);
+
+    }
+    .form-input {
+        background-color: #0F3460;
+        color: rgb(203, 170, 170);
+        width: 97%;
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    form small {
+        color: rgb(203, 170, 170);
+        font-size:x-small;
+    }
+    a .button {
+        border: none;
+        border-radius: 10px;
+        background-color: #533483;
+        color: rgba(255, 255, 255, 0.529);
+        padding: 10px;
+        width: 97%;
+        margin-left: auto; margin-right: auto;
+        margin-top: 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+    a .button:hover {
+        background-color: #7c61a4;
+    }
+    .logo {
+        width: 230px;
+        margin-left: auto; margin-right: auto;
+    }
+    .logo img {
+        width: 100%;
+        opacity: 0.5;
+    }
+</style>
+<body>
+    <main class="reg" >
+        <h1>REGISTER</h1>
+
+        <div class="logo">
+            <img src="../assets/img/logo.png" alt="">
+        </div>
+
+        <form action="">
+            <div class="form-input">
+                <input type="text" placeholder="Fullname"> 
+            </div>
+            <div class="form-input">
+                <input type="text" placeholder="Username"> 
+            </div>
+            <div class="form-input">
+                <input type="password" placeholder="Password"> 
+            </div>
+            <div class="form-input">
+                <input placeholder="Birthday" class="textbox-n" type="text" onfocus="(this.type='date')"> 
+            </div>
+            <div class="form-input">
+                <input type="email" placeholder="Email"> 
+            </div>
+            <div class="form-input">
+                <input type="tel" placeholder="Phone"> 
+            </div>
+            <div class="form-input">
+                <select name="" id="">
+                    <option>--- Select your package ---</option>
+                    <option>Package Free</option>
+                    <option>Package Middle</option>
+                    <option>Package Pro</option>
+                </select>
+            </div>
+
+            <input type="checkbox" name="term"><small>I will comply with all terms and conditions</small>
+
+
+            <a href="./profile.html"><div class="button"> REGISTER </div></a>
+
+        </form>
+    </main>
+</body>
+</html>

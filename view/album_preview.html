@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Preview</title>
+</head>
+<style>
+    body {
+        background-color: #16213E;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0F3460;
+    }
+
+    nav li {
+        float: left;
+    }
+
+    nav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #E94560;
+    }
+    main {
+        margin-bottom: 30px;
+    }
+    .container {
+        padding: 30px;
+        width: 86%;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #0F3460;
+        margin-top: 70px;
+        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.312);
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.596);
+    }
+    .row {
+        display: flex;
+        margin: 30px;
+    }
+    .box {
+        margin: 2px;
+        padding: 10px;
+    }
+    .img {
+        width: 300px;
+    }
+    .img img {
+        width: 100%;
+    }
+    .detail {
+        /* margin-top: 50px; */
+        margin-left: 10px;
+        background-color: #533483;
+        width: 100%;
+        border-radius: 20px;
+    }
+    .songs {
+        background-color: #533483;
+        width: 100%;
+        margin-left: 20px;
+        border-radius: 20px;
+
+    }
+    tr {
+        height: 40px;
+    }
+    .info-par {
+        background-color: rgba(255, 255, 255, 0.069);
+        border-radius: 10px 0 10px 0;
+    }
+    .sub {
+        width: 110px;
+    }
+    .other {
+        background-color: #533483;
+        height: 300px;
+        padding: 40px;
+        border-radius: 20px;
+    }
+    .card{
+        width: 100%;
+        background-color: white;
+        height: 100px;
+    }
+    
+</style>
+<body>
+    <nav class="navbar" >
+        <ul>
+            <li><a class="" href="./profile.html">Profile</a></li>
+            <li><a class="" href="./song_listing.html">Song Listing</a></li>
+            <li><a class="active" href="#">Album Preview</a></li>
+        </ul>
+    </nav>
+    <main class="container" >
+        <h1 class="tittle" >Dear God - Avenged Sevenfold</h1>
+        <section class="row" >
+            <div class="box" style="flex-grow:1">
+                <div class="img">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2732f7c0bbeb52350986f00f9ed" alt="">
+                </div>
+            </div>
+            <div class="box info-par" style="flex-grow:6" >
+                <p>&emsp; Avenged Sevenfold (also known as The White Album) is the fourth studio album by American heavy metal band Avenged Sevenfold, released on October 30, 2007, through Warner Bros. and Hopeless Records. It is their last studio album to feature The Rev performing on drums, due to his death in December 2009 during production of their follow-up album, Nightmare.</p>
+
+                <p>&emsp;Originally slated for an October 16 release, it was delayed by two weeks in order to provide more time to complete bonus material and production for the record. The album debuted at number 4 on the Billboard 200. On May 4, 2021, it was certified platinum by the Recording Industry Association of America (RIAA). The band supported the album with a tour, beginning a day before the release of the album and ending in August 2009.</p>
+                    
+                <p>&emsp;Although critical reception to the album was mixed compared to previous releases, Avenged Sevenfold won the Kerrang! Award for Best Album in 2008. In addition, the album was included in Kerrang!'s "666 Albums You Must Hear Before You Die". As of 2014, it has sold over 960,161 copies in the United States and 152,123 copies in the United Kingdom</p>
+            </div>
+        </section>
+        <section class="row" >
+            <div class="detail box">
+                <table>
+                    <tr>
+                        <td class="sub" ><strong>Artist</strong></td> 
+                        <td>:</td> 
+                        <td>Avenged Sevenfold</td> 
+                    </tr>
+                    <tr>
+                        <td class="sub" ><strong>Also Known as</strong></td> 
+                        <td>:</td> 
+                        <td>A7X</td> 
+                    </tr>
+                    <tr>
+                        <td class="sub" ><strong>City</strong></td> 
+                        <td>:</td> 
+                        <td>Hungtiton beach, California</td> 
+                    </tr>
+                    <tr>
+                        <td class="sub" ><strong>Year</strong></td> 
+                        <td>:</td> 
+                        <td>1999</td> 
+                    </tr>
+                    <tr>
+                        <td class="sub" ><strong>Genre</strong></td> 
+                        <td>:</td> 
+                        <td>Heavy, Metal, Metalcore, Hard Rock, Progressive Metal</td> 
+                    </tr>
+                    <tr>
+                        <td class="sub" ><strong>Nominations</strong></td> 
+                        <td>:</td> 
+                        <td>MTV Video Music Award for Best New Artist</td> 
+                    </tr>
+                </table>
+            </div>
+            <div class="songs box">
+                <h2>Songs</h2>
+                <ul>
+                    <li>Dear God</li>
+                    <li>Critical Acclaim</li>
+                    <li>Afterlife</li>
+                    <li>Brompton Cocktail</li>
+                    <li>Almost Easy</li>
+                    <li>Gun Slinger</li>
+                    <li>Lost</li>
+                    <li>Scream</li>
+                    <li>Unbound(The Wild Ride)</li>
+                    <li>A Little Piece of Heaven</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

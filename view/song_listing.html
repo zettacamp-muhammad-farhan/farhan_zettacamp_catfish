@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Listing</title>
+</head>
+<style>
+        body {
+        background-color: #16213E;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0F3460;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #E94560;
+    }
+    header {
+        background-color: #0F3460;
+        background-image: url(../assets/img/banner-ls.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+    header .content {
+        position: absolute;
+        color: rgba(252, 253, 253, 0.691);
+        position: absolute;
+        top: 50%;  /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+
+        transform: translate(-50%, -50%); /* This is a shorthand of
+                                            translateX(-50%) and translateY(-50%) */
+        
+    }
+    tr:nth-child(odd){
+        background-color: #54348372;
+
+    }
+    td:nth-child(odd){
+        background-color: #54348372;
+
+    }
+    tr:hover {
+        background-color: rgba(17, 17, 17, 0.683);
+    }
+    table {
+        width: 100%;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.678);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    section.content {
+        padding: 30px;
+        margin-top: 20px;
+    }
+    thead tr,td {
+        background-color: rgba(0, 0, 0, 0.464) !important;
+        font-weight: bolder;
+    }
+    tr {
+        height: 40px;
+    }
+    .img {
+        width: 100px;
+        margin: 20px auto;
+    }
+    img {
+        width: 100%;
+    }
+</style>
+<body>
+    <nav class="navbar" >
+        <ul>
+            <li><a class="" href="./profile.html">Profile</a></li>
+            <li><a class="active" href="#">Song Listing</a></li>
+            <li><a class="" href="./album_preview.html">Album Preview</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="content">
+            <h1>SONG LISTING</h1>
+        </div>
+    </header>
+    <main>
+        <section class="content" >
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <td>Img</td>
+                        <td>Tittle</td>
+                        <td>Artist</td>
+                        <td>Duration</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 
+                            <div class="img">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2732f7c0bbeb52350986f00f9ed" alt="">
+                            </div>
+                        </td>
+                        <td>Dear God</td>
+                        <td>Avenged Sevefold</td>
+                        <td> 06:34 </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <div class="img">
+                                <img src="https://i.ytimg.com/vi/ceJD-2w5xCo/maxresdefault.jpg" alt="">
+                            </div>
+                        </td>
+                        <td>So Far Away</td>
+                        <td>Avenged Sevefold</td>
+                        <td> 05:28 </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <div class="img">
+                                <img src="https://images.genius.com/cda650447a3c3185398f63bfa46c0e2d.1000x1000x1.png" alt="">
+                            </div>
+                        </td>
+                        <td>Shutdown</td>
+                        <td>Black Pink</td>
+                        <td> 03:01 </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <div class="img">
+                                <img src="https://cdn.antaranews.com/cache/800x533/2022/08/21/20220821_044644.jpg" alt="">
+                            </div>
+                        </td>
+                        <td>Pink Venom</td>
+                        <td>Black Pink</td>
+                        <td> 03:14 </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <div class="img">
+                                <img src="https://i.discogs.com/7Np65u1Kcsfl_9YekVKkMSpO3NuJJa4Uym6SQDmfCRk/rs:fit/g:sm/q:90/h:467/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NTg1/NjEtMTI0ODI4MTAz/Ny5qcGVn.jpeg" alt="">
+                            </div>
+                        </td>
+                        <td>Eminem</td>
+                        <td>Lose Yourself</td>
+                        <td> 05:24 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+</html>

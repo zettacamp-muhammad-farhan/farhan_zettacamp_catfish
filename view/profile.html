@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<style>
+        body {
+        background-color: #16213E;
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0F3460;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #E94560;
+    }
+    main {
+        color: rgba(255, 255, 255, 0.529);
+    }
+    .row{
+        display: flex;
+    }
+    .box{
+        width: 100%;
+        padding: 20px;
+    }
+    .img {
+        width: 100%;
+        background-color: antiquewhite;
+        border: 1px solid rgba(50, 7, 61, 0.529);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .img img {
+        width: 100%;
+    }
+    table.profile{
+        width: 100%;    
+    }
+    table.profile tr:nth-child(odd){
+        background-color: rgba(17, 17, 17, 0.418);
+    }
+    td {
+        height: 60px;
+    }
+    .label {
+        width: 100px;
+        background-color: #E94560;
+        margin-left: auto; margin-right: auto;
+        margin-top: 20px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .album {
+        background-color: rgba(255, 255, 255, 0.142);
+        margin-top: 30px;
+    }
+    .card {
+        background-color: #533483;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.431);
+
+    }
+    .img-card{
+        width: 100%;
+    }
+    .img-card img {
+        width: 100%;
+    }
+    .card-body {
+        margin: 10px; 
+        font-size: 12px;
+    }
+    .foot-card{
+        /* padding-bottom: 30px; */
+        background-color: #E94560;
+        text-align: center;
+    }
+    .album {
+        padding: 20px;
+    }
+    footer {
+        width: 100%;
+        background-color: #1B2430;
+    }
+    .img-logo {
+        width: 220px;
+    }
+    .img-logo img {
+        width: 100%;
+    }
+    .line {
+        display: flex;
+        padding: 0;
+    }
+    .contact-logo{
+        width: 60px;
+        display: inline-block;
+        margin-top: 30px;
+        margin: 30px 40px;
+    }
+    .contact-logo img {
+        width: 100%;
+    }
+    .comunity-footer {
+        margin-top: 0px;
+        color: rgba(255, 255, 255, 0.672);
+    }
+    .copyright {
+        text-align: center;
+        padding: 20px;
+        color: white;
+    }
+    .contact {
+        color: rgba(255, 255, 255, 0.504);
+    }
+</style>
+<body>
+    <nav class="navbar" >
+        <ul>
+            <li><a class="active" href="">Profile</a></li>
+            <li><a class="" href="./song_listing.html">Song Listing</a></li>
+            <li><a class="" href="./album_preview.html">Album Preview</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="box">
+                <div class="img">
+                    <img src="../assets/img/profile.jpg" alt="">
+                </div>
+                <div class="label">
+                    <strong>PRO</strong>
+                </div>
+
+            </div>
+            <div class="box">
+                <table class="profile" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>Muhammad Farhan Ananto</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>farhan.fcbar@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>:</td>
+                        <td>089728878</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>:</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>:</td>
+                        <td>Man</td>
+                    </tr>
+                </table>
+                <div class="album">
+                    <h2>Favorite Album</h2>
+                    <div class="row">
+                        <div class="box">
+                            <div class="card">
+                                <div class="img-card">
+                                    <img src="../assets/img/bp.jpg" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p>Artist : Black Pink</p>
+                                    <p>Year &nbsp; : 2016</p>
+                                    <p>Genre : Hip-hop, K-Pop</p>
+                                    <p>City &nbsp; : Seoul, South Korea</p>
+                                </div>
+                                <div class="foot-card">
+                                    MORE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card">
+                                <div class="img-card">
+                                    <img src="../assets/img/av.jpg" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p>Artist : Avenged Sevenfold</p>
+                                    <p>Year &nbsp; : 1999-now</p>
+                                    <p>Genre : Heavy metal, Metal</p>
+                                    <p>City &nbsp; : California, AS</p>
+                                </div>
+                                <div class="foot-card">
+                                    MORE
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="card">
+                                <div class="img-card">
+                                    <img src="../assets/img/em.jpg" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p>Artist : Eminem</p>
+                                    <p>Year &nbsp; : 1998</p>
+                                    <p>Genre : Hip-hop, rap</p>
+                                    <p>City &nbsp; : Michigan, AS</p>
+                                </div>
+                                <div class="foot-card">
+                                    MORE
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="line row">
+            <div class="box">
+                <div class="img-logo">
+                    <img src="../assets/img/logo.png" alt="">
+                </div>
+            </div>
+            <div class="box comunity-footer">
+                <div class="row">
+                    <div class="box">
+                        <strong>Comunity</strong>
+                        <p>For artist</p>
+                        <p>Developer</p>
+                        <p>Ads</p>
+                        <p>Vendor</p>  
+                        <p>About</p>  
+                        <p>Other</p> 
+                    </div>
+                    <div class="box">
+                        <strong>Comunity</strong>
+                        <p>Support</p>
+                        <p>Player</p>
+                        <p>Free App</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="box">
+                <div class="contact-logo">
+                    <img src="../assets/img/fb.png" alt="">
+                </div>
+                <div class="contact-logo">
+                    <img src="../assets/img/ig.png" alt="">
+                </div>
+                <div class="contact-logo">
+                    <img src="../assets/img/twitter.png" alt="">
+                </div>
+
+                <div class="contact">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>flawlessmp3@flaw.com</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>:</td>
+                            <td>+628-2974-2948</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>:</td>
+                            <td>Jl.Munggur 999, District Z, Mars</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Muhammad Farhan - 2022
+        </div>
+    </footer>
+</body>
+</html>
