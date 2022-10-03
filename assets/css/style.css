@@ -1,0 +1,75 @@
+body {
+    background-color: #082032;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.col {
+    flex: 1;
+    flex-basis: 30%;
+}
+.photo {
+    flex-basis: 30%;
+}
+.desc {
+    flex-basis: 60%;
+    padding-left: 30px; padding-top: 30px;
+}
+.img {
+    width: 100%;
+}
+.img img {
+    width: 100%;
+}
+.title p{
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(220, 198, 198);
+}
+.bio {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(220, 198, 198);
+}
+.bio span {
+    color: #FF4C29;
+    font-size: 40px;
+}
+
+header {
+    width: 80%;
+    margin-left: auto; margin-right: auto;
+    background-color: #2C394B;
+}
+section {
+    width: 80%;
+    margin-left: auto; margin-right: auto;
+    color: rgb(220, 198, 198);
+}
+article {
+    width: 80%; margin-left: auto; margin-right: auto;
+}
+article span {
+    font-weight: 600;
+    color: wheat;
+}
+.prev {
+    float: left;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.next {
+    float: right;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

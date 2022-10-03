@@ -8,20 +8,38 @@
 </head>
 <style>
     body {
-        background-color: white;
+        background-color: #C3F8FF;
     }
     main {
         width: 100%;
     }
     section {
-        width: 100%;
+        width: 80%;
+        margin-left: auto; margin-right: auto;
+        background-color: #ABD9FF;
+        padding: 20px; 
+        margin-bottom: 50px;
+        border-radius: 10px;
+        box-shadow: 15px 15px 15px rgba(90, 65, 65, 0.356);
     }
     table {
         width: 100%;
     }
+    tr:nth-child(even) {
+        background-color: #FFF6BF;
+    }
+    tr:nth-child(odd) {
+        background-color: #FFEBAD;
+    }
     .first-table tr:nth-child(1) {
         background-color: green;
         color: rgb(219, 200, 200);
+    }
+    tr td {
+        text-align: center;
+    }
+    tr:hover {
+        background-color: #98acbd;
     }
     .img {
         width: 100px;
@@ -61,27 +79,39 @@
     <main>
         <section>
             <h2>My Hoby</h2>
-            <table border="1" class="first-table">
+            <table cellspacing="0" cellpadding="0" class="first-table">
                 <tr>
                     <td>Basketball</td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <div class="img">
+                            <img src="./assets/img/bb.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Group</td>
                 </tr>
                 <tr>
                     <td>Hiking</td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <div class="img">
+                            <img src="./assets/img/hk.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Group</td>
                 </tr>
                 <tr>
                     <td>Draw</td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <div class="img">
+                            <img src="./assets/img/dr.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Single</td>
                 </tr>
             </table>
         </section>
         <section>
             <h2>My favorite Movie</h2>
-            <table border="1" class="second-table" >
+            <table cellspacing="0" cellpadding="0" class="second-table" >
                 <tr>
                     <td>The Lord of the Rings: The Fellowship of the Ring</td>
                     <td class="cover" >
@@ -115,8 +145,8 @@
             </table>
         </section>
         <section>
-            <h2>My favorite songs</h2>
-            <table border="1" class="third-table">
+            <h2>My favorite Songs</h2>
+            <table cellspacing="0" cellpadding="0" class="third-table">
                 <tr>
                     <td>Dear God</td>
                     <td class="cover" >
