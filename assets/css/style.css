@@ -54,14 +54,14 @@ article {
     width: 80%; margin-left: auto; margin-right: auto;
 }
 article span:nth-child(1) {
-    font-weight: 600;
+    font-weight: bold;
     color: wheat;
-    font-size: 20px;
+    font-size: 30px;
 }
 article span:nth-child(2) {
-    font-weight: bold;
+    font-weight: 600;
     color: yellow;
-    font-size: 30px;
+    font-size: 20px;
 }
 .prev {
     float: left;
