@@ -1,5 +1,7 @@
 body {
     background-color: #082032;
+    margin: 0;
+    padding: 0;
 }
 .row {
     display: flex;
@@ -26,7 +28,7 @@ body {
 .title p{
     font-size: 40px;
     font-weight: bold;
-    color: rgb(220, 198, 198);
+    color: rgba(152, 152, 67, 0.658);
 }
 .bio {
     font-size: 20px;
@@ -85,4 +87,26 @@ article span {
     background-size: cover;
     top: 150px;
     z-index: -1;
+}
+.city {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(220, 198, 198);
+    margin-top: 100px;
+    margin-left: auto; margin-right: auto;
+    width: 50%;
+}
+.bio span {
+    color: rgba(152, 152, 67, 0.658);
+}
+
+.city span {
+    font-size: 50px;
+    color: rgba(152, 152, 67, 0.658);
+}
+.greet {
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    margin-bottom: -30px;
 }
