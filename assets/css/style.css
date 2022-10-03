@@ -54,6 +54,7 @@ article {
 article span {
     font-weight: 600;
     color: wheat;
+    font-size: 20px;
 }
 .prev {
     float: left;
@@ -72,4 +73,16 @@ article span {
     border-radius: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+.par {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    background-image: url('../img/bg-ext.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    top: 150px;
+    z-index: -1;
 }
