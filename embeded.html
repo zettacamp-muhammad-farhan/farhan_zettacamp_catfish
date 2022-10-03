@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embeded</title>
+</head>
+<style>
+    body {
+        background-color: white;
+    }
+    main {
+        width: 100%;
+    }
+    section {
+        width: 100%;
+    }
+    table {
+        width: 100%;
+    }
+    .first-table tr:nth-child(1) {
+        background-color: green;
+        color: rgb(219, 200, 200);
+    }
+    .img {
+        width: 100px;
+        margin: 20px;
+    }
+    .img img {
+        width: 100%;
+    }
+    .second-table tr:nth-child(2){
+        background-color: red;
+        color: wheat;
+    }
+    .third-table tr:nth-child(3){
+        background-color: blue;
+        color: wheat;
+    }
+    .prev {
+        float: left;
+        background-color: brown;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .next {
+        float: right;
+        background-color: brown;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <h2>My Hoby</h2>
+            <table border="1" class="first-table">
+                <tr>
+                    <td>Basketball</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Hiking</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Draw</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>My favorite Movie</h2>
+            <table border="1" class="second-table" >
+                <tr>
+                    <td>The Lord of the Rings: The Fellowship of the Ring</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/lotr.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>New Line Cinema</td>
+                    <td>02:58</td>
+                </tr>
+                <tr>
+                    <td>Maleficent</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/mlf.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Walt Disney Pictures</td>
+                    <td>01:38</td>
+                </tr>
+                <tr>
+                    <td>Spider Man 3</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/sp3.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Marvel</td>
+                    <td>02:19</td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <h2>My favorite songs</h2>
+            <table border="1" class="third-table">
+                <tr>
+                    <td>Dear God</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/dg.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Avenged Sevenfold</td>
+                    <td>04:43</td>
+                </tr>
+                <tr>
+                    <td>Lose Yourself</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/ly.jpg" alt="">
+                        </div>
+                    </td>
+                    <td>Eminem</td>
+                    <td>05:24</td>
+                </tr>
+                <tr>
+                    <td>Shut Down</td>
+                    <td class="cover" >
+                        <div class="img">
+                            <img src="./assets/img/sd.png" alt="">
+                        </div>
+                    </td>
+                    <td>Black Pink</td>
+                    <td>03:01</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <a href="./index.html"><div class="prev">
+        Prev Page
+    </div></a>
+    <a href="./eksternal.html"><div class="next">
+        Next Page
+    </div></a>
+</body>
+</html>
