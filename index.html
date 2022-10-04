@@ -6,7 +6,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+<style>
+    body {
+        background-color: #000000;
+    }
+    * {
+        color: wheat;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    header {
+        background: black url(./assets/img/bg-con.jpg) no-repeat center top;
+        background-attachment: fixed;
+        height: 400px;
+    }
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+    section.container > h1 {
+        text-align: center;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col {
+        flex: 1;
+        flex-basis: 25%;
+    }
+
+    .card {
+        width: 90%;
+        background-color: #150050;
+        min-height: 380px;
+        margin: 10px auto;
+        box-sizing: border-box;
+        margin: 0 0 20px 0;
+        border: 1px solid rgba(255, 255, 0, 0.437);
+    }
+    .img {
+        width: 100%;
+        background-color: red;
+        height: 150px;
+        overflow: hidden;
+    }
+    .img img {
+        width: 100%;
+    }
+    .card > h3.title {
+        text-align: center;
+    }
+    .card .card-body {
+        padding: 0 19px 0px 19px;
+        font-size: 13px;
+    }
+    .card > .card-footer {
+        background-color: #3F0071;
+        text-align: center;
+        padding: 10px;
+    }
+    section.container {
+        flex-grow: 4;
+        flex-basis: 80%;
+        box-sizing: border-box;
+        /* padding-right: 10px; */
+    }
+    aside.side {
+        flex-basis: 20%;
+        flex-grow: 2;
+        background-color: rgb(46, 49, 52);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .body-side p {
+        font-size: 12px;
+    }
+</style>
 <body>
+    <header>
+
+    </header>
+    <main>
+        <div class="row">
+            <section class="container">
+                <h1>SCP FOUNDATION</h1>
+                <article>
+                    <p>&emsp13; The SCP Foundation is a fictional secret organization documented by the collaborative writing wiki project of the same name, with the abbreviation standing for "Special Containment Procedures". Within the website's shared universe, the Foundation is responsible for capturing and containing various paranormal, supernatural, and other mysterious phenomena unexplained by mainstream science (known as "anomalies" or "SCPs"), while also keeping their existence hidden from the rest of human society. The real-world website is community-based, originating in 4chan, and includes elements of many genres such as horror, science fiction, and urban fantasy. the SCP Wiki, the majority of works consist of thousands of SCP files: confidential quasi-scientific reports that document an SCP object and the means of keeping it contained. The website also contains "Foundation Tales", which are short stories featuring various characters and settings in the SCP universe. The wiki's literary works have been praised for their ability to convey horror through a quasi-scientific and academic writing style, as well as for their high standards of quality.</p>
     
+                    <p>
+                        &emsp13; The fictional setting centers around the findings and activities of the SCP Foundation. The Foundation is an international secret society, consisting of a scientific research institution with a paramilitary intelligence agency to support their goals. Despite their extremely secretive nature, the Foundation is entrusted by governments around the world to capture and contain various unexplained phenomena that defy the known laws of nature (referred to as "anomalies", "SCP objects", "SCPs", or informally as "skips"). They include living beings and creatures, artifacts and objects, locations and places, abstract concepts, and incomprehensible entities which display supernatural abilities or other extremely unusual properties. If left uncontained, many of the more dangerous anomalies will pose a serious threat to humans or even all life on Earth. Their existence is hidden and withheld from the general public in order to prevent the supposed mass hysteria that would occur if they were leaked, and allow human civilization to "continue functioning normally". Whenever an SCP anomaly is discovered, teams of undercover Foundation agents (often called Mobile Task Forces) are deployed to either collect and transport the object to a Foundation facility, or to contain it at its location of discovery if transportation is not possible. If an anomaly is too widespread, elusive, or otherwise inaccessible, containment consists of suppressing all knowledge of the SCP from the public. This is accomplished both through censorship of mass media, and forcing all eyewitnesses to take amnestic drugs which erase their memories of anomalous events.
+                    </p>
+                </article>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/palgue.jpg" alt="errno">
+                            </div>
+                            <h3 class="title" >Dr. Plague</h3>
+                            <div class="card-body">
+                                <p>&emsp13; A plague doctor was a physician who treated victims of bubonic plague during epidemics. These physicians were hired by cities to treat infected patients regardless of income, especially the poor that could not afford to pay. Plague doctors had a mixed reputation, with some citizens seeing their presence as a warning to leave the area.Some plague doctors were said to charge patients and their families additional fees for special treatments or false cures.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn">
+                                    READ MORE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/682.jpg" alt="">
+                            </div>
+                            <h3 class="title" >SCP 682</h3>
+                            <div class="card-body">
+                                <p>&emsp13;  SCP-682 must be destroyed as soon as possible. At this time, no means available to SCP teams are capable of destroying SCP-682, only able to cause massive physical damage. SCP-682 should be contained within a 5 m x 5 m x 5 m chamber with 25 cm reinforced acid-resistant steel plate lining all inside surfaces. The containment chamber should be filled with hydrochloric acid until SCP-682 is submerged and incapacitated.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn">
+                                    READ MORE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/106.jpg" alt="">
+                            </div>
+                            <h3 class="title" >SCP 106</h3>
+                            <div class="card-body">
+                                <p>&emsp13; No physical interaction with SCP-106 is allowed at any time. All physical interaction must be approved by no less than a two-thirds vote from O5-Command. Any such interaction must be undertaken in AR-II maximum security sites, after a general non-essential staff evacuation. All staff (Research, Security, Class D, etc.) are to remain at least sixty meters away from the containment cell at all times, except in the event of breach events.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn">
+                                    READ MORE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/011.jpg" alt="">
+                            </div>
+                            <h3 class="title" >Civil War memorial statue </h3>
+                            <div class="card-body">
+                                <p>&emsp13; SCP-011 is a Civil War memorial statue located in Woodstock, Vermont. The statue is the image of a young male soldier holding a musket at his side, and is carved out of granite quarried within the area. Occasionally, SCP-011 has been observed lifting its musket to the sky to fire at birds which attempt to land or defecate on it. Reports detail that its movements produce soft grinding sounds but do not cause it any structural failure.</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn">
+                                    READ MORE
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+            <aside class="side" >
+                <h4>Most Popular</h4>
+                <div class="body-side">
+                    <div class="img">
+                        <img src="./assets/img/035.jpg" alt="">
+                    </div>
+                    <p>SCP 035 - The Mask</p>
+                    <div class="img">
+                        <img src="./assets/img/096.jpg" alt="">
+                    </div>
+                    <p>SCP 096 - The Shy Guy</p>
+                    <div class="img">
+                        <img src="./assets/img/173.jpg" alt="">
+                    </div>
+                    <p>SCP 173 - The Sclupture</p>
+                    <div class="img">
+                        <img src="./assets/img/3000.jpg" alt="">
+                    </div>
+                    <p>SCP 3000 - The Infinite Eel</p>
+                </div>
+            </aside>
+        </div>
+
+    </main>
 </body>
 </html>
