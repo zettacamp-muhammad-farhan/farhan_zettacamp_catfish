@@ -9,114 +9,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        header {
+            background: black url(./assets/img/bg-con.jpg) no-repeat center top;
+            background-attachment: fixed;
+            height: 400px;
+            position: relative;
+        }
+    </style>
 
 </head>
-<style>
-    body {
-        background-color: #000000;
-    }
-    * {
-        color: wheat;
-        font-family: 'Times New Roman', Times, serif;
-    }
-    header {
-        background: black url(./assets/img/bg-con.jpg) no-repeat center top;
-        background-attachment: fixed;
-        height: 400px;
-        position: relative;
-    }
-    main {
-        width: 95%;
-        margin: 20px auto;
-    }
-    section.container > h1 {
-        text-align: center;
-    }
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .col {
-        flex: 1;
-        flex-basis: 25%;
-    }
 
-    .card {
-        width: 90%;
-        background-color: #150050;
-        min-height: 380px;
-        margin: 10px auto;
-        box-sizing: border-box;
-        margin: 0 0 20px 0;
-        border: 1px solid rgba(255, 255, 0, 0.437);
-    }
-    .card:hover {
-        transform: scale(1.3);
-        cursor: pointer;
-        transition: transform 1s;
-    }
-    .img {
-        width: 100%;
-        background-color: red;
-        height: 150px;
-        overflow: hidden;
-    }
-    .img img {
-        width: 100%;
-    }
-    .card {
-        margin: 0 0 0 0;
-    }
-    .card > h3.title {
-        text-align: center;
-    }
-    .card .card-body {
-        padding: 0 19px 0px 19px;
-        font-size: 13px;
-    }
-    .card > .card-footer {
-        background-color: #3F0071;
-        text-align: center;
-        padding: 10px;
-    }
-    section.container {
-        flex-grow: 4;
-        flex-basis: 80%;
-        box-sizing: border-box;
-    }
-    aside.side {
-        flex-basis: 20%;
-        flex-grow: 2;
-        background-color: rgb(46, 49, 52);
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .body-side p {
-        font-size: 12px;
-    }
-    .item .img {
-        cursor: pointer;
-    }
-    .item p {
-        cursor: pointer;
-    }
-    .item .img:hover {
-        border: 1px solid rgba(255, 255, 0, 0.51);
-        box-sizing: border-box;
-        box-shadow: 0 0 25px yellow;
-    }
-    header>.text {
-        top: 40%;
-        left: 20%;
-        transform: translate(-50%);
-        position: absolute;
-    }
-    header>.text>h1{
-        text-shadow: 0 0 20px rgb(240, 240, 235);
-        /* color: white; */
-        font-family: 'Rubik Dirt', cursive;
-    }
-</style>
 <body>
     <header>
         <div class="text">
@@ -145,7 +49,7 @@
                                 <p>&emsp13; A plague doctor was a physician who treated victims of bubonic plague during epidemics. These physicians were hired by cities to treat infected patients regardless of income, especially the poor that could not afford to pay. Plague doctors had a mixed reputation, with some citizens seeing their presence as a warning to leave the area.Some plague doctors were said to charge patients and their families additional fees for special treatments or false cures.</p>
                             </div>
                             <div class="card-footer">
-                                <div class="btn">
+                                <div name="0" class="btn">
                                     READ MORE
                                 </div>
                             </div>
@@ -161,7 +65,7 @@
                                 <p>&emsp13;  SCP-682 must be destroyed as soon as possible. At this time, no means available to SCP teams are capable of destroying SCP-682, only able to cause massive physical damage. SCP-682 should be contained within a 5 m x 5 m x 5 m chamber with 25 cm reinforced acid-resistant steel plate lining all inside surfaces. The containment chamber should be filled with hydrochloric acid until SCP-682 is submerged and incapacitated.</p>
                             </div>
                             <div class="card-footer">
-                                <div class="btn">
+                                <div name="1" class="btn">
                                     READ MORE
                                 </div>
                             </div>
@@ -177,7 +81,7 @@
                                 <p>&emsp13; No physical interaction with SCP-106 is allowed at any time. All physical interaction must be approved by no less than a two-thirds vote from O5-Command. Any such interaction must be undertaken in AR-II maximum security sites, after a general non-essential staff evacuation. All staff (Research, Security, Class D, etc.) are to remain at least sixty meters away from the containment cell at all times, except in the event of breach events.</p>
                             </div>
                             <div class="card-footer">
-                                <div class="btn">
+                                <div name="2" class="btn">
                                     READ MORE
                                 </div>
                             </div>
@@ -193,7 +97,7 @@
                                 <p>&emsp13; Item SCP-011 and the area surrounding it are to be cleaned once every day. For safety purposes, cleaning should start at least 30 minutes after sundown. Cleaning should always be performed by at least two personnel, who are also advised to note anything unusual about the item or the debris cleaned up. In a situation where the item cannot be cleaned for more than two days, local residents must be contacted and instructed not to approach the item.</p>
                             </div>
                             <div class="card-footer">
-                                <div class="btn">
+                                <div name="3" class="btn">
                                     READ MORE
                                 </div>
                             </div>
@@ -238,5 +142,42 @@
         </div>
 
     </main>
+    <footer>
+        <p><span>Muhammad Farhan Ananto</span> - 2022</p>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+
+    <div class="overlay hide"></div>
+    <div id="modal" class="modal hide">
+        <div class="modal-header" >
+            <span id="close" style="color:white; float: right;" >X</span>
+        </div>
+        <div class="title">
+            <h1 id="title-mod" >Title</h1>
+            <div class="img">
+                <img src="./assets/img/palgue.jpg" alt="">
+            </div>
+            <div class="content">
+                <p id="con1" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque soluta qui aliquam distinctio eveniet enim facilis nam repudiandae. Itaque numquam nihil exercitationem nam perspiciatis aspernatur in quidem, maiores sapiente minus obcaecati molestias animi dolorum eum ratione cumque expedita non perferendis consectetur sint reprehenderit necessitatibus deserunt. Repudiandae optio, dolorem voluptates.</p>
+
+                <p id="con2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nisi eveniet illum recusandae modi ut facere alias, nam culpa impedit facilis aliquam, et pariatur id, officia quos. Pariatur maiores modi quod excepturi eius tempore? Labore nobis assumenda dignissimos iste eaque atque asperiores fugiat. Esse et quis aliquam fugit maiores architecto molestiae ex accusamus unde. Voluptatibus non officiis recusandae quo omnis accusamus, iste quis a necessitatibus atque dolor officia velit modi corrupti molestiae nostrum labore eum nam qui quos numquam aut reiciendis rem laudantium? Praesentium libero, repellendus laudantium laborum doloremque eligendi expedita hic odio consequatur vero quis, consectetur omnis molestiae dolore.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let modal = document.querySelector('#modal');
+        let close = document.querySelector('#close');
+        let blur = document.querySelector('.overlay')
+
+
+        close.addEventListener('click', function(){
+            modal.classList.add('hide')
+            blur.classList.add('hide')
+
+        })
+
+        console.log(modal)
+    </script>
 </body>
 </html>

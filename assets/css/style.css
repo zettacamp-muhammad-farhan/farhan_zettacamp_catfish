@@ -1,0 +1,146 @@
+body {
+    background-color: #000000;
+}
+* {
+    color: wheat;
+    font-family: 'Times New Roman', Times, serif;
+}
+header {
+    background: black url(./assets/img/bg-con.jpg) no-repeat center top;
+    background-attachment: fixed;
+    height: 400px;
+    position: relative;
+}
+main {
+    width: 95%;
+    margin: 20px auto;
+}
+section.container > h1 {
+    text-align: center;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    flex: 1;
+    flex-basis: 25%;
+}
+
+.card {
+    width: 90%;
+    background-color: #150050;
+    min-height: 380px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    border: 1px solid rgba(255, 255, 0, 0.437);
+}
+.card:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+    transition: transform 1s;
+}
+.img {
+    width: 100%;
+    background-color: red;
+    height: 150px;
+    overflow: hidden;
+}
+.img img {
+    width: 100%;
+}
+.card {
+    margin: 0;
+    padding: 0;
+}
+.card > h3.title {
+    text-align: center;
+}
+.card .card-body {
+    padding: 0 19px 0px 19px;
+    font-size: 13px;
+}
+.card > .card-footer {
+    background-color: #3F0071;
+    text-align: center;
+    padding: 10px;
+}
+section.container {
+    flex-grow: 4;
+    flex-basis: 80%;
+    box-sizing: border-box;
+}
+aside.side {
+    flex-basis: 20%;
+    flex-grow: 2;
+    background-color: rgb(46, 49, 52);
+    padding: 20px;
+    box-sizing: border-box;
+}
+.body-side p {
+    font-size: 12px;
+}
+.item .img {
+    cursor: pointer;
+}
+.item p {
+    cursor: pointer;
+}
+.item .img:hover {
+    border: 1px solid rgba(255, 255, 0, 0.51);
+    box-sizing: border-box;
+    box-shadow: 0 0 25px yellow;
+}
+header>.text {
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%);
+    position: absolute;
+}
+header>.text>h1{
+    text-shadow: 0 0 20px rgb(240, 240, 235);
+    /* color: white; */
+    font-family: 'Rubik Dirt', cursive;
+}
+footer{
+    text-align: center;
+}
+.modal {
+    width: 50%;
+    height: 800px;
+    position: absolute;
+    background-color: #150050f0;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 30px 40px;
+    z-index: 2;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.hide {
+    display: none;
+}
+.modal .title {
+    text-align: center;
+}
+.modal .img {
+    height: 400px;
+}
+.modal .content {
+    text-align: start;
+}
+span#close{
+    cursor: pointer;
+}
