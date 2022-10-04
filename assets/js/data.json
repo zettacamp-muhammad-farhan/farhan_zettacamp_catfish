@@ -4,25 +4,25 @@
         {
             "title" : "Dr.Plague",
             "content" : "&emsp13; A plague doctor was a physician who treated victims of bubonic plague during epidemics. These physicians were hired by cities to treat infected patients regardless of income, especially the poor that could not afford to pay. Plague doctors had a mixed reputation, with some citizens seeing their presence as a warning to leave the area.Some plague doctors were said to charge patients and their families additional fees for special treatments or false cures.",
-            "content2" : "&emsp13; A plague doctor was a physician who treated victims of bubonic plague during epidemics. These physicians were hired by cities to treat infected patients regardless of income, especially the poor that could not afford to pay. Plague doctors had a mixed reputation, with some citizens seeing their presence as a warning to leave the area.Some plague doctors were said to charge patients and their families additional fees for special treatments or false cures.",
+            "content2" : "&emsp13; According to Michel Tibayrenc's Encyclopedia of Infectious Diseases, the first mention of the iconic plague doctor is found during the 1619 plague outbreak in Paris, in the written work of royal physician Charles de Lorme, serving King Louis XIII of France at the time.",
             "img" : "./assets/img/palgue.jpg"
         },
         {
             "title" : "SCP 682",
             "content" : "&emsp13;  SCP-682 must be destroyed as soon as possible. At this time, no means available to SCP teams are capable of destroying SCP-682, only able to cause massive physical damage. SCP-682 should be contained within a 5 m x 5 m x 5 m chamber with 25 cm reinforced acid-resistant steel plate lining all inside surfaces. The containment chamber should be filled with hydrochloric acid until SCP-682 is submerged and incapacitated.",
-            "content2" : "&emsp13;  SCP-682 must be destroyed as soon as possible. At this time, no means available to SCP teams are capable of destroying SCP-682, only able to cause massive physical damage. SCP-682 should be contained within a 5 m x 5 m x 5 m chamber with 25 cm reinforced acid-resistant steel plate lining all inside surfaces. The containment chamber should be filled with hydrochloric acid until SCP-682 is submerged and incapacitated.",
+            "content2" : "&emsp13;  SCP-682 is a large, vaguely reptile-like creature of unknown origin. It appears to be extremely intelligent, and was observed to engage in complex communication with SCP-079 during their limited time of exposure. SCP-682 appears to have a hatred of all life, which has been expressed in several interviews during containment. (See Addendum 682-B).",
             "img" : "./assets/img/682.jpg"
         },
         {
             "title" : "SCP 106",
             "content" : "&emsp13; No physical interaction with SCP-106 is allowed at any time. All physical interaction must be approved by no less than a two-thirds vote from O5-Command. Any such interaction must be undertaken in AR-II maximum security sites, after a general non-essential staff evacuation. All staff (Research, Security, Class D, etc.) are to remain at least sixty meters away from the containment cell at all times, except in the event of breach events.",
-            "content2" : "&emsp13; No physical interaction with SCP-106 is allowed at any time. All physical interaction must be approved by no less than a two-thirds vote from O5-Command. Any such interaction must be undertaken in AR-II maximum security sites, after a general non-essential staff evacuation. All staff (Research, Security, Class D, etc.) are to remain at least sixty meters away from the containment cell at all times, except in the event of breach events.",
+            "content2" : "&emsp13; SCP-106 is to be contained in a sealed container, comprised of lead-lined steel. The container will be sealed within forty layers of identical material, each layer separated by no less than 36cm of empty space. Support struts between layers are to be randomly spaced. Container is to remain suspended no less than 60cm from any surface by ELO-IID electromagnetic supports.",
             "img" : "./assets/img/106.jpg"
         },
         {
             "title" : "Civil War memorial statue ",
             "content" : "&emsp13; Item SCP-011 and the area surrounding it are to be cleaned once every day. For safety purposes, cleaning should start at least 30 minutes after sundown. Cleaning should always be performed by at least two personnel, who are also advised to note anything unusual about the item or the debris cleaned up. In a situation where the item cannot be cleaned for more than two days, local residents must be contacted and instructed not to approach the item.",
-            "content2" : "&emsp13; Item SCP-011 and the area surrounding it are to be cleaned once every day. For safety purposes, cleaning should start at least 30 minutes after sundown. Cleaning should always be performed by at least two personnel, who are also advised to note anything unusual about the item or the debris cleaned up. In a situation where the item cannot be cleaned for more than two days, local residents must be contacted and instructed not to approach the item.",
+            "content2" : "&emsp13; SCP-011 is a Civil War memorial statue located in Woodstock, Vermont. The statue is the image of a young male soldier holding a musket at his side, and is carved out of granite quarried within the area. Occasionally, SCP-011 has been observed lifting its musket to the sky to fire at birds which attempt to land or defecate on it.",
             "img" : "./assets/img/011.jpg"
         }
     ]

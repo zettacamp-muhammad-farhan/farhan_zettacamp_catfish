@@ -108,10 +108,10 @@ footer{
 }
 .modal {
     width: 50%;
-    height: 800px;
+    /* height: 700px; */ margin-bottom: 30px;
     position: absolute;
     background-color: #150050f0;
-    top: 300px;
+    top: 650px;
     left: 50%;
     transform: translate(-50%);
     padding: 30px 40px;
