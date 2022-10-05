@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<style>
+    * {
+        color: rgb(93, 75, 75);
+    }
+    body {
+        background-color: #FFD1D1;
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        width: 70%;
+        margin-left: auto; margin-right: auto;
+        
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col {
+        flex: 1;
+        flex-basis: 33%;
+    }
+    .card {
+        width: 95%;
+        margin-left: auto; margin-right: auto;
+        min-height: 400px;
+        background-color: #FFE3E1;
+        padding: 20px;
+        box-sizing: border-box;
+        font-size: 13px;
+        /* box-shadow: 15px 15px 15px rgba(159, 116, 116, 0.323); */
+    }
+    .img {
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 1px solid rgb(167, 131, 131);
+        box-shadow: 0 0 20px rgba(109, 77, 77, 0.406) ;
+
+    }
+    img {
+        width: 100%;
+    }
+    .card>.content>.title {
+        text-align: center;
+    }
+    tr td {
+        height: 30px;
+    }
+    a {
+        text-decoration: none;
+        width: fit-content;
+    }
+    a .button {
+        padding: 10px;
+        width: fit-content;
+        background-color: #FF9494;
+        margin-left: auto; margin-right: auto;
+        margin-top: 10px;
+        color: rgba(0, 0, 0, 0.868);
+
+    }
+    section>h1 {
+        text-align: center;
+    }
+
+
+    .first + .row{
+        margin: 1rem 0;
+    }
+
+
+    .first:first-child{
+        margin: 0;
+    }
+
+    /* atur row ke tiga */
+    .row:last-child{
+        margin: 0;
+    }
+
+    footer {
+        width: 100%;
+        background-color: #FFF5E4;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 158px;
+        margin-right: auto; margin-left: auto;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: rgb(200, 144, 144);
+    }
+
+    /* psudeo element */
+    ::selection {
+        color: rgb(19, 197, 220);
+        background: rgb(74, 96, 145);
+    }
+    .hide{
+        display: none;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <h1>POPULAR PRODUCTS</h1>
+            <div class="first">
+                <div class="row first-row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/ip14pr.webp" alt="">
+                            </div>
+                            <div class="content">
+                                <h1 class="title">Iphone 14 Pro</h1>
+                                <div class="desc">
+                                    <table>
+                                        <tr>
+                                            <td>Display</td>
+                                            <td>:</td>
+                                            <td>LTPO Super Retina XDR OLED</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chipset</td>
+                                            <td>:</td>
+                                            <td>Apple A16 Bionic</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera</td>
+                                            <td>:</td>
+                                            <td>48mp(back), 12mp(rear)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Battery</td>
+                                            <td>:</td>
+                                            <td>Li-Ion 3200 mAh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Performance</td>
+                                            <td>:</td>
+                                            <td>AnTuTu: 968412 (v9)</td>
+                                        </tr>
+                                    </table>
+    
+                                    <a href="./view/view-product.html"><div class="button">
+                                        view product
+                                    </div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/s22.jpg" alt="">
+                            </div>
+                            <div class="content">
+                                <h1 class="title">Samsung S22</h1>
+                                <div class="desc">
+                                    <table>
+                                        <tr>
+                                            <td>Display</td>
+                                            <td>:</td>
+                                            <td>Dynamic AMOLED 2X</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chipset</td>
+                                            <td>:</td>
+                                            <td>Exynos 2200 (4 nm)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera</td>
+                                            <td>:</td>
+                                            <td>50mp(back), 10mp(rear)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Battery</td>
+                                            <td>:</td>
+                                            <td>Li-Ion 3700 mAh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Performance</td>
+                                            <td>:</td>
+                                            <td>AnTuTu: 745496 (v8), 881428 (v9)</td>
+                                        </tr>
+                                    </table>
+    
+                                    <a href="./view/view-product.html"><div class="button">
+                                        view product
+                                    </div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="img">
+                                <img src="./assets/img/p50pro.jpg" alt="">
+                            </div>
+                            <div class="content">
+                                <h1 class="title">Huawei P50 Pro</h1>
+                                <div class="desc">
+                                    <table>
+                                        <tr>
+                                            <td>Display</td>
+                                            <td>:</td>
+                                            <td>OLED, 1B colors, 120Hz</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Chipset</td>
+                                            <td>:</td>
+                                            <td>Kirin 9000 (5 nm)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera</td>
+                                            <td>:</td>
+                                            <td>50mp(back), 13mp(rear)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Battery</td>
+                                            <td>:</td>
+                                            <td>Li-Ion 4360 mAh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Performance</td>
+                                            <td>:</td>
+                                            <td>AnTuTu: 793876 (v8), 786215 (v9)</td>
+                                        </tr>
+                                    </table>
+    
+                                    <a href="./view/view-product.html"><div class="button">
+                                        view product
+                                    </div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row second-row">
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/x12u.jpeg" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">Xiaomi 12 Ultra</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>LTPO2 AMOLED, 1B colors, 120Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>Snapdragon 8+ Gen 1 (4 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>50.3mp(back), 32mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 4860 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 1039412 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/f4gt.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">Poco F4 GT</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>AMOLED, 1B colors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>Snapdragon 8 Gen 1 (4 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>64mp(back), 20mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 4700 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 745496 (v8), 881428 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/asr6.webp" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">Asus Rog Phone 6</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>AMOLED, 1B colors, 165Hz, HDR10+</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>Snapdragon 8+ Gen 1 (4 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>50mp(back), 12mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 6000 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 1003876 (v8), 1086215 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row third-row">
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/gtn3.webp" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">Realme GT Neo 3</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>AMOLED, 1B colors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>MediaTek Dimensity 8100 (5 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>50mp(back), 16mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 5000 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 819348 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/on10pro.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">One Plus 10 Pro</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>LTPO2 Fluid AMOLED, 1B colors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>Snapdragon 8 Gen 1 (4 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>48mp(back), 32mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 5000 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 886248 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="./assets/img/gp6pro.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h1 class="title">Google Pixel 6 Pro</h1>
+                            <div class="desc">
+                                <table>
+                                    <tr>
+                                        <td>Display</td>
+                                        <td>:</td>
+                                        <td>LTPO AMOLED, 120Hz</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chipset</td>
+                                        <td>:</td>
+                                        <td>Google Tensor (5 nm)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Camera</td>
+                                        <td>:</td>
+                                        <td>50mp(back), 11.1mp(rear)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery</td>
+                                        <td>:</td>
+                                        <td>Li-Ion 5003 mAh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Performance</td>
+                                        <td>:</td>
+                                        <td>AnTuTu: 585485 (v8), 719815 (v9)</td>
+                                    </tr>
+                                </table>
+
+                                <a href="./view/view-product.html"><div class="button">
+                                    view product
+                                </div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="hide" >
+        <h2>Hello</h2>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="./view/about.html">About</a></li>
+            <li><a href="./view/contact.html">Contact</a></li>
+          </ul>
+    </footer>
+</body>
+</html>

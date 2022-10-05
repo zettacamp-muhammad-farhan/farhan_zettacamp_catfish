@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #FFD1D1;
+    }
+    main {
+        width: 80%;
+        margin-left: auto; margin-right: auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    section {
+        margin-bottom: 20px;
+    }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col {
+        flex: 1;
+        box-sizing: border-box;
+    }
+    .card {
+        width: 90%;
+        margin-left: auto; margin-right: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #FFE3E1;
+        text-align: center;
+        color: #1413138d;
+    }
+    .title {
+        text-align: center;
+    }
+    .title>h1 {
+        text-align: center;
+    }
+    header {
+        background-color: #FF9494;
+        height: 300px;
+        width: 100%;
+        position: relative;
+    }
+    header > .title {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+    }
+    .form-in {
+        background-color: #FFF5E4;
+        width: 100%;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+    .form-in input {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        
+    }
+    .form-in input:focus {
+        outline: none;
+        box-shadow: 0 0 20px yellowgreen;
+    }
+    .form-in textarea {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+        
+    }
+    .form-in textarea:focus {
+        outline: none;
+        box-shadow: 0 0 20px yellowgreen;
+    }
+    button{
+        background-color: #FF9494;
+        border: none;
+        padding: 10px;
+        margin-right: auto; margin-left: auto;
+        border-radius: 10px;
+        width: 100%;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.735);
+    }
+    button:hover {
+        background-color: #ff9494aa;
+        box-shadow: 0 0 10px yellowgreen;
+    }
+    .logo {
+        width: 30%;
+        margin-left: auto; margin-right: auto;
+    }
+    .logo img {
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+        background-color: #FFF5E4;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 158px;
+        margin-right: auto; margin-left: auto;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: rgb(200, 144, 144);
+    }
+    form::after{
+        content: '**Required';
+    }
+    form label::before{
+        width: 10px;
+        height: 10px;
+        content: "**";
+    }
+</style>
+<body>
+    <header>
+        <div class="title">
+            <h1 class="" >GET IN TOUCH</h1>
+            <p>Contact The Help Team</p>
+        </div>
+    </header>
+    <main>
+
+        <section>
+            <form action="">
+                <label for="">
+                    <div class="form-in">
+                        <input type="text" placeholder="What can we help you ? ">
+                    </div>
+                </label>
+                <label for="">
+                    <div class="form-in">
+                        <input type="text" placeholder="Username">
+                    </div>
+                </label>
+                <label for="">
+                    <div class="form-in">
+                        <input type="email" placeholder="Email">
+                    </div>
+                </label>
+                <label for="">
+                    <div class="form-in">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                </label>
+                <label for="">
+                    <div class="form-in">
+                        <textarea name="" placeholder="Detail" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </label>
+
+                <button>SUBMIT</button>
+            </form>
+        </section>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="logo">
+                        <img src="../assets/img/call.png" alt="">
+                    </div>
+                    <h3>Call us if u need Some help</h3>
+                    <div class="contact">
+                        <p>Mr.Charles(027444902)</p>
+                        <p>Mr.Tom(027444944)</p>
+                        <p>Ms.Tifa(027444947)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="logo">
+                        <img src="../assets/img/wa.png" alt="">
+                    </div>
+                    <h3>Text us if u need Some help</h3>
+                    <div class="contact">
+                        <p>Ms.Revi(0897686877)</p>
+                        <p>Mr.Tomi(0897686808)</p>
+                        <p>Ms.Calisa(099927390)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="./view/about.html">About</a></li>
+            <li><a href="../">Home</a></li>
+          </ul>
+    </footer>
+</body>
+</html>

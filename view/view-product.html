@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body {
+            background-color: #FFD1D1;
+            color: rgba(47, 42, 42, 0.694);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #FFE3E1;
+            height: 100px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        main{
+            width: 90%;
+            margin-left: auto; margin-right: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .col {
+            flex: 1;
+            flex-basis: 50%;
+        }
+        .mini {
+            flex-basis: 25%;
+        }
+        .img {
+            width: 100%;
+            margin-left: auto; margin-right: auto;
+
+
+        }
+        .img img {
+            width: 100%;
+        }
+        .details {
+            padding: 0 20px 20px 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            width: 100%;
+            background-color: #FFF5E4;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        .other {
+            margin-top: 20px;
+        }
+        .size {
+            width: 90%; 
+            margin-left: auto; margin-right: auto;
+        }
+        .img.logo{
+            height: 65px;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 0.5px solid black;
+        }
+        .varian {
+            background-color: #FF9494;
+            width: 130px;
+            overflow: hidden;
+            border-radius: 5px;
+
+        }
+        .varian select {
+            background-color: transparent;
+            width: 100%;
+            color: rgba(22, 20, 20, 0.647);
+            border: none;
+            padding: 5px;
+        }
+        .varian select:focus{
+            outline: none;
+            box-shadow: 0 0 20px yellowgreen;
+        }
+        .size>.img.logo:hover{
+            transform: scale(1.3);
+            transition: transform 1s;
+        }
+        .button{
+            padding: 10px;
+            background-color: #FF9494;
+            width: 100;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px 10px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #c9a6a6;
+        }
+        .description {
+            background-color: #FFF5E4;
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .logo-top{
+            width: 100px;
+        }
+        .logo-top img {
+            width: 100%;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Product</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><div class="logo-top">
+            <img src="../assets/img/logo.png" alt="">
+        </div></a>
+    </header>
+    <main>
+        <section>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="../assets/img/ip14pr.webp" alt="">
+                        </div>
+                    </div>
+                    <div class="other">
+                        <div class="row">
+                            <div class="mini">
+                                <div class="size">
+                                    <div class="img logo">
+                                        <img src="../assets/img/ap1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini">
+                                <div class="size">
+                                    <div class="img logo">
+                                        <img src="../assets/img/ap2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini">
+                                <div class="size">
+                                    <div class="img logo">
+                                        <img src="../assets/img/ap3.jpeg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini">
+                                <div class="size">
+                                    <div class="img logo">
+                                        <img src="../assets/img/ap4.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col details">
+                    <div class="card">
+                        <h1>IPhone 14 Pro</h1>
+                        <table>
+                            <tr>
+                                <td>Network</td>
+                                <td>:</td>
+                                <td>GSM / CDMA / HSPA / EVDO / LTE / 5G</td>
+                            </tr>
+                            <tr>
+                                <td>Launch</td>
+                                <td>:</td>
+                                <td>2022, September 07</td>
+                            </tr>
+                            <tr>
+                                <td>Dimension</td>
+                                <td>:</td>
+                                <td>147.5 x 71.5 x 7.9 mm (5.81 x 2.81 x 0.31 in)</td>
+                            </tr>
+                            <tr>
+                                <td>Display</td>
+                                <td>:</td>
+                                <td>LTPO Super Retina XDR OLED, 120Hz</td>
+                            </tr>
+                            <tr>
+                                <td>Memory</td>
+                                <td>:</td>
+                                <td>128GB 6GB RAM, 256GB 6GB RAM, 512GB 6GB RAM</td>
+                            </tr>
+                            <tr>
+                                <td>Features</td>
+                                <td>:</td>
+                                <td>Face ID, accelerometer, gyro, proximity, compass, barometer</td>
+                            </tr>
+                            <tr>
+                                <td>Sound</td>
+                                <td>:</td>
+                                <td>stereo speakers</td>
+                            </tr>
+                            <tr>
+                                <td>Camera</td>
+                                <td>:</td>
+                                <td>48mp(main) 12mp(rear)</td>
+                            </tr>
+                            <tr>
+                                <td>Battery</td>
+                                <td>:</td>
+                                <td>Li-Ion 3200 mAh, non-removable (12.38 Wh)</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>:</td>
+                                <td>AnTuTu: 968412 (v9)</td>
+                            </tr>
+                        </table>
+    
+                        <div class="price">
+                            <h2>Rp. 26.200.000, 00</h2>
+                        </div>
+                        <div class="varian">
+                            <select name="">
+                                <option value="0">- Select Varian -</option>
+                                <option value="1">6gb - 128gb</option>
+                                <option value="2">6gb - 256gb</option>
+                                <option value="3">6gb - 5128gb</option>
+                                <option value="3">6gb - 1tb</option>
+                            </select>
+                        </div>
+
+                        <div class="footer-detail">
+                            <div class="button">
+                                Buy
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="description">
+                <h2>Description</h2>
+                <p>&emsp13; The iPhone 14 Pro and iPhone 14 Pro Max are smartphones designed and marketed by Apple Inc. They are the sixteenth generation flagship iPhones, succeeding the iPhone 13 Pro and iPhone 13 Pro Max. The devices were unveiled alongside the iPhone 14 and iPhone 14 Plus at the Apple Event at Apple Park in Cupertino, California on September 7, 2022 and were made available on September 16, 2022. Pre-orders for the iPhone 14 Pro and 14 Pro Max began on September 9, 2022. The iPhone 14 Pro and iPhone 14 Pro Max are the first iPhones to have a new type of cutout display called "Dynamic Island", replacing the notch since the iPhone X introduced in 2017. iPhone 14 Pro and iPhone 14 Pro Max models (as well as the iPhone 14 and 14 Plus) sold in the United States drop support for physical SIM cards, making them the first iPhone models since the CDMA variant of the iPhone 4 to not come with a discrete SIM card reader</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
