@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <style>
+        body {
+            background-color: #4C0027;
+            color: beige;
+        }
+        main {
+            width: 90%;
+            margin-right: auto; margin-left: auto;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1;
+            flex-basis: 50%;
+        }
+        .col-det{
+            flex: 1;
+            flex-basis: auto;
+        }
+        .w-80 {
+            width: 80%;
+        }
+        .p-2 {
+            padding: 2rem;
+        }
+        .mx-auto{
+            margin-left: auto; margin-right: auto;
+        } 
+        .card {
+            background-color: #570530;
+            height: 500px;
+            overflow-y: hidden;
+            border-radius: 10px;
+        }
+        .content {
+            overflow-y: scroll;
+            height: 350px;
+            scrollbar-width: 0;
+        }
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+        tr>td {
+            height: 5rem;
+        }
+        .h-1 {
+            height: 1rem;
+        }
+        .img {
+            width: 100px;
+            border: 1px solid wheat;
+        }
+        .img>img {
+            width: 100%;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li {
+            padding: 30px;
+            text-decoration: none;
+        }
+        ul li:nth-child(odd) {
+            background-color: #980F5A;
+        }
+
+
+           /*  ---  */
+    .fixed {
+        position: fixed;
+    }
+    .p-2 {
+        padding: 2rem;
+    }
+    .p-05 {
+        padding: 0.5rem;
+    }
+    .mt-10 {
+        margin-top: 10rem;
+    }
+    .right-0 {
+        right: 0;
+    }
+    .left-0 {
+        left: 0;
+    }
+    .top-0 {
+        top: 0;
+    }
+    .h-4 {
+        height: 4rem;
+    }
+    .w-100 {
+        width: 100px;
+    }
+    .w-full {
+        width: 100%;
+    }
+    header {
+        background-color: #750550;
+        box-shadow: 10px 105px 25x rgba(0, 0, 0, 0.47);
+    }
+    a button.btn {
+        background-color: #FFF5E4;
+        cursor: pointer;
+    }   
+    .border-radius-sm {
+        border-radius: 5px;
+    }
+    .border-0 {
+        border: none;
+    }
+    .ct-header {
+    top: 35px;
+        position: absolute;
+        right: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header class="fixed right-0 left-0 top-0">
+        <a href="../index.html"><div class="logo w-100">
+            <img class="w-full" src="../assets/img/logo.png" alt="">
+        </div></a>
+    </header>
+    <main class="mt-10">
+        <section>
+            <div class="row">
+                <div class="col">
+                    <div class="card w-80 mx-auto p-2">
+                        <h2>Available</h2>
+                        <ul style=" text-align:center;">
+                            <li>
+                                <div class="row">
+                                    <div class="col-det">Product</div>
+                                    <div class="col-det">Image</div>
+                                    <div class="col-det">Price</div>
+                                    <div class="col-det">Available</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Iphone 14 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/ip14pr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 26.000.000, 00</div>
+                                        <div class="col-det">13 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Samsung S22</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/s22.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 16.000.000, 00</div>
+                                        <div class="col-det">16 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Huawei P50 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/p50pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 13.500.000, 00</div>
+                                        <div class="col-det">13 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Xiaomi 12 Ultra</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/x12u.jpeg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 13.500.000, 00</div>
+                                        <div class="col-det">9 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Poco F4 GT</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/f4gt.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 7.000.000, 00</div>
+                                        <div class="col-det">8 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Asus Rog Phone 6</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/asr6.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 16.000.000, 00</div>
+                                        <div class="col-det">16 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Realme GT Neo 3</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/gtn3.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 7.500.000, 00</div>
+                                        <div class="col-det">14 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">One Plus 10 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/on10pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 12.300.000, 00</div>
+                                        <div class="col-det">12 unit</div>
+                                    </div>
+                                </li>
+  
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Google Pixel 6 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/gp6pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">Rp. 12.300.000, 00</div>
+                                        <div class="col-det">13 unit</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <table class="w-90 mx-auto" cellpadding="0" cellspacing="0" >
+                                <tr>
+                                    <td>Product</td>
+                                    <td>Image</td>
+                                    <td>Price</td>
+                                    <td>Item</td>
+                                </tr>
+                                <tr>
+                                    <td>Iphone 14 Pro</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/ip14pr.webp" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 26.000.000, 00</td>
+                                    <td>13 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Samsung S22</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/s22.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 16.000.000, 00</td>
+                                    <td>11 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Huawei P50 Pro</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/p50pro.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 13.500.000, 00</td>
+                                    <td>16 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Xiaomi 12 Ultra</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/x12u.jpeg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 13.500.000, 00</td>
+                                    <td>8 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Poco F4 GT</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/f4gt.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 7000.000, 00</td>
+                                    <td>11 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Asus Rog Phone 6</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/asr6.webp" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 16.000.000, 00</td>
+                                    <td>17 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Realme GT Neo 3</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/gtn3.webp" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 7.500.000, 00</td>
+                                    <td>9 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>One Plus 10 Pro</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/on10pro.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 12.300.000, 00</td>
+                                    <td>15 Unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Google Pixel 6 Pro</td>
+                                    <td>
+                                        <div class="img">
+                                            <img src="../assets/img/gp6pro.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td>Rp. 12.300.000, 00</td>
+                                    <td>13 Unit</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card w-90 mx-auto p-2">
+                        <h2>Sold</h2>
+                        <ul style=" text-align:center;">
+                            <li>
+                                <div class="row">
+                                    <div class="col-det">Product</div>
+                                    <div class="col-det">Image</div>
+                                    <div class="col-det">Sold</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="content">
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Google Pixel 6 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/gp6pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">7 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">One Plus 10 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/on10pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">3 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Realme GT Neo 3</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/gtn3.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">18 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Asus Rog Phone 6</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/asr6.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">13 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Poco F4 GT</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/f4gt.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">9 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Xiaomi 12 Ultra</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/x12u.jpeg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">8 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Huawei P50 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/p50pro.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">13 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Iphone 14 Pro</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/ip14pr.webp" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">12 Unit</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="row">
+                                        <div class="col-det">Samsung S22</div>
+                                        <div class="col-det">
+                                            <div class="img">
+                                                <img src="../assets/img/s22.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-det">9 Unit</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
