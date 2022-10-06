@@ -288,7 +288,7 @@ li a:hover:not(.active) {
 .w-full {
     width: 100%;
 }
-header {
+header#header {
     background-color: #FF9494;
     box-shadow: 10px 105px 25x rgba(0, 0, 0, 0.47);
     z-index: 3;
