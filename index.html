@@ -5,8 +5,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: rgba(9, 9, 9, 0.799);
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active, .icon) {
+        background-color: #111;
+        }
+
+        .active {
+        background-color: #04AA6D;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+        }
+        .icon {
+            font-size: xx-large;
+        }
+        .s-list {
+            margin-top: 10px;
+        }
+        header {
+            width: 70%;
+            margin-left: auto; margin-right: auto;
+            padding-top: 90px;
+        }
+        main {
+            width: 68%;
+            margin-left: auto; margin-right: auto;
+            margin-top: 2rem;
+        }
+        .row {
+            display:flex ;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .col {
+            flex: 1;
+        }
+        .video {
+            width: 100%;
+            height: 240px;
+            background-color: grey;
+        }
+        .head-content {
+            padding: 1rem 1rem 1rem 2rem;
+        }
+        .card {
+            border-color: #111;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
-    
+    <nav>
+        <ul>
+            <li><a class="icon" href="/index.html"><strong>Han'S</strong></a></li>
+            <li style="float:right"><a class="s-list" href="#about">Shopping List</a></li>
+          </ul>
+    </nav>
+    <header>
+        <div class="row">
+            <div class="col">
+                <div class="video">
+                    <video src=""></video>
+                </div>
+            </div>
+            <div class="col head-content">
+                <h1>Han's Store</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic deserunt excepturi, maxime consequatur quos quibusdam explicabo impedit aspernatur? Esse, inventore!</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    ss
+                </div>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="#home">About</a></li>
+            <li><a href="#news">Contact</a></li>
+          </ul>
+    </footer>
 </body>
 </html>
