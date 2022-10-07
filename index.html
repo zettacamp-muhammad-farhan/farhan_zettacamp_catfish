@@ -5,8 +5,246 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    <style>
+        body {
+            background-color: #F7E9D7;
+            color: rgba(97, 77, 77, 0.779);
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            width: 80vw;
+            margin-left: auto; margin-right: auto;
+            padding-top: 10rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem 2rem;
+        }
+        .col {
+            flex: 1;
+            flex-basis: 30%;
+            background-color: #EBD8C3;
+            box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.186);
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.188);
+        }
+        .card {
+            width: 100%;
+        }
+        .img {
+            width: 100%;
+            height: 13em;
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+        }
+        .title h2 {
+            margin-left: auto; margin-right: auto;
+            text-align: center;
+        }
+
+        .price, .desc {
+            padding: 0 2em;
+        }
+        .price {
+            margin-bottom: 2em;
+        }
+        .b-buy {
+            width: 100%;
+            background-color: #FFEEEE;
+            border: 0;
+            height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        header {
+            position: fixed;
+            background-color: #FFEEEE;
+            left: 0; right: 0;
+            height: 90px;
+        }
+        .body-head {
+            box-shadow: 10px 10px 10px rgba(128, 128, 128, 0.569);
+        }
+        .logo {
+            width: 5rem;
+            position: absolute;
+            left: 2px;
+        }
+    </style>
+
 </head>
 <body>
-    
+    <nav></nav>
+    <header>
+        <div class="body-head">
+            <div class="logo">
+                <img src="./assets/img/logo.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/f4gt.png" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Poco F4 GT</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 7.000.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/gp6pro.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Google Pixel 6 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 12.000.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/gtn3.webp" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Realme GT Neo 3</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 6.700.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/ip14pr.webp" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Iphone 14 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 26.000.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/on10pro.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>One Plus 10 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 13.000.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/p50pro.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Huawei P50 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 12.700.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/s22.jpg" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Huawei P50 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 14.700.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/x12u.jpeg" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Huawei P50 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 13.700.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="img">
+                        <img src="./assets/img/asr6.webp" alt="">
+                    </div>
+                    <div class="title">
+                        <h2>Huawei P50 Pro</h2>
+                    </div>
+                    <div class="desc">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem eveniet nam commodi ratione, ex dolore reiciendis sit iste numquam perferendis.</p>
+                    </div>
+                    <div class="price">
+                        <h4>IDR. 12.500.000, 00</h4>
+                        <button class="b-buy" ><strong> BUY </strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 </html>
