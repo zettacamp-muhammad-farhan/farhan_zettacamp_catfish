@@ -7,49 +7,6 @@
     <title>Add Item</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <style>
-        .form-input {
-            width: 100%;
-            background-color: rgba(250, 235, 215, 0.415);
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .form-input input {
-            background-color: transparent;
-            width: 98%;
-            border: none;
-            height: 30px;
-            outline: none;
-            border-radius: 5px;
-            color: rgba(0, 0, 0, 0.512);
-            padding: 5px;
-        }
-        .form-input input:focus {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.398);
-        }  
-        .upload {
-            width: 80%; 
-            margin-left: auto; margin-right: auto;
-            height: 160px;
-            border: 1px dashed  gray ;
-            position: relative;
-        }
-        .input-file {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%);
-        }
-        .input-file input[type="file"] {
-            display: block;
-        }
-        .preview {
-            margin-top: 2rem;
-        }
-        .price-preview {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -68,7 +25,7 @@
         </div>
 
     </header>
-    <main>
+    <main class="w-07 mt-2 mx-auto" >
         <section>
             <div class="row">
                 <div class="col">
@@ -89,7 +46,7 @@
                     <div class="upload">
                         <div class="input-file">
                             <label class="label-file" for="">
-                                <input type="file" name="pPhoto" id="">
+                                <input type="file" class="file-input" name="pPhoto" id="">
                             </label>
                         </div>
                     </div>
@@ -149,7 +106,7 @@
         </section>
     </main>
     <footer>
-        <ul>
+        <ul class="mx-auto" >
             <li><a href="/view/about.html">About</a></li>
             <li><a href="/view/contact.html">Contact</a></li>
           </ul>

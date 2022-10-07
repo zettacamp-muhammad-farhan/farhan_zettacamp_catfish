@@ -26,7 +26,8 @@ submit.addEventListener('click', function(){
     }
 
     alert('success upload data');
-    pName.value=''
-    pPrice.value=''
-    pPhoto.files=''
+    
+    document.querySelector('input[name="pName"]').value="";
+    document.querySelector('input[name="pPrice"]').value="";
+    pPhoto.files="";
 })
