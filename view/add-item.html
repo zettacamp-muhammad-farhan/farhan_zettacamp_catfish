@@ -16,7 +16,7 @@
         }
         .form-input input {
             background-color: transparent;
-            width: 100%;
+            width: 98%;
             border: none;
             height: 30px;
             outline: none;
@@ -40,8 +40,14 @@
             left: 50%;
             transform: translate(-50%);
         }
-        .input-file input {
-            
+        .input-file input[type="file"] {
+            display: block;
+        }
+        .preview {
+            margin-top: 2rem;
+        }
+        .price-preview {
+            text-align: center;
         }
     </style>
 </head>
@@ -56,9 +62,9 @@
         <a href="/view/shopping-list.html"><p><span style="margin-top: 10px;" class="icon"><img src="/assets/img/icon/arrow-left.svg" alt=""></span> &emsp14; Shopping List</p></a>
         <div>
             <h2>Add New Item</h2>
-            <a href=""><button class="add-item">
+            <button class="add-item">
                 Submit
-            </button></a>
+            </button>
         </div>
 
     </header>
@@ -69,12 +75,12 @@
                     <form action="">
                         <label for="">Product Name :
                             <div class="form-input">
-                                <input type="text" placeholder="Enter Product Name ...">
+                                <input type="text" name="pName" placeholder="Enter Product Name ...">
                             </div>
                         </label>
                         <label for="">Price :
                             <div class="form-input">
-                                <input type="text" placeholder="Enter Product Price ...">
+                                <input type="text" name="pPrice" placeholder="Enter Product Price ...">
                             </div>
                         </label>
                     </form>
@@ -82,10 +88,63 @@
                 <div class="col">
                     <div class="upload">
                         <div class="input-file">
-                            <input type="file" name="" id="">
+                            <label class="label-file" for="">
+                                <input type="file" name="pPhoto" id="">
+                            </label>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="preview" >
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="/assets/img/arG14.jpg" alt="">
+                        </div>
+                        <div class="title">
+                            <h4>Asus Rog Zepyrus G14</h4>
+                        </div>
+
+                        <div class="price price-preview">
+                            <h4>IDR. 37.500.000, 00</h4>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img id="sImg" src="./assets/img/asrg15.jpg" alt="">
+                        </div>
+                        <div class="title">
+                            <h4 id="sTitle" >Title</h4>
+                        </div>
+      
+                        <div class="price price-preview">
+                            <h4>IDR. <span id="sPrice" >-</span></h4>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="img">
+                            <img src="/assets/img/Lscr17.jpg" alt="">
+                        </div>
+                        <div class="title">
+                            <h4>Asus Rog Scar 17</h4>
+                        </div>
+                
+                        <div class="price price-preview">
+                            <h4>IDR. 62.500.000, 00</h4>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col"></div>
             </div>
         </section>
     </main>
@@ -95,5 +154,7 @@
             <li><a href="/view/contact.html">Contact</a></li>
           </ul>
     </footer>
+
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
