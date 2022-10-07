@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+        padding: 0;
+        color: rgba(9, 9, 9, 0.799);
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover:not(.active, .icon) {
+    background-color: #111;
+    }
+
+    .active {
+    background-color: #04AA6D;
+    }
+
+    nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+    }
+    footer {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+    }
+    .icon {
+        font-size: xx-large;
+    }
+    .s-list {
+        margin-top: 10px;
+    }
+    header {
+        width: 70%;
+        margin-left: auto; margin-right: auto;
+        padding-top: 90px;
+    }
+    main {
+        width: 68%;
+        margin-left: auto; margin-right: auto;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+    .row {
+        display:flex ;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .col {
+        flex: 1;
+        flex-basis: 30%;
+    }
+    .video {
+        width: 100%;
+        height: 240px;
+        background-color: grey;
+    }
+    .head-content {
+        padding: 1rem 1rem 1rem 2rem;
+    }
+    .card {
+        border: 1px solid rgba(17, 17, 17, 0.259);
+        width: 100%;
+        padding: 0.3rem;
+        padding-bottom: 1em;
+    }
+    .img {
+        width: 100%;
+        height: 170px;
+        background-color: #777;
+        overflow: hidden;
+        border: 0.5px solid rgba(128, 128, 128, 0.439);
+    }
+    img {
+        width: 100%;
+    }
+    .title {
+        text-align: center;
+    }
+    .desc {
+        font-size: 13px;
+        padding: 0 1em;
+    }
+    .price {
+        padding: 0 1em;
+    }
+    .space {
+        height: 100px;
+    }
+    button.b-buy {
+        padding: 5px;
+        width: 100%;
+        background-color: rgba(213, 202, 202, 0.529);
+        border-radius: 0.5em;
+    }
+
+    .icon>img{
+        width: 20px;
+        opacity: 0.7;
+        
+    }
+    button.add-item {
+        background-color: rgba(197, 150, 64, 0.649);
+        border: 0;
+        height: 2rem;
+        border-radius: 5px;
+        color: white;
+        float: right;
+        margin-top: -38px;
+        cursor: pointer;
+    }

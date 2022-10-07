@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <style>
+        .form-input {
+            width: 100%;
+            background-color: rgba(250, 235, 215, 0.415);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .form-input input {
+            background-color: transparent;
+            width: 100%;
+            border: none;
+            height: 30px;
+            outline: none;
+            border-radius: 5px;
+            color: rgba(0, 0, 0, 0.512);
+            padding: 5px;
+        }
+        .form-input input:focus {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.398);
+        }  
+        .upload {
+            width: 80%; 
+            margin-left: auto; margin-right: auto;
+            height: 160px;
+            border: 1px dashed  gray ;
+            position: relative;
+        }
+        .input-file {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .input-file input {
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a class="icon" href="/index.html"><strong>Han'S</strong></a></li>
+            <li style="float:right"><a class="s-list" href="/view/shopping-list.html">Shopping List</a></li>
+          </ul>
+    </nav>
+    <header>
+        <a href="/view/shopping-list.html"><p><span style="margin-top: 10px;" class="icon"><img src="/assets/img/icon/arrow-left.svg" alt=""></span> &emsp14; Shopping List</p></a>
+        <div>
+            <h2>Add New Item</h2>
+            <a href=""><button class="add-item">
+                Submit
+            </button></a>
+        </div>
+
+    </header>
+    <main>
+        <section>
+            <div class="row">
+                <div class="col">
+                    <form action="">
+                        <label for="">Product Name :
+                            <div class="form-input">
+                                <input type="text" placeholder="Enter Product Name ...">
+                            </div>
+                        </label>
+                        <label for="">Price :
+                            <div class="form-input">
+                                <input type="text" placeholder="Enter Product Price ...">
+                            </div>
+                        </label>
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="upload">
+                        <div class="input-file">
+                            <input type="file" name="" id="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="/view/about.html">About</a></li>
+            <li><a href="/view/contact.html">Contact</a></li>
+          </ul>
+    </footer>
+</body>
+</html>
