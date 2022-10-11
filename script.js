@@ -100,3 +100,4 @@ let tax = books[bookSelect].tax
 let available = books[bookSelect].available
 let stock = books[bookSelect].stock
 bookPurcasing(name, price, disc, tax, available, stock, buy)
+
