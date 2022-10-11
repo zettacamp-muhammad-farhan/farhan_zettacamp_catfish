@@ -6,7 +6,7 @@ const books =
             "disc" : 10,
             "tax" : 0.1,
             "available" : true,
-            "stock" : 7
+            "stock" : 2
         },
         {
             "name" : "kisah 25 nabi",
@@ -40,6 +40,7 @@ const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
 
     console.log(available)
     console.log(`Price :Rp. ${price}`)
+    let i = 0
 
 
     if(available) {
@@ -63,11 +64,10 @@ const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
 
         // let stock = 2
         // let buy = 1
-    
         var amountPrice = 0
-        for(let i = 0; i < buy; i++){
+        for( i = 0; i < buy; i++){
     
-            if(i > stock){
+            if(i+1 > stock){
                 console.log(`this book out of stock`)
                 break;
             } else {
@@ -75,12 +75,13 @@ const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
             }
     
             amountPrice += price
-            console.log(`curent ammount price : ${amountPrice}, ${i+1} book, and ${stock-i} left`)
+            console.log(`curent ammount price : ${amountPrice}, ${i+1} book, and ${stock-(i+1)} left`)
         }
 
     } else {
         console.log(`This book out of stock`)
     }
+    console.log(`stock left : ${stock-i+1}`)
     console.log(`you must pay : Rp. ${amountPrice}`)
     const greet = "thankyou ... come back to our store later"
     console.log(greet)
@@ -88,7 +89,7 @@ const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
 }
 
 // quantity buy
-let buy = 3
+let buy = 19
 
 // select book
 let bookSelect = 1
