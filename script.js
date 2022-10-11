@@ -23,45 +23,45 @@ const books =
         },
         {
             "name" : "cara merakit roket dalam 2 hari",
-            "price" : 550000,
-            "disc" : 0,
-            "tax" : 0.5,
+            "price" : 10000,
+            "disc" : 50,
+            "tax" : 0.10,
             "available" : true
         }
     ]
 
-const bookPurcasing = function(name, price, disc, tax, available){
+const bookPurcasing = function(book){
     // const disc = 10;
     // const tax = 0.1;
 
-    console.log(available ? 'Available' : 'Out of stock')
+    console.log(book.available ? 'Available' : 'Out of stock')
 
-    console.log(`Product Name : ${name}`);
+    console.log(`Product Name : ${book.name}`);
 
-    console.log(`Price :Rp. ${price}`)
+    console.log(`Price :Rp. ${book.price}`)
 
-    console.log(`Discount : ${disc}%`)
+    console.log(`Discount : ${book.disc}%`)
 
 
-    if(available) {
+    if(book.available) {
 
         // count amoount discount
-        let amountDisc = price * (disc/100);
+        let amountDisc = book.price * (book.disc/100);
         console.log(`discount : Rp. ${amountDisc}`)
     
         // Price after disc
         // price = price - amountDisc
-        price -= amountDisc;
-        console.log(`price after disc : Rp. ${price}`)
+        book.price -= amountDisc;
+        console.log(`price after disc : Rp. ${book.price}`)
     
         // Amount tax
-        let amountTax = price * (tax);
+        let amountTax = book.price * (book.tax);
         console.log(`total tax : Rp. ${amountTax}`)
     
         // Price after tax
         // price = price + amountDisc
-        price += amountTax;
-        console.log(`price after tax : Rp. ${price}`)    
+        book.price += amountTax;
+        console.log(`price after tax : Rp. ${book.price}`)    
 
     } else {
         console.log(`This book out of stock`)
@@ -73,11 +73,7 @@ const bookPurcasing = function(name, price, disc, tax, available){
 
 }
 
-bookSelect = 3
+bookSelect = 2
 
-let name = books[bookSelect].name
-let price = books[bookSelect].price
-let disc = books[bookSelect].disc
-let tax = books[bookSelect].tax
-let available = books[bookSelect].available
-bookPurcasing(name, price, disc, tax, available)
+
+bookPurcasing(books[bookSelect])
