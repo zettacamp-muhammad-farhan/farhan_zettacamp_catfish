@@ -34,18 +34,23 @@ const bookPurcasing = function(name, price, disc, tax, available){
     // const disc = 10;
     // const tax = 0.1;
 
-    console.log(available)
+    console.log(available ? 'Available' : 'Out of stock')
+
+    console.log(`Product Name : ${name}`);
+
     console.log(`Price :Rp. ${price}`)
+
+    console.log(`Discount : ${disc}%`)
 
 
     if(available) {
-        console.log(`Product Name : ${name}`);
 
         // count amoount discount
         let amountDisc = price * (disc/100);
         console.log(`discount : Rp. ${amountDisc}`)
     
         // Price after disc
+        // price = price - amountDisc
         price -= amountDisc;
         console.log(`price after disc : Rp. ${price}`)
     
@@ -54,6 +59,7 @@ const bookPurcasing = function(name, price, disc, tax, available){
         console.log(`total tax : Rp. ${amountTax}`)
     
         // Price after tax
+        // price = price + amountDisc
         price += amountTax;
         console.log(`price after tax : Rp. ${price}`)    
 
@@ -67,7 +73,7 @@ const bookPurcasing = function(name, price, disc, tax, available){
 
 }
 
-bookSelect = 1
+bookSelect = 3
 
 let name = books[bookSelect].name
 let price = books[bookSelect].price
