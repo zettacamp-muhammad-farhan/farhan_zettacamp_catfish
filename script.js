@@ -34,54 +34,54 @@ const books =
         }
     ]
 
-const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
+const bookPurcasing = function(book, buy){
     // const disc = 10;
     // const tax = 0.1;
 
-    console.log(available)
-    console.log(`Price :Rp. ${price}`)
+    console.log(book.available)
+    console.log(`Price :Rp. ${book.price}`)
     let i = 0
 
 
-    if(available) {
-        console.log(`Product Name : ${name}`);
+    if(book.available) {
+        console.log(`Product Name : ${book.name}`);
 
         // count amoount discount
-        let amountDisc = price * (disc/100);
+        let amountDisc = book.price * (book.disc/100);
         console.log(`discount : Rp. ${amountDisc}`)
     
         // Price after disc
-        price -= amountDisc;
-        console.log(`price after disc : Rp. ${price}`)
+        book.price -= amountDisc;
+        console.log(`price after disc : Rp. ${book.price}`)
     
         // Amount tax
-        let amountTax = price * (tax);
+        let amountTax = book.price * (book.tax);
         console.log(`total tax : Rp. ${amountTax}`)
     
         // Price after tax
-        price += amountTax;
-        console.log(`price after tax : Rp. ${price}`)    
+        book.price += amountTax;
+        console.log(`price after tax : Rp. ${book.price}`)    
 
         // let stock = 2
         // let buy = 1
         var amountPrice = 0
         for( i = 0; i < buy; i++){
     
-            if(i+1 > stock){
+            if(i+1 > book.stock){
                 console.log(`this book out of stock`)
                 break;
             } else {
                 console.log(`you can buy again`)
             }
     
-            amountPrice += price
-            console.log(`curent ammount price : ${amountPrice}, ${i+1} book, and ${stock-(i+1)} left`)
+            amountPrice += book.price
+            console.log(`curent ammount price : ${amountPrice}, ${i+1} book, and ${book.stock-(i+1)} left`)
         }
 
     } else {
         console.log(`This book out of stock`)
     }
-    console.log(`stock left : ${stock-i+1}`)
+    console.log(`stock left : ${book.stock-i}`)
     console.log(`you must pay : Rp. ${amountPrice}`)
     const greet = "thankyou ... come back to our store later"
     console.log(greet)
@@ -89,16 +89,12 @@ const bookPurcasing = function(name, price, disc, tax, available, stock, buy){
 }
 
 // quantity buy
-let buy = 19
+let buy = 21
 
 // select book
 let bookSelect = 1
 
-let name = books[bookSelect].name
-let price = books[bookSelect].price
-let disc = books[bookSelect].disc
-let tax = books[bookSelect].tax
-let available = books[bookSelect].available
-let stock = books[bookSelect].stock
-bookPurcasing(name, price, disc, tax, available, stock, buy)
+
+
+bookPurcasing(books[bookSelect], buy)
 
