@@ -34,6 +34,11 @@ const books =
         }
     ]
 
+const term = {
+    long : null,
+    startFrom : null
+}
+
 const month = 
 [
     {
@@ -86,40 +91,9 @@ const month =
     }
 ]
 
-// let tempCredit = month.filter((month)=>{
-//     return month.month <= 6
-// })
-// console.log(tempCredit)
-
-const pay = 6000000;
-let termOfCredit = 6 ;
-let creditPay = pay/termOfCredit;
-console.log(creditPay);
-
-// for(let i = 0; i < termOfCredit; i++){
-//     tempCredit[i].credit = creditPay
-// }
-
-let credit = [
-    {
-
-    }
-]
-
-let monthName = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'december']
 
 
-for(let i = 0; i < termOfCredit; i++){
-    credit[i] = {'month' : i, 'credit' : creditPay}
-
-    let month = i%12
-    credit[i].monthName = monthName[month]
-}
-
-console.log(credit)
-
-
-const bookPurcasing = function(book, buy){
+const bookPurcasing = function(book, buy, term){
     // const disc = 10;
     // const tax = 0.1;
 
@@ -175,6 +149,41 @@ const bookPurcasing = function(book, buy){
     const greet = "thankyou ... come back to our store later"
     console.log(greet)
 
+
+        
+    const pay = amountPrice;
+    // long time of credit
+    let termOfCredit = term.long;
+    // start from month (ex : 1, 2, 3)
+    let monthStart = term.startFrom;
+
+    // count pay / month
+    let creditPay = pay/termOfCredit;
+
+    let credit = [
+        {
+
+        }
+    ]
+
+    let monthName = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'december']
+
+    console.log(`=== You choose to pay w/ credit for ${termOfCredit} month, and you pay from ${monthName[monthStart-1]}, every month you must pay Rp.${creditPay} === `)
+
+
+    monthStart-=2
+    // make a object to pay
+    for(let i = 0; i < termOfCredit; i++){
+        credit[i] = {'month' : i+1, 'credit' : creditPay}
+
+        monthStart ++
+        let month = monthStart%12
+        // console.log(`${i} : ${monthStart}`)
+        credit[i].monthName = monthName[month]
+    }
+
+    console.log(credit)
+
 }
 
 // quantity buy
@@ -183,6 +192,11 @@ let buy = 21
 // select book
 let bookSelect = 1
 
-bookPurcasing(books[bookSelect], buy)
 
+// you can assign long time of credit (ex: 1, 2, 3)
+ term.long = 6
 
+ //you can assign month from
+ term.startFrom = 5
+
+ bookPurcasing(books[bookSelect], buy, term)
