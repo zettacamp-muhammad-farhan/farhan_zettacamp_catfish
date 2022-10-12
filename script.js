@@ -34,6 +34,76 @@ const books =
         }
     ]
 
+const month = 
+[
+    {
+        month: 1,
+        monthName : "january"
+    },
+    {
+        month: 2,
+        monthName : "Februrary"
+    },
+    {
+        month: 3,
+        monthName : "March"
+    },
+    {
+        month: 4,
+        monthName : "April"
+    },
+    {
+        month: 5,
+        monthName : "May"
+    },
+    {
+        month: 6,
+        monthName : "June"
+    },
+    {
+        month: 7,
+        monthName : "July"
+    },
+    {
+        month: 8,
+        monthName : "August"
+    },
+    {
+        month: 9,
+        monthName : "September"
+    },
+    {
+        month: 10,
+        monthName : "October"
+    },
+    {
+        month: 11,
+        monthName : "November"
+    },
+    {
+        month: 12,
+        monthName : "December"
+    }
+]
+
+let tempCredit = month.filter((month)=>{
+    return month.month <= 6
+})
+console.log(tempCredit)
+
+const pay = 6000000;
+let termOfCredit = 6;
+let creditPay = pay/termOfCredit;
+console.log(creditPay);
+
+for(let i = 0; i < termOfCredit; i++){
+    tempCredit[i].credit = creditPay
+}
+
+console.log(tempCredit)
+
+
+
 const bookPurcasing = function(book, buy){
     // const disc = 10;
     // const tax = 0.1;
@@ -83,6 +153,10 @@ const bookPurcasing = function(book, buy){
     }
     console.log(`stock left : ${book.stock-i}`)
     console.log(`you must pay : Rp. ${amountPrice}`)
+
+    // information pay of credit
+
+
     const greet = "thankyou ... come back to our store later"
     console.log(greet)
 
@@ -94,7 +168,6 @@ let buy = 21
 // select book
 let bookSelect = 1
 
-
-
 bookPurcasing(books[bookSelect], buy)
+
 
