@@ -86,22 +86,37 @@ const month =
     }
 ]
 
-let tempCredit = month.filter((month)=>{
-    return month.month <= 6
-})
-console.log(tempCredit)
+// let tempCredit = month.filter((month)=>{
+//     return month.month <= 6
+// })
+// console.log(tempCredit)
 
 const pay = 6000000;
-let termOfCredit = 6;
+let termOfCredit = 6 ;
 let creditPay = pay/termOfCredit;
 console.log(creditPay);
 
+// for(let i = 0; i < termOfCredit; i++){
+//     tempCredit[i].credit = creditPay
+// }
+
+let credit = [
+    {
+
+    }
+]
+
+let monthName = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'december']
+
+
 for(let i = 0; i < termOfCredit; i++){
-    tempCredit[i].credit = creditPay
+    credit[i] = {'month' : i, 'credit' : creditPay}
+
+    let month = i%12
+    credit[i].monthName = monthName[month]
 }
 
-console.log(tempCredit)
-
+console.log(credit)
 
 
 const bookPurcasing = function(book, buy){
