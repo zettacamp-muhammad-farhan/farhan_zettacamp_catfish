@@ -91,6 +91,7 @@ const month =
     }
 ]
 
+console.log(month.filter((e)=>{e.month<=4}))
 
 
 const bookPurcasing = function(book, buy, term){
@@ -159,14 +160,19 @@ const bookPurcasing = function(book, buy, term){
 
     // count pay / month
     let creditPay = pay/termOfCredit;
-
+    creditPay = creditPay.toFixed(0);
+    console.log(creditPay*termOfCredit)
     let credit = [
         {
 
         }
     ]
 
-    let monthName = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'december']
+    let monthName = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'oktober', 'november', 'descember']
+
+    let monthIndex = monthName[monthStart-1]
+    let monthStartName = monthName.find((e)=>{return e === monthIndex})
+    console.log(` -=-=-=-=-You choose month ${monthStartName}`)
 
     console.log(`=== You choose to pay w/ credit for ${termOfCredit} month, and you pay from ${monthName[monthStart-1]}, every month you must pay Rp.${creditPay} === `)
 
@@ -184,19 +190,61 @@ const bookPurcasing = function(book, buy, term){
 
     console.log(credit)
 
+    let totalAmountPaid = amountPrice-(creditPay*termOfCredit)
+
+    if(totalAmountPaid > 0) {
+        credit[termOfCredit-1].month=termOfCredit;
+        credit[termOfCredit-1].credit=`Rp. ${creditPay} + Rp. ${totalAmountPaid}(previous deficiency)`;
+        console.log(`In the end of pay you must pay Rp. ${totalAmountPaid}`)
+    } else if(totalAmountPaid < 0) {
+        console.log(`In the end of pay we will return Rp. ${-(totalAmountPaid)}`)
+    } else {
+        console.log(`pass`)
+    }
+    
+
+    let paidRecap = credit.map((e)=>{return e.credit})
+    console.log(paidRecap)
+
+
+    //destructure
+    let [a, b, c] = paidRecap
+
+    console.log(`at first month you must pay Rp. ${a}`)
+
+    // spread
+    const objMonthName = {...monthName}
+    console.log(monthName)
+
+
 }
 
 // quantity buy
-let buy = 21
+let buy = 4
 
 // select book
 let bookSelect = 1
 
 
 // you can assign long time of credit (ex: 1, 2, 3)
- term.long = 6
+ term.long = 3
 
  //you can assign month from
- term.startFrom = 5
+ term.startFrom = 3
 
  bookPurcasing(books[bookSelect], buy, term)
+
+// console.log(month)
+
+
+// const findMonth = month.find(function(e){
+//     return e.monthName = 'sss'
+// })
+
+// console.log(findMonth)
+
+
+// let arr = ['a','b','c','d']
+
+// const arr2 = arr.filter((e)=>{e==='c'})
+// console.log(arr2)
