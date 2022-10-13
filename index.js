@@ -90,11 +90,19 @@ const music =
         genre : 'pop',
         duration : '5.10'
     },
+    {
+        title : 'I Love You',
+        artist : 'Billie Eilish',
+        genre : 'pop',
+        duration : '1.10'
+    },
 
 ]
 
+
+
 const findArtist = (music, artist) => {
-    let a = music.filter(music=> music.artist == artist )
+    let a = music.filter(music=> music.artist == (artist) )
     console.log(a)
 }
 
@@ -130,6 +138,19 @@ let playList = []
 let amountSec = 0
 let amontMinute = 0
 for(let i = 0; i < music.length; i++){
+
+    const indRand = Math.floor(Math.random() * music.length);
+
+    
+
+    // console.log(indRand)
+
+    // if(indRand==playList[])
+    // for(let k=0; k < playList.length; k++){
+    //     if(indRand !== k){
+    //         console.log(`hola `)
+    //     }
+    // }
 
     const timez = music[i].duration
 
@@ -177,7 +198,35 @@ for(let i = 0; i < music.length; i++){
     } else {
 
         let ammountRemain = 59 - amontMinute
-        console.log(`sisa : ${ammountRemain}`)
+        console.log(`Time Remain : ${ammountRemain} minute`)
+
+            // filter lagu dibawah menit sisa yang masih bisa di assign
+            let remainSong = music.slice(i, music.length)
+            for(let j = 0; j < remainSong.length; j++){
+                let time2 = remainSong[j].duration.split('.')
+                let[min, sec] = time2
+                let minute = Number(min)
+                let second = Number(sec)
+
+                let numbb = j+1
+                if(minute<ammountRemain){
+                    playList.push({title : remainSong[j].title, duration : remainSong[j].duration})
+                }
+            }
+            console.log(remainSong)
+            // for( let j = i+1; j < music.length ; j++){
+            //    music.find((m)=>{
+            //     time2 = m.duration.split('.')
+            //     let[min, sec] = time2;
+            //     let minute = Number(min)
+            //     let second = Number(sec)
+
+            //     minute<=ammountRemain
+
+            //     console.log(m)
+            // })
+                
+            // }
 
 
         console.log(`your playlist more than 1 hour`)
