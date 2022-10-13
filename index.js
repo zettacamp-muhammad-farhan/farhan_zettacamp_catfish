@@ -1,0 +1,178 @@
+const music = 
+[
+    {
+        title : "Dear God",
+        artist : "Avenged Sevenfold",
+        genre : "metal",
+        duration : '6.34'
+    },
+    {
+        title : "A Little Piece Of Heaven",
+        artist : "Avenged Sevenfold",
+        genre : "metal",
+        duration : '8.01'
+    },
+    {
+        title : 'Critical Acclaim',
+        artist : 'Avenged Sevenfold',
+        genre : "metal",
+        duration : '5.16'
+    },
+    {
+        title : 'Not Alike',
+        artist : "Eminem",
+        genre : "hip-hop",
+        duration : '4.50'
+    },
+    {
+        title : 'Without Me',
+        artist : 'Eminem',
+        genre : 'hip-hop',
+        duration : '4.52'
+    },
+    {
+        title : 'Beautiful',
+        artist : 'Eminem',
+        genre : 'hip-hop',
+        duration : '6.33'
+    },
+    {
+        title : 'Happier',
+        artist : 'Marshmellow',
+        genre : 'pop',
+        duration : '3.35'
+    },
+    {
+        title : 'Friends',
+        artist : 'Marshmellow',
+        genre : 'pop',
+        duration : '3.23'
+    },
+    {
+        title : 'Allone',
+        artist : 'Marshmellow',
+        genre : 'pop',
+        duration : '3.32'
+    },
+    {
+        title : 'Lily',
+        artist : 'Alan Walker',
+        genre : 'pop',
+        duration : '3.36'
+    },
+    {
+        title : 'Faded',
+        artist : 'Alan Walker',
+        genre : 'pop',
+        duration : '3.33'
+    },
+    {
+        title : 'On My Way',
+        artist : 'Alan Walker',
+        genre : 'pop',
+        duration : '3.37'
+    },
+    {
+        title : 'Bad Guy',
+        artist : 'Billie Eilish',
+        genre : 'pop',
+        duration : '3.15'
+    },
+    {
+        title : 'Happier Than Ever',
+        artist : 'Billie Eilish',
+        genre : 'pop',
+        duration : '4.56'
+    },
+    {
+        title : 'I Love You',
+        artist : 'Billie Eilish',
+        genre : 'pop',
+        duration : '5.10'
+    },
+
+]
+
+const findArtist = (music, artist) => {
+    let a = music.filter(music=> music.artist == artist )
+    console.log(a)
+}
+
+let listArtist = findArtist(music, 'Billie Eilish')
+
+
+
+
+function findGenre (music, genre)  {
+     return music.filter(music => {return music.genre == genre} )
+}
+
+let listGenre =  findGenre(music, 'pop')
+console.log(listGenre)
+
+// function playList(){
+
+// }
+
+let playList = []
+let duration = 0
+for(let i = 0 ; i < music.length; i++){
+    if (duration < 59.59) {
+        playList[i] = {title : music[i].title, duration : music[i].duration}
+        console.log(`add new music ${music[i].title}`)
+    }
+    
+}
+
+console.log(playList)
+
+
+
+
+let amountSec = 0
+let amontMinute = 0
+for(let i = 0; i < music.length; i++){
+
+    const timez = music[i].duration
+
+    // memsiahkan menit dan detik menjadi array
+    let arrTime =timez.split('.')
+
+    // melakukan destrcut array
+    let [min, sec] = arrTime
+    console.log(Number(min))
+
+    // mengubah string menit dan detik agar bisa di hitung
+    let second = Number(sec)
+    let minute = Number(min)
+
+    if( amountSec <= 59 ){
+        // amountTime += music[i].duration
+        // menambahkan detik ke detik total
+        amountSec +=second
+
+        // jika detik lebih dari 59 detik akan di reset ke 0 dan diubah ke menit
+        if (amountSec > 59) {
+            // menghitung sisa detik
+            let secRemain = amountSec % 60
+
+            //memasukan detik yang tersisa
+            amountSec = secRemain
+
+            // menit akan ditambah 1 dikarenakan telah melewati 59
+            amontMinute += 1
+        }
+    }
+
+    // menambhakan menit ke waktu total
+    if(amontMinute + minute <= 59 ) {
+        amontMinute +=minute
+        console.log(`your playlist add ${minute} min ${second} sec`)
+    } else {
+        console.log(`your playlist more than 1 hour`)
+        console.log(`your playlist ${amontMinute} Minute and ${amountSec} sec`)
+        break
+    }
+
+}
+
