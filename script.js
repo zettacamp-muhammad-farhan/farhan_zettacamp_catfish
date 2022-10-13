@@ -2,9 +2,9 @@ const books =
     [
         {
             "name" : "drawing book",
-            "price" : 5000,
-            "disc" : 10,
-            "tax" : 0.1,
+            "price" : 6000,
+            "disc" : 0,
+            "tax" : 0,
             "available" : true,
             "stock" : 2
         },
@@ -220,14 +220,14 @@ const bookPurcasing = function(book, buy, term){
 }
 
 // quantity buy
-let buy = 4
+let buy = 1
 
 // select book
-let bookSelect = 1
+let bookSelect = 0
 
 
 // you can assign long time of credit (ex: 1, 2, 3)
- term.long = 3
+ term.long = 7
 
  //you can assign month from
  term.startFrom = 3
@@ -237,12 +237,8 @@ let bookSelect = 1
 // console.log(month)
 
 
-// const findMonth = month.find(function(e){
-//     return e.monthName = 'sss'
-// })
-
-// console.log(findMonth)
-
+const findMonth = month.find((e)=>{return e.monthName == 'may'})
+console.log(findMonth)
 
 // let arr = ['a','b','c','d']
 
