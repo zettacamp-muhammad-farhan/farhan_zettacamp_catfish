@@ -114,21 +114,19 @@ console.log(listGenre)
 
 // }
 
-let playList = []
-let duration = 0
-for(let i = 0 ; i < music.length; i++){
-    if (duration < 59.59) {
-        playList[i] = {title : music[i].title, duration : music[i].duration}
-        console.log(`add new music ${music[i].title}`)
-    }
+
+// for(let i = 0 ; i < music.length; i++){
+//     if (duration < 59.59) {
+//         // playList[i] = {title : music[i].title, duration : music[i].duration}
+//         // console.log(`add new music ${music[i].title}`)
+//     }
     
-}
-
-console.log(playList)
+// }
 
 
 
-
+let playList = []
+// let duration = 0
 let amountSec = 0
 let amontMinute = 0
 for(let i = 0; i < music.length; i++){
@@ -140,7 +138,7 @@ for(let i = 0; i < music.length; i++){
 
     // melakukan destrcut array
     let [min, sec] = arrTime
-    console.log(Number(min))
+    // console.log(Number(min))
 
     // mengubah string menit dan detik agar bisa di hitung
     let second = Number(sec)
@@ -164,15 +162,29 @@ for(let i = 0; i < music.length; i++){
         }
     }
 
+
     // menambhakan menit ke waktu total
     if(amontMinute + minute <= 59 ) {
         amontMinute +=minute
         console.log(`your playlist add ${minute} min ${second} sec`)
+
+        // show song
+        console.log(music[i].title)
+
+        // memasukan list musik ke dalam objek
+        playList[i] = {title : music[i].title, duration : music[i].duration}
+
     } else {
+
+        let ammountRemain = 59 - amontMinute
+        console.log(`sisa : ${ammountRemain}`)
+
+
         console.log(`your playlist more than 1 hour`)
-        console.log(`your playlist ${amontMinute} Minute and ${amountSec} sec`)
+        console.log(`your last song add to playlist ${music[i].title} and total duration in playlist ${amontMinute} Minute and ${amountSec} Second`)
         break
     }
 
 }
 
+console.log(playList)
