@@ -1,4 +1,4 @@
-const music = 
+let music = 
 [
     {
         title : "Dear God",
@@ -132,6 +132,8 @@ console.log(listGenre)
 // }
 
 
+ music = music[Math.floor(Math.random()*music.length)];
+
 
 let playList = []
 // let duration = 0
@@ -141,7 +143,7 @@ for(let i = 0; i < music.length; i++){
 
     const indRand = Math.floor(Math.random() * music.length);
 
-    
+
 
     // console.log(indRand)
 
