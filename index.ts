@@ -1,14 +1,18 @@
-let data:(number | string)[]=[1, 'data', '3', 'result']
+// allias
+// let dataType: string | number // string literal, tidak bisa menjadi type 
+type dataType = string | number  // type allias
 
 
-function Result(data:any):string{
+let data:dataType[]=[1, 'data', '3', 'result']
+
+
+function Result(data:dataType[]):string{
  return data.join(' ')
 }
 
 console.log(Result(data))
 
 
-let word:[string, string, string, string, string] = ['bejo', 'has', '4', 'sport', 'car'];
+let words:[string, string, string, string, string] = ['bejo', 'has', '4', 'sport', 'car'];
 
-console.log(Result(word))
-
+console.log(Result(words))
