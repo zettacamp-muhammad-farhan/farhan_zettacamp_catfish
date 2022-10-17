@@ -17,3 +17,6 @@ let words:[string, string, string, string, string] = ['bejo', 'has', '4', 'sport
 
 console.log(Result(words))
 
+let hanz = "hoho"
+console.log(hanz)
+
