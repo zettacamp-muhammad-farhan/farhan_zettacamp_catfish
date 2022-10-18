@@ -3,12 +3,14 @@
 <table border="1" >
     <thead>
         <tr>
+            <td>No</td>
             <td>Name</td>
             <td>Age</td>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pers of person" >
+        <tr *ngFor="let pers of person ; let i = index" >
+            <td>{{i}}</td>
             <td>{{ pers.nama }}</td>
             <td>{{ pers.age }}</td>
         </tr>
