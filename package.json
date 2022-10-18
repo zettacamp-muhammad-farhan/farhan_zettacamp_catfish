@@ -1,0 +1,19 @@
+{
+  "name": "zettacamp_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zettacamp-muhammad-farhan/farhan_zettacamp_catfish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zettacamp-muhammad-farhan/farhan_zettacamp_catfish/issues"
+  },
+  "homepage": "https://github.com/zettacamp-muhammad-farhan/farhan_zettacamp_catfish#readme"
+}
