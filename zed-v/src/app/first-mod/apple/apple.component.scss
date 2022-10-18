@@ -1,0 +1,8 @@
+table tr {
+    color: grey;
+}
+
+tbody tr:nth-child(odd){
+    background-color: skyblue;
+}
+
