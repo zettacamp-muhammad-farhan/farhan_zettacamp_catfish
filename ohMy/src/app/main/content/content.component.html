@@ -10,3 +10,12 @@
 <ul>
   <li *ngFor="let item of items">{{ item }}</li>
 </ul>
+
+<button class="magicButton" (click)="switchRole()" [innerText]="user === 'user' ? 'switch to admin' : 'switch to user'  "></button>
+
+<app-section *ngIf="user === 'user' else elseBlock " ></app-section>
+<ng-template #elseBlock >
+  <h1>Admin</h1>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aspernatur reprehenderit maiores, dolorem in qui error, ducimus incidunt dignissimos quod sunt unde ab sequi recusandae molestiae, libero explicabo asperiores facilis quas culpa perspiciatis! Eos architecto maiores mollitia cumque quis natus earum aspernatur fugit, veritatis quidem voluptas voluptates tenetur quas eaque?</p>
+</ng-template>
+

@@ -40,3 +40,12 @@ button{
 button:hover{
     background-color: rgba(57, 85, 84, 0.488);
 }
+
+.magicButton{
+    border: 0;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    width: 50%;
+    margin-left: auto; margin-right: auto;
+}

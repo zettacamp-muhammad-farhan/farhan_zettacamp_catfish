@@ -10,6 +10,7 @@ export class ListComponent implements OnInit {
 
   inputData ="input your data ..."
 
+  imgHide = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/2560px-Black_flag.svg.png'
 
   constructor() { }
 

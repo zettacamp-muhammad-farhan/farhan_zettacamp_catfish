@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ContentComponent } from './content/content.component';
 import { CardComponent } from './content/card/card.component';
 import { ListComponent } from './content/list/list.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SectionComponent } from './content/section/section.component'
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms'
   declarations: [
     ContentComponent,
     CardComponent,
-    ListComponent
+    ListComponent,
+    SectionComponent
   ],
   imports: [
     CommonModule,

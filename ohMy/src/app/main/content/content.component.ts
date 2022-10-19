@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
+  user = 'admin'
+
   items = ['gajah', 'sapi', 'badak', 'jaran']
 
   list = [
@@ -46,6 +48,14 @@ export class ContentComponent implements OnInit {
 
   addItem(newItem: string) {
     this.items.push(newItem);
+  }
+
+  switchRole(){
+    if(this.user=="user"){
+      this.user="admin"
+    } else {
+      this.user="user"
+    }
   }
 
   ngOnInit(): void {
