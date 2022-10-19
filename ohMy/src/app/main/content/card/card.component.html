@@ -1,0 +1,13 @@
+
+  <div class="card">
+    <div class="img">
+      <img [src]="background === 'red' ? items.img : imgHide" alt="" />
+    </div>
+    <div class="content" [ngStyle]="{'background-color':background === 'red' ? 'red' : 'yellow' }">
+      <h3 class="title" [innerHTML]="background === 'red' ? items.title : '---' "></h3>
+      <p class="desc">{{ items.desc }}</p>
+    </div>
+    <div class="footer">
+      <button [innerHTML]="background === 'red' ? 'Hide' : 'Show' " (click)="backgroundChange()" >KICK</button>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<h2> Hello {{ nama }} </h2>
+
+<h3>Now youre {{ statuses() }}</h3>
+
+<input type="text"
+            class="form-control"
+            (input)="updateOnStatuses($event)">
+            <br><br>
+            
+<input type="text"
+            [(ngModel)]="statusName">
+
+<p>Status : {{ statusName }}</p>
+
+<button class="btn btn-primary"
+                [disabled]="!allowedClick"
+                (click)="creationStatuses()">Add</button>
+
+<p>{{ creationStatus }}</p>

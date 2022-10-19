@@ -1,0 +1,17 @@
+<div class="form-in">
+    <input type="text"
+            [(ngModel)]="inputData">
+</div>
+
+
+<p>your data : {{ inputData }}</p>
+<br>
+<hr>
+
+
+<label for="item-input">Add an item:</label>
+<div class="form-in">
+    <input type="text" placeholder="input some animal" id="item-input" #newItem>
+</div>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+

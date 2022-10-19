@@ -1,0 +1,12 @@
+<div>
+  <div class="row">
+    <app-card class="col" *ngFor="let item of list" [items]="item"></app-card>
+  </div>
+</div>
+
+<div><hr /></div>
+
+<app-list (newItemEvent)="addItem($event)"></app-list>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
