@@ -4,6 +4,7 @@ import { ContentComponent } from './content/content.component';
 import { CardComponent } from './content/card/card.component';
 import { FormComponent } from './content/form/form.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -12,7 +13,8 @@ import { HeaderComponent } from './header/header.component';
     ContentComponent,
     CardComponent,
     FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { HeaderComponent } from './header/header.component';
   exports: [
     ContentComponent,
     CardComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class MainModule { }

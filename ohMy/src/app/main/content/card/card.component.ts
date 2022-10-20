@@ -4,7 +4,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.None
 })
 export class CardComponent implements OnInit {
 
