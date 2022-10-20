@@ -1,0 +1,15 @@
+<div class="form-in">
+    <input type="url" placeholder="input url image" id="item-input" #img>
+</div>
+<div class="form-in">
+    <input type="text" placeholder="input title" id="item-input" #title>
+</div>
+<div class="form-in">
+    <input type="text" placeholder="input description" id="item-input" #description>
+</div>
+<div class="form-in">
+    <input type="text" placeholder="input price" id="item-input" #price>
+</div>
+
+
+<button type="button" (click)="addNewItem({img:img.value, title:title.value, desc:description.value, price:price.value})">Add to Item List</button>

@@ -72,4 +72,8 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addItem(newItem: any) {
+    this.items.push(newItem);
+  }
+
 }

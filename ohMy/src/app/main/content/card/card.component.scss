@@ -41,7 +41,15 @@ h3 {
     color: white;
     padding: 12px;
     width: 100%;
+    cursor: pointer;
 }
 .sold {
     position: absolute;
+    z-index: 2;
+}
+.back {
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.576);
+    height: 100%;
 }

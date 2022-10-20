@@ -3,6 +3,9 @@
         <div *ngIf="paid" class="sold" >
             <img [src]="imgSold" alt="">     
         </div>
+        <div *ngIf="paid" class="back" >
+            <img [src]="imgSold" alt="">     
+        </div>
         <div class="img">
             <img [src]="item.img" alt="">
         </div>
@@ -16,7 +19,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <button (click)="getDisc()" [disabled]="discount" [innerText]=" !discount?'Get Extra Discount' : 'Claimed' " class="disc" >Get extra Discount</button>
+            <button (click)="getDisc()" [disabled]="discount" [innerHTML]=" !discount?'Get Extra Discount' : 'Claimed' " class="disc" >Get extra Discount</button>
             <div  >
                 <button class="buy" (click)="buy()" [innerText]="paid? 'OUT OF STOCK' : 'BUY NOW' " [ngStyle]="{'background-color': paid? 'red' : 'rgba(0, 128, 0, 0.75)'}" >BUY NOW</button>
             </div>

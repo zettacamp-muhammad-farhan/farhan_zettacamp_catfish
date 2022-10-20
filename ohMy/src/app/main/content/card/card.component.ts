@@ -25,7 +25,7 @@ export class CardComponent implements OnInit {
 
   buy(){
     this.paid = true
-    
+
   }
 
 }
