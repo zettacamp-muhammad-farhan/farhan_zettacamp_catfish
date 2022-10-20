@@ -1,0 +1,24 @@
+
+    <div class="card">
+        <div *ngIf="paid" class="sold" >
+            <img [src]="imgSold" alt="">     
+        </div>
+        <div class="img">
+            <img [src]="item.img" alt="">
+        </div>
+        <div class="card-body">
+            <h3>{{ item.title }}</h3>
+            <div class="desc">
+                <p>{{ item.desription }}</p>
+            </div>
+            <div class="price">
+                <h3>IDR. {{ item.price }}</h3>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button (click)="getDisc()" [disabled]="discount" [innerText]=" !discount?'Get Extra Discount' : 'Claimed' " class="disc" >Get extra Discount</button>
+            <div  >
+                <button class="buy" (click)="buy()" [innerText]="paid? 'OUT OF STOCK' : 'BUY NOW' " [ngStyle]="{'background-color': paid? 'red' : 'rgba(0, 128, 0, 0.75)'}" >BUY NOW</button>
+            </div>
+        </div>
+    </div>
