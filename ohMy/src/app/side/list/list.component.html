@@ -1,0 +1,13 @@
+<app-item *ngFor="let item of cars" [item]="item" ></app-item>
+<app-add (newAnimal)="addData($event)" ></app-add>
+
+<br><hr><br>
+
+<div>
+    <p>guess : {{ animal }}</p>
+</div>
+
+
+<app-update (editAnimal)="editData($event)" >
+    <div #contentWrapper>foo</div> 
+</app-update>

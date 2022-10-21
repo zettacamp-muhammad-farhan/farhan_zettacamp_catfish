@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ohMy';
+  loadingImg = "https://i.stack.imgur.com/hzk6C.gif"
+  load = true
+
+  constructor(){
+
+  }
+
+  ngAfterViewInit() {
+    setInterval(()=>{this.load=false}, 2000)
+  }
 }

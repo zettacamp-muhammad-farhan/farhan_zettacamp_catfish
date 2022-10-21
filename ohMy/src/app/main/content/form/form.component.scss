@@ -1,0 +1,27 @@
+.form-in{
+    background-color: rgba(103, 103, 180, 0.335);
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+}
+input {
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+}
+input:focus{
+    outline: none;
+}
+
+button {
+    background-color: rgb(135, 187, 57);
+    border: none;
+    border-radius: 5px;
+    width: 103%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    color: gray;
+}
