@@ -17,7 +17,8 @@ export class FormAddComponent implements OnInit {
     )
    }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dataService.cek()
   }
 
   addFood(img:string, nama:string, price:string){

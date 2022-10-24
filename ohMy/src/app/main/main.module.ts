@@ -5,6 +5,7 @@ import { CardComponent } from './content/card/card.component';
 import { FormAddComponent } from './form-add/form-add.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { GetDataComponent } from './get-data/get-data.component';
 
 
 
@@ -12,7 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [
     ContentComponent,
     CardComponent,
-    FormAddComponent
+    FormAddComponent,
+    GetDataComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
   exports:[
     ContentComponent,
     CardComponent,
-    FormAddComponent
+    FormAddComponent,
+    GetDataComponent
   ]
 })
 export class MainModule { }

@@ -1,9 +1,13 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService implements OnInit {
+
+
+
   foods = [
     {
       img: "https://static.toiimg.com/thumb/75581339.cms?width=1200&height=900",
@@ -44,12 +48,49 @@ export class DataService {
       img: "https://www.biggerbolderbaking.com/wp-content/uploads/2020/01/2-Ingredient-Ice-cream-Thumbnail-scaled.jpg",
       nama: "Ice Cream",
       price : 7000
+    },
+    {
+      img: "https://www.biggerbolderbaking.com/wp-content/uploads/2020/01/2-Ingredient-Ice-cream-Thumbnail-scaled.jpg",
+      nama: "Ice Cream",
+      price : 7000
     }
   ];
 
   foodUpdate = new EventEmitter<any>()
 
+  _dataFood:BehaviorSubject<any> = new BehaviorSubject([]);
+  dataFood = this._dataFood.asObservable();
+
+  private _countData:BehaviorSubject<any> = new BehaviorSubject({
+    totalCart:0
+  })
+  private countData = this._countData.asObservable();
+
   constructor() { }
+
+  getCount(){
+    return this.countData
+  }
+  setCount(val:any){
+    return this._countData.next(val)
+  }
+
+  ngOnInit(){
+    console.log(this.dataFood)
+  }
+
+  buy(val:string){
+    this._dataFood.next(val)
+  }
+
+  cek(){
+    console.log(this.dataFood.subscribe({
+      next: (value) => {
+        console.log(value)
+      }
+    }
+    ))
+  }
 
   addFood(img:string, nama:string, price:number){
     this.foods.push({img:img,nama : nama, price : price})
