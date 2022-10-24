@@ -1,0 +1,17 @@
+<div>
+    <div class="form-group">
+        <label for="">Food's name
+            <input type="text" #fName placeholder="input food's name">
+        </label>
+
+        <label for="">Food's image
+            <input type="url" #fImage placeholder="input food's image">
+        </label>
+
+        <label for="">Food's Price
+            <input type="number" #fPrice placeholder="input food's price">
+        </label>
+
+        <button  (click)="addFood(fImage.value, fName.value, fPrice.value)" mat-raised-button color="primary">Submit</button>
+    </div>
+</div>
