@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="img">
+        <img [src]="book.img"  alt="">
+    </div>
+    <div class="content">
+        <h3 class="title" >{{ book.name }}</h3>
+        <table>
+            <tr>
+                <td>Author</td>
+                <td> : </td>
+                <td>{{ book.author }}</td>
+            </tr>
+            <tr>
+                <td>Publisher</td>
+                <td> : </td>
+                <td>{{ book.publisher }}</td>
+            </tr>
+            <tr>
+                <td>Date Publish</td>
+                <td> : </td>
+                <td>{{ book.publishDate }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
