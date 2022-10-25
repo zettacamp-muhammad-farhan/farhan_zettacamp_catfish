@@ -1,5 +1,8 @@
 <div class="card">
-    <div>{{ book.name }}</div>
+    <div>
+        <h3>{{ book.name }}</h3>
+        <div>{{ book.publishDate }}</div>
+    </div>
 
     <button (click)="select()" class="btn" >View</button>
 </div>

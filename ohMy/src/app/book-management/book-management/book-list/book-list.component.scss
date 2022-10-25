@@ -9,3 +9,12 @@
     flex-basis: 30%;
     position: relative;
 }
+.contain {
+    height: 550px;
+    overflow-y: scroll;
+
+}
+
+.contain::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
