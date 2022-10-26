@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col {
+    flex-basis: 30%;
+    background-color: grey;
+    padding: 10px;
+    box-sizing: border-box;
+}

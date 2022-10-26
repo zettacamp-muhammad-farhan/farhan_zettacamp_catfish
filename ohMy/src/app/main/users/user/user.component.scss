@@ -1,0 +1,15 @@
+.card {
+    // background-color: #fff;
+    padding: 5px;
+    position: relative;
+}
+.btn {
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    background-color: rgb(133, 206, 23);
+    border: none;
+    border-radius: 10px;
+    top: 50%;
+    cursor: pointer;
+}
