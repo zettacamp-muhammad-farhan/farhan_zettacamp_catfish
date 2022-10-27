@@ -30,8 +30,6 @@ export class FormComponent implements OnInit {
 
     let user = this.userData.getUser(this.userId);
     this.user = user
-
-    // console.log(this.user[0]);
     
 
     this.signUpForm = new FormGroup({
@@ -62,7 +60,7 @@ export class FormComponent implements OnInit {
     if(this.route.snapshot.params['id']){
       this.userData.editUser(this.userId, this.signUpForm.value)
     }else {
-      console.log(this.signUpForm.value)
+      // console.log(this.signUpForm.value)
       this.userData.addUser(this.signUpForm.value)
       alert('success add data' + this.signUpForm.value.name)
     }

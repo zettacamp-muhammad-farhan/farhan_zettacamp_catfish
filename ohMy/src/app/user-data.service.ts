@@ -74,7 +74,7 @@ export class UserDataService {
     console.log(val);
     console.log(this.users);
     
-    let yser = this.users.filter(p=> p.id === parseInt(val));
+    let yser = this.users.filter(p=> p.id == parseInt(val));
 
     return yser;
     // console.log(yser);
