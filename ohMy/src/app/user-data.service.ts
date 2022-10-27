@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class UserDataService {
 
   private users$ :BehaviorSubject<any>;
+  private user$ :BehaviorSubject<any> = new BehaviorSubject<any>({})
 
   users = [
     {
@@ -17,10 +18,12 @@ export class UserDataService {
       email: 'Ryx@gmail.co',
       position: "director",
       martial:"single",
-      address: "st.munggur",
-      zip:11001,
-      city:"Cew City",
-      country:"New Island"
+      addresses: {
+        address: "st.mungur",
+        zip:234567,
+        city:"add City",
+        country:"New Zelland"
+      }
     },
     {
       id : 2,
@@ -30,10 +33,13 @@ export class UserDataService {
       email: 'Tyzza@gmail.co',
       position: "actor",
       martial:"single",
-      address: "st.padjajaran",
-      zip:11001,
-      city:"Cew City",
-      country:"New Island"
+      addresses: {
+        address: "st.padjajaran",
+        zip:11001,
+        city:"Cew City",
+        country:"New Island"
+      }
+
     },
     {
       id : 3,
@@ -43,10 +49,12 @@ export class UserDataService {
       email: 'Vvyx@gmail.co',
       position: "director",
       martial:"maried",
-      address: "st.Longlasting",
-      zip:11008,
-      city:"Old City",
-      country:"Old Island"
+      addresses: {
+        address: "st.Middle Wave",
+        zip:45678,
+        city:"Zew City",
+        country:"Island Buff"
+      }
     },
   ]
 
@@ -55,10 +63,26 @@ export class UserDataService {
   }
 
   getUsers(){
-    return this.users$.asObservable();
+    return this.users$.asObservable()
   }
   addUser(val:any){
     this.users.push(val);
+    this.users$.next(this.users)
+  }
+
+  getUser(val:any){
+    console.log(val);
+    console.log(this.users);
+    
+    let yser = this.users.filter(p=> p.id === parseInt(val));
+
+    return yser;
+    // console.log(yser);
+    
+  }
+
+  editUser(val:any, content:any){
+    this.users[parseInt(val)-1] = content;
     this.users$.next(this.users)
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { UserDataService } from 'src/app/user-data.service';
 
 @Component({
@@ -9,13 +10,30 @@ import { UserDataService } from 'src/app/user-data.service';
 })
 export class FormComponent implements OnInit {
 
+  userId = null
+
   signUpForm:any
+  user:any= {}
 
   constructor(
-    private userData:UserDataService
+    private userData:UserDataService,
+    private route:ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    if(this.route.snapshot.params['id']){
+      this.userId = this.route.snapshot.params['id']
+      
+    }else {
+      this.userId = null
+    }
+
+    let user = this.userData.getUser(this.userId);
+    this.user = user
+
+    // console.log(this.user[0]);
+    
+
     this.signUpForm = new FormGroup({
       id:new FormControl(null, Validators.required),
       name:new FormControl(null, Validators.required),
@@ -32,13 +50,23 @@ export class FormComponent implements OnInit {
       })
 
     })
+    this.signUpForm.patchValue(this.user[0]);
+
+
+
+
   }
 
   onSubmit(){
-    console.log(this.signUpForm.value)
-    this.userData.addUser(this.signUpForm.value)
-    alert('success add data' + this.signUpForm.value.name)
-    this.signUpForm.value = null
+
+    if(this.route.snapshot.params['id']){
+      this.userData.editUser(this.userId, this.signUpForm.value)
+    }else {
+      console.log(this.signUpForm.value)
+      this.userData.addUser(this.signUpForm.value)
+      alert('success add data' + this.signUpForm.value.name)
+    }
+
   }
 
 }
