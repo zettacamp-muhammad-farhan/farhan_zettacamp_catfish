@@ -1,0 +1,17 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.col {
+    flex-basis: 30%;
+    background-color: gray;
+}
+.btn {
+    position: absolute;
+    right: 20px;
+    top: -40px;
+}

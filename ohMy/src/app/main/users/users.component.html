@@ -1,0 +1,5 @@
+<a routerLink="/users/form" ><button class="btn" >Add User</button></a>
+
+<div class="row">
+    <app-user class="col" *ngFor="let user of users" [user]="user" ></app-user>
+</div>

@@ -1,0 +1,26 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="id" placeholder="id">
+    <input type="text" formControlName="name" placeholder="name">
+    <input type="text" formControlName="age" placeholder="age">
+    <input type="radio" formControlName="gender" value="Male" placeholder="gender"> Male
+    <input type="radio" formControlName="gender" value="Female" placeholder="gender"> Female
+    <input type="email" formControlName="email" placeholder="email">
+    <select formControlName="position" name="position" id="">
+        <option value="director">Director</option>
+        <option value="actor">Actor</option>
+        <option value="make up">Make Up</option>
+    </select>
+    <select formControlName="martial" name="position" id="">
+        <option value="Mariage">Mariage</option>
+        <option value="Single">Single</option>
+    </select>
+    <div formGroupName="addresses" >
+        <input type="text" formControlName="address" placeholder="address">
+        <input type="number" formControlName="zip" placeholder="zip code">
+        <input type="text" formControlName="city" placeholder="city">
+        <input type="text" formControlName="country" placeholder="country">
+    </div>
+
+
+    <button type="submit" >Submit</button>
+</form>
