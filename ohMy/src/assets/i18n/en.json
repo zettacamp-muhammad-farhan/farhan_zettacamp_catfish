@@ -1,0 +1,22 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "USER": "User"
+  },
+  "USER": {
+    "NAME": "Name",
+    "ADDRESS": "Address",
+    "AGE": "Age",
+    "GENDER": "Gender",
+    "POSITION": "Position",
+    "MARITAL": "Select your Martial status",
+    "ZIP": "Zip Code",
+    "CITY": "City",
+    "COUNTRY": "Country"
+  },
+  "ADD": "Add User",
+  "EDIT": "Edit",
+  "SUBMIT" : "Submit",
+  "BACK" : "Back",
+  "GRETTING" : "Wellcome Home"
+}

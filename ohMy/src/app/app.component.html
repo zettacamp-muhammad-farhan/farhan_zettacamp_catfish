@@ -5,10 +5,10 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLink="/"
-        >Home</a
+        >{{ "NAV.HOME" | translate }}</a
       >
     </li>
-    <li><a routerLinkActive="active" routerLink="/users">User</a></li>
+    <li><a routerLinkActive="active" routerLink="/users">{{ "NAV.USER" | translate }}</a></li>
   </ul>
 </nav>
 

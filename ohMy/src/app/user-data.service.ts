@@ -71,18 +71,22 @@ export class UserDataService {
   }
 
   getUser(val:any){
-    console.log(val);
-    console.log(this.users);
-    
+    // console.log(val);
+    // console.log(this.users);
     let yser = this.users.filter(p=> p.id == parseInt(val));
 
     return yser;
-    // console.log(yser);
-    
   }
 
   editUser(val:any, content:any){
-    this.users[parseInt(val)-1] = content;
+    let index:number = 0
+    for(let i = 0; i<this.users.length; i++){
+      if(this.users[i] == val){
+         index = i
+         break
+      } 
+    }
+    this.users[index] = content;
     this.users$.next(this.users)
   }
 }

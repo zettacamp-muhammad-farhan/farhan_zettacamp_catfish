@@ -1,26 +1,90 @@
-<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="id" placeholder="id">
-    <input type="text" formControlName="name" placeholder="name">
-    <input type="text" formControlName="age" placeholder="age">
-    <input type="radio" formControlName="gender" value="Male" placeholder="gender"> Male
-    <input type="radio" formControlName="gender" value="Female" placeholder="gender"> Female
-    <input type="email" formControlName="email" placeholder="email">
-    <select formControlName="position" name="position" id="">
-        <option value="director">Director</option>
-        <option value="actor">Actor</option>
-        <option value="make up">Make Up</option>
+<button (click)="setLanguage('id')" >Id</button>
+<button (click)="setLanguage('en')" >En</button>
+
+<button class="btn-back" mat-flat-button color="primary" (click)="backTo()">{{ "BACK" | translate }}</button>
+
+<!-- <mat-form-field appearance="fill">
+    <mat-label>{{ "LANG" | translate }}</mat-label>
+    <select matNativeControl id="mySelectId">
+      <option (click)="setLanguage('en')" value="director">English</option>
+      <option (click)="setLanguage('id')" value="actor"><button (click)="setLanguage('id')" >Id</button></option>
     </select>
-    <select formControlName="martial" name="position" id="">
-        <option value="Mariage">Mariage</option>
-        <option value="Single">Single</option>
-    </select>
+</mat-form-field> -->
+
+<form class="example-full-width" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>id</mat-label>
+        <input matInput type="text" formControlName="id" placeholder="id">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "USER.NAME" | translate }}</mat-label>
+        <input matInput type="text" formControlName="name" placeholder="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "USER.AGE" | translate }}</mat-label>
+        <input matInput type="text" formControlName="age" placeholder="age">
+    </mat-form-field>
+     <br>
+    <mat-label>{{ "USER.GENDER" | translate }}</mat-label>
+    <mat-radio-group formControlName="gender" aria-label="Select an option">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group> <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="email">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>{{ "USER.POSITION" | translate }}</mat-label>
+        <select formControlName="position" matNativeControl id="mySelectId">
+          <option value="director">Director</option>
+          <option value="actor">Actor</option>
+          <option value="make up">Maku Up</option>
+          <option value="caster">Caster</option>
+        </select>
+    </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        <mat-label>{{ "USER.MARITAL" | translate }}</mat-label>
+        <select formControlName="martial" matNativeControl id="mySelectId">
+          <option value="mariage">Mariage</option>
+          <option value="single">Single</option>
+        </select>
+      </mat-form-field>
+
+
+
     <div formGroupName="addresses" >
-        <input type="text" formControlName="address" placeholder="address">
-        <input type="number" formControlName="zip" placeholder="zip code">
-        <input type="text" formControlName="city" placeholder="city">
-        <input type="text" formControlName="country" placeholder="country">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{ "USER.ADDRESS" | translate }}</mat-label>
+            <input matInput type="text" formControlName="address" placeholder="address">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{ "USER.ZIP" | translate }}</mat-label>
+            <input matInput type="number" formControlName="zip" placeholder="zip code">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{ "USER.CITY" | translate }}</mat-label>
+            <input matInput type="text" formControlName="city" placeholder="city">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>{{ "USER.COUNTRY" | translate }}</mat-label>
+            <input matInput type="text" formControlName="country" placeholder="country">
+        </mat-form-field>
     </div>
 
 
-    <button type="submit">Submit</button>
+    <button class="btn" mat-flat-button color="primary" type="submit">{{ "SUBMIT" | translate }}</button>
 </form>
+
+<!-- <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Leave a comment</mat-label>
+      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field>
+  </form> -->

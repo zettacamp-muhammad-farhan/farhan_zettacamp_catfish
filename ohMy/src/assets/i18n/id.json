@@ -1,0 +1,23 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "USER": "User"
+  },
+  "USER": {
+    "NAME": "Nama",
+    "ADDRESS": "Alamat",
+    "AGE": "Umur",
+    "GENDER": "Jenis Kelamin",
+    "POSITION": "Posisimu",
+    "MARITAL": "Pilih Status pernikahanmu",
+    "ZIP": "Kode Pos",
+    "CITY": "Kota",
+    "COUNTRY": "Negara"
+  },
+  "ADD": "Tambah Data",
+  "EDIT": "Ubah",
+  "SUBMIT": "Kirim",
+  "BACK": "Kembali",
+  "GRETTING" : "Selamat datang di baranda"
+
+}

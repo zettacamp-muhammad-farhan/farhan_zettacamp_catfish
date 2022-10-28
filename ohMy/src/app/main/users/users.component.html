@@ -1,4 +1,7 @@
-<a routerLink="/users/form" ><button class="btn" >Add User</button></a>
+<button (click)="setLanguage('id')" >Id</button>
+<button (click)="setLanguage('en')" >En</button>
+
+<a routerLink="/users/form" ><button mat-flat-button color="primary" class="btn">{{ "ADD" | translate }}</button></a>
 
 <div class="row">
     <app-user class="col" *ngFor="let user of users" [user]="user" ></app-user>

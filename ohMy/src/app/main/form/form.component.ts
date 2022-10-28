@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserDataService } from 'src/app/user-data.service';
+import {TranslateService} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-form',
@@ -14,10 +16,13 @@ export class FormComponent implements OnInit {
 
   signUpForm:any
   user:any= {}
+  genders:string[] = ["Male", "Female"]
 
   constructor(
     private userData:UserDataService,
     private route:ActivatedRoute,
+    private router:Router,
+    public translate:TranslateService
   ) { }
 
   ngOnInit() {
@@ -33,7 +38,7 @@ export class FormComponent implements OnInit {
     
 
     this.signUpForm = new FormGroup({
-      id:new FormControl(null, Validators.required),
+      id:new FormControl(null, [Validators.required]),
       name:new FormControl(null, Validators.required),
       age:new FormControl(null, Validators.required),
       gender:new FormControl(null, Validators.required),
@@ -65,6 +70,15 @@ export class FormComponent implements OnInit {
       alert('success add data' + this.signUpForm.value.name)
     }
 
+    this.router.navigate(['/users']);
+  }
+
+  setLanguage(lang: string) {
+    this.translate.use(lang);
+  }
+
+  backTo(){
+    this.router.navigate(['/users']);
   }
 
 }

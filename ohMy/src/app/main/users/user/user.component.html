@@ -1,26 +1,31 @@
-<div class="card">
+
+
+<mat-card class="example-card">
     <div class="img">
         <img src="https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c29sZGllcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="">
     </div>
-    <div class="content">
-        <h3>{{ user.name }}</h3>
-        <table>
-            <tr>
-                <td>Age</td>
-                <td>:</td>
-                <td>{{ user.age }}</td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td>:</td>
-                <td>{{ user.gender }}</td>
-            </tr>
-            <tr>
-                <td>Position</td>
-                <td>:</td>
-                <td>{{ user.position }}</td>
-            </tr>
-        </table>
-    </div>
-    <button (click)="editData()" class="btn">Edit</button>
-</div>
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <tr>
+            <td>{{ "USER.AGE" | translate }}</td>
+            <td>:</td>
+            <td>{{ user.age }}</td>
+        </tr>
+        <tr>
+            <td>{{ "USER.GENDER" | translate }}</td>
+            <td>:</td>
+            <td>{{ user.gender }}</td>
+        </tr>
+        <tr>
+            <td>{{ "USER.POSITION" | translate }}</td>
+            <td>:</td>
+            <td>{{ user.position }}</td>
+        </tr>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="primary" (click)="editData()" mat-flat-button>{{ "EDIT" | translate }}</button>
+    </mat-card-actions>
+  </mat-card>
+  
