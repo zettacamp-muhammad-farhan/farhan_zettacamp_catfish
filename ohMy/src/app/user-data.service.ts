@@ -88,12 +88,9 @@ export class UserDataService {
   editUser(val:any, content:any){
     let index:number = 0
     let valN = 0
-    for(let i = 0; i<=this.users.length; i++){
-
+    for(let i = 0; i<=this.users.length; i++){ 
       // cari index berdasarkan id
-      
       for (let j = 0; j <= this.users.length; j++){
-        
         if(this.users[j].id === val){
           valN = j
           console.log(this.users[j].id);
