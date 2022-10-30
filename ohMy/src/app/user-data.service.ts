@@ -79,14 +79,16 @@ export class UserDataService {
   }
 
   editUser(val:any, content:any){
-    let index:number = 0
-    for(let i = 0; i<this.users.length; i++){
-      if(this.users[i] == val){
-         index = i
-         break
-      } 
-    }
-    this.users[index] = content;
+    let userN = this.users.map(
+      a=>{
+        if(a.id == val){
+          return a = content
+        }else {
+          return a
+        }
+      }
+    )
+    this.users = userN
     this.users$.next(this.users)
   }
 }

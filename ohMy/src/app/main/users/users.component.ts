@@ -21,7 +21,6 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.userData.getUsers().subscribe(
       p=>{
-        console.log(p)
         this.users = p
       }
     )
