@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserDataService } from 'src/app/user-data.service';
 import {TranslateService} from '@ngx-translate/core';
+
 
 
 @Component({
@@ -27,13 +28,13 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     if(this.route.snapshot.params['id']){
-      this.userId = this.route.snapshot.params['id']
-      
+      this.userId = this.route.snapshot.params['id'];
     }else {
       this.userId = null
     }
 
     let user = this.userData.getUser(this.userId);
+    
     this.user = user
     
 
@@ -45,20 +46,36 @@ export class FormComponent implements OnInit {
       email:new FormControl(null, Validators.required),
       position:new FormControl(null, Validators.required),
       martial:new FormControl(null, Validators.required),
-      addresses:new FormGroup({
-        address:new FormControl(null, Validators.required),
-        zip:new FormControl(null, Validators.required),
-        city:new FormControl(null, Validators.required),
-        country:new FormControl(null, Validators.required)
-      })
+      addresses: new FormArray([])
 
     })
+    console.log(this.userId);
+    
+    if(this.userId != null ){
+      let lengthUser = user[0].addresses.length;
+      console.log(1);
+      
+      if(lengthUser > 0){
+        for(let i = 0; i < lengthUser; i++){
+          const control = new FormGroup({
+            address:new FormControl(null),
+            zip:new FormControl(null),
+            city:new FormControl(null),
+            country:new FormControl(null)
+          });
+          (<FormArray>this.signUpForm.get('addresses')).push(control);
+        }
+      }
+      
+      
+    }
+
     this.signUpForm.patchValue(this.user[0]);
 
 
 
-
   }
+
 
   onSubmit(){
 
@@ -79,6 +96,16 @@ export class FormComponent implements OnInit {
 
   backTo(){
     this.router.navigate(['/users']);
+  }
+
+  addAddress(){
+    const control = new FormGroup({
+        address:new FormControl(null),
+        zip:new FormControl(null),
+        city:new FormControl(null),
+        country:new FormControl(null)
+    });
+    (<FormArray>this.signUpForm.get('addresses')).push(control);
   }
 
 }

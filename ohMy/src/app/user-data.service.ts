@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,50 +12,59 @@ export class UserDataService {
 
   users = [
     {
-      id : 1,
+      id : 'numb-1',
       name: "Ryan",
       age: 20,
       gender: "Male",
       email: 'Ryx@gmail.co',
       position: "director",
       martial:"single",
-      addresses: {
-        address: "st.mungur",
-        zip:234567,
-        city:"add City",
-        country:"New Zelland"
-      }
+      addresses:[
+        {
+          address: "st.mungur",
+          zip:234567,
+          city:"add City",
+          country:"New Zelland"
+        },
+        {
+          address: "st.kemunging",
+          zip:23456799,
+          city:"add City mana",
+          country:"hoho Zelland"
+        }
+
+      ]
     },
     {
-      id : 2,
+      id : 'numb-2',
       name: "Tia",
       age: 22,
       gender: "Female",
       email: 'Tyzza@gmail.co',
       position: "actor",
       martial:"single",
-      addresses: {
+      addresses:[{
         address: "st.padjajaran",
         zip:11001,
         city:"Cew City",
         country:"New Island"
-      }
+      }]
 
     },
     {
-      id : 3,
+      id : 'numb-3',
       name: "Vim",
       age: 25,
       gender: "Male",
       email: 'Vvyx@gmail.co',
       position: "director",
       martial:"maried",
-      addresses: {
+      addresses:[ {
         address: "st.Middle Wave",
         zip:45678,
         city:"Zew City",
         country:"Island Buff"
-      }
+      }]
     },
   ]
 
@@ -71,17 +81,26 @@ export class UserDataService {
   }
 
   getUser(val:any){
-    // console.log(val);
-    // console.log(this.users);
-    let yser = this.users.filter(p=> p.id == parseInt(val));
-
+    let yser = this.users.filter(p=> p.id == (val));
     return yser;
   }
 
   editUser(val:any, content:any){
     let index:number = 0
-    for(let i = 0; i<this.users.length; i++){
-      if(this.users[i] == val){
+    let valN = 0
+    for(let i = 0; i<=this.users.length; i++){
+
+      // cari index berdasarkan id
+      
+      for (let j = 0; j <= this.users.length; j++){
+        
+        if(this.users[j].id === val){
+          valN = j
+          console.log(this.users[j].id);
+          break
+        }
+      }
+      if(i === valN){
          index = i
          break
       } 
