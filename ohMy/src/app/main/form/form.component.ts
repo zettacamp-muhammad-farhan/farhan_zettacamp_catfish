@@ -84,7 +84,7 @@ export class FormComponent implements OnInit {
     }else {
       // console.log(this.signUpForm.value)
       this.userData.addUser(this.signUpForm.value)
-      alert('success add data' + this.signUpForm.value.name)
+      alert('success add data ' + this.signUpForm.value.name)
     }
 
     this.router.navigate(['/users']);
@@ -106,6 +106,10 @@ export class FormComponent implements OnInit {
         country:new FormControl(null)
     });
     (<FormArray>this.signUpForm.get('addresses')).push(control);
+  }
+
+  deleteAddress(val:number){
+    (<FormArray>this.signUpForm.get('addresses')).removeAt(val)
   }
 
 }

@@ -19,9 +19,16 @@ input {
 .btn {
     width: 60%;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 .btn-back {
     float: right;
     margin-right: 20px;
     margin-top: 20px;
+}
+.btn-add{
+    border: 1px solid black;
+}
+.btn-dell {
+    float: right;
 }
