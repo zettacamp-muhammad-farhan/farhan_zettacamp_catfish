@@ -12,7 +12,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class FormComponent implements OnInit {
 
-  userId = null
+  userId:any = null
 
   signUpForm:any
   user:any= {}
@@ -26,8 +26,8 @@ export class FormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(this.route.snapshot.params['id']){
-      this.userId = this.route.snapshot.params['id']
+    if(this.route.snapshot.queryParamMap.get('id')){
+      this.userId = this.route.snapshot.queryParamMap.get('id')
       
     }else {
       this.userId = null
@@ -62,7 +62,7 @@ export class FormComponent implements OnInit {
 
   onSubmit(){
 
-    if(this.route.snapshot.params['id']){
+    if(this.route.snapshot.queryParamMap.get('id')){
       this.userData.editUser(this.userId, this.signUpForm.value)
     }else {
       // console.log(this.signUpForm.value)

@@ -18,7 +18,9 @@ export class UserComponent implements OnInit {
   }
   
   editData(){
-    this.router.navigate(['/users', 'edit', this.user.id]);
+    this.router.navigate(['/users', 'edit'], {
+      queryParams:{id: this.user.id}
+    });
   }
 
 }

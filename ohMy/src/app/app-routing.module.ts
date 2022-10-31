@@ -9,7 +9,8 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"users", component:UsersComponent},
   {path:"users/form", component:FormComponent},
-  {path:"users/edit/:id", component:FormComponent},
+  {path:"users/edit", component:FormComponent},
+  // {path:"users/edit", component:FormComponent}
 ];
 
 @NgModule({
