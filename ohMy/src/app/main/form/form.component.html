@@ -5,27 +5,35 @@
   {{ "BACK" | translate }}
 </button>
 
-<!-- <mat-form-field appearance="fill">
-    <mat-label>{{ "LANG" | translate }}</mat-label>
-    <select matNativeControl id="mySelectId">
-      <option (click)="setLanguage('en')" value="director">English</option>
-      <option (click)="setLanguage('id')" value="actor"><button (click)="setLanguage('id')" >Id</button></option>
-    </select>
-</mat-form-field> -->
-
 <form class="example-full-width" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>id</mat-label>
     <input matInput type="text" formControlName="id" placeholder="id" />
   </mat-form-field>
+  <span *ngIf="!signUpForm.get('id').valid && signUpForm.get('id').touched" class="help-block">
+    <span *ngIf="signUpForm.get('id').errors['idForbid']">This id is registered!</span>
+    <span *ngIf="signUpForm.get('id').errors['required']">This field is required!</span>
+  </span>
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>{{ "USER.NAME" | translate }}</mat-label>
     <input matInput type="text" formControlName="name" placeholder="name" />
   </mat-form-field>
+  <span *ngIf="!signUpForm.get('name').valid && signUpForm.get('name').touched" class="help-block">
+    <span *ngIf="signUpForm.get('name').errors['nameIsForbidden']">This name is invalid!</span>
+    <span *ngIf="signUpForm.get('name').errors['required']">This field is required!</span>
+  </span>
+
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>{{ "USER.AGE" | translate }}</mat-label>
     <input matInput type="text" formControlName="age" placeholder="age" />
   </mat-form-field>
+  <span *ngIf="!signUpForm.get('age').valid && signUpForm.get('age').touched" class="help-block" >
+    <span *ngIf="signUpForm.get('age').errors['min']">This age must greater than 10!</span>
+    <span *ngIf="signUpForm.get('age').errors['required']">This field is required!</span>
+  </span>
+
   <br />
   <mat-label>{{ "USER.GENDER" | translate }}</mat-label>
   <mat-radio-group formControlName="gender" aria-label="Select an option">
@@ -37,6 +45,12 @@
     <mat-label>Email</mat-label>
     <input matInput type="email" formControlName="email" placeholder="email" />
   </mat-form-field>
+  <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched" class="help-block">
+    <span *ngIf="signUpForm.get('email').errors['email']">This email is invalid!</span>
+    <span *ngIf="signUpForm.get('email').errors['required']">This field is required!</span>
+  </span>
+
+
   <br />
   <mat-form-field appearance="fill">
     <mat-label>{{ "USER.POSITION" | translate }}</mat-label>
@@ -64,8 +78,11 @@
       ">
       <div [formGroupName]="i">
         <hr>
-        <div><h3>Address {{ i+1 }}</h3></div>
-        <button type="button" class="btn-dell" mat-flat-button color="warn" (click)="deleteAddress(i)">Delete Address</button><br>
+        <div>
+          <h3>Address {{ i+1 }}</h3>
+        </div>
+        <button type="button" class="btn-dell" mat-flat-button color="warn" (click)="deleteAddress(i)">Delete
+          Address</button><br>
 
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>{{ "USER.ADDRESS" | translate }}</mat-label>
@@ -93,19 +110,12 @@
     <button type="button" class="btn-add" mat-flat-button (click)="addAddress()">Add Address</button>
   </div>
 
+  <span
+    *ngIf="signUpForm.invalid && signUpForm.touched"
+    class="">Please enter valid data!
+  </span> <br>
+
   <button class="btn" mat-flat-button color="primary" type="submit">
     {{ "SUBMIT" | translate }}
   </button>
 </form>
-
-<!-- <form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <input matInput placeholder="Ex. Pizza" value="Sushi">
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Leave a comment</mat-label>
-      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-  </form> -->

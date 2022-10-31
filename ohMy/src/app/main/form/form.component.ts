@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserDataService } from 'src/app/user-data.service';
 import {TranslateService} from '@ngx-translate/core';
+import Swal from 'sweetalert2'
 
 
 
@@ -11,7 +12,11 @@ import {TranslateService} from '@ngx-translate/core';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnChanges {
+
+  forbiddenUsername = ['hanz', 'danz', 'franz'];
+
+  registeredId:any = ['test']
 
   userId = null
 
@@ -25,6 +30,10 @@ export class FormComponent implements OnInit {
     private router:Router,
     public translate:TranslateService
   ) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    //
+  }
 
   ngOnInit() {
     if(this.route.snapshot.params['id']){
@@ -40,26 +49,22 @@ export class FormComponent implements OnInit {
 
     this.signUpForm = new FormGroup({
       id:new FormControl(null, [Validators.required]),
-      name:new FormControl(null, Validators.required),
-      age:new FormControl(null, Validators.required),
-      gender:new FormControl(null, Validators.required),
-      email:new FormControl(null, Validators.required),
-      position:new FormControl(null, Validators.required),
-      martial:new FormControl(null, Validators.required),
+      name:new FormControl(null, [Validators.required, this.forbidName.bind(this)]),
+      age:new FormControl(null, [Validators.required, Validators.min(10.1)]),
+      gender:new FormControl(null),
+      email:new FormControl(null, [Validators.required, Validators.email]),
+      position:new FormControl(null),
+      martial:new FormControl(null),
       addresses: new FormArray([])
-
     })
-    console.log(this.userId);
     
     if(this.userId != null ){
       let lengthUser = user[0].addresses.length;
-      console.log(1);
-      
       if(lengthUser > 0){
         for(let i = 0; i < lengthUser; i++){
           const control = new FormGroup({
             address:new FormControl(null),
-            zip:new FormControl(null),
+            zip:new FormControl(null, [Validators.required]),
             city:new FormControl(null),
             country:new FormControl(null)
           });
@@ -72,22 +77,73 @@ export class FormComponent implements OnInit {
 
     this.signUpForm.patchValue(this.user[0]);
 
+    this.registeredId = this.userData.registeredId
+    // console.log(this.registeredId);
+
+    this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
+      // console.log('form value changed')
+      console.log(changes)
+      let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+      let a= specialChar.test(changes)
+      if(a) {
+        this.signUpForm.patchValue(
+          {name: this.user[0].name}
+        )
+        Swal.fire("username can't contain special character", "", 'warning')
+      }
+      
+    })
+    
 
 
   }
 
 
   onSubmit(){
-
     if(this.route.snapshot.params['id']){
-      this.userData.editUser(this.userId, this.signUpForm.value)
+      
+      if(this.signUpForm.valid){
+        console.log('berhasil');
+        this.userData.editUser(this.userId, this.signUpForm.value)
+
+        Swal.fire(
+          'success to edit ' + this.signUpForm.value.name,
+          'Click to close',
+          'success'
+        )
+        this.router.navigate(['/users']);
+
+      }else {
+        console.log('gagal');
+        Swal.fire(
+          'Failed to edit ' + this.signUpForm.value.name,
+          'Click to close',
+          'error'
+        )
+      }
     }else {
-      // console.log(this.signUpForm.value)
-      this.userData.addUser(this.signUpForm.value)
-      alert('success add data ' + this.signUpForm.value.name)
+      if(this.signUpForm.valid){
+        console.log('berhasil');
+        // console.log(this.signUpForm.value)
+        this.userData.addUser(this.signUpForm.value)
+        Swal.fire(
+            'success to add ' + this.signUpForm.value.name,
+            'Click to close',
+            'success'
+        )
+        this.router.navigate(['/users']);
+
+      }else {
+        console.log('gagal');
+        Swal.fire(
+          'Failed to add data',
+          'Click to close',
+          'error'
+        )
+      }
+
     }
 
-    this.router.navigate(['/users']);
   }
 
   setLanguage(lang: string) {
@@ -108,8 +164,25 @@ export class FormComponent implements OnInit {
     (<FormArray>this.signUpForm.get('addresses')).push(control);
   }
 
+  //delete multiple address
   deleteAddress(val:number){
     (<FormArray>this.signUpForm.get('addresses')).removeAt(val)
   }
+
+  forbidName(control:FormControl){
+    if(this.forbiddenUsername.indexOf(control.value) !== -1 ){
+      return {'nameIsForbidden': true};
+    }
+    return null
+  }
+
+  forbidId(control:FormControl){
+    if(this.registeredId.indexOf(control.value) !== -1){
+      return {'idForbid' : true}
+    } 
+    return null
+  }
+
+
 
 }

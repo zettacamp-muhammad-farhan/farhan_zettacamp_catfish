@@ -105,4 +105,11 @@ export class UserDataService {
     this.users[index] = content;
     this.users$.next(this.users)
   }
+
+  //registered id
+  registeredId = this.users.map(
+    m=> {
+      return m.id
+    }
+  )
 }
