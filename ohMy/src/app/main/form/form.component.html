@@ -29,10 +29,10 @@
     <mat-label>{{ "USER.AGE" | translate }}</mat-label>
     <input matInput type="text" formControlName="age" placeholder="age" />
   </mat-form-field>
-  <span *ngIf="!signUpForm.get('age').valid && signUpForm.get('age').touched" class="help-block" >
-    <span *ngIf="signUpForm.get('age').errors['min']">This age must greater than 10!</span>
-    <span *ngIf="signUpForm.get('age').errors['required']">This field is required!</span>
-  </span>
+  <mat-error *ngIf="!signUpForm.get('age').valid && signUpForm.get('age').touched" class="help-block" >
+    <mat-error *ngIf="signUpForm.get('age').errors['min']">This age must greater than 10!</mat-error>
+    <mat-error *ngIf="signUpForm.get('age').errors['required']">This field is required!</mat-error>
+  </mat-error>
 
   <br />
   <mat-label>{{ "USER.GENDER" | translate }}</mat-label>

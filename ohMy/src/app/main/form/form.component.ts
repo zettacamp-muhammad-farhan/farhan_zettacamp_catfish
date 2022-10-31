@@ -50,7 +50,7 @@ export class FormComponent implements OnInit, OnChanges {
     this.signUpForm = new FormGroup({
       id:new FormControl(null, [Validators.required]),
       name:new FormControl(null, [Validators.required, this.forbidName.bind(this)]),
-      age:new FormControl(null, [Validators.required, Validators.min(10.1)]),
+      age:new FormControl(null, [Validators.required, Validators.min(10)]),
       gender:new FormControl(null),
       email:new FormControl(null, [Validators.required, Validators.email]),
       position:new FormControl(null),
@@ -64,7 +64,7 @@ export class FormComponent implements OnInit, OnChanges {
         for(let i = 0; i < lengthUser; i++){
           const control = new FormGroup({
             address:new FormControl(null),
-            zip:new FormControl(null, [Validators.required]),
+            zip:new FormControl(null, [Validators.required, Validators.minLength(3)]),
             city:new FormControl(null),
             country:new FormControl(null)
           });
@@ -80,19 +80,38 @@ export class FormComponent implements OnInit, OnChanges {
     this.registeredId = this.userData.registeredId
     // console.log(this.registeredId);
 
-    this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
-      // console.log('form value changed')
-      console.log(changes)
-      let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-      let a= specialChar.test(changes)
-      if(a) {
-        this.signUpForm.patchValue(
-          {name: this.user[0].name}
-        )
-        Swal.fire("username can't contain special character", "", 'warning')
-      }
-      
-    })
+    if(this.route.snapshot.params['id']){
+      let nama = ""
+      this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
+        console.log(changes)
+        let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        let a = specialChar.test(changes)
+        if(a) {
+          this.signUpForm.patchValue(
+            {name: nama},
+            {emitEvent:false}
+          )
+          Swal.fire("username can't contain special character", "", 'warning')
+        }else {
+          nama = changes
+        }
+        
+      })
+    }else {
+      this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
+        // console.log('form value changed')
+        console.log(changes)
+        let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        let a = specialChar.test(changes)
+        if(a) {
+          this.signUpForm.get('name').setValue("", {emitEvent:false})
+          Swal.fire("username can't contain special character", "", 'warning')
+        }
+        
+      })
+    }
+
+
     
 
 
