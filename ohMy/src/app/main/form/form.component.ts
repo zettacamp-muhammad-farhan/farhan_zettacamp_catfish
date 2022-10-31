@@ -59,6 +59,7 @@ export class FormComponent implements OnInit, OnChanges {
     })
     
     if(this.userId != null ){
+      this.signUpForm.get('id')?.disable()
       let lengthUser = user[0].addresses.length;
       if(lengthUser > 0){
         for(let i = 0; i < lengthUser; i++){

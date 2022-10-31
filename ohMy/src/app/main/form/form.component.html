@@ -8,7 +8,7 @@
 <form class="example-full-width" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>id</mat-label>
-    <input matInput type="text" formControlName="id" placeholder="id" />
+    <input matInput type="text" formControlName="id" placeholder="id"  />
   </mat-form-field>
   <span *ngIf="!signUpForm.get('id').valid && signUpForm.get('id').touched" class="help-block">
     <span *ngIf="signUpForm.get('id').errors['idForbid']">This id is registered!</span>
@@ -17,7 +17,7 @@
 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>{{ "USER.NAME" | translate }}</mat-label>
-    <input matInput type="text" formControlName="name" placeholder="name" />
+    <input matInput type="text" formControlName="name" placeholder="name"/>
   </mat-form-field>
   <span *ngIf="!signUpForm.get('name').valid && signUpForm.get('name').touched" class="help-block">
     <span *ngIf="signUpForm.get('name').errors['nameIsForbidden']">This name is invalid!</span>
@@ -45,10 +45,10 @@
     <mat-label>Email</mat-label>
     <input matInput type="email" formControlName="email" placeholder="email" />
   </mat-form-field>
-  <span *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched" class="help-block">
-    <span *ngIf="signUpForm.get('email').errors['email']">This email is invalid!</span>
-    <span *ngIf="signUpForm.get('email').errors['required']">This field is required!</span>
-  </span>
+  <mat-error *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched" class="help-block">
+    <mat-error *ngIf="signUpForm.get('email').errors['email']">This email is invalid!</mat-error>
+    <mat-error *ngIf="signUpForm.get('email').errors['required']">This field is required!</mat-error>
+  </mat-error>
 
 
   <br />
