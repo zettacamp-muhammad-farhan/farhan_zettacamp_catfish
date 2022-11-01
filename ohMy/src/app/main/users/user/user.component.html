@@ -16,12 +16,12 @@
         <tr>
             <td>{{ "USER.GENDER" | translate }}</td>
             <td>:</td>
-            <td>{{ user.gender }}</td>
+            <td>{{ user.gender  | lowercase}}</td>
         </tr>
         <tr>
             <td>{{ "USER.POSITION" | translate }}</td>
             <td>:</td>
-            <td>{{ user.position }}</td>
+            <td>{{ user.position  }}</td>
         </tr>
     </mat-card-content>
     <mat-card-actions>

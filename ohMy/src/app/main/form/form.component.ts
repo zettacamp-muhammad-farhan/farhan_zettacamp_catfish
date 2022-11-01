@@ -123,7 +123,6 @@ export class FormComponent implements OnInit, OnChanges {
     if(this.route.snapshot.params['id']){
       
       if(this.signUpForm.valid){
-        console.log('berhasil');
         this.userData.editUser(this.userId, this.signUpForm.value)
 
         Swal.fire(

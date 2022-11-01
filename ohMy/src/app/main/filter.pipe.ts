@@ -19,7 +19,7 @@ export class FilterPipe implements PipeTransform {
       // let itemName =item[propName].toLowerCase();
       let fltStr =removeDiacritics(filterString).toLowerCase().replace(/\s+/g, '')
 
-      let res = value.filter((data:any) => removeDiacritics(data.name).toLowerCase().replace(/\s+/g, '').includes(fltStr))
+      let res = value.filter((data:any) => removeDiacritics(data[propName]).toLowerCase().replace(/\s+/g, '').includes(fltStr))
       // if(itemName == fltStr){
       //   // console.log(item);
       //   resArr.push(item);
