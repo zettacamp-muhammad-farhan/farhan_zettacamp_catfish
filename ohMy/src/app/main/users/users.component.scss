@@ -16,3 +16,16 @@
     right: 20px;
     top: -40px;
 }
+.search-bar {
+    background-color: rgb(220, 212, 201);
+    width: 50%;
+    margin-left: auto; margin-right: auto;
+    border-radius: 65px;
+}
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 10px;
+}

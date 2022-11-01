@@ -59,7 +59,7 @@ export class FormComponent implements OnInit, OnChanges {
     })
     
     if(this.userId != null ){
-      this.signUpForm.get('id')?.disable()
+      // this.signUpForm.get('id')?.disable()
       let lengthUser = user[0].addresses.length;
       if(lengthUser > 0){
         for(let i = 0; i < lengthUser; i++){
@@ -101,7 +101,7 @@ export class FormComponent implements OnInit, OnChanges {
     }else {
       this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
         // console.log('form value changed')
-        console.log(changes)
+        // console.log(changes)
         let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         let a = specialChar.test(changes)
         if(a) {
@@ -144,7 +144,6 @@ export class FormComponent implements OnInit, OnChanges {
     }else {
       if(this.signUpForm.valid){
         console.log('berhasil');
-        // console.log(this.signUpForm.value)
         this.userData.addUser(this.signUpForm.value)
         Swal.fire(
             'success to add ' + this.signUpForm.value.name,

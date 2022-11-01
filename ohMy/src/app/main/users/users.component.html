@@ -3,6 +3,10 @@
 
 <a routerLink="/users/form" ><button mat-flat-button color="primary" class="btn">{{ "ADD" | translate }}</button></a>
 
+<br>
+<div class="search-bar" >
+    <input type="text" [(ngModel)]="filteredName" placeholder="Search Name ...">
+</div>
 <div class="row">
-    <app-user class="col" *ngFor="let user of users" [user]="user" ></app-user>
+    <app-user class="col" *ngFor="let user of users | filter:filteredName:'name'" [user]="user" ></app-user>
 </div>

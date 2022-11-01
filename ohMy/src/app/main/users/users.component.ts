@@ -11,6 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class UsersComponent implements OnInit {
 
   users:any
+  filteredName = ""
 
   constructor(
     private userData:UserDataService,

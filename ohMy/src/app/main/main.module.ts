@@ -19,6 +19,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HomeComponent } from './home/home.component';
+import { CustCharPipe } from './cust-char.pipe';
+import { FilterPipe } from './filter.pipe';
+import { remove } from  "remove-accents";
+import { ShorterPipe } from './shorter.pipe';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,7 +37,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserComponent,
     FormComponent,
     UserDetailComponent,
-    HomeComponent
+    HomeComponent,
+    CustCharPipe,
+    FilterPipe,
+    ShorterPipe
   ],
   imports: [
     CommonModule,
@@ -54,7 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
       }
-    )
+    ),
+    
   ],
   exports:[
     UsersComponent,

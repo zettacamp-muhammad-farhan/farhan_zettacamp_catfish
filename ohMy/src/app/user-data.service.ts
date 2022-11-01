@@ -66,6 +66,36 @@ export class UserDataService {
         country:"Island Buff"
       }]
     },
+    {
+      id : 'numb-4',
+      name: "Ãbráham Lìm",
+      age: 25,
+      gender: "Male",
+      email: 'Abrham@gmail.co',
+      position: "artis",
+      martial:"maried",
+      addresses:[ {
+        address: "st.Middle Wave",
+        zip:45678,
+        city:"Zew City",
+        country:"Island Buff"
+      }]
+    },
+    {
+      id : 'numb-5',
+      name: "Yaša Zdjelar",
+      age: 23,
+      gender: "Male",
+      email: 'Abrham@gmail.co',
+      position: "artis",
+      martial:"maried",
+      addresses:[ {
+        address: "st.Middle Wave",
+        zip:45678,
+        city:"Zew City",
+        country:"Island Buff"
+      }]
+    },
   ]
 
   constructor() {
