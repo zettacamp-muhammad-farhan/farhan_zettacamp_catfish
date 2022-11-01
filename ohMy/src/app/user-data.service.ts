@@ -123,7 +123,6 @@ export class UserDataService {
       for (let j = 0; j <= this.users.length; j++){
         if(this.users[j].id === val){
           valN = j
-          console.log(this.users[j].id);
           break
         }
       }

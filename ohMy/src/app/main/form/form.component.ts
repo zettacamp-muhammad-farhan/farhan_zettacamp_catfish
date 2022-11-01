@@ -84,7 +84,7 @@ export class FormComponent implements OnInit, OnChanges {
     if(this.route.snapshot.params['id']){
       let nama = ""
       this.signUpForm.get('name').valueChanges.subscribe((changes: any)  => {
-        console.log(changes)
+        // console.log(changes)
         let specialChar = /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         let a = specialChar.test(changes)
         if(a) {
@@ -143,7 +143,6 @@ export class FormComponent implements OnInit, OnChanges {
       }
     }else {
       if(this.signUpForm.valid){
-        console.log('berhasil');
         this.userData.addUser(this.signUpForm.value)
         Swal.fire(
             'success to add ' + this.signUpForm.value.name,
