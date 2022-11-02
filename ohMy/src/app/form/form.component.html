@@ -1,0 +1,22 @@
+<!-- <form class="example-full-width" formGroup="signUpForm" (ngSubmit)="onSubmit()">
+
+      <input matInput type="text" formControlName="id" placeholder="id"/>
+
+      <input matInput type="text" formControlName="userId" placeholder="user id"/>
+
+      <input matInput type="text" formControlName="title" placeholder="title" />
+
+      <input matInput type="text" formControlName="body" placeholder="body" />
+  
+    <button class="btn" mat-flat-button color="primary" type="submit">SUBMIT</button>
+    
+</form> -->
+<a routerLink="/">To List</a>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
+    <input type="text" formControlName="id" placeholder="id"> <br>
+    <input type="text" formControlName="userId" placeholder="user id"> <br>
+    <input type="text" formControlName="title" placeholder="title"> <br>
+    <input type="text" formControlName="body" placeholder="body"> <br>
+
+    <button type="submit" >Submit</button>
+</form>

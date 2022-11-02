@@ -1,0 +1,9 @@
+<a routerLink="/">To List</a>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
+    <input type="text" formControlName="id" placeholder="id"> <br>
+    <input type="text" formControlName="userId" placeholder="user id"> <br>
+    <input type="text" formControlName="title" placeholder="title"> <br>
+    <input type="text" formControlName="body" placeholder="body"> <br>
+
+    <button type="submit" >Submit</button>
+</form>
