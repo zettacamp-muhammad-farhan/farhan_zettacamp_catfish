@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <div class="img">
+    <img
+    mat-card-image
+    [src]="movie.img"
+    alt="Photo of a Shiba Inu"
+    />
+  </div>
+
+  <mat-card-content>
+    <h3>{{ movie.title }}</h3>
+    <p>
+        {{ movie.desc }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button (click)="getDetail()">DETAIL</button>
+  </mat-card-actions>
+</mat-card>

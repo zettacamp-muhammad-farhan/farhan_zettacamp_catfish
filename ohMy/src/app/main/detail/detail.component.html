@@ -1,0 +1,66 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab class="btn" label="DETAIL">
+    <div class="content" >
+        <div class="img">
+            <div class="cover">
+                <img [src]="movie.img" alt="">
+            </div>
+        </div>
+        <div class="detail">
+            <table>
+                <tr>
+                    <td>Title</td>
+                    <td>:</td>
+                    <td>{{ movie.title }}</td>
+                </tr>
+                <tr>
+                    <td>Producer</td>
+                    <td>:</td>
+                    <td>{{ movie.produced }}</td>
+                </tr>
+                <tr>
+                    <td>Company</td>
+                    <td>:</td>
+                    <td>{{ movie.company }}</td>
+                </tr>
+                <tr>
+                    <td>Sinopsis</td>
+                    <td>:</td>
+                    <td></td>
+                </tr>
+            </table>
+            <p>
+                {{ movie.desc }}
+            </p>
+
+        </div>
+    </div>
+  </mat-tab>
+  <mat-tab class="btn" label="ACTOR">
+    <div class="content">
+        <div class="row">
+            <div *ngFor="let actor of movie.actor" class="col">
+                <mat-card class="example-card">
+                    <div class="imgc">
+                      <img
+                      mat-card-image
+                      [src]="actor.img"
+                      alt="Photo of a Shiba Inu"
+                      />
+                    </div>
+                  
+                    <mat-card-content>
+                      <h3>{{ actor.name }}</h3>
+                      <p>
+                          {{ actor.desc }}
+                      </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button>LIKE</button>
+                    </mat-card-actions>
+                  </mat-card>
+            </div>
+        </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
