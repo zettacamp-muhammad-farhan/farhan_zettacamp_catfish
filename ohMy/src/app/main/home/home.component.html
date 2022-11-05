@@ -1,0 +1,90 @@
+<main>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Input name" (keyup)="search($event.target)" #input>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Type</mat-label>
+        <input type="text" matInput placeholder="Input type" (keyup)="searchType($event.target)" #inputType />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="text" matInput placeholder="Input email" (keyup)="searchEmail($event.target)" #inputEmail />
+    </mat-form-field>
+
+
+  <mat-form-field appearance="fill" class="no-label-field">
+    <mat-select [formControl]="sourceFilter">
+      <mat-option value=""> -- Filter Status -- </mat-option>
+      <mat-option
+        *ngFor="let source of availableSources"
+        [value]="source.value"
+      >
+        {{ source.display }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+
+    
+    <!-- Weight Column -->
+    <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>User Type</th>
+        <td mat-cell *matCellDef="let element">
+            {{ element.company.user_type }}
+        </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.civility }}. {{ element.last_name | uppercase }}
+        {{ element.first_name }}
+      </td>
+    </ng-container>
+    
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon
+          [ngStyle]="{ color: 'greenyellow' }"
+          *ngIf="element.user_status === 'active'"
+          >done</mat-icon
+        >
+        <mat-icon
+          [ngStyle]="{ color: 'red' }"
+          *ngIf="element.user_status === 'pending'"
+          >close</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">
+        No data matching the filter "{{ input.value }}{{ inputType.value }}{{ inputEmail.value }}"
+      </td>
+    </tr>
+  </table>
+</main>
