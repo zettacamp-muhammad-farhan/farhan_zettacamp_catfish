@@ -1,0 +1,4 @@
+<main>
+    <button (click)="openDialog()" >Add User</button>
+    <app-card *ngFor="let item of user" [user]="item" ></app-card>
+</main>

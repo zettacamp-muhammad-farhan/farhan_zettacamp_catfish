@@ -1,0 +1,23 @@
+[
+    {
+        "first_name" : "Laura",
+        "last_name" : "Patricia",
+        "birth_day" : "Mar 23, 2000",
+        "gender" : "Female",
+        "civility" : "Ms"
+    },
+    {
+        "first_name" : "Ferry",
+        "last_name" : "Lucio",
+        "birth_day" : "May 29, 1998",
+        "gender" : "Male",
+        "civility" : "Mr"
+    },
+    {
+        "first_name" : "Nichola",
+        "last_name" : "Frederic",
+        "birth_day" : "Feb 12, 1999",
+        "gender" : "Male",
+        "civility" : "Mr"
+    }
+]
