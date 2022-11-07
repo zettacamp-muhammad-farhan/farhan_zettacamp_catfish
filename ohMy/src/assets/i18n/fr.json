@@ -1,14 +1,16 @@
 {
+    "sel lang" : "Choisir la Langue",
     "add":"Ajouter un Utilisateur",
     "Male" : "Mâle",
     "Female" : "Femelle",
-    "greet" : "Ajouter un Utilisateur de Données",
+    "greet" : "Ajouter un Utilisateur de Données ...",
     "user" : {
         "civility" : "Civilité",
         "first name" : "Prénom",
         "last name" : "Nom de Famille",
         "date" : "Choisir une Date",
         "gender" : "Le Genre"
+        
     },
     "submit" : "Envoyer",
     "validate" : {
@@ -16,9 +18,26 @@
         "last name" : "Le nom de famille est obligatoire",
         "date" : "Le jour de naissance est obligatoire",
         "gender" : "Le sexe est requis",
-        "all" : "Veuillez entrer des données valides !!!"
+        "all" : "Veuillez entrer des données valides !!!",
+        "civility" : "La courtoisie est requise"
     },
     "success add" : "Vos données ont été enregistrées",
     "error add" : "Vous devez remplir le champ",
-    "okay" : "D'ACCORD"
+    "okay" : "D'ACCORD",
+    "Mr" : "M",
+    "Ms" : "Mme",
+    "Mrs" : "Mme",
+    "Jan" : "Janv",
+    "Feb" : "Fév",
+    "Mar" : "Mars",
+    "Apr" : "Avr",
+    "May" : "Peut",
+    "Jun" : "Juin",
+    "Jul" : "Juil",
+    "Aug" : "Augt",
+    "Sep" : "Sepb",
+    "Oct" : "Octb",
+    "Nov" : "Novb",
+    "Des" : "Déc"
+    
 }

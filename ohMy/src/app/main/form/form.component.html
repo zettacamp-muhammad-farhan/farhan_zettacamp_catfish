@@ -1,13 +1,24 @@
-<h2>{{ 'greet' | translate }}</h2>
+<h2>{{ "greet" | translate }}</h2>
 <main>
   <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
     <label>{{ "user.civility" | translate }}</label> <br />
     <mat-radio-group formControlName="civility" aria-label="Select an option">
-      <mat-radio-button value="Mr">Mr </mat-radio-button>
-      <mat-radio-button value="Ms">Ms </mat-radio-button>
-      <mat-radio-button value="Mrs">Mrs </mat-radio-button>
+      <mat-radio-button value="Mr">{{ "Mr" | translate  }}</mat-radio-button>
+      <mat-radio-button value="Ms">{{ "Ms" | translate }} </mat-radio-button>
+      <mat-radio-button value="Mrs">{{ "Mrs" | translate }} </mat-radio-button>
     </mat-radio-group>
     <!-- <mat-error *ngIf="formUser.get('civility')?.errors?.['required']">This field is required!</mat-error> -->
+    <mat-error
+      *ngIf="
+        !formUser.get('civility')?.valid &&
+        formUser.get('civility')?.touched
+      "
+      class="help-block"
+    >
+      <mat-error *ngIf="formUser.get('civility')?.errors?.['required']">{{
+        "validate.civility" | translate
+      }}</mat-error>
+    </mat-error>
     <br /><br />
 
     <table class="example-full-width" cellspacing="0">
@@ -24,7 +35,8 @@
             "
             class="help-block"
           >
-            <mat-error *ngIf="formUser.get('first_name')?.errors?.['required']"
+            <mat-error
+              *ngIf="formUser.get('first_name')?.errors?.['required']"
               >{{ "validate.first name" | translate }}</mat-error
             >
           </mat-error>
@@ -42,7 +54,8 @@
             "
             class="help-block"
           >
-            <mat-error *ngIf="formUser.get('last_name')?.errors?.['required']"
+            <mat-error
+              *ngIf="formUser.get('last_name')?.errors?.['required']"
               >{{ "validate.last name" | translate }}</mat-error
             >
           </mat-error>
@@ -63,9 +76,9 @@
       "
       class="help-block"
     >
-      <mat-error *ngIf="formUser.get('birth_day')?.errors?.['required']"
-        >{{ "validate.date" | translate }}</mat-error
-      >
+      <mat-error *ngIf="formUser.get('birth_day')?.errors?.['required']">{{
+        "validate.date" | translate
+      }}</mat-error>
     </mat-error>
     <br />
 
@@ -73,7 +86,7 @@
       <mat-label>{{ "user.gender" | translate }}</mat-label>
       <mat-select formControlName="gender">
         <mat-option *ngFor="let gender of genders" [value]="gender.value">
-          {{ gender.value }}
+          {{ gender.value | translate }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -83,19 +96,21 @@
           !formUser.get('gender')?.valid && formUser.get('gender')?.touched
         "
       >
-        <mat-error *ngIf="formUser.get('gender')?.errors?.['required']"
-          >{{ "validate.gender" | translate }}</mat-error
-        >
+        <mat-error *ngIf="formUser.get('gender')?.errors?.['required']">{{
+          "validate.gender" | translate
+        }}</mat-error>
       </mat-error>
     </span>
     <br />
-    <mat-error
-        *ngIf="formUser.invalid && formUser.touched"
-        class="">{{ "validate.all" | translate }}
-    </mat-error> <br>
+    <mat-error *ngIf="formUser.invalid && formUser.touched" class=""
+      >{{ "validate.all" | translate }}
+    </mat-error>
+    <br />
 
     <div class="btn">
-      <button mat-raised-button type="submit" mat-button>{{ "submit" | translate }}</button>
+      <button mat-raised-button type="submit" mat-button>
+        {{ "submit" | translate }}
+      </button>
     </div>
   </form>
 </main>

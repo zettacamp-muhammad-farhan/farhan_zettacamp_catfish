@@ -68,6 +68,7 @@ export class FormComponent implements OnInit {
         confirmButtonText: this.translate.instant('okay')
       
       })
+      this.formUser.markAllAsTouched()
     }
 
   }

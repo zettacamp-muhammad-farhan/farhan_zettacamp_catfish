@@ -1,4 +1,5 @@
 {
+    "sel lang" : "Select Language",
     "add":"Add User",
     "Male" : "Male",
     "Female" : "Female",
@@ -16,9 +17,26 @@
         "last name" : "Last name is Required",
         "date" : "Birth day is Required",
         "gender" : "Gender is Required",
-        "all" : "Please enter valid data !!!"
+        "all" : "Please enter valid data !!!",
+        "civility" : "Civility is Required"
     },
     "success add" : "Your data has been saved",
     "error add" : "You must fill the field",
-    "okay" : "OKAY"
+    "okay" : "OKAY",    
+    "Mr" : "Mr",
+    "Ms" : "Ms",
+    "Mrs" : "Mrs",
+    "Jan" : "Jan",
+    "Feb" : "Feb",
+    "Mar" : "Mar",
+    "Apr" : "Apr",
+    "May" : "May",
+    "Jun" : "Jun",
+    "Jul" : "Jul",
+    "Aug" : "Aug",
+    "Sep" : "Sep",
+    "Oct" : "Oct",
+    "Nov" : "Nov",
+    "Des" : "Des"
+    
 }
