@@ -32,6 +32,8 @@ export class FormComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    console.log(this.data);
+    
   }
 
   formUser = new FormGroup({
@@ -57,7 +59,8 @@ export class FormComponent implements OnInit {
       
       })
       // this.router.navigate(["/"]);
-      this.dialogRef.close()
+      this.dialogRef.close('test')
+
       
 
     } else {

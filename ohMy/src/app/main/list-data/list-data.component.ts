@@ -38,10 +38,13 @@ export class ListDataComponent implements OnInit {
   openDialog(){
     const dialogRef = this.dialog.open(FormComponent, {
       width: "70%",
+      data: {
+        "nama" : "siapa"
+      }
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        // console.log(res);
+        console.log(res);
       }
     )
   }
