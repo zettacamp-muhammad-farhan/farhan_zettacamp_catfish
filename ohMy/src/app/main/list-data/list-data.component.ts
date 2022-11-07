@@ -14,7 +14,8 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ListDataComponent implements OnInit {
 
-  user:User[] = [{"first_name":"", "birth_day":"","last_name":"","civility":"","gender":""}]
+  user:User[] = [{"first_name":"", "birth_day":"","last_name":"","civility":"","gender":""}];
+  curentLang = this.translate.currentLang
 
   constructor(
     private dataUser:DataUserService,
@@ -30,6 +31,8 @@ export class ListDataComponent implements OnInit {
         this.user = user
       }
     )
+
+    
   }
 
   openDialog(){
@@ -45,6 +48,9 @@ export class ListDataComponent implements OnInit {
 
   setLang(lang:string){
     this.translate.use(lang)
+
+    this.curentLang = this.translate.currentLang
+    console.log(this.curentLang);
   }
 
 }

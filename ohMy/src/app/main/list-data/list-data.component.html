@@ -1,7 +1,7 @@
 <div>{{ "sel lang" | translate }} : </div>
-<div>
-    <button (click)="setLang('en')" >En</button>
-    <button (click)="setLang('fr')" >Fr</button>
+<div class="btn-lang" >
+    <button [ngStyle]="{'background-color': curentLang != 'fr' ? 'rgba(0, 0, 0, 0.243)' : 'transparent'}" (click)="setLang('en')" >En</button>
+    <button [ngStyle]="{'background-color': curentLang == 'fr' ? 'rgba(0, 0, 0, 0.243)' : 'transparent'}" (click)="setLang('fr')" >Fr</button>
 </div>
 <main>
     <button mat-raised-button color="primary" (click)="openDialog()" >{{ 'add' | translate }}</button>

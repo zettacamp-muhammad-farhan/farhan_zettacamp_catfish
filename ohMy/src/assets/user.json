@@ -7,8 +7,8 @@
         "civility" : "Ms"
     },
     {
-        "first_name" : "Ferry",
-        "last_name" : "Lucio",
+        "first_name" : "Su",
+        "last_name" : "Parman",
         "birth_day" : "May 29, 1998",
         "gender" : "Male",
         "civility" : "Mr"
@@ -19,5 +19,12 @@
         "birth_day" : "Feb 12, 1999",
         "gender" : "Male",
         "civility" : "Mr"
+    },
+    {
+        "first_name" : "War",
+        "last_name" : "Jilah",
+        "birth_day" : "Apr 23, 1995",
+        "gender" : "Female",
+        "civility" : "Mrs"
     }
 ]
