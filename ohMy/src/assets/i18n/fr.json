@@ -1,0 +1,24 @@
+{
+    "add":"Ajouter un Utilisateur",
+    "Male" : "Mâle",
+    "Female" : "Femelle",
+    "greet" : "Ajouter un Utilisateur de Données",
+    "user" : {
+        "civility" : "Civilité",
+        "first name" : "Prénom",
+        "last name" : "Nom de Famille",
+        "date" : "Choisir une Date",
+        "gender" : "Le Genre"
+    },
+    "submit" : "Envoyer",
+    "validate" : {
+        "first name" : "Le prénom est Requis",
+        "last name" : "Le nom de famille est obligatoire",
+        "date" : "Le jour de naissance est obligatoire",
+        "gender" : "Le sexe est requis",
+        "all" : "Veuillez entrer des données valides !!!"
+    },
+    "success add" : "Vos données ont été enregistrées",
+    "error add" : "Vous devez remplir le champ",
+    "okay" : "D'ACCORD"
+}

@@ -1,0 +1,24 @@
+{
+    "add":"Add User",
+    "Male" : "Male",
+    "Female" : "Female",
+    "greet" : "Add data User ...",
+    "user" : {
+        "civility" : "Civility",
+        "first name" : "First Name",
+        "last name" : "Last Name",
+        "date" : "Choose a date",
+        "gender" : "Gender"
+    },
+    "submit" : "Submit",
+    "validate" : {
+        "first name" : "First name is Required",
+        "last name" : "Last name is Required",
+        "date" : "Birth day is Required",
+        "gender" : "Gender is Required",
+        "all" : "Please enter valid data !!!"
+    },
+    "success add" : "Your data has been saved",
+    "error add" : "You must fill the field",
+    "okay" : "OKAY"
+}
