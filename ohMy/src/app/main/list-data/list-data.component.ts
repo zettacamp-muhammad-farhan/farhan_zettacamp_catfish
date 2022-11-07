@@ -4,6 +4,7 @@ import {User} from './user';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ListDataComponent implements OnInit {
 
   constructor(
     private dataUser:DataUserService,
-    public dialog:MatDialog
+    public dialog:MatDialog,
+    public translate:TranslateService
     ) { }
 
   ngOnInit(){
@@ -36,9 +38,13 @@ export class ListDataComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        console.log(res);
+        // console.log(res);
       }
     )
+  }
+
+  setLang(lang:string){
+    this.translate.use(lang)
   }
 
 }

@@ -5,6 +5,7 @@ import { Gender } from '../list-data/user';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {TranslateService} from '@ngx-translate/core';
 
 import Swal from 'sweetalert2'
 
@@ -26,7 +27,8 @@ export class FormComponent implements OnInit {
     private route:ActivatedRoute,
     private router:Router,
     public dialogRef:MatDialogRef<FormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:any
+    @Inject(MAT_DIALOG_DATA) public data:any,
+    private translate: TranslateService
     ) { }
 
   ngOnInit(): void {
@@ -50,9 +52,8 @@ export class FormComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
+        title: this.translate.instant('success add'),
+        confirmButtonText: this.translate.instant('okay')
       
       })
       // this.router.navigate(["/"]);
@@ -63,13 +64,10 @@ export class FormComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'error',
-        title: 'You must fill the field',
-        showConfirmButton: false,
-        timer: 1500
+        title: this.translate.instant('error add'),
+        confirmButtonText: this.translate.instant('okay')
       
       })
-      console.log('fail');
-      
     }
 
   }

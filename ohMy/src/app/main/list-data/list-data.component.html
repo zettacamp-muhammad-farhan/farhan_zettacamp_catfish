@@ -1,4 +1,8 @@
+<div>
+    <button (click)="setLang('en')" >En</button>
+    <button (click)="setLang('fr')" >Fr</button>
+</div>
 <main>
-    <button (click)="openDialog()" >Add User</button>
+    <button mat-raised-button color="primary" (click)="openDialog()" >{{ 'add' | translate }}</button>
     <app-card *ngFor="let item of user" [user]="item" ></app-card>
 </main>

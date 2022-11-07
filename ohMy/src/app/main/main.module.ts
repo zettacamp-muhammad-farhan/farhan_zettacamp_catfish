@@ -47,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
       }
-    )
+    ),
+    TranslateModule
   ],
   exports:[
     ListDataComponent,

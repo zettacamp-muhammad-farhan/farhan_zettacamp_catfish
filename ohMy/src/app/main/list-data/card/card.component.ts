@@ -10,6 +10,11 @@ export class CardComponent implements OnInit {
 
   @Input() user!:User
 
+  img = {
+    male : "https://wallpapers.com/images/hd/cute-chibi-profile-picture-s52z1uggme5sj92d.jpg",
+    female: "https://cdnb.artstation.com/p/assets/images/images/048/114/445/large/luupaloop-illustration-9.jpg?1649243050"
+  }
+
   constructor() { }
 
   ngOnInit(): void {

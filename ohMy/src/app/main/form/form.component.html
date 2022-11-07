@@ -1,6 +1,7 @@
+<h2>{{ 'greet' | translate }}</h2>
 <main>
   <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
-    <label>Civility</label> <br />
+    <label>{{ "user.civility" | translate }}</label> <br />
     <mat-radio-group formControlName="civility" aria-label="Select an option">
       <mat-radio-button value="Mr">Mr </mat-radio-button>
       <mat-radio-button value="Ms">Ms </mat-radio-button>
@@ -13,7 +14,7 @@
       <tr>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+            <mat-label>{{ "user.first name" | translate }}</mat-label>
             <input matInput type="text" formControlName="first_name" />
           </mat-form-field>
           <mat-error
@@ -24,14 +25,14 @@
             class="help-block"
           >
             <mat-error *ngIf="formUser.get('first_name')?.errors?.['required']"
-              >First name is required!</mat-error
+              >{{ "validate.first name" | translate }}</mat-error
             >
           </mat-error>
           <!-- <mat-error *ngIf="formUser.get('first_name')?.errors?.['required']">This field is required!</mat-error> -->
         </td>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Last Name</mat-label>
+            <mat-label>{{ "user.last name" | translate }}</mat-label>
             <input matInput formControlName="last_name" />
           </mat-form-field>
           <mat-error
@@ -42,7 +43,7 @@
             class="help-block"
           >
             <mat-error *ngIf="formUser.get('last_name')?.errors?.['required']"
-              >Last name is required!</mat-error
+              >{{ "validate.last name" | translate }}</mat-error
             >
           </mat-error>
         </td>
@@ -50,7 +51,7 @@
     </table>
 
     <mat-form-field appearance="fill">
-      <mat-label>Choose a date</mat-label>
+      <mat-label>{{ "user.date" | translate }}</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="birth_day" />
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -63,13 +64,13 @@
       class="help-block"
     >
       <mat-error *ngIf="formUser.get('birth_day')?.errors?.['required']"
-        >Last name is required!</mat-error
+        >{{ "validate.date" | translate }}</mat-error
       >
     </mat-error>
     <br />
 
     <mat-form-field appearance="fill">
-      <mat-label>Gender</mat-label>
+      <mat-label>{{ "user.gender" | translate }}</mat-label>
       <mat-select formControlName="gender">
         <mat-option *ngFor="let gender of genders" [value]="gender.value">
           {{ gender.value }}
@@ -83,18 +84,18 @@
         "
       >
         <mat-error *ngIf="formUser.get('gender')?.errors?.['required']"
-          >Last name is required!</mat-error
+          >{{ "validate.gender" | translate }}</mat-error
         >
       </mat-error>
     </span>
     <br />
     <mat-error
         *ngIf="formUser.invalid && formUser.touched"
-        class="">Please enter valid data!in this form
+        class="">{{ "validate.all" | translate }}
     </mat-error> <br>
 
     <div class="btn">
-      <button mat-raised-button type="submit" mat-button>Submit</button>
+      <button mat-raised-button type="submit" mat-button>{{ "submit" | translate }}</button>
     </div>
   </form>
 </main>
