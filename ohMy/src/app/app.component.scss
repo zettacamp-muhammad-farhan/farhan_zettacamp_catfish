@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+mat-list {
+    flex: 1;
+    height: 100wh;
+    position:fixed;
+    z-index: 3;
+}
+.content {
+    flex: 4; 
+    margin-left: 140px;
+}

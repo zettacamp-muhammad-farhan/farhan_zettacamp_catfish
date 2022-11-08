@@ -1,0 +1,15 @@
+<mat-form-field>
+    <input
+      matInput
+      class="form-field"
+      [formControl]="searchName"
+      placeholder="Name Filter"
+    />
+  </mat-form-field>
+  
+  <br />
+  
+  <div class="container">
+    <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+  </div>
+  

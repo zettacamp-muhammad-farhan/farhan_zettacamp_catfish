@@ -1,0 +1,16 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ promo.title }}</mat-card-title>
+      <mat-card-subtitle>{{ promo.sub_title }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="promo.image_url" alt="Photo of a Shiba Inu" />
+    <mat-card-content>
+      <p>
+        {{ promo.ref }}
+      </p>
+      <p>
+        {{ promo.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  
