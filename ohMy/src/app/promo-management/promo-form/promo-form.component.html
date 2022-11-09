@@ -1,0 +1,51 @@
+<form class="example-full-width" [formGroup]="formPromos" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Ref</mat-label>
+      <input matInput type="text" formControlName="ref" placeholder="Ref ..."  />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('ref').valid && formPromos.get('ref').touched" class="help-block">
+      <mat-error *ngIf="formPromos.get('ref').errors['required']">This field is required!</mat-error >
+    </mat-error >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Img</mat-label>
+      <input matInput type="text" formControlName="img" placeholder="img ..."  />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('img').valid && formPromos.get('img').touched" class="help-block">
+      <mat-error *ngIf="formPromos.get('img').errors['required']">This field is required!</mat-error >
+    </mat-error >
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="Title ..."/>
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('title').valid && formPromos.get('title').touched" class="help-block">
+      <mat-error *ngIf="formPromos.get('title').errors['required']">This field is required!</mat-error>
+    </mat-error>
+  
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>subtitle</mat-label>
+      <input matInput type="text" formControlName="subtitle" placeholder="Subtitle ..." />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('subtitle').valid && formPromos.get('subtitle').touched" class="help-block" >
+      <mat-error *ngIf="formPromos.get('subtitle').errors['required']">This field is required!</mat-error>
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" formControlName="description" placeholder="Description..." />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('description').valid && formPromos.get('description').touched" class="help-block" >
+      <mat-error *ngIf="formPromos.get('description').errors['required']">This field is required!</mat-error>
+    </mat-error>
+  
+  
+    <mat-error
+      *ngIf="formPromos.invalid && formPromos.touched"
+      class="">Please enter valid data!
+    </mat-error> <br>
+  
+    <button class="btn" mat-flat-button color="primary" type="submit" [disabled]="formPromos.invalid">
+      Submit
+    </button>
+  </form>
