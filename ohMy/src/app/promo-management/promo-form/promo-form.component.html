@@ -1,0 +1,44 @@
+<form class="example-full-width" [formGroup]="formPromos" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Ref</mat-label>
+      <input matInput type="text" formControlName="ref" placeholder="ref"  />
+    </mat-form-field>
+    <span *ngIf="!formPromos.get('ref').valid && formPromos.get('ref').touched" class="help-block">
+      <span *ngIf="formPromos.get('ref').errors['required']">This field is required!</span>
+    </span>
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="title"/>
+    </mat-form-field>
+    <span *ngIf="!formPromos.get('title').valid && formPromos.get('title').touched" class="help-block">
+      <span *ngIf="formPromos.get('title').errors['required']">This field is required!</span>
+    </span>
+  
+  
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>subtitle</mat-label>
+      <input matInput type="text" formControlName="subtitle" placeholder="age" />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('subtitle').valid && formPromos.get('subtitle').touched" class="help-block" >
+      <mat-error *ngIf="formPromos.get('subtitle').errors['required']">This field is required!</mat-error>
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" formControlName="description" placeholder="age" />
+    </mat-form-field>
+    <mat-error *ngIf="!formPromos.get('description').valid && formPromos.get('description').touched" class="help-block" >
+      <mat-error *ngIf="formPromos.get('description').errors['required']">This field is required!</mat-error>
+    </mat-error>
+  
+  
+    <span
+      *ngIf="formPromos.invalid && formPromos.touched"
+      class="">Please enter valid data!
+    </span> <br>
+  
+    <button class="btn" mat-flat-button color="primary" type="submit">
+      Submit
+    </button>
+  </form>
