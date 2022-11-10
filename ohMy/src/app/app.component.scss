@@ -1,0 +1,30 @@
+main {
+    width: 700px;
+    margin-left: auto; margin-right: auto;
+    margin-top: 50px;
+}
+.border-column{
+    border: 1px solid black;
+}
+.box{
+    box-sizing: border-box;
+}
+.my-10 {
+    margin-top: 10px; margin-bottom: 10px;
+}
+.box-left {
+    height: 100%;
+    box-sizing: border-box;
+}
+.box-right {
+    height: 140px;
+}
+.box-right:nth-child(1){
+    margin-top: 0; 
+}
+.box-right:nth-child(4){
+    margin-bottom: 0; 
+}
+.pl-0 {
+    padding-left: 0;
+}
