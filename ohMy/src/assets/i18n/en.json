@@ -1,0 +1,17 @@
+{
+    "add" : "Add Data",
+    "title" : "Promo List",
+    "image" : "Image",
+    "titlee" : "Title",
+    "subtitle" : "Subtitle",
+    "Description" : "Description",
+    "submit" : "Submit",
+    "inv" : {
+        "reff" : "field reff is required!",
+        "img" : "field img is required!",
+        "title" : "field title is required!",
+        "subtitle" : "field subtitle is required!",
+        "description" : "field description is required!",
+        "err" : "Please fill the field and enter valid data!"
+    }
+}
