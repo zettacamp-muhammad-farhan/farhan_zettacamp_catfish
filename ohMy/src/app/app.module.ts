@@ -9,6 +9,10 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { MaterialModule } from './material/material.module';
+import { HomepageManagementModule } from './homepage-management/homepage-management.module';
+import { MenuManagementModule } from './menu-management/menu-management.module';
+import { LoginMainComponent } from './login-management/login-main/login-main.component';
+import { LoginManagementModule } from './login-management/login-management.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,7 +38,10 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
       }
-    )
+    ),
+    HomepageManagementModule,
+    MenuManagementModule,
+    LoginManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,83 @@
+.container {
+    width: 100%;
+}
+.img-banner {
+    // background-image: url('../../../assets/img/img-about.jpg');
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/87/885/195/breakfast-fried-egg-egg-cuisine-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    position: relative;
+}
+.title {
+    background-color: rgba(255, 255, 255, 0.449);
+    width: 500px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%);
+    border-radius: 20px;
+}
+.title h1 {
+    text-align: center;
+    font-size:50px;
+    font-weight: bold;
+    color: rgb(55, 50, 50);
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.col-6 {
+    flex: 45%;
+}
+.col-4 {
+    flex: 4;
+}
+.p-5 {
+    padding: 20px;
+}
+.pt-0 {
+    padding-top: 0;
+}
+.slide {
+    width: 60%;
+    margin-left: auto; margin-right: auto;
+    margin-top: 20px;
+}
+.img-slide {
+    width: 100%;
+    overflow: hidden;
+    height: 100px;
+}
+.img-slide img {
+    width: 100%;
+}
+.col {
+    flex-basis: 20%;
+}
+.title p {
+    text-align: center;
+}
+.img-decorate{
+    width: 100%;
+    overflow: hidden;
+}
+.img-decorate img {
+    width: 100%;
+}
+.content {
+    text-align: center;
+}
+.content h1 {
+    font-weight:400;
+    font-size: 40px;
+}
+.content p {
+    font-weight:bold;
+}

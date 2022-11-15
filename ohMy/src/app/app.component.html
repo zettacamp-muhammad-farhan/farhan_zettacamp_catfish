@@ -1,37 +1,54 @@
-<a routerLink="/user/promo">Test</a> <br>
-<a routerLink="/user/user">User</a> <br>
-
 <mat-sidenav-container fullscreen>
-    <mat-sidenav #sidenav>
-      <mat-nav-list (click)="sidenav.close()">
-  
-        <a mat-list-item routerLink="/promo">
-          <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-          <span> Promo </span>
-        </a>
-  
-        <a mat-list-item routerLink="/user/user">
-          <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
-          <span> User </span>
-        </a>
-  
-        <!-- <a mat-list-item routerLink="filter">
-          <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="search"></mat-icon>
-          <span> Search </span>
-        </a> -->
-  
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="sidenav.open()">
-        <mat-icon>menu</mat-icon>
-        <span> Table Promos </span>
-      </button>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-  
-  </mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+
+      <a mat-list-item routerLink="/">
+        <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        <span>Home Page</span>
+      </a>
+
+      <a mat-list-item routerLink="/menu">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="apps"></mat-icon>
+        <span> Menu </span>
+      </a>
+
+      <a mat-list-item routerLink="">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
+        <span> Cart </span>
+      </a>
+
+      <a mat-list-item routerLink="">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+        <span> Stock Management </span>
+      </a>
+
+      <a mat-list-item routerLink="">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
+        <span> Menu Management </span>
+      </a>
+
+      <a mat-list-item routerLink="/about">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="widgets"></mat-icon>
+        <span> About </span>
+      </a>
+
+      <a mat-list-item routerLink="/login">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
+        <span> Login </span>
+      </a>
 
 
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+      <span> Reztaurant New Life </span>
+    </button>
+  </mat-toolbar>
 
-<!-- <app-promo-list></app-promo-list> -->
+  <main>
+    <router-outlet></router-outlet> 
+  </main>
+  <!-- <app-homepage-main></app-homepage-main> -->
+</mat-sidenav-container>

@@ -1,0 +1,46 @@
+main{
+    background-image: url('https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(50, 42, 42);
+    height: 100vh;
+}
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.img-hero {
+    width: 100%;
+    overflow: hidden;
+    margin-left: auto; margin-right: auto;
+}
+.img-hero img {
+    width: 100%;
+}
+.row {
+    display: flex;
+}
+.col {
+    flex: 1;
+}
+.head-desc {
+    padding-top: 50px;
+}
+.head-desc h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+.head-desc h2 {
+    font-size: 35px;
+    margin-bottom: 90px;
+    font-weight: bold;
+}
+.desc p {
+    font-size: 17px;
+}
+.btn-order {
+    padding: 10px;
+    width: 130px;
+}

@@ -1,0 +1,22 @@
+main{
+    background-image: url('https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(50, 42, 42);
+    height: 100vh;
+    padding: 100px;
+}
+.container {
+    width: 50%;
+    margin-left: auto; margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.824);
+    border-radius: 20px;
+    padding: 20px;
+}
+mat-form-field {
+    width: 100%;
+}
+
+::ng-deep .mat-card {
+    background-color: transparent;
+}
