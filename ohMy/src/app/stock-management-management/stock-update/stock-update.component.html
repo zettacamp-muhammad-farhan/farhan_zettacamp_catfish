@@ -1,0 +1,44 @@
+<h2>Add Stock Data</h2>
+<form [formGroup]="updateStock" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !updateStock.get('name')?.valid &&
+          updateStock.get('name')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="updateStock.get('name')?.errors?.['required']"
+          >name must fill</mat-error
+        >
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Stock</mat-label>
+        <input matInput type="number" formControlName="stock" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !updateStock.get('stock')?.valid &&
+          updateStock.get('stock')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="updateStock.get('stock')?.errors?.['required']"
+          >stock must fill</mat-error
+        >
+    </mat-error>
+
+
+    <div class="btn">
+      <button mat-raised-button type="submit" mat-button>
+        SUBMIT
+      </button>
+    </div>
+  </form>

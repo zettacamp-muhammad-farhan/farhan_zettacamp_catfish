@@ -1,13 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SubSink } from 'subsink';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { MenuService } from '../menu.service';
+import { CartService } from '../cart.service';
+
 @Component({
-  selector: 'app-menu-main',
-  templateUrl: './menu-main.component.html',
-  styleUrls: ['./menu-main.component.scss']
+  selector: 'app-cart-main',
+  templateUrl: './cart-main.component.html',
+  styleUrls: ['./cart-main.component.scss']
 })
-export class MenuMainComponent implements OnInit {
+export class CartMainComponent implements OnInit {
 
   @ViewChild('paginator') paginator!: MatPaginator;
   length = 5
@@ -19,49 +20,46 @@ export class MenuMainComponent implements OnInit {
 
   subs = new SubSink();
 
-  recipes:any
+  recipes:{}[] = []
 
   constructor(
-    private menuServ : MenuService
+    private cartServ:CartService
   ) { }
 
   ngOnInit(): void {
-    this.getData()
-  }
-
-  getData(){
-    this.subs.sink = this.menuServ
+    this.subs.sink = this.cartServ
     .getRecipes(this.pagination)
     .valueChanges.subscribe(
       (data:any) => {
-        this.recipes = data.data.getAllRecipes;
+        this.recipes = data.data.GetAllrecipes.data;
         console.log(this.recipes);
+        
       }
     )
     this.initPaginator()
   }
 
   initPaginator() {
-    this.menuServ
-      .getRecipesLenght()
-      .subscribe((length: number) => {
-            // update paginator length
-            this.paginator.length = length;
-            this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-      });
+    this.cartServ
+          .getRecipesLenght()
+          .subscribe((length: number) => {
+                // update paginator length
+                this.paginator.length = length;
+                this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+          });
   }
 
   onPaginatorChange(event: PageEvent) {
     this.pagination.limit = event.pageSize;
     this.pagination.page = event.pageIndex;
+
     // refetch data
     this.refetchData();
-    this.getData()
   } 
 
   refetchData() {
     const pagination = this.pagination;
-    this.menuServ.getRecipes(pagination).refetch();
+    this.cartServ.getRecipes(pagination).refetch();
   }
 
 }

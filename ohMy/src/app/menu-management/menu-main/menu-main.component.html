@@ -3,8 +3,11 @@
 </header>
 <main>
     <section class="row">
-        <app-menu-card class="col"></app-menu-card>
-        <app-menu-card class="col"></app-menu-card>
-        <app-menu-card class="col"></app-menu-card>
+        <app-menu-card *ngFor="let recipe of recipes" [recipe]="recipe" class="col"></app-menu-card>
+        <!-- <app-menu-card class="col"></app-menu-card>
+        <app-menu-card class="col"></app-menu-card> -->
     </section>
+    <mat-paginator #paginator class="promo-paginator" (page)="onPaginatorChange($event)"
+        [pageSizeOptions]="pageSizeOptions" showFirstLastButtons="true">
+    </mat-paginator>
 </main>

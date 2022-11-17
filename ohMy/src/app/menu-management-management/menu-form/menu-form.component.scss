@@ -1,0 +1,17 @@
+form {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+main {
+    overflow-y: scroll;
+    height: 500px;
+}
+main::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+button {
+    width: 100%;
+}

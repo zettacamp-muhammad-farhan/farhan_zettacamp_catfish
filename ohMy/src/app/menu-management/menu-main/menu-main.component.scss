@@ -10,10 +10,13 @@ header {
 }
 main {
     padding: 20px;
+    width: 80%;
+    margin-right: auto; margin-left: auto;
 }
 .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }

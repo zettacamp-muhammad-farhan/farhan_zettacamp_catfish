@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Small</mat-card-subtitle>
+
+    </mat-card-title-group>
+    <mat-card-content>
+        <div class="desc" >
+            <p>{{longText}}</p>
+        </div>
+      
+        <div class="img-card">
+            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" > 
+        </div>
+    </mat-card-content>
+    <form>
+        <div class="value-button" id="decrease" (click)="decreaseVal()" value="Decrease Value">-</div>
+        <input type="number" id="number" value="{{ value }}" />
+        <div class="value-button" id="increase" (click)="increaseVal()" value="Increase Value">+</div>
+      </form>
+  </mat-card>

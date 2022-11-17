@@ -1,0 +1,96 @@
+<h2>Add Menu Data</h2>
+<main>
+<form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" formControlName="recipe_name" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('recipe_name')?.valid &&
+          formMenu.get('recipe_name')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('recipe_name')?.errors?.['required']"
+          >name must fill</mat-error
+        >
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Image</mat-label>
+        <input matInput type="text" formControlName="image" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('image')?.valid &&
+          formMenu.get('image')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('image')?.errors?.['required']"
+          >image must fill</mat-error
+        >
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('price')?.valid &&
+          formMenu.get('price')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('price')?.errors?.['required']"
+          >price must fill</mat-error
+        >
+    </mat-error>
+
+    <div formArrayName="ingredients" >
+        <h2>Ingredients</h2>
+
+        <div *ngFor="let ingredient of formMenu.get('ingredients').controls let i = index" >
+            <div [formGroupName]="i" >
+                <hr>
+                <div> <h3>Ingridient {{ i+1 }}</h3> </div>
+                <button type="button" class="btn-dell" mat-flat-button color="warn" (click)="removeIngredient(i)">Delete Ingridient Form</button><br><br>
+
+                <!-- <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ingredient</mat-label>
+                    <input matInput type="text" formControlName="ingredient_id" placeholder="Ingresient id" />
+                </mat-form-field> -->
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingredient</mat-label>
+                    <mat-select formControlName="ingredient_id" >
+                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient._id">
+                        {{ingredient.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Stock</mat-label>
+                    <input matInput type="text" formControlName="stock_used" placeholder="Stock" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <button type="button" class="btn-add" mat-raised-button color="primary" mat-flat-button (click)="addIngredient()">Add Ingredient</button><br><br>
+
+    </div>
+
+    <div class="btn">
+      <button mat-raised-button color="accent" type="submit" mat-button>
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</main>

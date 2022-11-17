@@ -1,0 +1,25 @@
+main{
+    padding: 20px;
+}
+.container {
+    background-color: rgb(230, 242, 242);
+    width: 80%;
+    margin-right: auto; margin-left: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+.img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+.img img {
+    width: 100%;
+}
+.mat-header-cell.mat-column-action{
+    text-align: center !important;
+}

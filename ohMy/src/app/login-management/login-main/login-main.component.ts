@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SubSink } from 'subsink';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login-main',
@@ -8,10 +11,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginMainComponent implements OnInit {
 
+  private subs = new SubSink()
+
   loginForm:FormGroup = this.initFormGroup()
 
   constructor(
-    private fb : FormBuilder
+    private fb : FormBuilder,
+    private loginServ:LoginService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +32,15 @@ export class LoginMainComponent implements OnInit {
   }
 
   login(){
+    const payload = this.loginForm.value
+    console.log(payload);
     
+    this.subs.sink = this.loginServ.loginUser(payload).subscribe((resp:any)=>{
+      console.log(resp);
+      if(resp){
+        this.router.navigate(['/'])
+      }
+    })
   }
 
 }

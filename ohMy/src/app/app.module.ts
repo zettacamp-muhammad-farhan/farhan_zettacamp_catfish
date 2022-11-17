@@ -13,6 +13,10 @@ import { HomepageManagementModule } from './homepage-management/homepage-managem
 import { MenuManagementModule } from './menu-management/menu-management.module';
 import { LoginMainComponent } from './login-management/login-main/login-main.component';
 import { LoginManagementModule } from './login-management/login-management.module';
+import { CartManagementModule } from './cart-management/cart-management.module';
+import { MenuManagementManagementModule } from './menu-management-management/menu-management-management.module';
+import { StockManagementManagementModule } from './stock-management-management/stock-management-management.module';
+import { AuthguardServiceService } from './authguard-service.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,9 +45,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     ),
     HomepageManagementModule,
     MenuManagementModule,
-    LoginManagementModule
+    LoginManagementModule,
+    CartManagementModule,
+    MenuManagementManagementModule,
+    StockManagementManagementModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

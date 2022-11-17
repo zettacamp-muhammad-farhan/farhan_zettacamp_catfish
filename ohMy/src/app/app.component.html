@@ -12,17 +12,17 @@
         <span> Menu </span>
       </a>
 
-      <a mat-list-item routerLink="">
+      <a mat-list-item routerLink="/cart">
         <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
         <span> Cart </span>
       </a>
 
-      <a mat-list-item routerLink="">
+      <a mat-list-item routerLink="/stock-management">
         <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
         <span> Stock Management </span>
       </a>
 
-      <a mat-list-item routerLink="">
+      <a mat-list-item routerLink="/menu-management">
         <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="list"></mat-icon>
         <span> Menu Management </span>
       </a>
@@ -32,10 +32,16 @@
         <span> About </span>
       </a>
 
-      <a mat-list-item routerLink="/login">
+      <a *ngIf="!loged"else logout  mat-list-item routerLink="/login">
         <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
         <span> Login </span>
       </a>
+
+      <a *ngIf="loged"else logout  mat-list-item (click)="logOut()">
+        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
+        <span> Logout </span>
+      </a>
+      
 
 
     </mat-nav-list>
