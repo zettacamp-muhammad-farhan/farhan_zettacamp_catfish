@@ -7,6 +7,7 @@ import { StockService } from '../stock.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { StockFormComponent } from '../stock-form/stock-form.component';
 import { StockUpdateComponent } from '../stock-update/stock-update.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-stcok-management-main',
@@ -85,6 +86,10 @@ export class StcokManagementMainComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       res=>{
         console.log(res);
+        
+        if(res){
+          this.getData()
+        }
       }
     )
   }
@@ -92,7 +97,41 @@ export class StcokManagementMainComponent implements OnInit {
   openDell(id:any){
     let status = 'deleted'
     let data = {id}
-    this.stockServ.deleteIngirdient(data)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.stockServ.deleteIngirdient(data).subscribe(
+          ({data})=>{
+            Swal.fire({
+              position:'center',
+              icon: 'success',
+              title : 'Success Delete data',
+              confirmButtonText : 'okay'
+            })
+            this.getData()
+            
+          }, error => {
+    
+            console.log(error);
+            
+            Swal.fire({
+              position:'center',
+              icon: 'error',
+              title : error,
+              confirmButtonText : 'okay'
+            })
+          }
+        )
+      }
+    })
+    
   }
 
   updateData(id:string, name:string, stock:any){

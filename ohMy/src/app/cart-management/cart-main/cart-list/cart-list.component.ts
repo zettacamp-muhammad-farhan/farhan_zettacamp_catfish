@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartListComponent implements OnInit {
 
   @Input() recipe:any
+  recipes:any
 
   value:number = 1
 
@@ -18,6 +19,9 @@ export class CartListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.recipes = this.recipe.menu
+    console.log(this.recipes);
+    
   }
 
   increaseVal(){

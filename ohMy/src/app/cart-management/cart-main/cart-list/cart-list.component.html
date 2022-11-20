@@ -1,9 +1,16 @@
 <mat-card class="example-card">
     <mat-card-title-group>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Small</mat-card-subtitle>
-
+      <mat-card-title>{{ recipe.order_date }} </mat-card-title>
     </mat-card-title-group>
+    <div class="w-full" *ngFor="let item of recipes" >
+        <div class="body-item">
+            <h3>{{ item.recipe_id.recipe_name }}</h3>
+            <mat-card-subtitle>
+                Note : {{ item.note }}
+            </mat-card-subtitle>
+        </div>
+
+    </div>
     <mat-card-content>
         <div class="desc" >
             <p>{{longText}}</p>

@@ -4,6 +4,7 @@ import { Observable } from '@apollo/client';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import Swal from 'sweetalert2';
 export class LoginService {
 
   constructor(
-    private apollo:Apollo
+    private apollo:Apollo,
+    private router:Router
   ) { }
 
   loginUser(input:any){
@@ -36,7 +38,6 @@ export class LoginService {
       map((resp:any) => {
         this.userLogin(resp)
         return resp
-        
       })
     )
   }
@@ -50,24 +51,5 @@ export class LoginService {
 
   }
 
-  logOut() {
-    Swal.fire({
-      title: 'Are you sure to logout?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        localStorage.removeItem(environment.tokenKey);
-        localStorage.removeItem('user');
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
-      }
-    })
-  }
+
 }

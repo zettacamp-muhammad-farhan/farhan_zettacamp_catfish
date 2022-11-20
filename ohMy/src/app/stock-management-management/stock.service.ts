@@ -118,29 +118,7 @@ export class StockService {
         input
       }
 
-    }).subscribe(
-      ({data})=>{
-        console.log(data);
-
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : 'Success Delete data',
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
-
-        console.log(error);
-        
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-      }
-    )
+    })
     
     console.log('success');
     

@@ -63,5 +63,35 @@ export class MenuService {
     }))
   }
 
+  addCart(val:any){
+    return this.apollo.mutate({
+      mutation:gql `
+      mutation Mutation($input: DataInputTransaction) {
+        createTransaction(input: $input) {
+          total
+          _id
+          status
+          user_id {
+            _id
+            email
+          }
+          menu {
+            amount
+            note
+          }
+        }
+      }
+      
+      `,
+      variables:{
+        input : {
+          menu : [
+            val
+          ]
+        }
+      }
+    })
+  }
+
 
 }

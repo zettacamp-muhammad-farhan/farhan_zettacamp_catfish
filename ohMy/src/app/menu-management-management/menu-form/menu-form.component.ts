@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MenuManService } from '../menu-man.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu-form',
@@ -54,17 +55,27 @@ export class MenuFormComponent implements OnInit {
   }
 
   onSubmit(){
-    let stock = (this.formMenu.value.ingredients)
-    console.log(stock);
-    
 
-    this.formMenu.value.ingredients.map((data:any)=>{
-      data.stock_used = parseInt(data.stock_used)
-    })
-    // console.log(stock);
-    
-    this.menuServ.postRecipes(this.formMenu.value)
-    this.dialogRef.close(true)
+    if(this.formMenu.valid){
+      let stock = (this.formMenu.value.ingredients)
+      console.log(stock);
+      
+  
+      this.formMenu.value.ingredients.map((data:any)=>{
+        data.stock_used = parseInt(data.stock_used)
+      })
+      // console.log(stock);
+      
+      this.menuServ.postRecipes(this.formMenu.value)
+      this.dialogRef.close(true)
+    }else {
+      Swal.fire({
+        position:'center',
+        icon: 'error',
+        title : 'Fill form before submit !!!',
+        confirmButtonText : 'okay'
+      })
+    }
   }
 
 

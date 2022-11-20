@@ -5,5 +5,8 @@ main {
 }
 table {
     width: 100%;
-    // text-align:center;
+    text-align:center;
+}
+.mat-header-cell.mat-column-action{
+    text-align: center !important;
 }

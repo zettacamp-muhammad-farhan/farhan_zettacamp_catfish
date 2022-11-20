@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SubSink } from 'subsink';
 import { LoginService } from '../login.service';
+import { AppComponent } from '../../app.component'
 
 @Component({
   selector: 'app-login-main',
@@ -15,10 +16,12 @@ export class LoginMainComponent implements OnInit {
 
   loginForm:FormGroup = this.initFormGroup()
 
+
   constructor(
     private fb : FormBuilder,
     private loginServ:LoginService,
-    private router:Router
+    private router:Router,
+    public appComp:AppComponent
   ) { }
 
   ngOnInit(): void {
@@ -32,13 +35,15 @@ export class LoginMainComponent implements OnInit {
   }
 
   login(){
+    this.appComp.logIn()
+
     const payload = this.loginForm.value
     console.log(payload);
     
     this.subs.sink = this.loginServ.loginUser(payload).subscribe((resp:any)=>{
-      console.log(resp);
       if(resp){
-        this.router.navigate(['/'])
+        // this.router.navigate(['/']);
+        this.appComp.logIn()
       }
     })
   }

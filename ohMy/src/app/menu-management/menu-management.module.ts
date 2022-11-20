@@ -5,6 +5,8 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MenuCardComponent } from './menu-main/menu-card/menu-card.component';
 import { MaterialModule } from '../material/material.module';
+import { MenuAddComponent } from './menu-add/menu-add.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes : Routes = [
   {
@@ -21,13 +23,14 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     MenuMainComponent,
-    MenuCardComponent
+    MenuCardComponent,
+    MenuAddComponent
   ],
   imports: [
-    CommonModule, MaterialModule
+    CommonModule, MaterialModule, ReactiveFormsModule
   ],
   exports:[
-    MenuMainComponent, MenuCardComponent
+    MenuMainComponent, MenuCardComponent, MenuAddComponent
   ]
 })
 export class MenuManagementModule { }

@@ -13,55 +13,66 @@ export class CartService {
     private apollo:Apollo
   ) { }
 
-  getRecipes(data:any){
+  getCart(data:any){
+    console.log(data);
+    
+    let pagination=data;
+    let filter= {user_lname:"User", order_status:"pending"}
     return this.apollo.watchQuery({
       query:gql`
-        query GetAllrecipes($data: recipeParams) {
-          GetAllrecipes(data: $data) {
-            data {
-              _id
-              ingredients {
-                ingredient_id {
-                  _id
-                  name
-                  stock
-                  available
-                  status
-                }
-                stock_used
-              }
-              price
+      query QueryTransaction($pagination: Paging, $filter: DataFilterTransaction) {
+        getAllTransactions(pagination: $pagination, filter: $filter) {
+          _id
+          menu {
+            recipe_id {
               recipe_name
-              status
-              link_recipe
+              _id
+              image
+              price
             }
+            amount
+            note
           }
-        }
-      `,
-      variables:{data}
-    })
-  }
-
-  getRecipesLenght(){
-    return this.apollo
-    .query({
-      query: gql `
-      query GetAllrecipes($data: recipeParams) {
-        GetAllrecipes(data: $data) {
-          data {
+          order_date
+          order_status
+          status
+          user_id {
             _id
-            price
-            recipe_name
-            status
-            link_recipe
+            last_name
           }
         }
       }
       `,
-      variables: {data: {limit:0, page:0}}
+      variables:{
+        pagination,
+        filter
+      }
+    })
+  }
+
+  getCartLength(){
+    // let data:any = localStorage.getItem('user') ? localStorage.getItem('user') : ""
+    // JSON.parse(data)
+    let user_lname = "User"
+    let order_status = "pending"
+    return this.apollo
+    .query({
+      query: gql `
+      query Query($filter: DataFilterTransaction, $pagination: Paging) {
+        getAllTransactions(filter: $filter, pagination: $pagination) {
+          _id
+          order_status
+          status
+        }
+      }
+      `,
+      variables: {
+        pagination: {limit:100, page:0},
+        filter:{user_lname, order_status}
+      }
     })
     .pipe(map((resp:any) => {
-      const data = resp.data.GetAllrecipes;
+      const data = resp.data.getAllTransactions;
       return data.length
     }))
   }

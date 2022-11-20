@@ -28,12 +28,11 @@ export class CartMainComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs.sink = this.cartServ
-    .getRecipes(this.pagination)
+    .getCart(this.pagination)
     .valueChanges.subscribe(
       (data:any) => {
-        this.recipes = data.data.GetAllrecipes.data;
+        this.recipes = data.data.getAllTransactions;
         console.log(this.recipes);
-        
       }
     )
     this.initPaginator()
@@ -41,7 +40,7 @@ export class CartMainComponent implements OnInit {
 
   initPaginator() {
     this.cartServ
-          .getRecipesLenght()
+          .getCartLength()
           .subscribe((length: number) => {
                 // update paginator length
                 this.paginator.length = length;
@@ -50,6 +49,7 @@ export class CartMainComponent implements OnInit {
   }
 
   onPaginatorChange(event: PageEvent) {
+    
     this.pagination.limit = event.pageSize;
     this.pagination.page = event.pageIndex;
 
@@ -59,7 +59,7 @@ export class CartMainComponent implements OnInit {
 
   refetchData() {
     const pagination = this.pagination;
-    this.cartServ.getRecipes(pagination).refetch();
+    this.cartServ.getCart(pagination).refetch();
   }
 
 }

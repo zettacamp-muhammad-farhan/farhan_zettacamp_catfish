@@ -14,7 +14,7 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>
+        <button (click)="openDialog( recipe._id )" mat-button>
             <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
             <span>Add to cart</span>
         </button>

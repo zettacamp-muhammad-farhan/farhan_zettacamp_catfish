@@ -1,0 +1,45 @@
+<h2>Add Menu Data</h2>
+<main>
+<form [formGroup]="formCart" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input matInput type="text" formControlName="amount" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formCart.get('amount')?.valid &&
+          formCart.get('amount')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formCart.get('amount')?.errors?.['required']"
+          >Stock must fill</mat-error
+        >
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Note</mat-label>
+        <input matInput type="text" formControlName="note" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formCart.get('note')?.valid &&
+          formCart.get('note')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formCart.get('note')?.errors?.['required']"
+          >Note must fill</mat-error
+        >
+    </mat-error>
+
+    <div class="btn">
+      <button mat-raised-button color="accent" type="submit" mat-button>
+        SUBMIT
+      </button>
+    </div>
+  </form>
+</main>

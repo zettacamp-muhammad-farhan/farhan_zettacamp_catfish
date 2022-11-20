@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SubSink } from 'subsink';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MenuService } from '../menu.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MenuAddComponent } from '../menu-add/menu-add.component';
 @Component({
   selector: 'app-menu-main',
   templateUrl: './menu-main.component.html',
@@ -22,7 +24,8 @@ export class MenuMainComponent implements OnInit {
   recipes:any
 
   constructor(
-    private menuServ : MenuService
+    private menuServ : MenuService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +38,7 @@ export class MenuMainComponent implements OnInit {
     .valueChanges.subscribe(
       (data:any) => {
         this.recipes = data.data.getAllRecipes;
-        console.log(this.recipes);
+        // console.log(this.recipes);
       }
     )
     this.initPaginator()
@@ -62,6 +65,23 @@ export class MenuMainComponent implements OnInit {
   refetchData() {
     const pagination = this.pagination;
     this.menuServ.getRecipes(pagination).refetch();
+  }
+
+  openDialog(){
+    const dialogRef = this.dialog.open(MenuAddComponent, {
+      width:"70%",
+      data: {
+        hola:"test"
+      }
+    })
+    dialogRef.afterClosed().subscribe(
+      res=>{
+        if(res){
+          this.getData()
+        }
+        
+      }
+    )
   }
 
 }
