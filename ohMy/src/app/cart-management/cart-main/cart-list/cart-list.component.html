@@ -2,27 +2,45 @@
     <mat-card-title-group>
       <mat-card-title>{{ recipe.order_date }} </mat-card-title>
     </mat-card-title-group>
-    <div class="w-full" *ngFor="let item of recipes" >
-        <div class="body-item">
-            <h3>{{ item.recipe_id.recipe_name }}</h3>
-            <mat-card-subtitle>
-                Note : {{ item.note }}
-            </mat-card-subtitle>
-        </div>
 
-    </div>
-    <mat-card-content>
-        <div class="desc" >
-            <p>{{longText}}</p>
+    <div class="contain" *ngFor="let item of recipes">
+        <div class="w-full item-mini"  >
+            <div class="body-item">
+                <h3>{{ item.recipe_id.recipe_name }}</h3>
+                <mat-card-subtitle>
+                    Note : {{ item.note }}
+                </mat-card-subtitle>
+                <form>
+                    <div class="value-button" id="decrease" (click)="decreaseVal()" value="Decrease Value">-</div>
+                    <input type="number" id="number" value="{{ item.amount }}" />
+                    <div class="value-button" id="increase" (click)="increaseVal()" value="Increase Value">+</div>
+                </form>
+                <div class="btn">
+                    <button (click)="deleteItem(item._id)" mat-raised-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="body-img" >
+                <div class="img-card">
+                    <div class="img">
+                        <img src="{{ item.recipe_id.image }}" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-      
-        <div class="img-card">
-            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" > 
+    </div>
+
+    <mat-card-content class="footer-card">
+        <div class="desc" >
+            <button (click)="deleteCart(recipe._id)" mat-raised-button color="warn">Delete All</button>
+        </div>
+        <div class="" >
+            <div>
+                <strong>Amount price :Rp. {{ recipe.total }}, 00</strong>
+            </div>
         </div>
     </mat-card-content>
-    <form>
-        <div class="value-button" id="decrease" (click)="decreaseVal()" value="Decrease Value">-</div>
-        <input type="number" id="number" value="{{ value }}" />
-        <div class="value-button" id="increase" (click)="increaseVal()" value="Increase Value">+</div>
-      </form>
+    <button class="btn-order" (click)="buyItem()" mat-raised-button color="primary">Order Now</button>
+
   </mat-card>

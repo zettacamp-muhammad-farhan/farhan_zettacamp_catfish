@@ -149,12 +149,15 @@ export class MenuManService {
   getIngridients(){
     return this.apollo.watchQuery({
       query: gql `
-      query Query($paging: Paging) {
+      query GetAllIngredients($paging: Paging) {
         getAllIngredients(paging: $paging) {
-          _id
-          name
-          status
-          stock
+          TotalDocument
+          data {
+            _id
+            name
+            status
+            stock
+          }
         }
       }  
       `,
@@ -178,29 +181,7 @@ export class MenuManService {
         input
       }
 
-    }).subscribe(
-      ({data})=>{
-        console.log(data);
-
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : "Success update",
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
-
-        console.log(error);
-        
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-      }
-    )
+    })
     
     console.log('success');
     
@@ -224,6 +205,20 @@ export class MenuManService {
       variables:{
         filter
       }
+    })
+  }
+
+  updateStatus(input:any){
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation Mutation($input: DataUpdateRecipe) {
+        updateRecipe(input: $input) {
+          status
+          _id
+        }
+      }
+      `,
+      variables:{input}
     })
   }
 

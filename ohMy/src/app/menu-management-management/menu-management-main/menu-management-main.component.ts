@@ -9,6 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MenuFormComponent } from '../menu-form/menu-form.component';
 import Swal from 'sweetalert2';
 import { MenuUpdateComponent } from '../menu-update/menu-update.component';
+import { MenuService } from 'src/app/menu-management/menu.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -33,13 +35,37 @@ export class MenuManagementMainComponent implements OnInit {
 
   recipes:any
 
+  findName:any
   constructor(
     private menuServ : MenuManService,
+    private menu:MenuService,
     private dialog:MatDialog
   ) { }
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
+
+    this.findName = new FormGroup({
+      name: new FormControl(null),
+      status:new FormControl(null)
+    })
+    
+    this.findName.valueChanges.subscribe(
+      (data:any)=>{
+        if(data){
+          console.log(data.name);
+          if(data.name){
+            console.log(0);
+            
+          } else {
+            console.log(1);
+          
+          }
+          
+        } 
+      }
+    )
+    
   }
 
   getData(){
@@ -48,7 +74,7 @@ export class MenuManagementMainComponent implements OnInit {
     .subscribe(
       (data:any) => {
         this.dataSource = data;
-        console.log(this.recipes);
+        console.log(this.dataSource);
       }
     )
     this.initPaginator()
@@ -138,8 +164,17 @@ export class MenuManagementMainComponent implements OnInit {
         )
       }
     })
-    
+  }
 
+  updateStatus(input:any){
+    this.menuServ.updateStatus(input).subscribe(
+      (res:any)=>{
+        if(res){
+          this.getData();
+          this.menu.getRecipes({limit:5, page:0})
+        }
+      }
+    )
   }
 
 }

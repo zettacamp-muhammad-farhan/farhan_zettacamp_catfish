@@ -96,3 +96,22 @@ form {
 mat-card-title-group{
   width: 100%;
 }
+.item-mini {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: row;
+}
+.body-item {
+  flex: 4;
+}
+.body-img {
+  flex: 1;
+}
+.desc {
+  float: right;
+}
+.btn-order {
+  width: 100%;
+}

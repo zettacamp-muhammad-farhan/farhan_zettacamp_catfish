@@ -24,6 +24,7 @@ export class CartService {
         getAllTransactions(pagination: $pagination, filter: $filter) {
           _id
           menu {
+            _id
             recipe_id {
               recipe_name
               _id
@@ -36,6 +37,7 @@ export class CartService {
           order_date
           order_status
           status
+          total
           user_id {
             _id
             last_name
@@ -75,5 +77,59 @@ export class CartService {
       const data = resp.data.getAllTransactions;
       return data.length
     }))
+  }
+
+  deleteItem(id:any){
+    console.log(id);
+    
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation DeleteMenu($input: DeleteMenu) {
+        deleteMenu(input: $input) {
+          _id
+        }
+      } `,
+      variables: {
+        input:{
+          id
+        }
+      }
+
+    })
+
+
+  }
+
+  buy(){
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation Mutation {
+        updateOrderStatus {
+          _id
+          menu {
+            _id
+            note
+          }
+        }
+      }
+      `
+    })
+  }
+
+  deleteCart(id:string){
+    return this.apollo.mutate({
+      mutation: gql `
+      mutation Mutation($input: DataDeleteTransaction) {
+        deleteTransaction(input: $input) {
+          _id
+        }
+      }
+      `,
+      variables:{
+          "input": {
+            id
+          }
+        }
+    })
   }
 }

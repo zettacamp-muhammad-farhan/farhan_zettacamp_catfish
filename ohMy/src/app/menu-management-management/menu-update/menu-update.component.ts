@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MenuManService } from '../menu-man.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu-update',
@@ -57,7 +58,7 @@ export class MenuUpdateComponent implements OnInit {
     this.menuServ.getIngridients().valueChanges.subscribe(
       (val:any)=>{
         // console.log(val);
-        this.ingredients = val.data.getAllIngredients
+        this.ingredients = val.data.getAllIngredients.data
       }
     )
 
@@ -88,7 +89,29 @@ export class MenuUpdateComponent implements OnInit {
       data.stock_used = parseInt(data.stock_used)
     })
 
-    this.menuServ.updateRecipes(this.formMenu.value)
+    this.menuServ.updateRecipes(this.formMenu.value).subscribe(
+      ({data})=>{
+        console.log(data);
+        this.menuServ.getRecipes({page:0, limit:5})
+        Swal.fire({
+          position:'center',
+          icon: 'success',
+          title : "Success update",
+          confirmButtonText : 'okay'
+        })
+        
+      }, error => {
+
+        console.log(error);
+        
+        Swal.fire({
+          position:'center',
+          icon: 'error',
+          title : error,
+          confirmButtonText : 'okay'
+        })
+      }
+    )
 
     this.dialogRef.close()
   }

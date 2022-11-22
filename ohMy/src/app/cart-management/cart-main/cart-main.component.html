@@ -1,9 +1,13 @@
 <main>
     <h1>Food Cart</h1>
     <div class="container">
-        <app-cart-list *ngFor="let item of recipes" [recipe]="item"></app-cart-list>
-        <!-- <app-cart-list></app-cart-list>
-        <app-cart-list></app-cart-list> -->
+        <div *ngIf="recipes.length > 0" >
+            <app-cart-list *ngFor="let item of recipes" [recipe]="item"></app-cart-list>
+        </div>
+        <div *ngIf="recipes.length == 0" >
+            <div>No item </div>
+        </div>
+        
     </div>
     <mat-paginator #paginator class="promo-paginator" (page)="onPaginatorChange($event)"
         [pageSizeOptions]="pageSizeOptions" showFirstLastButtons="true">

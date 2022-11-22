@@ -1,12 +1,11 @@
 <mat-card class="example-card">
-    <!-- <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header> -->
-    <img mat-card-image src="https://media.self.com/photos/58c83f1288c77a551bdaed4d/master/w_870,h_576,c_limit/bacon-baked-eggs3.jpg" alt="Photo of a Shiba Inu">
+    <div class="img">
+      <img mat-card-image [src]="recipe.image" alt="Photo of a Shiba Inu">
+    </div>
     <mat-card-content>
         <h2>{{ recipe.recipe_name }}</h2>
+        <mat-card-subtitle>Available : {{ recipe.available }}</mat-card-subtitle>
+        
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
         A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
@@ -14,9 +13,16 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-        <button (click)="openDialog( recipe._id )" mat-button>
+      <div class="price" >
+        <h2>Rp. {{ recipe.price }}</h2>
+      </div>
+        <button [disabled]="recipe.available == 0" (click)="openDialog( recipe._id )" mat-button>
             <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
             <span>Add to cart</span>
         </button>
     </mat-card-actions>
-  </mat-card>
+
+    <div *ngIf="recipe.available == 0" class="gray">
+      <img src="https://batampos.co.id/wp-content/uploads/2018/11/sold-out-logo-png-2.png" alt="">
+    </div>
+</mat-card>

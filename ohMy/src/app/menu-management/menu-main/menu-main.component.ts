@@ -38,7 +38,7 @@ export class MenuMainComponent implements OnInit {
     .valueChanges.subscribe(
       (data:any) => {
         this.recipes = data.data.getAllRecipes;
-        // console.log(this.recipes);
+        console.log(this.recipes);
       }
     )
     this.initPaginator()

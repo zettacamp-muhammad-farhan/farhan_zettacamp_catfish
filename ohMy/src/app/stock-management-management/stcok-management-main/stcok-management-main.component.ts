@@ -8,6 +8,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { StockFormComponent } from '../stock-form/stock-form.component';
 import { StockUpdateComponent } from '../stock-update/stock-update.component';
 import Swal from 'sweetalert2';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-stcok-management-main',
@@ -17,7 +18,7 @@ import Swal from 'sweetalert2';
 export class StcokManagementMainComponent implements OnInit {
 
   dataSource = new MatTableDataSource([])
-  displayedColumns:string[] = ['name', 'stock', 'status', 'action']
+  displayedColumns:string[] = ['name', 'stock', 'action']
 
   @ViewChild('paginator') paginator!: MatPaginator;
   length = 5
@@ -29,7 +30,9 @@ export class StcokManagementMainComponent implements OnInit {
 
   subs = new SubSink();
 
-  stock:any
+  stock:any;
+
+  filterName:any
 
   constructor(
     private stockServ : StockService,
@@ -38,14 +41,44 @@ export class StcokManagementMainComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData()
+
+    this.filterName = new FormGroup({
+      name: new FormControl(null)
+    })
+
+    this.filterName.get('name').valueChanges.subscribe(
+      (data:any)=>{
+        if(data){
+          console.log(data);
+          this.stockServ.getIngridients(this.pagination, data).valueChanges.subscribe(
+            (data:any) => {
+              this.dataSource = data.data.getAllIngredients.data;
+              console.log(this.dataSource);
+              
+            }
+          )
+        } else{
+          this.stockServ.getIngridients(this.pagination, "").valueChanges.subscribe(
+            (data:any) => {
+              this.dataSource = data.data.getAllIngredients.data;
+              console.log(this.dataSource);
+            }
+          )
+          
+        }
+      }
+      
+    )
   }
 
   getData(){
     this.subs.sink = this.stockServ
-    .getIngridients(this.pagination)
+    .getIngridients(this.pagination, "")
     .valueChanges.subscribe(
       (data:any) => {
-        this.dataSource = data.data.getAllIngredients;
+        console.log(data);
+        
+        this.dataSource = data.data.getAllIngredients.data;
         console.log(this.dataSource);
         
       }
@@ -55,10 +88,10 @@ export class StcokManagementMainComponent implements OnInit {
 
   initPaginator(){
     this.stockServ.getIngridientsLenght()
-    .subscribe((length:number) => {
-      console.log(length);
+    .subscribe((length:any) => {
+      console.log(length.data.getAllIngredients.TotalDocument);
       
-      this.paginator.length = length;
+      this.paginator.length = length.data.getAllIngredients.TotalDocument;
       this.paginator.pageSize = this.pageSizeOptions[0];
     } )
   }
@@ -73,7 +106,7 @@ export class StcokManagementMainComponent implements OnInit {
 
   refetchData() {
     const pagination = this.pagination;
-    this.stockServ.getIngridients(pagination).refetch();
+    this.stockServ.getIngridients(pagination, "").refetch();
   }
 
   openDialog(){

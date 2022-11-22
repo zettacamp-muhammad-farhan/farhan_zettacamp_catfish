@@ -15,19 +15,27 @@ export class StockService {
     private apollo:Apollo
   ) { }
 
-  getIngridients(paging:any){
+  getIngridients(paging:any, name:any){
     return this.apollo.watchQuery({
       query: gql `
-      query Query($paging: Paging) {
-        getAllIngredients(paging: $paging) {
-          _id
-          name
-          status
-          stock
+      query GetAllIngredients($paging: Paging, $filter: DataFilterIngredients) {
+        getAllIngredients(paging: $paging, filter: $filter) {
+          TotalDocument
+          data {
+            _id
+            name
+            status
+            stock
+          }
         }
-      }  
+      }
       `,
-      variables:{paging}
+      variables:{
+        paging,
+        filter: {
+          name
+        }
+      }
     })
   }
 
@@ -37,16 +45,25 @@ export class StockService {
       query: gql`
       query Query($paging: Paging) {
         getAllIngredients(paging: $paging) {
-          _id
+          TotalDocument
         }
       }
       `,
       variables:{paging:{limit:1000, page:0}}
     })
-    .pipe(map((resp: any) => {
-      const data = resp.data.getAllIngredients;
-      return data.length
-    }))
+    // .subscribe(
+    //   (resp:any)=>{
+    //     console.log(resp);
+    //     return resp.TotalDocument
+        
+    //   }
+    // )
+    // .pipe(map((resp: any) => {
+    //   const data = resp.data.getAllIngredients;
+    //   console.log(resp);
+      
+    //   return resp.TotalDocument
+    // }))
   }
 
 

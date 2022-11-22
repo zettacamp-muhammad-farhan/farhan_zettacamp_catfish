@@ -53,7 +53,6 @@ export class AppComponent {
         this.nav = nav;
       }
     )
-    console.log(this.nav);
     
   }
 

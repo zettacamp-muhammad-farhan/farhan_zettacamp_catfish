@@ -36,7 +36,7 @@ export class MenuFormComponent implements OnInit {
     this.menuServ.getIngridients().valueChanges.subscribe(
       (val:any)=>{
         console.log(val);
-        this.ingredients = val.data.getAllIngredients
+        this.ingredients = val.data.getAllIngredients.data
       }
     )
   }

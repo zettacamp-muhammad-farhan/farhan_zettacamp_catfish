@@ -20,8 +20,7 @@ export class LoginMainComponent implements OnInit {
   constructor(
     private fb : FormBuilder,
     private loginServ:LoginService,
-    private router:Router,
-    public appComp:AppComponent
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -35,15 +34,12 @@ export class LoginMainComponent implements OnInit {
   }
 
   login(){
-    this.appComp.logIn()
-
     const payload = this.loginForm.value
     console.log(payload);
     
     this.subs.sink = this.loginServ.loginUser(payload).subscribe((resp:any)=>{
       if(resp){
-        // this.router.navigate(['/']);
-        this.appComp.logIn()
+        this.router.navigate(['/']);
       }
     })
   }

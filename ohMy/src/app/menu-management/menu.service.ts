@@ -17,10 +17,11 @@ export class MenuService {
   getRecipes(paging:any){
     return this.apollo.watchQuery({
       query:gql`
-        query getAllRecipes($paging: Paging) {
-          getAllRecipes(paging: $paging) {
+        query getAllRecipes($paging: Paging, $status: Status) {
+          getAllRecipes(paging: $paging, status: $status) {
             
               _id
+              available
               ingredients {
                 ingredient_id {
                   _id
@@ -32,10 +33,12 @@ export class MenuService {
               }
               recipe_name
               status
+              image
+              price
           }
         }
       `,
-      variables:{paging},
+      variables:{paging, status: "active"},
       fetchPolicy: "network-only"
     }
 
@@ -66,18 +69,14 @@ export class MenuService {
   addCart(val:any){
     return this.apollo.mutate({
       mutation:gql `
-      mutation Mutation($input: DataInputTransaction) {
-        createTransaction(input: $input) {
-          total
-          _id
-          status
-          user_id {
-            _id
-            email
-          }
+      mutation AddCart($input: DataInputTransaction) {
+        addCart(input: $input) {
           menu {
             amount
             note
+            recipe_id {
+              _id
+            }
           }
         }
       }

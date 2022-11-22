@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SubSink } from 'subsink';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { CartService } from '../cart.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cart-main',
@@ -40,12 +41,12 @@ export class CartMainComponent implements OnInit {
 
   initPaginator() {
     this.cartServ
-          .getCartLength()
-          .subscribe((length: number) => {
-                // update paginator length
-                this.paginator.length = length;
-                this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-          });
+      .getCartLength()
+      .subscribe((length: number) => {
+          // update paginator length
+          this.paginator.length = length;
+          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+      });
   }
 
   onPaginatorChange(event: PageEvent) {

@@ -7,6 +7,10 @@ table {
     width: 100%;
     text-align:center;
 }
-.mat-header-cell.mat-column-action{
+th.mat-header-cell{
     text-align: center !important;
+}
+button{
+    margin-left: 10px;
+    margin-right: 10px;
 }
