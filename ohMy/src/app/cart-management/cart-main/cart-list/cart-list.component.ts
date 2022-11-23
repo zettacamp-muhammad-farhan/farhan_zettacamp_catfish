@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { CartService } from '../../cart.service';
 
@@ -12,7 +13,9 @@ export class CartListComponent implements OnInit {
   @Input() recipe:any
   recipes:any
 
-  value:number = 1
+  value:number = 1;
+
+  updateForm:any
 
   constructor(
     private cartServ:CartService
@@ -21,22 +24,21 @@ export class CartListComponent implements OnInit {
   ngOnInit(): void {
     this.recipes = this.recipe.menu
     console.log(this.recipes);
-    console.log(this.recipe);
     
-    
-  }
+    this.updateForm = new FormGroup({
+      amount: new FormControl(null),
+      id:new FormControl(null)
+    })
 
-  increaseVal(){
-    this.value++
+    this.updateForm.valueChanges.subscribe(
+      (data:any)=>{
+        console.log(data);
+      }
+    )
+    
   }
-  decreaseVal(){
-    if(this.value > 0){
-      this.value--
-    } else {
-      this.value = this.value
-      alert('you cant decrease item at 0 !!!')
-    }
-  }
+  
+
 
   deleteItem(id:any){
     Swal.fire({
@@ -120,6 +122,35 @@ export class CartListComponent implements OnInit {
         )
       }
     })
+  }
+
+  increaseItem(amount:any, id:any){
+    console.log(amount);
+    
+    this.cartServ.increaseItem(amount+1, id).subscribe(
+      (data:any)=>{
+        if(data){
+          this.cartServ.getCart({page:0, limit:10})
+        }
+      }
+    )
+  }
+  decreaseItem(amount:any, id:any){
+    if(amount == 0){
+      Swal.fire(
+        'X',
+        'you cant decrease when 0 item',
+        'error'
+      )
+    } else {
+      this.cartServ.increaseItem(amount-1, id).subscribe(
+        (data:any)=>{
+          if(data){
+            this.cartServ.getCart({page:0, limit:10})
+          }
+        }
+      )
+    }
   }
 
 }

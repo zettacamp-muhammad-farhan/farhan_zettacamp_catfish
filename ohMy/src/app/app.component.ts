@@ -12,12 +12,16 @@ import { LoginService } from './login-management/login.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+
   title = 'ohMy';
 
   loged!:boolean|null;
 
   logStatus!:Log[];
 
+  // save nav temp
+  tempNav:any = [{name:'Home', view:true}]
   nav!:Nav[]
 
   constructor(
@@ -27,30 +31,50 @@ export class AppComponent {
   ) { }
 
   ngOnInit(){
+
+    const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
+    if(usr != false){
+      const user = JSON.parse(usr)
+      console.log(user);
+      user.user_type.map(
+        (data:any)=>{
+          if(data.view == true){
+            this.tempNav.push(data)
+          }
+        }
+        )
+        console.log(this.tempNav);
+        
+    } else {
+      console.log('err');
+      
+    }
+    
+
     let data = localStorage.getItem('token') ? true : false
     this.loged = data;
 
-    if(this.loged){
-      this.appServ.getLogStatus().subscribe(
-        (data:any)=>{
-          this.logStatus = [ data ]
-        }
-      )
-    } else {
-      this.appServ.changeStatus({name:"Login", icon:"supervisor_account"})
-      this.appServ.getLogStatus().subscribe(
-        (data:any)=>{
-          this.logStatus = [ data ]
-        }
-      )
-    }
-
-    
+    // if(this.loged){
+    //   this.appServ.getLogStatus().subscribe(
+    //     (data:any)=>{
+    //       this.logStatus = [ data ]
+    //     }
+    //   )
+    // } else {
+    //   this.appServ.changeStatus({name:"Login", icon:"supervisor_account"})
+    //   this.appServ.getLogStatus().subscribe(
+    //     (data:any)=>{
+    //       this.logStatus = [ data ]
+    //     }
+    //   )
+    // }
 
     // input nav data from service
     this.appServ.getNav().subscribe(
       (nav:any)=>{
         this.nav = nav;
+        console.log(nav);
+        
       }
     )
     
@@ -84,6 +108,7 @@ export class AppComponent {
         this.appServ.changeStatus({name:"Login", icon:"supervisor_account"});
         this.getLogin()
         this.router.navigate(['/'])
+        window.location.reload()
         localStorage.removeItem(environment.tokenKey);
         localStorage.removeItem('user');
         Swal.fire(
@@ -94,5 +119,6 @@ export class AppComponent {
       }
     })
   }
+
 
 }

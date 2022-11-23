@@ -132,4 +132,27 @@ export class CartService {
         }
     })
   }
+
+  increaseItem(amount:any, id:any){
+    return this.apollo.mutate({
+      mutation : gql `
+      mutation addincreasede($input: UpdateAmount) {
+        updateAmount(input: $input) {
+          _id
+          menu {
+            _id
+            amount
+          }
+          total
+        }
+      }
+      `,
+      variables:{
+        input: {
+          amount,
+          id
+        }
+      }
+    })
+  }
 }

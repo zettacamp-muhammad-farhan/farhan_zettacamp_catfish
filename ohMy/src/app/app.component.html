@@ -9,12 +9,12 @@
       </div>
 
       
-      <div *ngFor="let item of logStatus" >
-        <a mat-list-item routerLink="/login">
+      <!-- <div *ngFor="let item of logStatus" >
+        <a mat-list-item >
           <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
           <span> {{ item.name }} </span>
         </a>
-      </div>
+      </div> -->
 
       <a *ngIf="!loged"else logout  mat-list-item routerLink="/login">
         <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>

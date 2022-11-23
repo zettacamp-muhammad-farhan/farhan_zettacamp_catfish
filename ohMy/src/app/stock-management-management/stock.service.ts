@@ -16,11 +16,12 @@ export class StockService {
   ) { }
 
   getIngridients(paging:any, name:any){
-    return this.apollo.watchQuery({
+    return this.apollo.query({
       query: gql `
       query GetAllIngredients($paging: Paging, $filter: DataFilterIngredients) {
         getAllIngredients(paging: $paging, filter: $filter) {
           TotalDocument
+          countResult
           data {
             _id
             name
@@ -38,34 +39,6 @@ export class StockService {
       }
     })
   }
-
-  getIngridientsLenght(){
-    return this.apollo
-    .query({
-      query: gql`
-      query Query($paging: Paging) {
-        getAllIngredients(paging: $paging) {
-          TotalDocument
-        }
-      }
-      `,
-      variables:{paging:{limit:1000, page:0}}
-    })
-    // .subscribe(
-    //   (resp:any)=>{
-    //     console.log(resp);
-    //     return resp.TotalDocument
-        
-    //   }
-    // )
-    // .pipe(map((resp: any) => {
-    //   const data = resp.data.getAllIngredients;
-    //   console.log(resp);
-      
-    //   return resp.TotalDocument
-    // }))
-  }
-
 
   postIngirdient(input:any){
     let {name, stock} = input
@@ -88,32 +61,8 @@ export class StockService {
         input :{name, stock}
       }
 
-    }).subscribe(
-      ({data})=>{
-        console.log(data);
-
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : 'Success add data',
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
-        console.log(error);
-
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-
-        
-      }
-    )
+    })
     
-    console.log('success');
     
   }
 
@@ -159,32 +108,7 @@ export class StockService {
         input
       }
 
-    }).subscribe(
-      ({data})=>{
-        console.log(data);
-
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : "Success update",
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
-
-        console.log(error);
-        
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-      }
-    )
-    
-    console.log('success');
-    
+    })
   }
 
 }

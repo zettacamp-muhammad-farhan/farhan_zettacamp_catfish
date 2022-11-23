@@ -92,7 +92,8 @@ export class MenuUpdateComponent implements OnInit {
     this.menuServ.updateRecipes(this.formMenu.value).subscribe(
       ({data})=>{
         console.log(data);
-        this.menuServ.getRecipes({page:0, limit:5})
+        this.menuServ.getRecipes({page:0, limit:5}, "", null)
+        this.dialogRef.close()
         Swal.fire({
           position:'center',
           icon: 'success',
@@ -113,7 +114,7 @@ export class MenuUpdateComponent implements OnInit {
       }
     )
 
-    this.dialogRef.close()
+ 
   }
 
 }

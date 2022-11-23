@@ -20,6 +20,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MenuManagementMainComponent implements OnInit {
 
+  // for filter
+  filterName:any = ""
+  filterStatus:any = null
+
   dataSource = new MatTableDataSource([])
   displayedColumns:string[] = ['image','name', 'ingredients', 'price', 'available', 'status', 'action']
 
@@ -32,6 +36,8 @@ export class MenuManagementMainComponent implements OnInit {
   }
 
   subs = new SubSink();
+
+  status = [null, "active", "deleted", "draft"]
 
   recipes:any
 
@@ -54,23 +60,47 @@ export class MenuManagementMainComponent implements OnInit {
       (data:any)=>{
         if(data){
           console.log(data.name);
+          let name = ""
+          let status:any = ""
           if(data.name){
-            console.log(0);
-            
+            name = data.name
           } else {
-            console.log(1);
-          
+            name = ""
           }
+          if(data.status){
+            status = data.status;
+          } else {
+            status = null
+          }
+
+          this.filterName = name
+          this.filterStatus = status
+          this.menuServ.getRecipes(this.pagination, this.filterName, this.filterStatus).subscribe(
+            (data:any) => {
+              this.dataSource = data;
+              console.log(this.dataSource);
+              
+              // get length data after filter
+              this.menuServ.getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
+                (data:any)=>{
+                  const length = data[0].count_result;
+                  console.log('go');
+                  this.paginator.length = length;
+                  this.paginator.pageSize = this.pageSizeOptions[0];
+                }
+              )
+
+            }
+          )
           
         } 
       }
     )
-    
   }
 
   getData(){
     this.subs.sink = this.menuServ
-    .getRecipes(this.pagination)
+    .getRecipes(this.pagination, this.filterName, this.filterStatus)
     .subscribe(
       (data:any) => {
         this.dataSource = data;
@@ -81,13 +111,16 @@ export class MenuManagementMainComponent implements OnInit {
   }
 
   initPaginator() {
-    this.menuServ
-      .getRecipesLenght()
-      .subscribe((length: number) => {
-            // update paginator length
-            this.paginator.length = length;
-            this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-      });
+      this.menuServ
+      .getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
+        (data:any)=>{
+          console.log(data[0].count_result);
+          const length = data[0].count_result;
+          this.paginator.length = length;
+          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+        }
+        
+      )
   }
 
   onPaginatorChange(event: PageEvent) {
@@ -132,7 +165,7 @@ export class MenuManagementMainComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       res=>{
         console.log(res);
-        
+        this.getData()
       }
     )
   }

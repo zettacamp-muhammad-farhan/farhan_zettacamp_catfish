@@ -38,8 +38,31 @@ export class StockUpdateComponent implements OnInit {
 
       const id = this.data.id
       const data = {newStock, id}
-      this.stokServ.updateIngirdient(data)
-      this.dialogRef.close()
+      this.stokServ.updateIngirdient(data).subscribe(
+        ({data})=>{
+          console.log(data);
+          this.stokServ.getIngridients({limit:10, page:0}, "")
+          this.dialogRef.close('test')
+
+          Swal.fire({
+            position:'center',
+            icon: 'success',
+            title : "Success update",
+            confirmButtonText : 'okay'
+          })
+          
+        }, error => {
+  
+          console.log(error);
+          
+          Swal.fire({
+            position:'center',
+            icon: 'error',
+            title : error,
+            confirmButtonText : 'okay'
+          })
+        }
+      )
 
     } else {
       Swal.fire({

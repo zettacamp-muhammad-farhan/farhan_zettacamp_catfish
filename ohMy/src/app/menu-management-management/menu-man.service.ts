@@ -15,11 +15,11 @@ export class MenuManService {
     private apollo: Apollo
   ) { }
 
-  getRecipes(paging: any) {
+  getRecipes(paging: any, recipe_name:any, status:any) {
     return this.apollo.query({
       query: gql`
-        query getAllRecipes($paging: Paging) {
-          getAllRecipes(paging: $paging) {
+        query getAllRecipes($filter: DataFilterForRecipe, $paging: Paging, $status: Status) {
+          getAllRecipes(filter: $filter, paging: $paging, status: $status) {
             
               _id
               ingredients {
@@ -36,10 +36,18 @@ export class MenuManService {
               status
               image
               available
+              count_result
+              total_count
           }
         }
       `,
-      variables: { paging },
+      variables: { 
+        paging,
+        filter: {
+          recipe_name
+        },
+        status
+       },
       fetchPolicy: "network-only"
     }
 
@@ -99,29 +107,7 @@ export class MenuManService {
         input
       }
 
-    }).subscribe(
-      ({data})=>{
-
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : 'Success add data',
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
-        console.log(error);
-
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-
-        
-      }
-    )
+    })
     
   }
 

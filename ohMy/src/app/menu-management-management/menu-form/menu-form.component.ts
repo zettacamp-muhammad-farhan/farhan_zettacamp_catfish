@@ -66,8 +66,31 @@ export class MenuFormComponent implements OnInit {
       })
       // console.log(stock);
       
-      this.menuServ.postRecipes(this.formMenu.value)
-      this.dialogRef.close(true)
+      this.menuServ.postRecipes(this.formMenu.value).subscribe(
+        ({data})=>{
+  
+          Swal.fire({
+            position:'center',
+            icon: 'success',
+            title : 'Success add data',
+            confirmButtonText : 'okay'
+          })
+          this.dialogRef.close(true)
+
+          
+        }, error => {
+          console.log(error);
+  
+          Swal.fire({
+            position:'center',
+            icon: 'error',
+            title : error,
+            confirmButtonText : 'okay'
+          })
+  
+          
+        }
+      )
     }else {
       Swal.fire({
         position:'center',

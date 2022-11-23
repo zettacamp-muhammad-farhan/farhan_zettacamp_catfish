@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { StockService } from '../stock.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-stock-form',
@@ -30,8 +31,32 @@ export class StockFormComponent implements OnInit {
 
   onSubmit(){
     if(this.formStock.valid){
-      this.stokServ.postIngirdient(this.formStock.value)
-      this.dialogRef.close()
+      this.stokServ.postIngirdient(this.formStock.value).subscribe(
+        ({data})=>{
+          console.log(data);
+  
+          Swal.fire({
+            position:'center',
+            icon: 'success',
+            title : 'Success add data',
+            confirmButtonText : 'okay'
+          })
+          this.stokServ.getIngridients({page:0, limit:10}, "")
+          this.dialogRef.close('hola')
+          
+        }, error => {
+          console.log(error);
+  
+          Swal.fire({
+            position:'center',
+            icon: 'error',
+            title : error,
+            confirmButtonText : 'okay'
+          })
+  
+          
+        }
+      )
     }
   }
 

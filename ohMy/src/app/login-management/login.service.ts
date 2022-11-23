@@ -36,7 +36,7 @@ export class LoginService {
       variables:{input}
     }).pipe(
       map((resp:any) => {
-        console.log(resp);
+        // console.log(resp);
         
         this.userLogin(resp)
         return resp
@@ -50,7 +50,6 @@ export class LoginService {
     // localStorage.setItem('user', data.data.login.)
     const permission = JSON.stringify(data.data.login.user);
     localStorage.setItem('user', permission)
-
   }
 
 

@@ -10,10 +10,20 @@
                 <mat-card-subtitle>
                     Note : {{ item.note }}
                 </mat-card-subtitle>
+
+                <!-- <form class="example-full-width" [formGroup]="updateForm">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>amount</mat-label>
+                      <input matInput type="text" formControlName="amount" placeholder="set amount ..."  />
+                    </mat-form-field>
+                   
+                    <input matInput type="text" formControlName="id" value="item._id" placeholder="set amount ..."  />
+                </form> -->
+
                 <form>
-                    <div class="value-button" id="decrease" (click)="decreaseVal()" value="Decrease Value">-</div>
-                    <input type="number" id="number" value="{{ item.amount }}" />
-                    <div class="value-button" id="increase" (click)="increaseVal()" value="Increase Value">+</div>
+                    <div class="value-button" id="decrease" disable (click)="decreaseItem(item.amount, item._id)" value="Decrease Value">-</div>
+                        <input type="number" id="number" value="{{ item.amount }}" />
+                    <div class="value-button" id="increase" (click)="increaseItem(item.amount, item._id)" value="Increase Value">+</div>
                 </form>
                 <div class="btn">
                     <button (click)="deleteItem(item._id)" mat-raised-button color="warn">

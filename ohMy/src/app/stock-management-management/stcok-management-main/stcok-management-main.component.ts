@@ -16,6 +16,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./stcok-management-main.component.scss']
 })
 export class StcokManagementMainComponent implements OnInit {
+  // filter name
+  filtName = ""
 
   dataSource = new MatTableDataSource([])
   displayedColumns:string[] = ['name', 'stock', 'action']
@@ -50,18 +52,33 @@ export class StcokManagementMainComponent implements OnInit {
       (data:any)=>{
         if(data){
           console.log(data);
-          this.stockServ.getIngridients(this.pagination, data).valueChanges.subscribe(
+          const name = data;
+          this.filtName = name
+          this.stockServ.getIngridients(this.pagination, this.filtName).subscribe(
             (data:any) => {
               this.dataSource = data.data.getAllIngredients.data;
               console.log(this.dataSource);
+
+              this.stockServ.getIngridients({page:0, limit:1000}, this.filtName).subscribe(
+                (length:any)=>{
+                  console.log(length.data.getAllIngredients.countResult);
+                  console.log('a');
+                  
+                  this.paginator.length = length.data.getAllIngredients.countResult
+                  this.paginator.pageSize = this.pageSizeOptions[0];
+                }
+              )
               
             }
           )
         } else{
-          this.stockServ.getIngridients(this.pagination, "").valueChanges.subscribe(
+          this.stockServ.getIngridients({page:0, limit: 100}, "").subscribe(
             (data:any) => {
               this.dataSource = data.data.getAllIngredients.data;
               console.log(this.dataSource);
+
+              this.paginator.length = 100
+              this.paginator.pageSize = this.pageSizeOptions[0];
             }
           )
           
@@ -73,8 +90,8 @@ export class StcokManagementMainComponent implements OnInit {
 
   getData(){
     this.subs.sink = this.stockServ
-    .getIngridients(this.pagination, "")
-    .valueChanges.subscribe(
+    .getIngridients(this.pagination, this.filtName)
+    .subscribe(
       (data:any) => {
         console.log(data);
         
@@ -87,26 +104,22 @@ export class StcokManagementMainComponent implements OnInit {
   }
 
   initPaginator(){
-    this.stockServ.getIngridientsLenght()
-    .subscribe((length:any) => {
-      console.log(length.data.getAllIngredients.TotalDocument);
-      
-      this.paginator.length = length.data.getAllIngredients.TotalDocument;
-      this.paginator.pageSize = this.pageSizeOptions[0];
-    } )
+    this.stockServ.getIngridients({limit:1000, page:0}, this.filtName).subscribe(
+      (length:any)=>{
+        console.log(length.data.getAllIngredients.countResult);
+        console.log('a');
+        
+        this.paginator.length = length.data.getAllIngredients.countResult
+        this.paginator.pageSize = this.pageSizeOptions[0];
+      }
+    )
   }
 
   onPaginatorChange(event:PageEvent){
     this.pagination.limit = event.pageSize;
     this.pagination.page = event.pageIndex;
     // refetch data
-    this.refetchData();
     this.getData()
-  }
-
-  refetchData() {
-    const pagination = this.pagination;
-    this.stockServ.getIngridients(pagination, "").refetch();
   }
 
   openDialog(){
@@ -121,7 +134,17 @@ export class StcokManagementMainComponent implements OnInit {
         console.log(res);
         
         if(res){
-          this.getData()
+          this.stockServ
+          .getIngridients(this.pagination, this.filtName)
+          .subscribe(
+            (data:any) => {
+              console.log(data);
+              
+              this.dataSource = data.data.getAllIngredients.data;
+              console.log(this.dataSource);
+              
+            }
+          )
         }
       }
     )
@@ -179,13 +202,19 @@ export class StcokManagementMainComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       res=>{
         console.log(res);
-        
+        this.stockServ
+        .getIngridients(this.pagination, this.filtName)
+        .subscribe(
+          (data:any) => {
+            console.log(data);
+            
+            this.dataSource = data.data.getAllIngredients.data;
+            console.log(this.dataSource);
+            
+          }
+        )
       }
     )
-
-    // newStock = parseInt(newStock)
-    // let data = {newStock, id}
-    // this.stockServ.updateIngirdient(data)
   }
 
 }
