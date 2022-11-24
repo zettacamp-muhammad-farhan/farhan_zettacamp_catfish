@@ -75,10 +75,10 @@ export class MenuManagementMainComponent implements OnInit {
 
           this.filterName = name
           this.filterStatus = status
-          this.menuServ.getRecipes(this.pagination, this.filterName, this.filterStatus).subscribe(
+          this.menuServ.getRecipes({page:0, limit:5}, this.filterName, this.filterStatus).subscribe(
+            
             (data:any) => {
               this.dataSource = data;
-              console.log(this.dataSource);
               
               // get length data after filter
               this.menuServ.getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(

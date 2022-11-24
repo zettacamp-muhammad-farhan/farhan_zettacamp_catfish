@@ -54,7 +54,7 @@ export class CartListComponent implements OnInit {
         this.cartServ.deleteItem(id).subscribe(
           (data:any)=>{
             if(data){
-              this.cartServ.getCart({page:0, limit:5}).refetch();
+              this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
@@ -82,13 +82,19 @@ export class CartListComponent implements OnInit {
         this.cartServ.buy().subscribe(
           (res:any)=>{
             if(res){
-              this.cartServ.getCart({page:0, limit:10}).refetch()
+              this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
                 'Horray!',
                 'Item has been Bought.',
                 'success'
               )
             }
+          }, (error)=>{
+            Swal.fire({
+              icon: 'error',
+              title: 'Failed...',
+              text: 'your transaction failed because amount limit less than your order!'
+            })
           }
         )
 
@@ -111,7 +117,7 @@ export class CartListComponent implements OnInit {
         this.cartServ.deleteCart(id).subscribe(
           (data:any)=> {
             if(data){
-              this.cartServ.getCart({page:0, limit:5}).refetch();
+              this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
                 'Deleted!',
                 'Your file has been deleted.',
@@ -130,7 +136,7 @@ export class CartListComponent implements OnInit {
     this.cartServ.increaseItem(amount+1, id).subscribe(
       (data:any)=>{
         if(data){
-          this.cartServ.getCart({page:0, limit:10})
+          this.cartServ.getCart({page:0, limit:10}).refetch()
         }
       }
     )
@@ -146,7 +152,7 @@ export class CartListComponent implements OnInit {
       this.cartServ.increaseItem(amount-1, id).subscribe(
         (data:any)=>{
           if(data){
-            this.cartServ.getCart({page:0, limit:10})
+            this.cartServ.getCart({page:0, limit:10}).refetch()
           }
         }
       )

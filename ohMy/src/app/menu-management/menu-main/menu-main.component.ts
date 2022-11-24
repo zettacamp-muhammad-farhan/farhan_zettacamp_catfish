@@ -38,20 +38,19 @@ export class MenuMainComponent implements OnInit {
     .valueChanges.subscribe(
       (data:any) => {
         this.recipes = data.data.getAllRecipes;
-        console.log(this.recipes);
       }
     )
     this.initPaginator()
   }
 
   initPaginator() {
-    this.menuServ
-      .getRecipesLenght()
-      .subscribe((length: number) => {
-            // update paginator length
-            this.paginator.length = length;
-            this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-      });
+      this.menuServ.getRecipes({limit:1000, page:0}).valueChanges.subscribe(
+        (data:any) => {
+          const length = data.data.getAllRecipes.length
+          this.paginator.length = length;
+          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+        }
+      )
   }
 
   onPaginatorChange(event: PageEvent) {

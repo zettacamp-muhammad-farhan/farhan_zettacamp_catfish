@@ -11,9 +11,9 @@ import Swal from 'sweetalert2';
 })
 export class CartMainComponent implements OnInit {
 
-  @ViewChild('paginator') paginator!: MatPaginator;
-  length = 5
-  pageSizeOptions: number[] = [5, 10, 15, 20];
+  // @ViewChild('paginator') paginator!: MatPaginator;
+  // length = 5
+  // pageSizeOptions: number[] = [5, 10, 15, 20];
   pagination:any = {
     page: 0,
     limit: 5
@@ -36,27 +36,27 @@ export class CartMainComponent implements OnInit {
         console.log(this.recipes);
       }
     )
-    this.initPaginator()
+    // this.initPaginator()
   }
 
-  initPaginator() {
-    this.cartServ
-      .getCartLength()
-      .subscribe((length: number) => {
-          // update paginator length
-          this.paginator.length = length;
-          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-      });
-  }
+  // initPaginator() {
+  //   this.cartServ
+  //     .getCartLength()
+  //     .subscribe((length: number) => {
+  //         // update paginator length
+  //         this.paginator.length = length;
+  //         this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+  //     });
+  // }
 
-  onPaginatorChange(event: PageEvent) {
+  // onPaginatorChange(event: PageEvent) {
     
-    this.pagination.limit = event.pageSize;
-    this.pagination.page = event.pageIndex;
+  //   this.pagination.limit = event.pageSize;
+  //   this.pagination.page = event.pageIndex;
 
-    // refetch data
-    this.refetchData();
-  } 
+  //   // refetch data
+  //   this.refetchData();
+  // } 
 
   refetchData() {
     const pagination = this.pagination;

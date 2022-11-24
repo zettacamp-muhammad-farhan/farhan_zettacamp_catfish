@@ -19,8 +19,8 @@ export class MenuService {
       query:gql`
         query getAllRecipes($paging: Paging, $status: Status) {
           getAllRecipes(paging: $paging, status: $status) {
-            
               _id
+              count_result
               available
               ingredients {
                 ingredient_id {

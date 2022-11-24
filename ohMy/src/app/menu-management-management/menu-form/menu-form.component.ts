@@ -84,7 +84,7 @@ export class MenuFormComponent implements OnInit {
           Swal.fire({
             position:'center',
             icon: 'error',
-            title : error,
+            title : 'Menus already exist, check again',
             confirmButtonText : 'okay'
           })
   

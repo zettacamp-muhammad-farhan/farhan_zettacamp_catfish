@@ -2,7 +2,7 @@
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
       <div *ngFor="let item of nav">
-        <a mat-list-item routerLink="/{{ item.route }}">
+        <a mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
           <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon>
           <span>{{ item.name }}</span>
         </a>

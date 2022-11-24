@@ -82,8 +82,8 @@
                 <input type="text" value="{{ element.recipe_name }}" hidden #name>
                 <input type="text" value="{{ element.price }}" hidden #price>
                 <input type="text" value="{{ element.image }}" hidden #image>
-                <button (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" ><mat-icon>edit</mat-icon></button>
-                <button (click)="deleteRecipe(_id.value)" ><mat-icon>delete</mat-icon></button>
+                <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" ><mat-icon>edit</mat-icon></button>
+                <button [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" ><mat-icon>delete</mat-icon></button>
               </td>
             </ng-container>
         

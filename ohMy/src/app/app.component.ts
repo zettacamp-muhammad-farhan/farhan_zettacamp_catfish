@@ -21,7 +21,6 @@ export class AppComponent {
   logStatus!:Log[];
 
   // save nav temp
-  tempNav:any = [{name:'Home', view:true}]
   nav!:Nav[]
 
   constructor(
@@ -33,20 +32,38 @@ export class AppComponent {
   ngOnInit(){
 
     const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
-    if(usr != false){
+    if(usr !== false){
       const user = JSON.parse(usr)
       console.log(user);
-      user.user_type.map(
-        (data:any)=>{
-          if(data.view == true){
-            this.tempNav.push(data)
+
+      //if user(not admin)
+      if(user.user_type[4].view == false){
+        this.appServ.getNav().subscribe(
+          (nav:any)=>{
+            this.nav = nav;
+            // console.log(nav);
+            
           }
-        }
         )
-        console.log(this.tempNav);
-        
+      } else {
+        // if admin
+        this.appServ.changeAdmin().subscribe(
+          (nav:any)=>{
+            this.nav = nav;
+            // console.log(nav);
+          }
+        )
+      }
+      
     } else {
-      console.log('err');
+      // if not login
+      this.appServ.changeNotLog().subscribe(
+        (nav:any)=>{
+          this.nav = nav;
+          // console.log(nav);
+        }
+      )
+      // console.log('err');
       
     }
     
@@ -70,20 +87,14 @@ export class AppComponent {
     // }
 
     // input nav data from service
-    this.appServ.getNav().subscribe(
-      (nav:any)=>{
-        this.nav = nav;
-        console.log(nav);
-        
-      }
-    )
+
     
   }
 
   getLogin(){
     this.appServ.getLogStatus().subscribe(
       (data:any)=>{
-        console.log(data);
+        // console.log(data);
         this.logStatus = [data]
       }
     )
@@ -105,10 +116,8 @@ export class AppComponent {
       confirmButtonText: 'Yes'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.appServ.changeStatus({name:"Login", icon:"supervisor_account"});
-        this.getLogin()
         this.router.navigate(['/'])
-        window.location.reload()
+        window.location.href = "/"
         localStorage.removeItem(environment.tokenKey);
         localStorage.removeItem('user');
         Swal.fire(

@@ -31,8 +31,6 @@ export class MenuAddComponent implements OnInit {
 
   onSubmit(){
     if(this.formCart.valid){
-      // console.log(this.data.id);
-      
       this.formCart.value.amount = parseInt(this.formCart.value.amount)
       this,this.formCart.value.recipe_id = this.data.id
       console.log(this.formCart.value);

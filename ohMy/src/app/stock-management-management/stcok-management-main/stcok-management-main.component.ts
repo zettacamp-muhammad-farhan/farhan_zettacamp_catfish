@@ -51,18 +51,17 @@ export class StcokManagementMainComponent implements OnInit {
     this.filterName.get('name').valueChanges.subscribe(
       (data:any)=>{
         if(data){
-          console.log(data);
+          // console.log(data);
           const name = data;
           this.filtName = name
-          this.stockServ.getIngridients(this.pagination, this.filtName).subscribe(
+          this.stockServ.getIngridients({limit:5, page:0}, this.filtName).subscribe(
             (data:any) => {
               this.dataSource = data.data.getAllIngredients.data;
-              console.log(this.dataSource);
+              // console.log(this.dataSource);
 
               this.stockServ.getIngridients({page:0, limit:1000}, this.filtName).subscribe(
                 (length:any)=>{
-                  console.log(length.data.getAllIngredients.countResult);
-                  console.log('a');
+                  // console.log(length.data.getAllIngredients.countResult);
                   
                   this.paginator.length = length.data.getAllIngredients.countResult
                   this.paginator.pageSize = this.pageSizeOptions[0];
@@ -75,7 +74,7 @@ export class StcokManagementMainComponent implements OnInit {
           this.stockServ.getIngridients({page:0, limit: 100}, "").subscribe(
             (data:any) => {
               this.dataSource = data.data.getAllIngredients.data;
-              console.log(this.dataSource);
+              // console.log(this.dataSource);
 
               this.paginator.length = 100
               this.paginator.pageSize = this.pageSizeOptions[0];
@@ -93,10 +92,10 @@ export class StcokManagementMainComponent implements OnInit {
     .getIngridients(this.pagination, this.filtName)
     .subscribe(
       (data:any) => {
-        console.log(data);
+        // console.log(data);
         
         this.dataSource = data.data.getAllIngredients.data;
-        console.log(this.dataSource);
+        // console.log(this.dataSource);
         
       }
     )
@@ -106,8 +105,8 @@ export class StcokManagementMainComponent implements OnInit {
   initPaginator(){
     this.stockServ.getIngridients({limit:1000, page:0}, this.filtName).subscribe(
       (length:any)=>{
-        console.log(length.data.getAllIngredients.countResult);
-        console.log('a');
+        // console.log(length.data.getAllIngredients.countResult);
+        // console.log('a');
         
         this.paginator.length = length.data.getAllIngredients.countResult
         this.paginator.pageSize = this.pageSizeOptions[0];
@@ -131,17 +130,17 @@ export class StcokManagementMainComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        console.log(res);
+        // console.log(res);
         
         if(res){
           this.stockServ
           .getIngridients(this.pagination, this.filtName)
           .subscribe(
             (data:any) => {
-              console.log(data);
+              // console.log(data);
               
               this.dataSource = data.data.getAllIngredients.data;
-              console.log(this.dataSource);
+              // console.log(this.dataSource);
               
             }
           )
@@ -174,9 +173,6 @@ export class StcokManagementMainComponent implements OnInit {
             this.getData()
             
           }, error => {
-    
-            console.log(error);
-            
             Swal.fire({
               position:'center',
               icon: 'error',
@@ -201,16 +197,11 @@ export class StcokManagementMainComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        console.log(res);
         this.stockServ
         .getIngridients(this.pagination, this.filtName)
         .subscribe(
           (data:any) => {
-            console.log(data);
-            
             this.dataSource = data.data.getAllIngredients.data;
-            console.log(this.dataSource);
-            
           }
         )
       }

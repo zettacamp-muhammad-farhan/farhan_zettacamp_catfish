@@ -17,7 +17,7 @@ export class CartService {
     console.log(data);
     
     let pagination=data;
-    let filter= {user_lname:"User", order_status:"pending"}
+    let filter= {order_status:"pending"}
     return this.apollo.watchQuery({
       query:gql`
       query QueryTransaction($pagination: Paging, $filter: DataFilterTransaction) {
@@ -53,8 +53,6 @@ export class CartService {
   }
 
   getCartLength(){
-    // let data:any = localStorage.getItem('user') ? localStorage.getItem('user') : ""
-    // JSON.parse(data)
     let user_lname = "User"
     let order_status = "pending"
     return this.apollo
