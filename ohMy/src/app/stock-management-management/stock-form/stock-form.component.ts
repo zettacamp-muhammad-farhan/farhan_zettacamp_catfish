@@ -45,12 +45,10 @@ export class StockFormComponent implements OnInit {
           this.dialogRef.close('hola')
           
         }, error => {
-          console.log(error);
-  
           Swal.fire({
             position:'center',
             icon: 'error',
-            title : error,
+            title : 'stock already exist, please check again ...',
             confirmButtonText : 'okay'
           })
   

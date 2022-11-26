@@ -7,38 +7,28 @@ import { AuthguardServiceService } from './authguard-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationGuard implements CanActivate {
+export class AuthguardUserGuard implements CanActivate {
+
   constructor(
     private router:Router,
     private activatedRoute:ActivatedRoute,
     private authGuard : AuthguardServiceService
   ){}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-
-      if(!this.authGuard.getToken()){
+      if(!this.authGuard.getUserType()){
         Swal.fire({
-          title: 'You must login to access this page !!!',
-          text: "do you want to login ?",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, go to login page'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            this.router.navigateByUrl("/login")
-          } else {
-            this.router.navigateByUrl("/")           
-          }
+          icon: 'error',
+          title: 'Oops...',
+          text: 'You must login as admin to access this page'
         })
-        return false;
+        this.router.navigateByUrl("/")      
+        return false     
       } else {
         return true
       }
-    
   }
   
 }

@@ -14,3 +14,22 @@ button{
     margin-left: 10px;
     margin-right: 10px;
 }
+mat-spinner {
+    width: 1500px;
+    height: 1500px;
+    margin-right: auto; margin-left: auto;
+}
+.btn-add {
+    float: right;
+    margin-bottom: 20px;
+}
+
+::ng-deep .mat-paginator{
+    background-color: rgba(0, 0, 0, 0.69) !important;
+    color: wheat;
+    margin-top: 10px;
+}
+
+.up {
+    padding-top: 50px;
+}

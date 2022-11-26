@@ -16,6 +16,9 @@ export class MenuFormComponent implements OnInit {
 
   ingredients:any
 
+  cpIngridients!:string[]
+
+  selectedIngredient:string[] = []
 
   constructor(
     private menuServ:MenuManService,
@@ -35,8 +38,18 @@ export class MenuFormComponent implements OnInit {
 
     this.menuServ.getIngridients().valueChanges.subscribe(
       (val:any)=>{
-        console.log(val);
+        // console.log(val);
         this.ingredients = val.data.getAllIngredients.data
+      }
+    )
+
+
+    this.formMenu.get('ingredients').valueChanges.subscribe(
+      (a:any)=>{
+        this.selectedIngredient = a.map((val:any)=>{
+          return val.ingredient_id
+        })
+        
       }
     )
   }
@@ -58,13 +71,9 @@ export class MenuFormComponent implements OnInit {
 
     if(this.formMenu.valid){
       let stock = (this.formMenu.value.ingredients)
-      console.log(stock);
-      
-  
       this.formMenu.value.ingredients.map((data:any)=>{
         data.stock_used = parseInt(data.stock_used)
       })
-      // console.log(stock);
       
       this.menuServ.postRecipes(this.formMenu.value).subscribe(
         ({data})=>{
@@ -79,16 +88,12 @@ export class MenuFormComponent implements OnInit {
 
           
         }, error => {
-          console.log(error);
-  
           Swal.fire({
             position:'center',
             icon: 'error',
             title : 'Menus already exist, check again',
             confirmButtonText : 'okay'
           })
-  
-          
         }
       )
     }else {

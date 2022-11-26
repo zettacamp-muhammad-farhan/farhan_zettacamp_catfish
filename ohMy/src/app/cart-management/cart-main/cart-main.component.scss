@@ -1,10 +1,11 @@
 main {
     padding: 20px;
+    min-height: 100vh;
 }
 .container {
     width: 80%;
     margin-left: auto; margin-right: auto;
-    background-color: rgb(246, 241, 241);
+    background-color: transparent;
     padding: 20px;
 }
 main h1 {
@@ -13,4 +14,19 @@ main h1 {
 .example-card {
     max-width: 400px;
     margin-bottom: 8px;
-  }
+    background-color: rgba(0, 0, 0, 0.619);
+}
+::ng-deep.mat-card {
+    background: rgba(255, 255, 255, 0.799);
+}
+.title {
+    position: sticky;
+    top: 64px;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.448);
+    padding: 20px;
+    color: wheat;
+}
+.title h2 {
+    text-align: center;
+}

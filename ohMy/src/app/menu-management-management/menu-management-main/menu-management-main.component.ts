@@ -20,6 +20,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class MenuManagementMainComponent implements OnInit {
 
+  loaded=false
+
   // for filter
   filterName:any = ""
   filterStatus:any = null
@@ -59,7 +61,7 @@ export class MenuManagementMainComponent implements OnInit {
     this.findName.valueChanges.subscribe(
       (data:any)=>{
         if(data){
-          console.log(data.name);
+          // console.log(data.name);
           let name = ""
           let status:any = ""
           if(data.name){
@@ -84,7 +86,6 @@ export class MenuManagementMainComponent implements OnInit {
               this.menuServ.getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
                 (data:any)=>{
                   const length = data[0].count_result;
-                  console.log('go');
                   this.paginator.length = length;
                   this.paginator.pageSize = this.pageSizeOptions[0];
                 }
@@ -103,25 +104,30 @@ export class MenuManagementMainComponent implements OnInit {
     .getRecipes(this.pagination, this.filterName, this.filterStatus)
     .subscribe(
       (data:any) => {
+        if(data){
+          this.loaded = true
+        }
         this.dataSource = data;
-        console.log(this.dataSource);
+        // console.log(data[0].total_count);
+        const length = data[0].total_count
+        this.paginator.length = length;
+        this.paginator.pageSize = this.pageSizeOptions[0]; // 5
       }
     )
-    this.initPaginator()
   }
 
-  initPaginator() {
-      this.menuServ
-      .getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
-        (data:any)=>{
-          console.log(data[0].count_result);
-          const length = data[0].count_result;
-          this.paginator.length = length;
-          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-        }
+  // initPaginator() {
+  //     this.menuServ
+  //     .getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
+  //       (data:any)=>{
+  //         // console.log(data[0].count_result);
+  //         const length = data[0].count_result;
+  //         this.paginator.length = length;
+  //         this.paginator.pageSize = this.pageSizeOptions[0]; // 5
+  //       }
         
-      )
-  }
+  //     )
+  // }
 
   onPaginatorChange(event: PageEvent) {
     this.pagination.limit = event.pageSize;
@@ -150,7 +156,7 @@ export class MenuManagementMainComponent implements OnInit {
   }
 
   openEdit(id:string, name:string, price:string, image:string, ingredient:any){
-    console.log(ingredient);
+    // console.log(ingredient);
     
     const dialogRef = this.dialog.open(MenuUpdateComponent, {
       width:"70%",
@@ -164,7 +170,7 @@ export class MenuManagementMainComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        console.log(res);
+        // console.log(res);
         this.getData()
       }
     )
@@ -205,7 +211,14 @@ export class MenuManagementMainComponent implements OnInit {
         if(res){
           this.getData();
           this.menu.getRecipes({limit:5, page:0})
-        }
+        } 
+      }, (error:any)=>{
+        Swal.fire(
+          "you can't unpublished because this food in cart",
+          'You clicked the button!',
+          'error'
+        )
+        
       }
     )
   }

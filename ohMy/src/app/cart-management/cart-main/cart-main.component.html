@@ -1,5 +1,7 @@
 <main>
-    <h1>Food Cart</h1>
+    <div class="title">
+        <h2>Food Cart</h2>
+    </div>
     <div class="container">
         <div *ngIf="recipes.length > 0" >
             <app-cart-list *ngFor="let item of recipes" [recipe]="item"></app-cart-list>

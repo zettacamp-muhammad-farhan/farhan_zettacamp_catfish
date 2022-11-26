@@ -1,25 +1,60 @@
 <main>
     <div class="container">
-        <button (click)="openDialog()" mat-raised-button color="primary">Add Menu</button>
+        <button class="btn-add" (click)="openDialog()" mat-raised-button color="primary">Add Menu</button>
 
-        <form class="example-full-width" [formGroup]="findName">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>name</mat-label>
-            <input matInput type="text" formControlName="name" placeholder="find name ..."  />
-          </mat-form-field>
+        <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
 
-          <mat-form-field appearance="fill">
-            <mat-label>Status</mat-label>
-            <mat-select formControlName="status">
-              <mat-option *ngFor="let item of status" [value]="item">
-                {{item}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </form>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!--- Note that these columns can be defined in any order.
                         The actual rendered columns are set as a property on the row definition" -->
+
+            <form class="example-full-width" [formGroup]="findName">
+
+              <ng-container matColumnDef="name">
+                <th class="up" mat-header-cell *matHeaderCellDef>
+                  Name
+                  <div>
+                    <mat-form-field class="example-full-width" >
+                      <mat-label>name</mat-label>
+                      <input matInput type="text" formControlName="name" placeholder="find name ..."  />
+                    </mat-form-field>
+                  </div>
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.recipe_name }}</td>
+              </ng-container>
+
+                          <ng-container matColumnDef="status">
+              <th class="up" mat-header-cell *matHeaderCellDef>
+                Status
+                <div>
+                  <mat-form-field >
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="status">
+                      <mat-option *ngFor="let item of status" [value]="item">
+                        {{item == null ? "All" : item}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <!-- {{ element.status }} 
+                <button (click)="updateStatus({'id' : element._id,  'status' : element.status == 'draft' ? 'active' : 'draft'})" >
+                   <mat-icon *ngIf="element.status == 'active' " >check</mat-icon> 
+                   <mat-icon *ngIf="element.status == 'draft' " >panorama_fish_eye</mat-icon> 
+                </button> -->
+                <button mat-raised-button [color]="element.status == 'active' ? 'primary' : 'warn' " (click)="updateStatus({'id' : element._id,  'status' : element.status == 'draft' ? 'active' : 'draft'})">
+                  <mat-icon *ngIf="element.status == 'active' " >check</mat-icon> 
+                  <mat-icon *ngIf="element.status == 'draft' " >panorama_fish_eye</mat-icon> 
+                </button>
+              </td>
+            </ng-container>
+
+
+       
+    
+ 
+            </form>
         
             <!-- Position Column -->
             <ng-container matColumnDef="image">
@@ -32,10 +67,7 @@
             </ng-container>
 
             <!-- Position Column -->
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef>Name</th>
-              <td mat-cell *matCellDef="let element">{{ element.recipe_name }}</td>
-            </ng-container>
+
         
             
             <!-- Weight Column -->
@@ -63,17 +95,7 @@
             </ng-container>
             
             <!-- Symbol Column -->
-            <ng-container matColumnDef="status">
-              <th mat-header-cell *matHeaderCellDef>Status</th>
-              <td mat-cell *matCellDef="let element">
-                {{ element.status }} 
-                <button (click)="updateStatus({'id' : element._id,  'status' : element.status == 'draft' ? 'active' : 'draft'})" >
-                   <mat-icon *ngIf="element.status == 'active' " >check</mat-icon> 
-                   <mat-icon *ngIf="element.status == 'draft' " >panorama_fish_eye</mat-icon> 
 
-                </button>
-              </td>
-            </ng-container>
 
             <ng-container matColumnDef="action" style="text-align:center!important ;">
               <th mat-header-cell *matHeaderCellDef>Action</th>
@@ -82,8 +104,16 @@
                 <input type="text" value="{{ element.recipe_name }}" hidden #name>
                 <input type="text" value="{{ element.price }}" hidden #price>
                 <input type="text" value="{{ element.image }}" hidden #image>
-                <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" ><mat-icon>edit</mat-icon></button>
-                <button [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" ><mat-icon>delete</mat-icon></button>
+
+              <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" mat-raised-button color="primary">
+                  <mat-icon>edit</mat-icon>
+              </button>
+              <button [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" mat-raised-button color="warn">
+                  <mat-icon>delete</mat-icon>
+              </button>
+
+                <!-- <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" ><mat-icon>edit</mat-icon></button>
+                <button [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" ><mat-icon>delete</mat-icon></button> -->
               </td>
             </ng-container>
         

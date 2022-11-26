@@ -62,17 +62,13 @@
                 <div> <h3>Ingridient {{ i+1 }}</h3> </div>
                 <button type="button" class="btn-dell" mat-flat-button color="warn" (click)="removeIngredient(i)">Delete Ingridient Form</button><br><br>
 
-                <!-- <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Ingredient</mat-label>
-                    <input matInput type="text" formControlName="ingredient_id" placeholder="Ingresient id" />
-                </mat-form-field> -->
-
                 <mat-form-field appearance="fill">
                     <mat-label>Ingredient</mat-label>
                     <mat-select formControlName="ingredient_id" >
-                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient._id">
-                        {{ingredient.name}}
-                      </mat-option>
+                        <mat-option *ngFor="let ingredient of ingredients" [disabled]="(selectedIngredient).includes(ingredient._id)" [value]="ingredient._id">
+                          {{ingredient.name}}
+                        </mat-option>
+                    
                     </mat-select>
                 </mat-form-field>
 
@@ -94,3 +90,4 @@
     </div>
   </form>
 </main>
+

@@ -23,7 +23,7 @@ export class MenuUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data.ingredient);
+    // console.log(this.data.ingredient);
     
     this.formMenu = new FormGroup({
       newName : new FormControl(this.data.name, Validators.required),
@@ -33,7 +33,7 @@ export class MenuUpdateComponent implements OnInit {
     });
 
     let _id = {id:this.data.id}
-    console.log(_id);
+    // console.log(_id);
     
     this.menuServ.getOneRecipes(_id).valueChanges.subscribe(
       (val:any)=>{
@@ -82,16 +82,16 @@ export class MenuUpdateComponent implements OnInit {
     this.formMenu.value.id = this.data.id
     this.formMenu.value.price = parseInt(this.formMenu.value.price)
     let stock = (this.formMenu.value.ingredient)
-    console.log(stock);
+    // console.log(stock);
     
-    console.log(this.formMenu.value);
+    // console.log(this.formMenu.value);
     this.formMenu.value.newIngredient.map((data:any) => {
       data.stock_used = parseInt(data.stock_used)
     })
 
     this.menuServ.updateRecipes(this.formMenu.value).subscribe(
       ({data})=>{
-        console.log(data);
+        // console.log(data);
         this.menuServ.getRecipes({page:0, limit:5}, "", null)
         this.dialogRef.close()
         Swal.fire({
@@ -103,7 +103,7 @@ export class MenuUpdateComponent implements OnInit {
         
       }, error => {
 
-        console.log(error);
+        // console.log(error);
         
         Swal.fire({
           position:'center',

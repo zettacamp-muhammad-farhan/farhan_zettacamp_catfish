@@ -1,29 +1,50 @@
-<main>
+<div class="log">
+  <main>
     <div class="container">
-        <mat-card class="example-card">
-            <mat-card-title>Login</mat-card-title>
-            <mat-divider inset></mat-divider>
-            <mat-card-content class="no-margin-y">
-              <div class="p-grid" [formGroup]="loginForm">
-                <div class="p-col-12">
-                  <mat-form-field class="full-width">
-                    <input matInput type="email" placeholder="Email" formControlName="email">
-                  </mat-form-field>
-                </div>
-                <div class="p-col-12">
-                  <mat-form-field class="full-width">
-                    <input matInput type="password" placeholder="Password" formControlName="password">
-                  </mat-form-field>
-                </div>
-              </div>
-              <ng-container >
-                
-              </ng-container>
-            </mat-card-content>
-            <mat-divider inset></mat-divider>
-            <mat-card-actions class="align-end">
-              <button mat-raised-button color="primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>
-            </mat-card-actions>
-          </mat-card>
+      <mat-card class="example-card">
+        <mat-card-title>
+          <h2>Login</h2>
+        </mat-card-title>
+        <mat-divider inset></mat-divider>
+        <mat-card-content class="no-margin-y">
+          <div class="p-grid" [formGroup]="loginForm">
+            <div class="p-col-12">
+              <mat-form-field class="full-width">
+                <input matInput type="email" placeholder="Email" formControlName="email">
+              </mat-form-field>
+
+              <mat-error *ngIf="
+                    !loginForm.get('email')?.valid &&
+                    loginForm.get('email')?.touched
+                  " class="help-block">
+                <mat-error *ngIf="loginForm.get('email')?.errors?.['required']">Email must fill</mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.errors?.['email']">Input email please</mat-error>
+              </mat-error>
+
+            </div>
+            <div class="p-col-12">
+              <mat-form-field class="full-width">
+                <input matInput type="password" placeholder="Password" formControlName="password">
+              </mat-form-field>
+
+              <mat-error *ngIf="
+              !loginForm.get('password')?.valid &&
+              loginForm.get('password')?.touched
+            " class="help-block">
+                <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password must fill</mat-error>
+              </mat-error>
+
+            </div>
+          </div>
+          <ng-container>
+
+          </ng-container>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions class="align-end">
+          <button mat-raised-button color="primary" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
-</main>
+  </main>
+</div>

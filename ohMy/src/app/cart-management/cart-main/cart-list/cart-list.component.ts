@@ -23,7 +23,7 @@ export class CartListComponent implements OnInit {
 
   ngOnInit(): void {
     this.recipes = this.recipe.menu
-    console.log(this.recipes);
+    // console.log(this.recipes);
     
     this.updateForm = new FormGroup({
       amount: new FormControl(null),
@@ -32,7 +32,7 @@ export class CartListComponent implements OnInit {
 
     this.updateForm.valueChanges.subscribe(
       (data:any)=>{
-        console.log(data);
+        // console.log(data);
       }
     )
     
@@ -131,7 +131,7 @@ export class CartListComponent implements OnInit {
   }
 
   increaseItem(amount:any, id:any){
-    console.log(amount);
+    // console.log(amount);
     
     this.cartServ.increaseItem(amount+1, id).subscribe(
       (data:any)=>{

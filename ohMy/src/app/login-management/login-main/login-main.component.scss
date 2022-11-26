@@ -1,17 +1,21 @@
+.log {
+    overflow: hidden;
+}
 main{
-    background-image: url('https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: rgb(50, 42, 42);
-    height: 100vh;
+    // background-image: url('https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    color: wheat;
+    height: 70vh;
     padding: 100px;
 }
 .container {
-    width: 50%;
+    width: 40%;
     margin-left: auto; margin-right: auto;
-    background-color: rgba(255, 255, 255, 0.824);
+    background-color: rgb(218 196 196 / 94%);
     border-radius: 20px;
     padding: 20px;
+    color: wheat !important;
 }
 mat-form-field {
     width: 100%;
@@ -19,4 +23,13 @@ mat-form-field {
 
 ::ng-deep .mat-card {
     background-color: transparent;
+}
+
+button {
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    // color: wheat;
 }

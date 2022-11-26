@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MenuFormComponent } from './menu-form/menu-form.component';
 import { MenuUpdateComponent } from './menu-update/menu-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -16,7 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuUpdateComponent
   ],
   imports: [
-    CommonModule,MaterialModule, ReactiveFormsModule
+    CommonModule,MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule
   ],
   exports:[
     MenuManagementMainComponent, MenuFormComponent, MenuUpdateComponent

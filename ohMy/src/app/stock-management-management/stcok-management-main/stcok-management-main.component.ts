@@ -36,6 +36,8 @@ export class StcokManagementMainComponent implements OnInit {
 
   filterName:any
 
+  loaded=false
+
   constructor(
     private stockServ : StockService,
     private dialog : MatDialog
@@ -51,7 +53,6 @@ export class StcokManagementMainComponent implements OnInit {
     this.filterName.get('name').valueChanges.subscribe(
       (data:any)=>{
         if(data){
-          // console.log(data);
           const name = data;
           this.filtName = name
           this.stockServ.getIngridients({limit:5, page:0}, this.filtName).subscribe(
@@ -61,7 +62,6 @@ export class StcokManagementMainComponent implements OnInit {
 
               this.stockServ.getIngridients({page:0, limit:1000}, this.filtName).subscribe(
                 (length:any)=>{
-                  // console.log(length.data.getAllIngredients.countResult);
                   
                   this.paginator.length = length.data.getAllIngredients.countResult
                   this.paginator.pageSize = this.pageSizeOptions[0];
@@ -73,11 +73,16 @@ export class StcokManagementMainComponent implements OnInit {
         } else{
           this.stockServ.getIngridients({page:0, limit: 100}, "").subscribe(
             (data:any) => {
-              this.dataSource = data.data.getAllIngredients.data;
-              // console.log(this.dataSource);
+              if(data){
+                this.loaded = true
+                console.log(this.loaded);
+                
 
-              this.paginator.length = 100
-              this.paginator.pageSize = this.pageSizeOptions[0];
+                this.dataSource = data.data.getAllIngredients.data;
+  
+                this.paginator.length = 100
+                this.paginator.pageSize = this.pageSizeOptions[0];
+              }
             }
           )
           
@@ -92,27 +97,20 @@ export class StcokManagementMainComponent implements OnInit {
     .getIngridients(this.pagination, this.filtName)
     .subscribe(
       (data:any) => {
-        // console.log(data);
+        if(data){
+          this.loaded = true
+        }
+        console.log(data.data.getAllIngredients.TotalDocument);
+
+        // set paginator
+        this.paginator.length = data.data.getAllIngredients.TotalDocument
+        this.paginator.pageSize = this.pageSizeOptions[0];
         
         this.dataSource = data.data.getAllIngredients.data;
-        // console.log(this.dataSource);
-        
       }
     )
-    this.initPaginator()
   }
 
-  initPaginator(){
-    this.stockServ.getIngridients({limit:1000, page:0}, this.filtName).subscribe(
-      (length:any)=>{
-        // console.log(length.data.getAllIngredients.countResult);
-        // console.log('a');
-        
-        this.paginator.length = length.data.getAllIngredients.countResult
-        this.paginator.pageSize = this.pageSizeOptions[0];
-      }
-    )
-  }
 
   onPaginatorChange(event:PageEvent){
     this.pagination.limit = event.pageSize;
@@ -130,18 +128,12 @@ export class StcokManagementMainComponent implements OnInit {
     })
     dialogRef.afterClosed().subscribe(
       res=>{
-        // console.log(res);
-        
         if(res){
           this.stockServ
           .getIngridients(this.pagination, this.filtName)
           .subscribe(
             (data:any) => {
-              // console.log(data);
-              
               this.dataSource = data.data.getAllIngredients.data;
-              // console.log(this.dataSource);
-              
             }
           )
         }

@@ -11,15 +11,6 @@
                     Note : {{ item.note }}
                 </mat-card-subtitle>
 
-                <!-- <form class="example-full-width" [formGroup]="updateForm">
-                    <mat-form-field class="example-full-width" appearance="fill">
-                      <mat-label>amount</mat-label>
-                      <input matInput type="text" formControlName="amount" placeholder="set amount ..."  />
-                    </mat-form-field>
-                   
-                    <input matInput type="text" formControlName="id" value="item._id" placeholder="set amount ..."  />
-                </form> -->
-
                 <form>
                     <div class="value-button" id="decrease" disable (click)="decreaseItem(item.amount, item._id)" value="Decrease Value">-</div>
                         <input type="number" id="number" value="{{ item.amount }}" />

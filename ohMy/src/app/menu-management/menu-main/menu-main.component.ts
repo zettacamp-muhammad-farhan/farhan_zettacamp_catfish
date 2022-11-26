@@ -11,12 +11,14 @@ import { MenuAddComponent } from '../menu-add/menu-add.component';
 })
 export class MenuMainComponent implements OnInit {
 
+  loaded=false
+
   @ViewChild('paginator') paginator!: MatPaginator;
-  length = 5
-  pageSizeOptions: number[] = [5, 10, 15, 20];
+  length = 6
+  pageSizeOptions: number[] = [6, 10, 16, 20];
   pagination:any = {
     page: 0,
-    limit: 5
+    limit: 6
   }
 
   subs = new SubSink();
@@ -37,21 +39,31 @@ export class MenuMainComponent implements OnInit {
     .getRecipes(this.pagination)
     .valueChanges.subscribe(
       (data:any) => {
+
+        if(data){
+          this.loaded = true
+        }
+
         this.recipes = data.data.getAllRecipes;
+        // console.log(this.recipes[0].total_count);
+
+        // set pagainate
+        const length = this.recipes[0].total_count
+        this.paginator.length = length;
+        this.paginator.pageSize = this.pageSizeOptions[0]; // 6
       }
     )
-    this.initPaginator()
   }
 
-  initPaginator() {
-      this.menuServ.getRecipes({limit:1000, page:0}).valueChanges.subscribe(
-        (data:any) => {
-          const length = data.data.getAllRecipes.length
-          this.paginator.length = length;
-          this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-        }
-      )
-  }
+  // initPaginator() {
+  //     this.menuServ.getRecipes({limit:1000, page:0}).valueChanges.subscribe(
+  //       (data:any) => {
+  //         const length = data.data.getAllRecipes.length
+  //         this.paginator.length = length;
+  //         this.paginator.pageSize = this.pageSizeOptions[0]; // 6
+  //       }
+  //     )
+  // }
 
   onPaginatorChange(event: PageEvent) {
     this.pagination.limit = event.pageSize;

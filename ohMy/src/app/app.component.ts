@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { AppService, Nav, Log } from './app.service';
+import { AuthguardServiceService } from './authguard-service.service';
 import { LoginService } from './login-management/login.service';
 
 @Component({
@@ -26,15 +27,18 @@ export class AppComponent {
   constructor(
     private login:LoginService,
     private router:Router,
-    private appServ:AppService
+    private appServ:AppService,
+    private guard:AuthguardServiceService
   ) { }
 
   ngOnInit(){
 
+    // console.log(this.guard.getUserType())
+
     const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
     if(usr !== false){
       const user = JSON.parse(usr)
-      console.log(user);
+      // console.log(user);
 
       //if user(not admin)
       if(user.user_type[4].view == false){

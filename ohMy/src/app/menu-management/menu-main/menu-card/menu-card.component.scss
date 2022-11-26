@@ -4,7 +4,10 @@
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-position: center;
+    background-attachment: fixed;
     background-size: cover;
+    background-repeat: no-repeat;
   }
   .img {
     overflow: hidden;
@@ -16,6 +19,7 @@
 
   mat-card {
     position: relative;
+    height: 420px;
   }
 
   .gray {
@@ -25,8 +29,19 @@
     top: 0;
     left: 0;
     background-color: rgba(61, 51, 51, 0.41);
-    height: max-content;
+    height: 100%;
   }
   .gray img {
+    margin-top: 70px;
     width: 100%;
+  }
+
+  ::ng-deep .mat-card {
+    background-color: #761a1ad0;
+    color: wheat;
+  }
+
+  ::ng-deep .mat-card-subtitle{
+    color: rgba(245, 222, 179, 0.781);
+
   }

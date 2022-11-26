@@ -11,14 +11,13 @@ form {
   
   .value-button {
     display: inline-block;
-    border: 1px solid #ddd;
     margin: 0px;
     width: 40px;
     height: 20px;
     text-align: center;
     vertical-align: middle;
     padding: 11px 0;
-    background: #eee;
+    background: rgb(125, 76, 76);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -67,10 +66,14 @@ form {
   .img-card {
     width: 100%;
     overflow: hidden;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    border-radius: 5px;
   }
   .img-card img {
     width: 100%;
-    height: 100%;
   }
 
   mat-card-content {
@@ -90,7 +93,6 @@ form {
   width: 100%;
 }
 .body-item {
-  background-color: #ddd;
   padding: 20px;
 }
 mat-card-title-group{
@@ -99,15 +101,17 @@ mat-card-title-group{
 .item-mini {
   width: 100%;
   margin-bottom: 10px;
-  background-color: #ddd;
   display: flex;
   flex-direction: row;
+  border: 1px solid rgba(216, 192, 192, 0.546);
+
 }
 .body-item {
   flex: 4;
 }
 .body-img {
   flex: 1;
+  position: relative;
 }
 .desc {
   float: right;
@@ -126,4 +130,19 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+::ng-deep .mat-card {
+  background-color: #761a1ad0;
+  color: wheat;
+}
+
+::ng-deep .mat-card-subtitle{
+  color: rgba(245, 222, 179, 0.781);
+}
+
+input{
+  background-color: rgb(99, 14, 14);
+  color: wheat;
+  border: none;
 }

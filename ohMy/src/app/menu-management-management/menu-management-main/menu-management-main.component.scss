@@ -1,8 +1,8 @@
 main{
     padding: 20px;
+    min-height: 100vh;
 }
 .container {
-    background-color: rgb(230, 242, 242);
     width: 80%;
     margin-right: auto; margin-left: auto;
     border-radius: 10px;
@@ -14,12 +14,36 @@ table{
 }
 .img {
     width: 100px;
-    height: 100px;
+    height: 50px;
     overflow: hidden;
+    margin-top: 20px; margin-bottom: 20px;
 }
 .img img {
     width: 100%;
 }
 .mat-header-cell.mat-column-action{
     text-align: center !important;
+}
+button {
+    margin-left: 10px; margin-right: 10px;
+}
+mat-spinner {
+    width: 1500px;
+    height: 1500px;
+    margin-right: auto; margin-left: auto;
+}
+.btn-add {
+    float: right;
+    margin-bottom: 20px;
+}
+
+::ng-deep .mat-paginator{
+    background-color: rgba(0, 0, 0, 0.69) !important;
+    background: transparent;
+    color: wheat;
+    margin-top: 10px;
+}
+
+.up {
+    padding-top: 50px;
 }

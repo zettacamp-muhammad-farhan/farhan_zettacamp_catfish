@@ -14,7 +14,7 @@ export class CartService {
   ) { }
 
   getCart(data:any){
-    console.log(data);
+    // console.log(data);
     
     let pagination=data;
     let filter= {order_status:"pending"}
@@ -48,7 +48,8 @@ export class CartService {
       variables:{
         pagination,
         filter
-      }
+      },
+      fetchPolicy: "network-only"
     })
   }
 
@@ -78,7 +79,7 @@ export class CartService {
   }
 
   deleteItem(id:any){
-    console.log(id);
+    // console.log(id);
     
     return this.apollo.mutate({
       mutation: gql `

@@ -7,6 +7,7 @@ import { MenuCardComponent } from './menu-main/menu-card/menu-card.component';
 import { MaterialModule } from '../material/material.module';
 import { MenuAddComponent } from './menu-add/menu-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes : Routes = [
   {
@@ -27,7 +28,7 @@ const routes : Routes = [
     MenuAddComponent
   ],
   imports: [
-    CommonModule, MaterialModule, ReactiveFormsModule
+    CommonModule, MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule
   ],
   exports:[
     MenuMainComponent, MenuCardComponent, MenuAddComponent

@@ -21,6 +21,7 @@ export class MenuService {
           getAllRecipes(paging: $paging, status: $status) {
               _id
               count_result
+              total_count
               available
               ingredients {
                 ingredient_id {

@@ -2,7 +2,8 @@ header {
     background-image: url(https://blog.myfitnesspal.com/wp-content/uploads/2018/01/Pesto-Egg-in-a-Hole-Toast-with-Bacon-14-1024x576.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px;
+    background-attachment: fixed;
+    height: 300px;
     width: 100%;
     position: relative;
     background-position: center;
@@ -22,4 +23,26 @@ main {
 }
 .col {
     flex-basis: 30%;
+}
+mat-spinner {
+    width: 1500px;
+    height: 1500px;
+    margin-right: auto; margin-left: auto;
+}
+.title {
+    position: sticky;
+    top: 64px;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.448);
+    padding: 20px;
+    color: wheat;
+}
+.title h2 {
+    text-align: center;
+}
+
+::ng-deep .mat-paginator{
+    background-color: rgba(0, 0, 0, 0.69);
+    color: wheat;
+    margin-top: 10px;
 }

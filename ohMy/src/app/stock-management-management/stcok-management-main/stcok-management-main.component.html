@@ -1,20 +1,27 @@
 <main>
     <div class="container">
-        <button (click)="openDialog()" mat-raised-button color="primary">Add Ingrediets</button>
+        <button class="btn-add" (click)="openDialog()" mat-raised-button color="primary">Add Ingrediets</button>
 
-        <form class="example-full-width" [formGroup]="filterName">
-            <mat-form-field class="example-full-width">
-              <mat-label>name</mat-label>
-              <input matInput type="text" formControlName="name" placeholder="find name ..."  />
-            </mat-form-field>
-        </form>
+
+        
+        <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!--- Note that these columns can be defined in any order.
                         The actual rendered columns are set as a property on the row definition" -->
 
             <!-- Position Column -->
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef>Name</th>              
+                <th class="up" mat-header-cell *matHeaderCellDef>
+                    Name
+                    <div >
+                        <form class="example-full-width" [formGroup]="filterName">
+                            <mat-form-field class="example-full-width">
+                              <mat-label>name</mat-label>
+                              <input matInput type="text" formControlName="name" placeholder="find name ..."  />
+                            </mat-form-field>
+                        </form>
+                    </div>
+                </th>              
                 <td mat-cell *matCellDef="let element">{{ element.name }}</td>
             </ng-container>
 

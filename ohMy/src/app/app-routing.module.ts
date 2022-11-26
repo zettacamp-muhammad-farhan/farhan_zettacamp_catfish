@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutMainComponent } from './about-management/about-main/about-main.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { AuthguardUserGuard } from './authguard-user.guard';
 import { CartMainComponent } from './cart-management/cart-main/cart-main.component';
 import { LoginMainComponent } from './login-management/login-main/login-main.component';
 import { MenuManagementMainComponent } from './menu-management-management/menu-management-main/menu-management-main.component';
@@ -25,13 +26,13 @@ const routes: Routes = [
     path:"about", component:AboutMainComponent
   },
   {
-    path:"cart", component:CartMainComponent
+    path:"cart", component:CartMainComponent, canActivate:[AuthenticationGuard]
   },
   {
-    path:"menu-management", component:MenuManagementMainComponent
+    path:"menu-management", component:MenuManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
   },
   {
-    path:"stock-management", component:StcokManagementMainComponent, canActivate:[AuthenticationGuard]
+    path:"stock-management", component:StcokManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
   }
 ];
 
