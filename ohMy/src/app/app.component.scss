@@ -3,12 +3,7 @@ mat-toolbar {
     z-index: 3;
 }
 main {
-    margin-top: 60px;
-    background-image: url(https://w0.peakpx.com/wallpaper/821/32/HD-wallpaper-beautiful-wood-lined-restaurant-r-tables-window-restaurant-chairs-r.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #FFF8EA;
 }
 
 .nav-right {
@@ -31,10 +26,12 @@ main {
     flex: 1;
 }
 .log {
-    margin-top: 2px;
     margin-left: 20px;
+    color: rgba(255, 255, 255, 0.679)
 }
 
-::ng-deep mat-toolbar.mat-primary {
-    background-color: #3f414bd1;
+
+::ng-deep.mat-toolbar.mat-primary{
+    background-color: #594545 !important;
+    color: rgba(255, 255, 255, 0.719);
 }

@@ -23,16 +23,29 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-toolbar color="primary">
+
+    <form [formGroup]="language">
+      <mat-form-field>
+        <mat-label>Language</mat-label>
+        <mat-select formControlName="lang">
+          <mat-option value="en">English</mat-option>
+          <mat-option value="fr">France</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+
     <button mat-icon-button (click)="sidenav.open()">
       <mat-icon>menu</mat-icon>
       <span> Reztaurant New Life </span>
     </button>
+
     <div class="nav-right" style="float: right ;" >
 
       <div class="row" *ngFor="let item of nav">
-        <a class="col" mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
-          <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon>
-          <span>{{ item.name }}</span>
+        <a class="col log" mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
+          <!-- <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon> -->
+          <span>{{ item.name | translate }}</span>
         </a>
       </div>
 

@@ -133,8 +133,8 @@ input[type=number] {
 }
 
 ::ng-deep .mat-card {
-  background-color: #761a1ad0;
-  color: wheat;
+  background-color: #815B5B;
+  color: #FFF8EA;
 }
 
 ::ng-deep .mat-card-subtitle{
@@ -146,3 +146,8 @@ input{
   color: wheat;
   border: none;
 }
+
+::ng-deep .mat-raised-button.mat-primary{
+  background-color: #9E7676 !important;
+}
+

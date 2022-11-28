@@ -4,6 +4,7 @@ import { AboutMainComponent } from './about-management/about-main/about-main.com
 import { AuthenticationGuard } from './authentication.guard';
 import { AuthguardUserGuard } from './authguard-user.guard';
 import { CartMainComponent } from './cart-management/cart-main/cart-main.component';
+import { HistoryMainComponent } from './history-management/history-main/history-main.component';
 import { LoginMainComponent } from './login-management/login-main/login-main.component';
 import { MenuManagementMainComponent } from './menu-management-management/menu-management-main/menu-management-main.component';
 import { MenuMainComponent } from './menu-management/menu-main/menu-main.component';
@@ -27,6 +28,8 @@ const routes: Routes = [
   },
   {
     path:"cart", component:CartMainComponent, canActivate:[AuthenticationGuard]
+  },{
+    path:"history", component:HistoryMainComponent, canActivate:[AuthenticationGuard]
   },
   {
     path:"menu-management", component:MenuManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]

@@ -1,13 +1,104 @@
 <main>
-    <div class="container">
-        <!-- <div class="img-hero">
-            <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/54/89/d2/parisian-benedict.jpg" alt="">
+    <header>
+        <div class="row">
+            <div class="col first">
+                <h2>D J A Y A</h2>
+                <div class="tagline">
+                    <div>Enjoy good life</div> <br> <br>
+                    <div>Hangout experience good taste</div>
+                </div>
+                <div class="message">
+                    Feel the valuable experience at our place, 
+                    Boost your productivity and build your mood with a short break in the most comfortable place, 
+                    feel the thrill of victory
+                </div>
+                <button class="reservation" >
+                    Reservation
+                </button>
+                <button class="reservation" >
+                    See our Menu
+                </button>
+            </div>
+            <div class="col second">
+                <div class="img">
+                    <img src="../../../assets/img/image-front.jpg" alt="">
+                </div>
+                <div class="best">
+                    <img src="../../../assets/img/logo-best.png" alt="">
+                </div>
+            </div>
         </div>
-        <div class="desc">
-            <p>
-                welcome to our simple restaurant, we provide a variety of dishes using eggs, from traditional to modern, you can enjoy them
-            </p>
-        </div> -->
+    </header>
+
+    <section>
+        <div class="menu">
+            <div class="row">
+                <div class=" left-content">
+                    <div class="img-sample">
+                        <img src="../../../assets/img/sample-homepage.jpg" alt="">
+                    </div>
+                </div>
+                <div class=" right-content">
+                    <h2>Overview</h2>
+                    <div class="tagline">
+                        <div> A Little Information Just For You ..... </div><br> <br>
+                        <div>Hangout experience good taste</div>
+                    </div>
+                    <div class="message">
+                        <p>Here we attach brief data about our foods and beverages at Legawa space that will make it easier for you our guest at our restaurant to get know us, and understand how we can serve you well with all our heart that we give to provide the best service for all of you, and we want you to feel satisfaction, your satisfaction is our happiness</p>
+                    </div>
+                    <div class="information-precent row">
+                        <div class="col precent">
+                            <h1>10 <span class="plus">+</span> </h1>
+                            <div>Meeting Room</div>
+                        </div>
+                        <div class="col precent">
+                            <h1>20 <span class="plus">+</span> </h1>
+                            <div>of all menus</div>
+                        </div>
+                        <div class="col precent">
+                            <h1>15 <span class="plus">+</span> </h1>
+                            <div>Event Spaces</div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </section>
+
+    <section>
+        <h2>Recommend For you ...</h2>
+        <div class="row">
+            <app-homepage-card class="col-30" *ngFor="let recipe of recipesHighlight" [recipe]="recipe" ></app-homepage-card>
+        </div>
+    </section>
+
+    <section>
+        <h2>Special Offer, dont miss it </h2>
+        <div class="row">
+            <app-homepage-card class="col-30" *ngFor="let recipe of specialOffer" [recipe]="recipe" ></app-homepage-card>
+        </div>
+    </section>
+
+    <footer>
+        
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
         <div class="row">
             <div class="col">
                 <div class="head-desc">
@@ -29,5 +120,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </main>

@@ -34,6 +34,8 @@ export class MenuManService {
               recipe_name
               price
               status
+              highlight
+              special_offers
               image
               available
               count_result
@@ -168,9 +170,39 @@ export class MenuManService {
       }
 
     })
-    
-    console.log('success');
-    
+  }
+
+  updateSpecial(input:any){
+    this.query = gql `
+    mutation Mutation($input: DataUpdateRecipe) {
+      updateRecipe(input: $input) {
+        _id
+        recipe_name
+      }
+    }
+    `
+    return this.apollo.mutate({
+      mutation : this.query,
+      variables: {
+        input
+      }
+    })
+  }
+
+  updateHightlight(input:any){
+    this.query = gql `
+    mutation Mutation($input: DataUpdateRecipe) {
+      updateRecipe(input: $input) {
+        _id
+        recipe_name
+      }
+    }
+    `
+
+    return this,this.apollo.mutate({
+      mutation: this.query,
+      variables:{input}
+    })
   }
 
   getOneRecipes(filter:any){

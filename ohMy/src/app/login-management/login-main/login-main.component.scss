@@ -11,7 +11,7 @@ main{
 }
 .container {
     width: 40%;
-    margin-left: auto; margin-right: auto;
+    margin-left: auto; margin-right: auto; margin-top: 90px;
     background-color: rgb(218 196 196 / 94%);
     border-radius: 20px;
     padding: 20px;
@@ -23,6 +23,10 @@ mat-form-field {
 
 ::ng-deep .mat-card {
     background-color: transparent;
+}
+
+::ng-deep .mat-raised-button.mat-primary {
+    background-color: #594545;
 }
 
 button {

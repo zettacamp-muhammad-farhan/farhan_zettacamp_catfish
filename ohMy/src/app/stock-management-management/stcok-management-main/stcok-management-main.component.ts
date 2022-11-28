@@ -23,11 +23,11 @@ export class StcokManagementMainComponent implements OnInit {
   displayedColumns:string[] = ['name', 'stock', 'action']
 
   @ViewChild('paginator') paginator!: MatPaginator;
-  length = 5
-  pageSizeOptions: number[] = [5, 10, 15, 20];
+  length = 10
+  pageSizeOptions: number[] = [10, 10, 15, 20];
   pagination:any = {
     page: 0,
-    limit: 5
+    limit: 10
   }
 
   subs = new SubSink();
@@ -55,7 +55,7 @@ export class StcokManagementMainComponent implements OnInit {
         if(data){
           const name = data;
           this.filtName = name
-          this.stockServ.getIngridients({limit:5, page:0}, this.filtName).subscribe(
+          this.stockServ.getIngridients({limit:10, page:0}, this.filtName).subscribe(
             (data:any) => {
               this.dataSource = data.data.getAllIngredients.data;
               // console.log(this.dataSource);

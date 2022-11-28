@@ -4,6 +4,7 @@ import { HomepageMainComponent } from './homepage-main/homepage-main.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MaterialModule } from '../material/material.module';
+import { HomepageCardComponent } from './homepage-main/homepage-card/homepage-card.component';
 
 const routes : Routes = [
   {
@@ -19,13 +20,14 @@ const routes : Routes = [
 
 @NgModule({
   declarations: [
-    HomepageMainComponent
+    HomepageMainComponent,
+    HomepageCardComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     MaterialModule
   ],
-  exports: [HomepageMainComponent]
+  exports: [HomepageMainComponent, HomepageCardComponent]
 })
 export class HomepageManagementModule { }

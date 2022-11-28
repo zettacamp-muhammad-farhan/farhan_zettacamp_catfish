@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import { MenuUpdateComponent } from '../menu-update/menu-update.component';
 import { MenuService } from 'src/app/menu-management/menu.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { HomepageService } from 'src/app/homepage-management/homepage.service';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class MenuManagementMainComponent implements OnInit {
   filterStatus:any = null
 
   dataSource = new MatTableDataSource([])
-  displayedColumns:string[] = ['image','name', 'ingredients', 'price', 'available', 'status', 'action']
+  displayedColumns:string[] = ['image','name', 'ingredients', 'price', 'available', 'specialOffer', 'highlight', 'status', 'action']
 
   @ViewChild('paginator') paginator!: MatPaginator;
   length = 5
@@ -47,7 +48,8 @@ export class MenuManagementMainComponent implements OnInit {
   constructor(
     private menuServ : MenuManService,
     private menu:MenuService,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private home:HomepageService
   ) { }
 
   ngOnInit(): void {
@@ -115,19 +117,6 @@ export class MenuManagementMainComponent implements OnInit {
       }
     )
   }
-
-  // initPaginator() {
-  //     this.menuServ
-  //     .getRecipes({limit:1000, page:0}, this.filterName, this.filterStatus).subscribe(
-  //       (data:any)=>{
-  //         // console.log(data[0].count_result);
-  //         const length = data[0].count_result;
-  //         this.paginator.length = length;
-  //         this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-  //       }
-        
-  //     )
-  // }
 
   onPaginatorChange(event: PageEvent) {
     this.pagination.limit = event.pageSize;
@@ -219,6 +208,41 @@ export class MenuManagementMainComponent implements OnInit {
           'error'
         )
         
+      }
+    )
+  }
+
+  updateSpecial(input:any){
+    this.menuServ.updateSpecial(input).subscribe(
+      (res:any)=>{
+        if(res){
+          this.getData()
+          // homepage
+          this.home.getRecipesSpecial({limit:5, page:0})
+        }
+      }, (error:any)=>{
+        Swal.fire(
+          "you can't set because this food in cart",
+          'You clicked the button!',
+          'error'
+        )
+      }
+    )
+  }
+
+  updateHightlight(input:any){
+    this,this.menuServ.updateHightlight(input).subscribe(
+      (res:any)=>{
+        if(res){
+          this.getData()
+          this.home.getRecipesHighlight({limit:5, page:0})
+        }
+      }, (error:any)=>{
+        Swal.fire(
+          "you can't set because this food in cart",
+          'You clicked the button!',
+          'error'
+        )
       }
     )
   }

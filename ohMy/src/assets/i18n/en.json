@@ -1,17 +1,22 @@
 {
-    "add" : "Add Data",
-    "title" : "Promo List",
-    "image" : "Image",
-    "titlee" : "Title",
-    "subtitle" : "Subtitle",
-    "Description" : "Description",
-    "submit" : "Submit",
-    "inv" : {
-        "reff" : "field reff is required!",
-        "img" : "field img is required!",
-        "title" : "field title is required!",
-        "subtitle" : "field subtitle is required!",
-        "description" : "field description is required!",
-        "err" : "Please fill the field and enter valid data!"
-    }
+    "Homepage" : "Homepage",
+    "Menu" : "Menu",
+    "About" : "About",
+    "Login" : "Login",
+
+    "Enjoy" : "Enjoy good life",
+    "Hangout" : "Hangout experience good taste",
+    "ALittle" : "A Little Information Just For You .....",
+    "Overview" : "Overview",
+
+    "MessageHome" : "Feel the valuable experience at our place, Boost your productivity and build your mood with a short break in the most comfortable place, feel the thrill of victory",
+
+    "MessageContent" : "Here we attach brief data about our foods and beverages at Legawa space that will make it easier for you our guest at our restaurant to get know us, and understand how we can serve you well with all our heart that we give to provide the best service for all of you, and we want you to feel satisfaction, your satisfaction is our happiness",
+
+    "Reservation" : "Reservation",
+    "SeeMenu" : "See Our Menu",
+
+    "Meeting Room" : "Meeting Room",
+    "OffAll" : "Off All Menu",
+    "Event Spaces" : "Event Spaces"
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -17,6 +19,8 @@ export class AppComponent {
 
   title = 'ohMy';
 
+  language:any
+
   loged!:boolean|null;
 
   logStatus!:Log[];
@@ -28,12 +32,11 @@ export class AppComponent {
     private login:LoginService,
     private router:Router,
     private appServ:AppService,
-    private guard:AuthguardServiceService
+    private guard:AuthguardServiceService,
+    private translate:TranslateService
   ) { }
 
   ngOnInit(){
-
-    // console.log(this.guard.getUserType())
 
     const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
     if(usr !== false){
@@ -71,26 +74,23 @@ export class AppComponent {
       
     }
     
-
     let data = localStorage.getItem('token') ? true : false
     this.loged = data;
+    
+    this.language = new FormGroup({
+      lang: new FormControl(null)
+    })
 
-    // if(this.loged){
-    //   this.appServ.getLogStatus().subscribe(
-    //     (data:any)=>{
-    //       this.logStatus = [ data ]
-    //     }
-    //   )
-    // } else {
-    //   this.appServ.changeStatus({name:"Login", icon:"supervisor_account"})
-    //   this.appServ.getLogStatus().subscribe(
-    //     (data:any)=>{
-    //       this.logStatus = [ data ]
-    //     }
-    //   )
-    // }
-
-    // input nav data from service
+    this.language.get('lang').valueChanges.subscribe(
+      (lang:any)=>{
+        if(lang == "en"){
+          this.translate.use("en");
+        } else {
+          this.translate.use("fr")
+        }
+      }
+      
+    )
 
     
   }

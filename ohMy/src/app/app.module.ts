@@ -17,6 +17,7 @@ import { CartManagementModule } from './cart-management/cart-management.module';
 import { MenuManagementManagementModule } from './menu-management-management/menu-management-management.module';
 import { StockManagementManagementModule } from './stock-management-management/stock-management-management.module';
 import { AuthguardServiceService } from './authguard-service.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -48,7 +49,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginManagementModule,
     CartManagementModule,
     MenuManagementManagementModule,
-    StockManagementManagementModule
+    StockManagementManagementModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthguardServiceService

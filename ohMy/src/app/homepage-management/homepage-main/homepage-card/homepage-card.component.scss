@@ -1,0 +1,30 @@
+.col {
+    flex-basis: 30%;
+}
+
+.img {
+    overflow: hidden;
+    height: 180px;
+  }
+  .price {
+    float: right;
+  }
+
+  mat-card {
+    position: relative;
+    height: 420px;
+  }
+
+  .gray {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(61, 51, 51, 0.41);
+    height: 100%;
+  }
+  .gray img {
+    margin-top: 70px;
+    width: 100%;
+  }

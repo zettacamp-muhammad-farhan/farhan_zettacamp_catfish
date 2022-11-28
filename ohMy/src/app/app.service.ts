@@ -37,6 +37,12 @@ export class AppService {
       name:"Cart"
     },
     {
+      route:"history",
+      icon:"",
+      permission:true,
+      name:"History"
+    },
+    {
       route:"stock-management",
       icon:"list",
       permission:false,
@@ -74,6 +80,12 @@ export class AppService {
       icon:"shopping_cart",
       permission:true,
       name:"Cart"
+    },
+    {
+      route:"history",
+      icon:"",
+      permission:true,
+      name:"History"
     },
     {
       route:"stock-management",
