@@ -35,3 +35,18 @@ main {
     background-color: #594545 !important;
     color: rgba(255, 255, 255, 0.719);
 }
+
+.nav-right a:hover {
+    background-color: #eba4a4;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+.nav-right a.active {
+    background-color: #eba4a4;
+    color: #4f2f2f !important;
+    text-decoration: dashed !important;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+

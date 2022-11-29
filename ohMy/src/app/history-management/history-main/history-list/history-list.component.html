@@ -1,1 +1,37 @@
-<p>history-list works!</p>
+<main>
+    <div class="card">
+        <h2>{{ transaction.order_date }}</h2>
+        <div class="contain-item" *ngFor="let trans of transaction.menu" >
+            <div class="row">
+                <div class="col">
+                    <div class="img">
+                        <img [src]="trans.recipe_id.image" alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="name">
+                        <h2>{{ trans.recipe_id.recipe_name }}</h2>
+                    </div>
+                    <div class="note">
+                        <p>
+                            {{ trans.note }}
+                        </p>
+                    </div>
+                    <div class="price">
+                        <h3>Rp. {{ trans.recipe_id.price }}</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="ammount">
+                        <h3>{{ trans.amount }}</h3>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="totalPrice">
+            <h2>Total Price : Rp. {{ transaction.total }}</h2>
+        </div>
+    </div>
+</main>

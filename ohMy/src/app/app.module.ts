@@ -18,6 +18,7 @@ import { MenuManagementManagementModule } from './menu-management-management/men
 import { StockManagementManagementModule } from './stock-management-management/stock-management-management.module';
 import { AuthguardServiceService } from './authguard-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HistoryManagementModule } from './history-management/history-management.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -51,7 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuManagementManagementModule,
     StockManagementManagementModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    HistoryManagementModule
   ],
   providers: [
     AuthguardServiceService

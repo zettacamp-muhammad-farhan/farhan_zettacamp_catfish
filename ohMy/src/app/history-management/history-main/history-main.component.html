@@ -3,6 +3,21 @@
         <h2>History</h2>
     </div>
     <div class="container">
+
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+            <mat-tab label="Success Transaction">
+                <app-history-list *ngFor="let transaction of orderSuccess" [transaction]="transaction"></app-history-list>
+                <mat-paginator #paginator class="promo-paginator" (page)="onPaginatorChange($event)"
+                    showFirstLastButtons="true">
+                </mat-paginator>
+            </mat-tab>
+            <mat-tab label="Failed Transaction">
+                <app-history-list *ngFor="let transaction of orderFailed" [transaction]="transaction"></app-history-list>
+                <mat-paginator #paginatorFail class="promo-paginator" (page)="onPaginatorChangeFail($event)"
+                    showFirstLastButtons="true">
+                </mat-paginator>
+            </mat-tab>
+        </mat-tab-group>
         <!-- <div *ngIf="recipes.length > 0" >
             <app-history-list *ngFor="let item of recipes" [recipe]="item"></app-history-list>
         </div>

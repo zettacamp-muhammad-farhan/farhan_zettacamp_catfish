@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-history-list',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryListComponent implements OnInit {
 
+  @Input() transaction:any
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.transaction);
+    
   }
 
 }

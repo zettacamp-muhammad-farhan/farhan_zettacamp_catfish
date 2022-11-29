@@ -2,7 +2,7 @@
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
       <div *ngFor="let item of nav">
-        <a mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
+        <a mat-list-item class="active" routerLinkActive="active" *ngIf="item.permission" routerLink="/{{ item.route }}">
           <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon>
           <span>{{ item.name }}</span>
         </a>
@@ -43,7 +43,7 @@
     <div class="nav-right" style="float: right ;" >
 
       <div class="row" *ngFor="let item of nav">
-        <a class="col log" mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
+        <a class="col log" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
           <!-- <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon> -->
           <span>{{ item.name | translate }}</span>
         </a>

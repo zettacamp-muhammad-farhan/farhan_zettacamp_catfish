@@ -1,0 +1,38 @@
+main{
+    width: 80%;
+    margin-left: auto; margin-right: auto;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.col {
+    flex-basis: 30%;
+}
+.card {
+    background-color: #815B5B;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #FFF8EA;
+}
+.img{
+    width: 80%;
+    height: 100px;
+    overflow: hidden;
+}
+.img img {
+    width: 100%;
+}
+.contain-item {
+    margin-bottom: 20px;
+}
+.col .ammount {
+    text-align: center;
+}
+.totalPrice{
+    float: right;
+    margin-bottom: 60px;
+    margin-top: -30px;
+}
