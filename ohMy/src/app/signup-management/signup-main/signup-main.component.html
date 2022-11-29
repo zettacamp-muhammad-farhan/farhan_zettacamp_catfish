@@ -1,1 +1,80 @@
-<p>signup-main works!</p>
+<div class="log">
+    <main>
+      <div class="container">
+        <mat-card class="example-card">
+          <mat-card-title>
+            <h2>Register</h2>
+          </mat-card-title>
+          <mat-divider inset></mat-divider>
+          <mat-card-content class="no-margin-y">
+            <div class="p-grid" [formGroup]="signUp">
+                
+              <div class="p-col-12">
+                <mat-form-field class="full-width">
+                  <input matInput type="email" placeholder="Email" formControlName="email">
+                </mat-form-field>
+  
+                <mat-error *ngIf="
+                      !signUp.get('email')?.valid &&
+                      signUp.get('email')?.touched
+                    " class="help-block">
+                  <mat-error *ngIf="signUp.get('email')?.errors?.['required']">Email must fill</mat-error>
+                  <mat-error *ngIf="signUp.get('email')?.errors?.['email']">Input email please</mat-error>
+                </mat-error>
+  
+              </div>
+
+              <div class="p-col-12">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="First Name" formControlName="first_name">
+                </mat-form-field>
+  
+                <mat-error *ngIf="
+                      !signUp.get('firstName')?.valid &&
+                      signUp.get('firstName')?.touched
+                    " class="help-block">
+                  <mat-error *ngIf="signUp.get('firstName')?.errors?.['required']">first name must fill</mat-error>
+                </mat-error>
+  
+              </div>
+
+              <div class="p-col-12">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Last Name" formControlName="last_name">
+                </mat-form-field>
+  
+                <mat-error *ngIf="
+                      !signUp.get('lastName')?.valid &&
+                      signUp.get('lastName')?.touched
+                    " class="help-block">
+                  <mat-error *ngIf="signUp.get('lastName')?.errors?.['required']">Last Name must fill</mat-error>
+                </mat-error>
+  
+              </div>
+
+              <div class="p-col-12">
+                <mat-form-field class="full-width">
+                  <input matInput type="password" placeholder="Password" formControlName="password">
+                </mat-form-field>
+  
+                <mat-error *ngIf="
+                !signUp.get('password')?.valid &&
+                signUp.get('password')?.touched
+              " class="help-block">
+                  <mat-error *ngIf="signUp.get('password')?.errors?.['required']">Password must fill</mat-error>
+                </mat-error>
+  
+              </div>
+            </div>
+            <ng-container>
+  
+            </ng-container>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions class="align-end">
+            <button mat-raised-button color="primary" (click)="submit()" [disabled]="signUp.invalid">Register</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </main>
+  </div>

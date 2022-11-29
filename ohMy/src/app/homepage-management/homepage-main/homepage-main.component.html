@@ -12,10 +12,7 @@
                     Boost your productivity and build your mood with a short break in the most comfortable place, 
                     feel the thrill of victory
                 </div>
-                <button class="reservation" >
-                    Reservation
-                </button>
-                <button class="reservation" >
+                <button (click)="linkMenu()"  class="reservation" >
                     See our Menu
                 </button>
             </div>
@@ -70,8 +67,11 @@
 
     <section>
         <h2>Recommend For you ...</h2>
-        <div class="row">
+        <div class="row" *ngIf="recipesHighlight>=0">
             <app-homepage-card class="col-30" *ngFor="let recipe of recipesHighlight" [recipe]="recipe" ></app-homepage-card>
+        </div>
+        <div class="row" *ngIf="recipesHighlight==0" >
+            Item not available ...
         </div>
     </section>
 

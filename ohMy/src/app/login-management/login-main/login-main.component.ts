@@ -36,7 +36,7 @@ export class LoginMainComponent implements OnInit {
 
   login(){
     const payload = this.loginForm.value
-    console.log(payload);
+    // console.log(payload);
     this.subs.sink = this.loginServ.loginUser(payload).subscribe((resp:any)=>{
       if(resp){
         console.log(resp);

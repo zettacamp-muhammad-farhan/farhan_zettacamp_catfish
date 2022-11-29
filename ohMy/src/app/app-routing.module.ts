@@ -8,6 +8,8 @@ import { HistoryMainComponent } from './history-management/history-main/history-
 import { LoginMainComponent } from './login-management/login-main/login-main.component';
 import { MenuManagementMainComponent } from './menu-management-management/menu-management-main/menu-management-main.component';
 import { MenuMainComponent } from './menu-management/menu-main/menu-main.component';
+import { SignupMainComponent } from './signup-management/signup-main/signup-main.component';
+import { SignupManagementModule } from './signup-management/signup-management.module';
 import { StcokManagementMainComponent } from './stock-management-management/stcok-management-main/stcok-management-main.component';
 import { StockManagementManagementModule } from './stock-management-management/stock-management-management.module';
 
@@ -36,6 +38,9 @@ const routes: Routes = [
   },
   {
     path:"stock-management", component:StcokManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
+  },
+  {
+    path:"signup", component:SignupMainComponent
   }
 ];
 

@@ -4,6 +4,7 @@ import { HomepageService } from '../homepage.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 import { SubSink } from 'subsink';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-homepage-main',
   templateUrl: './homepage-main.component.html',
@@ -26,12 +27,13 @@ export class HomepageMainComponent implements OnInit {
   specialOffer:any
 
   constructor(
-    private homeServ:HomepageService
+    private homeServ:HomepageService, 
+    private router:Router
   ) { }
 
   ngOnInit(): void {
     this.getRecipesHigh()
-    this.getSpecialOver()
+    this.getSpecialOver() 
   }
 
   getRecipesHigh(){
@@ -42,6 +44,7 @@ export class HomepageMainComponent implements OnInit {
           this.loaded = true
         }
         this.recipesHighlight = data.data.getAllRecipes
+        console.log(data.data.getAllRecipes);
       }
     )
   }
@@ -58,6 +61,10 @@ export class HomepageMainComponent implements OnInit {
       }
     )
 
+  }
+
+  linkMenu(){
+    this.router.navigate(['/menu'])
   }
 
 

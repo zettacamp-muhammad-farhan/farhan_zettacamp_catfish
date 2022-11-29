@@ -36,10 +36,12 @@ export class HomepageService {
   }
 
   getRecipesHighlight(paging:any){
+    console.log(paging);
+    
     return this.apollo.watchQuery({
       query:gql`
-      query GetAllRecipes($special: Boolean, $highlight: Boolean, $paging: Paging) {
-        getAllRecipes(special: $special, highlight: $highlight, paging: $paging) {
+      query GetAllRecipes($paging: Paging, $highlight: Boolean) {
+        getAllRecipes(paging: $paging, highlight: $highlight) {
           _id
           available
           recipe_name
@@ -50,10 +52,9 @@ export class HomepageService {
           price
           count_result
         }
-      }
-      `, 
+      }`, 
       variables:{
-        "highlight": true,
+        highlight : true,
         paging
       },
       fetchPolicy: "network-only"

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { HistoryService } from 'src/app/history-management/history.service';
 import Swal from 'sweetalert2';
 import { CartService } from '../../cart.service';
 
@@ -18,7 +19,8 @@ export class CartListComponent implements OnInit {
   updateForm:any
 
   constructor(
-    private cartServ:CartService
+    private cartServ:CartService,
+    private historyServ:HistoryService
   ) { }
 
   ngOnInit(): void {
@@ -83,6 +85,7 @@ export class CartListComponent implements OnInit {
           (res:any)=>{
             if(res){
               this.cartServ.getCart({page:0, limit:5}).refetch()
+              this.historyServ.getHistory({page:0, limit:5}, "success")
               Swal.fire(
                 'Horray!',
                 'Item has been Bought.',
@@ -90,6 +93,7 @@ export class CartListComponent implements OnInit {
               )
             }
           }, (error)=>{
+            this.historyServ.getHistory({page:0, limit:5}, "failed")
             Swal.fire({
               icon: 'error',
               title: 'Failed...',

@@ -50,13 +50,20 @@
       </div>
 
       <div class="log" >
-        <a *ngIf="!loged"else logout  mat-list-item routerLink="/login">
+        <a *ngIf="!loged"else logout routerLinkActive="active"  mat-list-item routerLink="/login">
           <!-- <mat-icon color='white' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
           <span> Login </span>
         </a>
         <a *ngIf="loged"else logout  mat-list-item (click)="logOut()">
           <!-- <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
           <span> Logout </span>
+        </a>
+      </div>
+
+      <div class="log" >
+        <a *ngIf="!loged"else logout routerLinkActive="active"  mat-list-item routerLink="/signup">
+          <!-- <mat-icon color='white' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
+          <span> Register </span>
         </a>
       </div>
 

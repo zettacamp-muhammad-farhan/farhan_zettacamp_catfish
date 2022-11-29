@@ -37,7 +37,8 @@ export class HistoryService {
         "filter": {
           order_status
         }
-      }
+      },
+      fetchPolicy: "network-only"
     })
   }
 }
