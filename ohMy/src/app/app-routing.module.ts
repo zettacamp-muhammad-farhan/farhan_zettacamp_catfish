@@ -31,16 +31,16 @@ const routes: Routes = [
   {
     path:"cart", component:CartMainComponent, canActivate:[AuthenticationGuard]
   },{
-    path:"history", component:HistoryMainComponent, canActivate:[AuthenticationGuard]
+    path:"cart/history", component:HistoryMainComponent, canActivate:[AuthenticationGuard]
   },
   {
     path:"menu-management", component:MenuManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
   },
   {
-    path:"stock-management", component:StcokManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
+    path:"menu-management/stock-management", component:StcokManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
   },
   {
-    path:"signup", component:SignupMainComponent
+    path:"login/signup", component:SignupMainComponent
   }
 ];
 

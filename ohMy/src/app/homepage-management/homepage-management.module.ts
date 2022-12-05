@@ -5,11 +5,12 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { MaterialModule } from '../material/material.module';
 import { HomepageCardComponent } from './homepage-main/homepage-card/homepage-card.component';
+import { HomepageSlideComponent } from './homepage-main/homepage-slide/homepage-slide.component';
 
 const routes : Routes = [
   {
     path:"",
-    component:AppComponent,
+    component:HomepageMainComponent,
     children:[
       {
         path:"", component:HomepageMainComponent
@@ -21,13 +22,14 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     HomepageMainComponent,
-    HomepageCardComponent
+    HomepageCardComponent,
+    HomepageSlideComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     MaterialModule
   ],
-  exports: [HomepageMainComponent, HomepageCardComponent]
+  exports: [HomepageMainComponent, HomepageCardComponent, HomepageSlideComponent]
 })
 export class HomepageManagementModule { }

@@ -1,19 +1,17 @@
-import { Component, OnInit, ViewChild, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MenuAddComponent } from 'src/app/menu-management/menu-add/menu-add.component';
 import Swal from 'sweetalert2';
 import { HomepageService } from '../../homepage.service';
 
-
-
 @Component({
-  selector: 'app-homepage-card',
-  templateUrl: './homepage-card.component.html',
-  styleUrls: ['./homepage-card.component.scss']
+  selector: 'app-homepage-slide',
+  templateUrl: './homepage-slide.component.html',
+  styleUrls: ['./homepage-slide.component.scss']
 })
-export class HomepageCardComponent implements OnInit {
+export class HomepageSlideComponent implements OnInit {
 
-  @Input() recipe:any
+  @Input() recipes:any
 
   canBuy = false
 
@@ -51,6 +49,5 @@ export class HomepageCardComponent implements OnInit {
     }
 
   }
-
 
 }

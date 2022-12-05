@@ -2,12 +2,20 @@
     <div class="title">
         <h2>Food Cart</h2>
     </div>
+    <mat-spinner *ngIf="!loaded" ></mat-spinner>
     <div class="container">
         <div *ngIf="recipes.length > 0" >
             <app-cart-list *ngFor="let item of recipes" [recipe]="item"></app-cart-list>
         </div>
         <div *ngIf="recipes.length == 0" >
-            <div>No item </div>
+            <div>
+                <div class="img-cart">
+                    <img src="../../../assets/img/cart/empty.webp" alt="">
+                </div>
+                <div class="cart-msg">
+                    <h2>You have no Item at the cart</h2>
+                </div>
+            </div>
         </div>
         
     </div>

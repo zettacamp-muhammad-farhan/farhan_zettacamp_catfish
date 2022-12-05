@@ -21,11 +21,11 @@ main h1 {
 }
 .title {
     position: sticky;
-    top: 64px;
+    top: 60px;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.448);
+    background-color: #2c42687b;
     padding: 20px;
-    color: wheat;
+    color: rgb(88, 70, 70);
 }
 .title h2 {
     text-align: center;
@@ -37,4 +37,25 @@ main h1 {
 
 .img img {
     width: 100%;
+}
+
+.img-cart {
+    margin-top: 50px;
+    overflow: hidden;
+    width: 20%;
+    margin-right: auto; margin-left: auto;
+}
+.img-cart img {
+    width: 100%;
+}
+.cart-msg{
+    margin-top: 30px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+mat-spinner {
+    margin-left: auto; margin-right: auto;
+    margin-top: 30px;
 }

@@ -117,4 +117,8 @@ export class MenuUpdateComponent implements OnInit {
  
   }
 
+
+  close(){
+    this.dialogRef.close(true)
+  }
 }

@@ -106,6 +106,10 @@ export class MenuFormComponent implements OnInit {
     }
   }
 
+  close(){
+    this.dialogRef.close(true)
+  }
+
 
 
 }

@@ -1,79 +1,88 @@
-<mat-sidenav-container fullscreen>
-  <mat-sidenav #sidenav>
-    <mat-nav-list (click)="sidenav.close()">
-      <div *ngFor="let item of nav">
-        <a mat-list-item class="active" routerLinkActive="active" *ngIf="item.permission" routerLink="/{{ item.route }}">
-          <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon>
-          <span>{{ item.name }}</span>
+<ul>
+  <li class="float-right" >
+    <button *ngIf="loged" mat-button [matMenuTriggerFor]="animals"> <div class="ava">
+      <img src="../assets/img/user.png" alt="">
+    </div>{{ user?.first_name }} {{ user?.last_name }}</button>
+    <mat-menu #animals="matMenu">
+      <div class="img-ava">
+        <img src="../assets/img/user.png" alt="">
+      </div>
+      <div class="user-info">
+        <h4>{{ user?.email }}</h4>
+        <p>({{ adm? "Admin" : "User" }})</p>
+        <button mat-raised-button (click)="logOut()" color="warn">Log Out</button>
+      </div>
+    </mat-menu>
+  </li>
+  <li class="float-right login" *ngIf="!loged" matTooltip="{{ 'Login' | translate }}"><a class="active" routerLinkActive="active" routerLink="/login" [matMenuTriggerFor]="login"><mat-icon> vpn_key</mat-icon></a></li>
+  <mat-menu #login="matMenu">
+    <button class="list" routerLink="/login" routerLinkActive="active" >{{ "Login" | translate }}</button>
+    <button class="list" routerLink="/login/signup" routerLinkActive="active" >{{ "Signup" | translate }}</button>
+  </mat-menu>
+
+
+  <div (click)="changeLang()" class="img-flag float-right" matTooltip="Change language">
+    <img [src]="language == 'en' ? '../assets/img/flag/en.png' : '../assets/img/flag/fr.png' " alt="">
+  </div>
+
+
+  <li> <a style="padding:12px 20px 0px 20px;" routerLink="/"><h1 class="res-name">D J A Y A</h1></a> </li>
+
+
+  <li class="" matTooltip="Home"><a class="active" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" routerLink="/"><mat-icon>home</mat-icon></a></li>
+
+
+  <li class="" matTooltip="Food and Drink menu" ><a routerLinkActive="active" *ngIf="true" routerLink="/menu"><mat-icon> restaurant_menu</mat-icon></a></li>
+  <li class="float-right" matTooltip="Cart and History" ><a routerLinkActive="active" *ngIf="loged" routerLink="/cart" [matMenuTriggerFor]="cart"><mat-icon>add_shopping_cart</mat-icon></a></li>
+  <mat-menu #cart="matMenu">
+    <button class="list" routerLink="/cart" routerLinkActive="active" >{{ "Cart" | translate }}</button>
+    <button class="list" routerLink="/cart/history" routerLinkActive="active" >{{ "History" | translate }}</button>
+  </mat-menu>
+
+  <li class="float-right" matTooltip="Management Food and Stock" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/menu-management" [matMenuTriggerFor]="management"><mat-icon> restaurant</mat-icon></a></li>
+  <mat-menu #management="matMenu" >
+    <button class="list" routerLink="/menu-management" routerLinkActive="active" >{{ "Management F n D" | translate }}</button>
+    <button class="list" routerLink="/menu-management/stock-management" routerLinkActive="active" >{{ "Management Stock" | translate }}</button>
+  </mat-menu>
+
+</ul>
+<main>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+
+<footer>
+  <div class="footer row">
+    <div class="col-20 btn-logo email">
+      <div class="img">
+        <a href="/gmail.com">
+          <img src="../assets/img/logo-contact/email.png" alt="">
         </a>
       </div>
-
-      <a *ngIf="!loged"else logout  mat-list-item routerLink="/login">
-        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
-        <span> Login </span>
-      </a>
-
-      <a *ngIf="loged"else logout  mat-list-item (click)="logOut()">
-        <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon>
-        <span> Logout </span>
-      </a>
-      
-
-
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-toolbar color="primary">
-
-    <form [formGroup]="language">
-      <mat-form-field>
-        <mat-label>Language</mat-label>
-        <mat-select formControlName="lang">
-          <mat-option value="en">English</mat-option>
-          <mat-option value="fr">France</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </form>
-
-
-    <button mat-icon-button (click)="sidenav.open()">
-      <mat-icon>menu</mat-icon>
-      <span> Reztaurant New Life </span>
-    </button>
-
-    <div class="nav-right" style="float: right ;" >
-
-      <div class="row" *ngFor="let item of nav">
-        <a class="col log" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-list-item *ngIf="item.permission" routerLink="/{{ item.route }}">
-          <!-- <mat-icon color='primary' aria-hidden="false" aria-label="Example home icon" fontIcon="{{ item.icon }}"></mat-icon> -->
-          <span>{{ item.name | translate }}</span>
-        </a>
-      </div>
-
-      <div class="log" >
-        <a *ngIf="!loged"else logout routerLinkActive="active"  mat-list-item routerLink="/login">
-          <!-- <mat-icon color='white' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
-          <span> Login </span>
-        </a>
-        <a *ngIf="loged"else logout  mat-list-item (click)="logOut()">
-          <!-- <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
-          <span> Logout </span>
-        </a>
-      </div>
-
-      <div class="log" >
-        <a *ngIf="!loged"else logout routerLinkActive="active"  mat-list-item routerLink="/signup">
-          <!-- <mat-icon color='white' aria-hidden="false" aria-label="Example home icon" fontIcon="supervisor_account"></mat-icon> -->
-          <span> Register </span>
-        </a>
-      </div>
-
-
-
     </div>
-  </mat-toolbar>
+    <div class="col-20 btn-logo">
+      <div class="img">
+        <a href="/facebook.com">
+          <img src="../assets/img/logo-contact/fb.png" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="col-20 btn-logo">
+      <div class="img">
+        <a href="/wa.me/+00099">
+          <img src="../assets/img/logo-contact/wa.png" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="col-20 btn-logo">
+      <div class="img">
+        <a href="/instagram.com">
+          <img src="../assets/img/logo-contact/ig.png" alt="">
+        </a>
+      </div>
+    </div>
 
-  <main>
-    <router-outlet></router-outlet> 
-  </main>
-  <!-- <app-homepage-main></app-homepage-main> -->
-</mat-sidenav-container>
+  </div>
+</footer>

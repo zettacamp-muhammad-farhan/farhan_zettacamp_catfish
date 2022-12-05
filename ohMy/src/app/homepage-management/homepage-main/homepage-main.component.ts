@@ -37,14 +37,15 @@ export class HomepageMainComponent implements OnInit {
   }
 
   getRecipesHigh(){
+    
     this.subs.sink = this.homeServ.getRecipesHighlight(this.pagination)
     .valueChanges.subscribe(
       (data:any) => {
+        
         if(data){
           this.loaded = true
         }
         this.recipesHighlight = data.data.getAllRecipes
-        console.log(data.data.getAllRecipes);
       }
     )
   }

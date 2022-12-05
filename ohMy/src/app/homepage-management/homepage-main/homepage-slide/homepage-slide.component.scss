@@ -1,0 +1,140 @@
+.col-70{
+    flex-basis: 60%;
+    height: 100vh;
+    background-color: red;
+}
+.col-30{
+    flex-basis: 40%;
+    height: 100vh;
+    background-color: #2C4268;
+}
+.row-head{
+    display: flex;
+    flex-direction: row;
+}
+.img-banner{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.img-banner img {
+    width: 100%;
+    height: 100%;
+}
+.content-right {
+    padding: 40px;
+    color: white;
+}
+.content-right .title h1 {
+    color: white;
+    font-size: 40px;
+}
+.description-main .price {
+    font-size: 40px;
+    font-weight:800;
+}
+.btn-big {
+    background-color: #7CCDF4;
+    border: none;
+    width: 200px;
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.701);
+}
+.btn-big:hover {
+    background-color: #3c8db6;
+}
+.contain-option{
+    margin-top: 20px; margin-left: -260px;
+    width: 1000px;
+    /* background-color: red; */
+    height: 300px;
+    overflow-y:scroll;
+}
+.contain-option::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+.menu-option {
+    width: 250%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10px;
+    height: 300px;
+}
+.menu-list {
+    flex: 20%;
+    position: relative;
+    height: 300px;
+}
+.img-list {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+    position: absolute;
+}
+.img-list img {
+    width: 100%;
+    float: right;
+}
+.desc-list {
+    position: absolute;
+    width: 40%;
+    right: 0;
+    top: 0px;
+    bottom: 0px;
+    background-color: #23233b81;
+    z-index: 3;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.desc-list:hover{
+    background-color: #23233B;
+}
+.desc-list .title p {
+    color: rgba(255, 255, 255, 0.719);
+}
+.add-cart {
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    border: none;
+    padding: 10px;
+    background-color: #3c8db6;
+    color: white;
+    
+}
+.add-cart:hover {
+    background-color: #379ed2;
+}
+.disscount{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    background-color: red;
+    border-radius: 100%;
+    left: -0px; top: -0px;
+    z-index: 6;
+}
+.disscount h1 {
+    text-align: center;
+    margin-top: 23px;
+}
+.gray {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(61, 51, 51, 0.41);
+    height: 100%;
+    z-index: 3;
+  }
+  .gray img {
+    margin-top: 30px;
+    width: 50%;
+    margin-left: 140px; margin-right: auto;
+  }

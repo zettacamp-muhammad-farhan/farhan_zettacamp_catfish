@@ -19,16 +19,19 @@ export class LoginService {
   loginUser(input:any){
     return this.apollo.mutate({
       mutation: gql `
-      mutation Mutation($input: UserLogin) {
+      mutation login($input: UserLogin) {
         login(input: $input) {
           token
           user {
+            _id
+            count
+            email
+            first_name
+            last_name
             user_type {
               name
               view
             }
-            _id
-            email
           }
         }
       }

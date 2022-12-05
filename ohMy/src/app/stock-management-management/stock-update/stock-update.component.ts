@@ -74,4 +74,8 @@ export class StockUpdateComponent implements OnInit {
     }
   }
 
+  close(){
+    this.dialogRef.close(true)
+  }
+
 }

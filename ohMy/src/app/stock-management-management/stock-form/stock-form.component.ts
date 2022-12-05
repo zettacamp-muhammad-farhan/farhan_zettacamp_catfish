@@ -58,4 +58,8 @@ export class StockFormComponent implements OnInit {
     }
   }
 
+  close(){
+    this.dialogRef.close(true)
+  }
+
 }

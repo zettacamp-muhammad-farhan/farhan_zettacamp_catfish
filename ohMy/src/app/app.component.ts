@@ -15,11 +15,14 @@ import { LoginService } from './login-management/login.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+  // user data
+  user:any
+  // if login as admin return true
+  adm!:boolean
 
   title = 'ohMy';
 
-  language:any
+  language:string = "en"
 
   loged!:boolean|null;
 
@@ -38,18 +41,22 @@ export class AppComponent {
 
   ngOnInit(){
 
+
+
     const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
     if(usr !== false){
+      
+      
       const user = JSON.parse(usr)
-      // console.log(user);
+      this.user = user
+      console.log(this.user);
+      this.adm = user.user_type[4].view // if admin true
 
       //if user(not admin)
       if(user.user_type[4].view == false){
         this.appServ.getNav().subscribe(
           (nav:any)=>{
             this.nav = nav;
-            // console.log(nav);
-            
           }
         )
       } else {
@@ -57,7 +64,6 @@ export class AppComponent {
         this.appServ.changeAdmin().subscribe(
           (nav:any)=>{
             this.nav = nav;
-            // console.log(nav);
           }
         )
       }
@@ -67,38 +73,31 @@ export class AppComponent {
       this.appServ.changeNotLog().subscribe(
         (nav:any)=>{
           this.nav = nav;
-          // console.log(nav);
         }
       )
-      // console.log('err');
       
     }
     
     let data = localStorage.getItem('token') ? true : false
     this.loged = data;
+  
     
-    this.language = new FormGroup({
-      lang: new FormControl(null)
-    })
+  }
 
-    this.language.get('lang').valueChanges.subscribe(
-      (lang:any)=>{
-        if(lang == "en"){
-          this.translate.use("en");
-        } else {
-          this.translate.use("fr")
-        }
-      }
-      
-    )
-
-    
+  // change localization
+  changeLang(){
+    if(this.language == "en"){
+      this.translate.use("fr")
+      this.language = "fr"
+    } else {
+      this.translate.use("en")
+      this.language = "en"
+    }
   }
 
   getLogin(){
     this.appServ.getLogStatus().subscribe(
       (data:any)=>{
-        // console.log(data);
         this.logStatus = [data]
       }
     )

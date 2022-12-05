@@ -21,6 +21,8 @@ export class CartMainComponent implements OnInit {
 
   subs = new SubSink();
 
+  loaded = false
+
   recipes:{}[] = []
 
   constructor(
@@ -32,6 +34,9 @@ export class CartMainComponent implements OnInit {
     .getCart(this.pagination)
     .valueChanges.subscribe(
       (data:any) => {
+        if(data){
+          this.loaded = true
+        }
         this.recipes = data.data.getAllTransactions;
         // console.log(this.recipes);
       }

@@ -108,7 +108,7 @@ mat-card-title-group{
   display: flex;
   flex-direction: row;
   border: 1px solid rgba(216, 192, 192, 0.546);
-
+  background-color: #B2B0B0;
 }
 .body-item {
   flex: 4;
@@ -137,12 +137,13 @@ input[type=number] {
 }
 
 ::ng-deep .mat-card {
-  background-color: #815B5B;
-  color: #FFF8EA;
+  background-color: #EBEBEB !important;
+  color: black !important;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.517);
 }
 
 ::ng-deep .mat-card-subtitle{
-  color: rgba(245, 222, 179, 0.781);
+  color: rgba(0, 0, 0, 0.446) !important;
 }
 
 input{

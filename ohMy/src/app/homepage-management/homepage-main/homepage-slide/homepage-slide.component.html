@@ -1,0 +1,19 @@
+<div class="img-list">
+    <img [src]="recipes.image || 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png'" alt="">
+</div>
+<div class="desc-list">
+    <div class="title">
+        <h2>{{ recipes.recipe_name }}</h2>
+        <p>Available :{{ recipes.available }}</p>
+        <s><h3 class="price" >Rp. 20000</h3></s>
+        <h2>Rp. {{ recipes.price }}</h2>
+    </div>
+    <button class="add-cart" (click)="openDialog( recipes._id )">ADD TO CART</button>
+</div>
+<div class="disscount">
+    <h1>20%</h1>
+</div>
+
+<div *ngIf="recipes.available == 0" class="gray">
+    <img src="https://batampos.co.id/wp-content/uploads/2018/11/sold-out-logo-png-2.png" alt="">
+</div>

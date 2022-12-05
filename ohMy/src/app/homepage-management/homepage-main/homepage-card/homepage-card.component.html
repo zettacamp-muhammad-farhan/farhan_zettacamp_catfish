@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<!-- <mat-card class="example-card">
     <div class="img">
       <img mat-card-image [src]="recipe.image" alt="Photo of a Shiba Inu">
     </div>
@@ -25,4 +25,29 @@
     <div *ngIf="recipe.available == 0" class="gray">
       <img src="https://batampos.co.id/wp-content/uploads/2018/11/sold-out-logo-png-2.png" alt="">
     </div>
-</mat-card>
+</mat-card> -->
+
+
+
+
+      <div class="card">
+          <div class="img">
+              <img [src]="recipe.image || 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png'" alt="">
+          </div>
+          <div class="content">
+              <h3>{{ recipe.recipe_name }}</h3>
+              <h4>Available : {{ recipe.available }}</h4>
+
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, saepe.</p>
+              
+              <h3>Rp. {{ recipe.price }}</h3>
+              <div class="btn-price">
+                <button [disabled]="recipe.available == 0" (click)="openDialog( recipe._id )">
+                    ADD TO CART
+                </button>
+              </div>
+          </div>
+          <div *ngIf="recipe.available == 0" class="gray">
+            <img src="https://batampos.co.id/wp-content/uploads/2018/11/sold-out-logo-png-2.png" alt="">
+          </div>
+      </div>

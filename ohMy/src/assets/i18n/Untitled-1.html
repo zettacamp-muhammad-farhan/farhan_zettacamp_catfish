@@ -1,0 +1,52 @@
+
+<ul>
+    <li> <a href="">Restaurant Name</a> </li>
+    <li class="float-right" ><a class="active" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">{{ "Homepage" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/menu">{{ "Menu" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/cart">{{ "Cart" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/cart">{{ "History" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/stock-management">{{ "Management Stock" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/menu-management">{{ "Management F n D" | translate }}</a></li>
+    <li class="float-right" ><a href="#about">About</a></li>
+    <div (click)="changeLang()" class="img-flag" matTooltip="Change language">
+      <img [src]="language == 'en' ? '../assets/img/flag/en.png' : '../assets/img/flag/fr.png' " alt="">
+    </div>
+  </ul>
+  <main>
+    <router-outlet></router-outlet> 
+  </main>
+
+  //backup pertama 
+
+  <ul>
+    <li class="float-right" >
+      <button *ngIf="loged" mat-button [matMenuTriggerFor]="animals"> <div class="ava">
+        <img src="../assets/img/user.png" alt="">
+      </div> {{ user.email }}</button>
+      <mat-menu #animals="matMenu">
+        <div class="img-ava">
+          <img src="../assets/img/user.png" alt="">
+        </div>
+        <div class="user-info">
+          <h4>{{ user?.first_name }} {{ user?.last_name }}</h4>
+          <p>(Admin)</p>
+          <button mat-raised-button (click)="logOut()" color="warn">Log Out</button>
+        </div>
+      </mat-menu>
+    </li>
+    <li> <a href="">Restaurant Name</a> </li>
+    <li class="float-right" ><a class="active" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">{{ "Homepage" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/menu">{{ "Menu" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/cart">{{ "Cart" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged" routerLink="/history">{{ "History" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/stock-management">{{ "Management Stock" | translate }}</a></li>
+    <li class="float-right" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/menu-management">{{ "Management F n D" | translate }}</a></li>
+    <li class="float-right" ><a href="#about">About</a></li>
+    <div (click)="changeLang()" class="img-flag" matTooltip="Change language">
+      <img [src]="language == 'en' ? '../assets/img/flag/en.png' : '../assets/img/flag/fr.png' " alt="">
+    </div>
+  
+  </ul>
+  <main>
+    <router-outlet></router-outlet> 
+  </main>
