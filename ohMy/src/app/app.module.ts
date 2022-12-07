@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HistoryManagementModule } from './history-management/history-management.module';
 
 import {MatMenuModule} from '@angular/material/menu';
+import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MaterialModule,
     ReactiveFormsModule, 
     HistoryManagementModule,
-    MatMenuModule
+    MatMenuModule,
+    ForgotPasswordModule
   ],
   providers: [
     AuthguardServiceService

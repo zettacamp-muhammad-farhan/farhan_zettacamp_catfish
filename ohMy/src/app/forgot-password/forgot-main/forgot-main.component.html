@@ -1,0 +1,43 @@
+<main>
+    <div class="container">
+        <h2>{{ "Forgot Password" | translate }}</h2>
+
+        <h4>{{ "Confirm your email first" | translate }}</h4>
+
+        <form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
+        
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>"{{ "Email" | translate }}"</mat-label>
+                <input matInput type="email" formControlName="email" />
+              </mat-form-field>
+              <mat-error
+                *ngIf="
+                  !formMenu.get('email')?.valid &&
+                  formMenu.get('email')?.touched
+                "
+                class="help-block"
+              >
+            <mat-error
+                  *ngIf="formMenu.get('email')?.errors?.['required']"
+                  >{{ "Email must fill" | translate }}
+            </mat-error>
+            <mat-error
+                  *ngIf="formMenu.get('email')?.errors?.['email']"
+                  >{{ "email must fill with email format" | translate }}
+            </mat-error>
+
+
+            </mat-error>
+        
+            <div [class]="formMenu.invalid ? 'btn-login-gray' : 'btn-login' ">
+              <button type="submit" [disabled]="formMenu.invalid" mat-button>
+                {{ "CONTINUE" | translate }}
+              </button>
+            </div>
+          </form>
+
+          <div class="msg">
+            <span class="" >{{ "Dont have account ?" | translate }} <a (click)="signUp()">{{ "Register" | translate }}</a></span>
+          </div>
+    </div>
+</main>

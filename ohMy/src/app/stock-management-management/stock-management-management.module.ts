@@ -6,6 +6,7 @@ import { StockFormComponent } from './stock-form/stock-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StockUpdateComponent } from './stock-update/stock-update.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -19,7 +20,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CommonModule,
     MaterialModule, 
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    TranslateModule
   ],
   exports: [
     StcokManagementMainComponent, StockFormComponent, StockUpdateComponent

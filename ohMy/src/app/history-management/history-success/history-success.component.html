@@ -1,0 +1,102 @@
+<main>
+    <h1 class="title" >{{ "SUCCESS TRANSACTION HISTORY" | translate }}</h1>
+    <div class="recap">
+        <div class="row">
+            <div class="col">
+                <h3 class="sub-title" >{{ "Total Transaction" | translate }}</h3>
+                <h1 class="val" >{{ dataIncome.count }}</h1>
+            </div>
+            <div class="col">
+                <h3 class="sub-title" >{{ "Total Sold Amount" | translate }}</h3>
+                <h1 class="val" >{{ dataIncome.sold }}</h1>
+            </div>
+            <div class="col">
+                <h3 class="sub-title" >{{ "Total Income" | translate }}</h3>
+                <h1 class="val" >{{ dataIncome.balance | currency:"Rp. " }}</h1>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <section>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+
+            <ng-container matColumnDef="id">
+              <th class="" mat-header-cell *matHeaderCellDef>
+                <strong> {{ "ID Transaction" | translate }} </strong>
+                <div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element">
+                    <strong> {{ element._id }} </strong>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <th class="" mat-header-cell *matHeaderCellDef>
+                {{ "User Email" | translate }}
+                <div>
+          
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.user_id.email }}
+              </td>
+            </ng-container>
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="fnd">
+              <th mat-header-cell *matHeaderCellDef>{{ "Food and Drink" | translate }}</th>
+              <td mat-cell *matCellDef="let element">
+                <div *ngFor="let item of element.menu" >
+                    <p>{{ item.recipe_id.recipe_name }} ( {{ item.amount }} )</p>
+                </div>
+              </td>
+            </ng-container>
+
+            <!-- Position Column -->
+
+        
+            
+            <!-- Weight Column -->
+            <ng-container matColumnDef="total_amount">
+                <th mat-header-cell *matHeaderCellDef>{{ "Total Amount" | translate }}</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.sold }}
+                </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="order_date">
+              <th mat-header-cell *matHeaderCellDef>{{ "Order Date" | translate }}</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.order_date }}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="total_price">
+              <th mat-header-cell *matHeaderCellDef>{{ "Total Price" | translate }}</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.total | currency:"Rp. " }}
+              </td>
+            </ng-container>
+            
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">
+                <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
+                No data matching the filter
+              </td>
+            </tr>
+          </table>
+        <mat-paginator #paginator class="promo-paginator" (page)="onPaginatorChange($event)"
+            showFirstLastButtons="true">
+        </mat-paginator>
+    </section>
+</main>

@@ -8,6 +8,7 @@ import { MaterialModule } from '../material/material.module';
 import { MenuAddComponent } from './menu-add/menu-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes : Routes = [
   {
@@ -28,7 +29,7 @@ const routes : Routes = [
     MenuAddComponent
   ],
   imports: [
-    CommonModule, MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule
+    CommonModule, MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule, TranslateModule
   ],
   exports:[
     MenuMainComponent, MenuCardComponent, MenuAddComponent

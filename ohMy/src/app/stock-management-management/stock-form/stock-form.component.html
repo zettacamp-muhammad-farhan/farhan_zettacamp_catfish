@@ -5,7 +5,7 @@
 <form [formGroup]="formStock" (ngSubmit)="onSubmit()">
 
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Name</mat-label>
+        <mat-label>{{ "Name" | translate }}</mat-label>
         <input matInput type="text" formControlName="name" />
       </mat-form-field>
       <mat-error
@@ -17,12 +17,12 @@
       >
     <mat-error
           *ngIf="formStock.get('name')?.errors?.['required']"
-          >name must fill</mat-error
+          >{{ "name must fill" | translate }}</mat-error
         >
     </mat-error>
 
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Stock</mat-label>
+        <mat-label>{{ "Stock" | translate }}</mat-label>
         <input matInput type="text" formControlName="stock" />
       </mat-form-field>
       <mat-error
@@ -34,14 +34,14 @@
       >
     <mat-error
           *ngIf="formStock.get('stock')?.errors?.['required']"
-          >stock must fill</mat-error
+          >{{ "stock must fill" | translate }}</mat-error
         >
     </mat-error>
 
 
-    <div class="btn">
-      <button mat-raised-button type="submit" mat-button>
-        SUBMIT
+    <div class="btn-sub">
+      <button type="submit" mat-button>
+        {{ "SUBMIT" | translate }}
       </button>
     </div>
   </form>

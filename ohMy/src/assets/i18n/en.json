@@ -23,5 +23,126 @@
 
     "Meeting Room" : "Meeting Room",
     "OffAll" : "Off All Menu",
-    "Event Spaces" : "Event Spaces"
+    "Event Spaces" : "Event Spaces",
+
+    "special offer" : "Special Offer for you",
+    "add to cart" : "ADD TO CART",
+    "recomended" : "Recomeded For You",
+    "available" : "Available",
+    "Logout" : "Logout",
+
+    "Food and Drink menu" : "Food and Drink menu",
+    "Cart and History" : "Cart and History",
+    "Management Food and Stock" : "Management Food and Stock",
+    "Home" : "Home",
+    "Change language" : "Change language",
+
+    "ABOUT" : "ABOUT",
+    "Our Restaurant" : "Our Restaurant",
+    "phone" : "Phone",
+    "address" : "Address",
+    "Hours" : "Hours",
+
+    "Monday" : "Monday",
+    "Tuesday" : "Tuesday",
+    "Wednesday" : "Wednesday",
+    "Thrusday" : "Thrusday",
+    "Friday" : "Friday",
+    "Saturday" : "Saturday",
+    "Sunday" : "Sunday",
+
+    "Add Ingrediets" : "Add Ingrediets",
+    "Name" : "Name",
+    "Stock" : "Stock",
+    "Status" : "Status",
+    "Action" : "Action",
+    "No data matching the filter" : "No data matching the filter",
+    "find name" : "find name ...",
+
+    "SUBMIT" : "SUBMIT",
+    "Add Stock Data" : "Add Stock Data",
+    "name must fill" : "name must fill",
+    "stock must fill" : "stock must fill",
+    "Edit Stock Data" : "Edit Stock Data",
+
+    "Are you sure?" : "Are you sure?",
+    "You won't be able to revert this!" : "You won't be able to revert this!",
+    "Yes, delete it!" : "Yes, delete it!",
+    "Cancel" : "Cancel",
+
+    "Add Menu" : "Add Menu",
+    "Amount" : "Amount",
+    "Note" : "Note",
+    "note must fill" : "note must fill",
+
+    "You must login before order!!" : "You must login before order!!",
+    "Oops" : "Oops ...",
+    "Oops, menus are up" : "Oops, menus are up",
+    "Sorry, menus are up, please choose other food" : "Sorry, menus are up, please choose other food",
+    "find another food" : "find another food",
+
+    "SUCCESS TRANSACTION HISTORY" : "SUCCESS TRANSACTION HISTORY",
+    "Total Transaction" : "Total Transaction",
+    "Total Sold Amount" : "Total Sold Amount",
+    "ID Transaction" : "ID Transaction",
+    "User Email" : "User Email",
+    "Food and Drink" : "Food and Drink",
+    "Total Amount" : "Total Amount",
+
+    "Email must fill" : "Email must fill",
+    "Input email please" : "Input email please",
+    "Password must fill" : "Password must fill",
+    "Fill the password at least 6 characters" : "Fill the password at least 6 characters",
+    "Forgot Password ?" : "Forgot Password ?",
+    "Dont have account ?" : "Dont have account ?",
+    "Register" : "Register",
+    "Email" : "Email",
+    "Password" : "Password",
+
+    "First Name" : "First Name",
+    "first name must fill" : "first name must fill",
+    "Last Name" : "Last Name",
+    "Last Name must fill" : "Last Name must fill",
+    "Password length at least 6 character" : "Password length at least 6 character",
+    "Already have an account ?" : "Already have an account ?",
+
+    "Forgot Password" : "Forgot Password",
+    "Confirm your email first" : "Confirm your email first",
+    "email must fill with email format" : "email must fill with email format",
+    "CONTINUE" : "CONTINUE",
+
+    "Your email is confirmed, pelase set a new password" : "Your email is confirmed, pelase set a new password",
+    "RESET PASSWORD" : "RESET PASSWORD",
+
+    "Food & Drink Management" : "Food & Drink Management",
+    "Special Offer" : "Special Offer",
+    "Highlight" : "Highlight",
+    "Image" : "Image",
+    "Ingrediets" : "Ingrediets",
+    "Available" : "Available",
+
+    "All" : "All",
+    "active" : "Active",
+    "deleted" : "Delete",
+    "draft" : "Draft",
+
+    "Add Menu Data" : "Add Menu Data",
+    "Price" : "Price",
+    "price must fill" : "price must fill",
+    "Ingredients" : "Ingredients",
+    "Add Ingredient" : "Add Ingredient",
+    "Delete Ingridient Form" : "Delete Ingridient Form",
+
+    "Edit Menu Data" : "Edit Menu Data"
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -31,6 +31,8 @@ export class AppComponent {
   // save nav temp
   nav!:Nav[]
 
+  wallet:any
+
   constructor(
     private login:LoginService,
     private router:Router,
@@ -40,6 +42,14 @@ export class AppComponent {
   ) { }
 
   ngOnInit(){
+
+    this.appServ.getWallet().subscribe(
+      (data:any)=>{
+        console.log(data);
+        this.wallet = data.data.getOneUser.wallet
+        
+      }
+    )
 
 
 

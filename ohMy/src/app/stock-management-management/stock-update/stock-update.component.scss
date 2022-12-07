@@ -11,3 +11,15 @@ button {
     margin-top: -60px;
     cursor: pointer;
 }
+
+.btn-sub {
+    background-color: #7CCDF4;
+    border-radius: 10px;
+}
+.btn-sub button {
+    border: none;
+}
+.btn-sub:hover {
+    background-color: #4db9ef;
+    border-radius: 10px;
+}

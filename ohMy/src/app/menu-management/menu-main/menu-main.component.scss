@@ -33,16 +33,10 @@ mat-spinner {
     position: sticky;
     top: 64px;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.448);
+    background-color: #2c426882;
     padding: 20px;
-    color: wheat;
+    // color: wheat;
 }
 .title h2 {
     text-align: center;
-}
-
-::ng-deep .mat-paginator{
-    background-color: rgba(0, 0, 0, 0.69);
-    color: wheat;
-    margin-top: 10px;
 }

@@ -4,7 +4,10 @@ import { AboutMainComponent } from './about-management/about-main/about-main.com
 import { AuthenticationGuard } from './authentication.guard';
 import { AuthguardUserGuard } from './authguard-user.guard';
 import { CartMainComponent } from './cart-management/cart-main/cart-main.component';
+import { ForgotMainComponent } from './forgot-password/forgot-main/forgot-main.component';
+import { ForgotPassComponent } from './forgot-password/forgot-pass/forgot-pass.component';
 import { HistoryMainComponent } from './history-management/history-main/history-main.component';
+import { HistorySuccessComponent } from './history-management/history-success/history-success.component';
 import { LoginMainComponent } from './login-management/login-main/login-main.component';
 import { MenuManagementMainComponent } from './menu-management-management/menu-management-main/menu-management-main.component';
 import { MenuMainComponent } from './menu-management/menu-main/menu-main.component';
@@ -34,6 +37,9 @@ const routes: Routes = [
     path:"cart/history", component:HistoryMainComponent, canActivate:[AuthenticationGuard]
   },
   {
+    path:"history-success", component:HistorySuccessComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
+  },
+  {
     path:"menu-management", component:MenuManagementMainComponent, canActivate:[AuthenticationGuard, AuthguardUserGuard]
   },
   {
@@ -41,6 +47,12 @@ const routes: Routes = [
   },
   {
     path:"login/signup", component:SignupMainComponent
+  }, 
+  {
+    path:"forgot", component:ForgotMainComponent
+  },
+  {
+    path:"forgot-pass", component:ForgotPassComponent
   }
 ];
 

@@ -1,8 +1,8 @@
 <main>
     <div class="container">
-        <button class="btn-add" (click)="openDialog()" mat-raised-button color="primary">Add Menu</button>
+        <h1 class="title" >{{ "Food & Drink Management" | translate }}</h1>
 
-        <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
+        <button class="btn-add" (click)="openDialog()">{{ "Add Menu" | translate }}</button>
 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!--- Note that these columns can be defined in any order.
@@ -12,10 +12,10 @@
 
               <ng-container matColumnDef="name">
                 <th class="up" mat-header-cell *matHeaderCellDef>
-                  Name
+                  {{ "Name" | translate }}
                   <div>
                     <mat-form-field class="example-full-width" >
-                      <mat-label>name</mat-label>
+                      <mat-label>{{ "Name" | translate }}</mat-label>
                       <input matInput type="text" formControlName="name" placeholder="find name ..."  />
                     </mat-form-field>
                   </div>
@@ -25,13 +25,13 @@
 
             <ng-container matColumnDef="status">
               <th class="up" mat-header-cell *matHeaderCellDef>
-                Status
+                {{ "Status" | translate }}
                 <div>
                   <mat-form-field >
-                    <mat-label>Status</mat-label>
+                    <mat-label>{{ "Status" | translate }}</mat-label>
                     <mat-select formControlName="status">
                       <mat-option *ngFor="let item of status" [value]="item">
-                        {{item == null ? "All" : item}}
+                        {{item == null ? "All" : item | translate}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
@@ -50,7 +50,7 @@
 
             <ng-container matColumnDef="specialOffer">
               <th class="" mat-header-cell *matHeaderCellDef>
-                Special Offer
+                {{ "Special Offer" | translate }}
                 <div>
                 </div>
               </th>
@@ -64,7 +64,7 @@
 
             <ng-container matColumnDef="highlight">
               <th class="" mat-header-cell *matHeaderCellDef>
-                Highlight
+                {{ "Highlight" | translate }}
                 <div>
           
                 </div>
@@ -79,7 +79,7 @@
         
             <!-- Position Column -->
             <ng-container matColumnDef="image">
-              <th mat-header-cell *matHeaderCellDef>Image</th>
+              <th mat-header-cell *matHeaderCellDef>{{ "Image" | translate }}</th>
               <td mat-cell *matCellDef="let element">
                 <div class="img">
                   <img [src]="element.image" alt="">
@@ -93,7 +93,7 @@
             
             <!-- Weight Column -->
             <ng-container matColumnDef="ingredients">
-                <th mat-header-cell *matHeaderCellDef>Ingrediets</th>
+                <th mat-header-cell *matHeaderCellDef>{{ "Ingrediets" | translate }}</th>
                 <td mat-cell *matCellDef="let element">
                     <div *ngFor="let item of element.ingredients">
                         <td mat-cell>{{ item.ingredient_id.name }} ( {{ item.stock_used }} )</td>
@@ -109,7 +109,7 @@
             </ng-container>
 
             <ng-container matColumnDef="available">
-              <th mat-header-cell *matHeaderCellDef>Available</th>
+              <th mat-header-cell *matHeaderCellDef>{{ "Available" | translate }}</th>
               <td mat-cell *matCellDef="let element">
                 {{ element.available }}
               </td>
@@ -119,7 +119,7 @@
 
 
             <ng-container matColumnDef="action" style="text-align:center!important ;">
-              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <th mat-header-cell *matHeaderCellDef>{{ "Action" | translate }}</th>
               <td mat-cell *matCellDef="let element">
                 <input type="text" value="{{ element._id }}" hidden #_id>
                 <input type="text" value="{{ element.recipe_name }}" hidden #name>
@@ -141,8 +141,12 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         
             <tr class="mat-row" *matNoDataRow>
+              
               <td class="mat-cell" colspan="4">
-                No data matching the filter
+                  <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
+              </td>
+              <td class="mat-cell" colspan="4">
+                {{ "No data matching the filter" | translate }}
               </td>
             </tr>
           </table>

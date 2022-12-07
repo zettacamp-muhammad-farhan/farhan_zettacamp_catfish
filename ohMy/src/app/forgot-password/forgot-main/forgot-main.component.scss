@@ -1,0 +1,89 @@
+.log {
+    overflow: hidden;
+}
+main{
+    // background-image: url('https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    height: 70vh;
+    padding: 100px;
+}
+.container {
+    width: 40%;
+    margin-left: auto; margin-right: auto; margin-top: 10px;
+    background-color: #BCE3FA;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.btn-login{
+    border: none;
+    background-color: #2C4268;
+    color: white;
+    padding: 5px 30px;
+    width: fit-content;
+    margin-right: auto; margin-left: auto;
+}
+.btn-login button {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.btn-login-gray{
+    border: none;
+    background-color: gray;
+    color: white;
+    padding: 5px 30px;
+    width: fit-content;
+    margin-right: auto; margin-left: auto;
+    cursor: not-allowed;
+}
+.btn-login-gray button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.436);
+    cursor: not-allowed;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+::ng-deep .mat-card {
+    background-color: transparent;
+}
+
+::ng-deep .mat-raised-button.mat-primary {
+    background-color: #594545;
+}
+
+button {
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.forgot a {
+    text-decoration: none;
+    font-weight: bold;
+}
+.forgot a h3 {
+    font-weight:500;
+}
+.msg {
+    text-align: center;
+    width: fit-content;
+    margin-right: auto; margin-left: auto;
+    margin-top: 10px;
+}
+.msg a {
+    text-decoration: none;
+}
+.eye {
+    right: 0;
+    top: -7px;
+    position: absolute;
+}

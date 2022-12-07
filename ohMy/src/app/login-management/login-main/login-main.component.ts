@@ -17,6 +17,8 @@ export class LoginMainComponent implements OnInit {
 
   loginForm:FormGroup = this.initFormGroup()
 
+  showPass = false
+
 
   constructor(
     private fb : FormBuilder,
@@ -30,7 +32,7 @@ export class LoginMainComponent implements OnInit {
   initFormGroup() {
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 
@@ -50,6 +52,8 @@ export class LoginMainComponent implements OnInit {
         })
       }
     }, error => {
+      console.log(error.errors);
+      
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -59,4 +63,18 @@ export class LoginMainComponent implements OnInit {
     })
   }
 
+  show(){
+    if(this.showPass){
+      this.showPass = false
+    } else {
+      this.showPass = true
+    }
+  }
+
+  signUp(){
+    this.router.navigate(['/login/signup'])
+  }
+  forgot(){
+    this.router.navigate(['/forgot'])
+  }
 }

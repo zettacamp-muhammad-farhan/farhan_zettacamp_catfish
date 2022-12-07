@@ -23,5 +23,117 @@
 
     "Meeting Room" : "Salle de réunion",
     "OffAll" : "Désactiver tout le menu",
-    "Event Spaces" : "Espaces événementiels"
+    "Event Spaces" : "Espaces événementiels",
+
+    "special offer" : "Offre spéciale pour vous",
+    "add to cart" : "AJOUTER AU PANIER",
+    "recomended" : "Recommandé pour vous",
+    "available" : "Disponible",
+    "Logout" : "Se déconnecter",
+
+    "Food and Drink menu" : "Carte des plats et des boissons",
+    "Cart and History" : "Panier et historique",
+    "Management Food and Stock" : "Gestion Nourriture et Stock",
+    "Home" : "Maison",
+    "Change language" : "Changer de langue",
+
+    "ABOUT" : "SUR",
+    "Our Restaurant" : "Notre Restaurant",
+    "phone" : "Téléphoner",
+    "address" : "Adresse",
+    "Hours" : "Heures",
+
+    "Monday" : "Lundi",
+    "Tuesday" : "Mardi",
+    "Wednesday" : "Mercredi",
+    "Thrusday" : "Jeudi",
+    "Friday" : "Vendredi",
+    "Saturday" : "Samedi",
+    "Sunday" : "Dimanche",
+
+    "Add Ingrediets" : "Ajouter des ingrédients",
+    "Name" : "Nom",
+    "Stock" : "Stocker",
+    "Status" : "Statut",
+    "Action" : "Action",
+    "No data matching the filter" : "Aucune donnée correspondant au filtre",
+    "find name" : "trouver le nom...",
+
+    "SUBMIT" : "NOUS FAIRE PARVENIR",
+    "Add Stock Data" : "Ajouter des données boursières",
+    "name must fill" : "le nom doit remplir",
+    "stock must fill" : "le stock doit se remplir",
+    "Edit Stock Data" : "Modifier les données boursières",
+
+    "Are you sure?" : "Êtes-vous sûr?",
+    "You won't be able to revert this!" : "Vous ne pourrez pas revenir en arrière !",
+    "Yes, delete it!" : "Oui, supprimez-le !",
+    "Cancel" : "Annuler",
+
+    "Add Menu" : "Ajouter un menu",
+    "Amount" : "Montant",
+    "Note" : "Noter",
+    "note must fill" : "note doit remplir",
+
+    "You must login before order!!" : "Vous devez vous connecter avant de commander !!",
+    "Oops" : "Oops ...",
+    "Oops, menus are up" : "Oups, les menus sont en place",
+    "Sorry, menus are up, please choose other food" : "Désolé, les menus sont en place, veuillez choisir un autre aliment",
+    "find another food" : "trouver un autre aliment",
+
+    "SUCCESS TRANSACTION HISTORY" : "HISTORIQUE DES TRANSACTIONS RÉUSSIES",
+    "Total Transaction" : "Transaction totale",
+    "Total Sold Amount" : "Montant total vendu",
+    "ID Transaction" : "Transaction d'identification",
+    "User Email" : "Courriel de l'utilisateur",
+    "Food and Drink" : "Nourriture et boisson",
+    "Total Amount" : "Montant total",
+
+    "Email must fill" : "L'e-mail doit remplir",
+    "Input email please" : "Saisissez votre e-mail s'il vous plaît",
+    "Password must fill" : "Le mot de passe doit remplir",
+    "Fill the password at least 6 characters" : "Remplissez le mot de passe au moins 6 caractères",
+    "Forgot Password ?" : "Mot de passe oublié ?",
+    "Dont have account ?" : "Vous n'avez pas de compte ?",
+    "Register" : "S'inscrire",
+    "Email" : "E-mail",
+    "Password" : "Mot de passe",
+
+    "First Name" : "Prénom",
+    "first name must fill" : "le prénom doit remplir",
+    "Last Name" : "Nom de famille",
+    "Last Name must fill" : "Le nom de famille doit être rempli",
+    "Password length at least 6 character" : "Longueur du mot de passe au moins 6 caractères",
+    "Already have an account ?" : "Vous avez déjà un compte ?",
+
+    "Forgot Password" : "Mot de passe oublié",
+    "Confirm your email first" : "Confirmez d'abord votre email",
+    "email must fill with email format" : "l'e-mail doit remplir le format d'e-mail",
+    "CONTINUE" : "CONTINUEZ",
+
+    "Your email is confirmed, pelase set a new password" : "Votre e-mail est confirmé, veuillez définir un nouveau mot de passe",
+    "RESET PASSWORD" : "RÉINITIALISER LE MOT DE PASSE",
+
+    "Food & Drink Management" : "Gestion des aliments et des boissons",
+    "Special Offer" : "Offre spéciale",
+    "Highlight" : "Souligner",
+    "Image" : "Image",
+    "Ingrediets" : "Ingrédients",
+    "Available" : "Disponible",
+
+    "All" : "Tout",
+    "active" : "Actif",
+    "deleted" : "Effacer",
+    "draft" : "Brouillon",
+
+    "Add Menu Data" : "Ajouter des données de menu",
+    "Price" : "Prix",
+    "price must fill" : "le prix doit remplir",
+    "Ingredients" : "Ingrédients",
+    "Add Ingredient" : "Ajouter un ingrédient",
+    "Delete Ingridient Form" : "Supprimer le formulaire d'ingrédients"
+
+
+
+
 }

@@ -1,0 +1,30 @@
+main {
+    padding: 40px;
+}
+.title {
+    font-weight: bold;
+    text-align: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.col {
+    flex-basis: 15%;
+}
+.val {
+    font-weight: bold;
+    color: #7CCDF4;
+}
+.recap {
+    margin-top: 50px;
+    margin-left: 30px;
+}
+table {
+    width: 100%;
+}
+mat-spinner {
+    margin-left: auto; margin-right: auto;
+    margin-top: 100px; margin-bottom: 100px;
+}

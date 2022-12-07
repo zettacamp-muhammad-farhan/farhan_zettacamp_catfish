@@ -8,19 +8,19 @@
     padding: 40px;
 }
 .row .first h2{
-    color: #FFF8EA;
+    // color: #FFF8EA;
     font-weight: bold;
     margin-bottom: 40px;
 }
 .row .first .tagline{
-    color: #FFF8EA;
+    // color: #FFF8EA;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
 .row .first .message{
-    color: #fff8eacb; 
+    // color: #fff8eacb; 
     margin-bottom: 40px;
 }
 
@@ -30,7 +30,7 @@
     padding: 15px;
     font-weight: bold;
     margin-right: 30px;
-    color: #dac1c1;
+    // color: #dac1c1;
     cursor: pointer;
 }
 
@@ -41,6 +41,7 @@
 
 .row .second {
     padding: 30px;
+    padding-bottom: 0;
     position: relative;
 }
 
@@ -387,4 +388,23 @@ footer{
         transform: rotate(360deg);
     }
 
+}
+
+.content {
+    text-align: center;
+    width: 70%;
+}
+.content h1 {
+    font-weight: bold;
+}
+
+.img-peta {
+    width: 100%;
+}
+.img-peta img {
+    width: 100%;
+}
+
+.detail {
+    margin-bottom: -200px;
 }

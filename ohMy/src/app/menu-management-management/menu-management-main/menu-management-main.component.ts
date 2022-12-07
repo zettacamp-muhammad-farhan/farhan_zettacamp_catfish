@@ -129,7 +129,7 @@ export class MenuManagementMainComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(MenuFormComponent, {
-      width:"70%",
+      width:"50%",
       data: {
         hola:"test"
       }
@@ -148,7 +148,7 @@ export class MenuManagementMainComponent implements OnInit {
     // console.log(ingredient);
     
     const dialogRef = this.dialog.open(MenuUpdateComponent, {
-      width:"70%",
+      width:"50%",
       data:{
         id:id,
         name:name,

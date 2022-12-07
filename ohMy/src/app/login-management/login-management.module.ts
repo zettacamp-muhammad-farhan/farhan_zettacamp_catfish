@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginMainComponent } from './login-main/login-main.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     MaterialModule, 
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ], 
   exports: [
     LoginMainComponent

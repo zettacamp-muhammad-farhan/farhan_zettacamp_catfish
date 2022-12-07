@@ -7,7 +7,6 @@ form {
     width: 300px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 50px;
   }
   
   .value-button {
@@ -65,15 +64,12 @@ form {
   .img-card {
     width: 100%;
     overflow: hidden;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -20%);
     border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
   }
   .img {
     overflow: hidden;
-    height: 100px;
 
   }
   .img-card img {
@@ -152,7 +148,80 @@ input{
   border: none;
 }
 
-::ng-deep .mat-raised-button.mat-primary{
-  background-color: #9E7676 !important;
+.btn-order {
+  background-color: #7CCDF4;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.btn-order button {
+  border: none;
+  width: 100%;
+  background-color: transparent;
 }
 
+.row {
+  flex-basis: 30%;
+}
+
+.desc-prod {
+  padding-left: 40px;
+  padding-top: 10px;
+  flex-basis: 40%;
+}
+
+.row.left{
+  flex-basis: 40%;
+}
+
+.set {
+  // background-color: red;
+  height: 100%;
+}
+
+.col-25 {
+  flex-basis: 25%;
+}
+
+
+.rows {
+  display: flex;
+  flex-direction: row;
+}
+.col-25.del {
+  background-color: #2C4268;
+  position: relative;
+  cursor: pointer;
+}
+
+.col-25.del:hover {
+  background-color: #44608f;
+}
+
+.white-icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.col-25.edit {
+  background-color: #7CCDF4;
+  position: relative;
+  cursor: pointer;
+}
+
+.col-25.edit:hover {
+  background-color: #5bbced;
+}
+
+.example-card {
+  position: relative;
+}
+.delete-all {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -43,6 +43,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { TranslateModule } from '@ngx-translate/core';
+
+// translate
+
 
 @NgModule({
   declarations: [],
@@ -85,6 +89,7 @@ import { MatTableModule } from '@angular/material/table';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    TranslateModule
   ],
   exports: [
     MatAutocompleteModule,

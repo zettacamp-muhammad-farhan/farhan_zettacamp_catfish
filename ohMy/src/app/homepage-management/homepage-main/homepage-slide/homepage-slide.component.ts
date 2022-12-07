@@ -13,6 +13,7 @@ export class HomepageSlideComponent implements OnInit {
 
   @Input() recipes:any
 
+
   canBuy = false
 
   constructor(
@@ -23,6 +24,7 @@ export class HomepageSlideComponent implements OnInit {
   ngOnInit(): void {
     let user = localStorage.getItem('user') ? true : false
     this.canBuy = user
+
   }
 
   openDialog(id:any){

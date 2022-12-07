@@ -1,10 +1,10 @@
 <main>
     <div class="container">
-        <button class="btn-add" (click)="openDialog()" mat-raised-button color="primary">Add Ingrediets</button>
 
+        <h1 class="title" >Stock Management</h1>
 
+        <button class="btn-add" (click)="openDialog()">{{ "Add Ingrediets" | translate }}</button>
         
-        <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!--- Note that these columns can be defined in any order.
                         The actual rendered columns are set as a property on the row definition" -->
@@ -12,12 +12,12 @@
             <!-- Position Column -->
             <ng-container matColumnDef="name">
                 <th class="up" mat-header-cell *matHeaderCellDef>
-                    Name
+                    {{ "Name" | translate }}
                     <div >
                         <form class="example-full-width" [formGroup]="filterName">
                             <mat-form-field class="example-full-width">
-                              <mat-label>name</mat-label>
-                              <input matInput type="text" formControlName="name" placeholder="find name ..."  />
+                              <mat-label>{{ "Name" | translate }}</mat-label>
+                              <input matInput type="text" formControlName="name" placeholder="{{ 'find name' | translate }}"  />
                             </mat-form-field>
                         </form>
                     </div>
@@ -26,17 +26,17 @@
             </ng-container>
 
             <ng-container matColumnDef="stock">
-                <th mat-header-cell *matHeaderCellDef>Stock</th>
+                <th mat-header-cell *matHeaderCellDef>{{ "Stock" | translate }}</th>
                 <td mat-cell *matCellDef="let element">{{ element.stock }}</td>
             </ng-container>
 
             <ng-container matColumnDef="status">
-                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <th mat-header-cell *matHeaderCellDef>{{ "Status" | translate }}</th>
                 <td mat-cell *matCellDef="let element">{{ element.status }}</td>
             </ng-container>
 
             <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <th mat-header-cell *matHeaderCellDef>{{ "Action" | translate }}</th>
                 <td mat-cell *matCellDef="let element"> 
                     <!-- <input type="text" value="{{ element._id }}" hidden #_id> -->
                     <button (click)="updateData(element._id, element.name, element.stock)" mat-raised-button color="primary">
@@ -52,7 +52,10 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
             <tr class="mat-row" *matNoDataRow>
-                <td class="mat-cell" colspan="4">No data matching the filter</td>
+                <td class="mat-cell" colspan="3">
+                    <mat-spinner [ngStyle]="{'display': loaded ? 'none' : 'block'}" ></mat-spinner>
+                </td>
+                <td class="mat-cell" colspan="4">{{ "No data matching the filter" | translate }}</td>
             </tr>
         </table>
 

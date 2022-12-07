@@ -17,6 +17,8 @@ export class SignupMainComponent implements OnInit {
 
   signUp:FormGroup = this.initFormGroup()
 
+  showPass = false
+
   constructor(
     private fb : FormBuilder,
     private signupServ:SignupService,
@@ -34,7 +36,7 @@ export class SignupMainComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       first_name : ['', Validators.required],
       last_name : ['', Validators.required],
-      password : ['', Validators.required]
+      password : ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 
@@ -70,5 +72,18 @@ export class SignupMainComponent implements OnInit {
     )
     
   }
+
+  login(){
+    this.router.navigate(['/login'])
+  }
+
+  show(){
+    if(this.showPass){
+      this.showPass = false
+    } else {
+      this.showPass = true
+    }
+  }
+
 
 }

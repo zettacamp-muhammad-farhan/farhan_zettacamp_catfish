@@ -13,8 +13,8 @@ export class HomepageService {
   getRecipesSpecial(paging:any){
     return this.apollo.watchQuery({
       query:gql`
-      query GetAllRecipes($special: Boolean, $paging: Paging) {
-        getAllRecipes(special: $special, paging: $paging) {
+      query GetAllRecipes($special: Boolean) {
+        getAllRecipes(special: $special) {
           _id
           available
           recipe_name
@@ -24,24 +24,23 @@ export class HomepageService {
           image
           price
           count_result
+          discount
         }
       }
       `, 
       variables:{
-        "special": true,
-        paging
+        "special": true
       },
       fetchPolicy: "network-only"
     })
   }
 
   getRecipesHighlight(paging:any){
-    console.log(paging);
     
     return this.apollo.watchQuery({
       query:gql`
-      query GetAllRecipes($paging: Paging, $highlight: Boolean) {
-        getAllRecipes(paging: $paging, highlight: $highlight) {
+      query GetAllRecipes($highlight: Boolean) {
+        getAllRecipes(highlight: $highlight) {
           _id
           available
           recipe_name
@@ -54,8 +53,7 @@ export class HomepageService {
         }
       }`, 
       variables:{
-        highlight : true,
-        paging
+        highlight : true
       },
       fetchPolicy: "network-only"
     })

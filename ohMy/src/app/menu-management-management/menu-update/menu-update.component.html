@@ -1,4 +1,4 @@
-<h2>Edit Menu Data</h2>
+<h2>{{ "Edit Menu Data" | translate }}</h2>
 <div class="close" (click)="close()">
   <strong>X</strong>
 </div>
@@ -6,7 +6,7 @@
 <form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
 
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Name</mat-label>
+        <mat-label>{{ "Name" | translate }}</mat-label>
         <input matInput type="text" formControlName="newName" />
       </mat-form-field>
       <mat-error
@@ -18,12 +18,12 @@
       >
     <mat-error
           *ngIf="formMenu.get('recipe_name')?.errors?.['required']"
-          >name must fill</mat-error
+          >{{ "name must fill" | translate }}</mat-error
         >
     </mat-error>
 
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Image</mat-label>
+        <mat-label>{{ "Image" | translate }}</mat-label>
         <input matInput type="text" formControlName="image" />
       </mat-form-field>
       <mat-error
@@ -40,7 +40,7 @@
     </mat-error>
 
     <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Price</mat-label>
+        <mat-label>{{ "Price" | translate }}</mat-label>
         <input matInput type="number" formControlName="price" />
       </mat-form-field>
       <mat-error
@@ -52,18 +52,18 @@
       >
     <mat-error
           *ngIf="formMenu.get('price')?.errors?.['required']"
-          >price must fill</mat-error
+          >{{ "price must fill" | translate }}</mat-error
         >
     </mat-error>
 
     <div formArrayName="newIngredient" >
-        <h2>Ingredients</h2>
+        <h2>{{ "Ingredients" | translate }}</h2>
 
         <div *ngFor="let ingredient of formMenu.get('newIngredient').controls let i = index" >
             <div [formGroupName]="i" >
                 <hr>
-                <div> <h3>Ingridient {{ i+1 }}</h3> </div>
-                <button type="button" class="btn-dell" mat-flat-button color="warn" (click)="removeIngredient(i)">Delete Ingridient Form</button><br><br>
+                <div> <h3>{{ "Ingridient" | translate }} {{ i+1 }}</h3> </div>
+                <button type="button" class="btn-dell" mat-flat-button color="warn" [ngStyle]="{'display' : i == 0 ? 'none' : 'block'}" (click)="removeIngredient(i)">{{ "Delete Ingridient Form" | translate }}</button><br><br>
 
                 <!-- <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Ingredient</mat-label>
@@ -71,7 +71,7 @@
                 </mat-form-field> -->
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Ingredient</mat-label>
+                    <mat-label>{{ "Ingredient" | translate }}</mat-label>
                     <mat-select formControlName="ingredient_id" >
                       <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient._id">
                         {{ingredient.name}}
@@ -80,19 +80,19 @@
                   </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Stock</mat-label>
-                    <input matInput type="text" formControlName="stock_used" placeholder="Stock" />
+                    <mat-label>{{ "Stock" | translate }}</mat-label>
+                    <input matInput type="text" formControlName="stock_used" placeholder="{{ 'Stock' | translate }}" />
                 </mat-form-field>
             </div>
         </div>
 
-        <button type="button" class="btn-add" mat-raised-button color="primary" mat-flat-button (click)="addIngredient()">Add Ingredient</button><br><br>
+        <button type="button" class="btn-add" mat-raised-button color="primary" mat-flat-button (click)="addIngredient()">{{ "Add Ingredient" | translate }}</button><br><br>
 
     </div>
 
     <div class="btn">
       <button mat-raised-button color="accent" type="submit" mat-button>
-        SUBMIT
+        {{ "SUBMIT" | translate }}
       </button>
     </div>
   </form>

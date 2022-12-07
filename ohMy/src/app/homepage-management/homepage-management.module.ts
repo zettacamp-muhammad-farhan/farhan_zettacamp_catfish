@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import { MaterialModule } from '../material/material.module';
 import { HomepageCardComponent } from './homepage-main/homepage-card/homepage-card.component';
 import { HomepageSlideComponent } from './homepage-main/homepage-slide/homepage-slide.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes : Routes = [
   {
@@ -28,7 +29,8 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    TranslateModule
   ],
   exports: [HomepageMainComponent, HomepageCardComponent, HomepageSlideComponent]
 })

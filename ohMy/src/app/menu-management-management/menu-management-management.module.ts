@@ -7,6 +7,7 @@ import { MenuFormComponent } from './menu-form/menu-form.component';
 import { MenuUpdateComponent } from './menu-update/menu-update.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -17,7 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MenuUpdateComponent
   ],
   imports: [
-    CommonModule,MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule
+    CommonModule,MaterialModule, ReactiveFormsModule, MatProgressSpinnerModule, TranslateModule
   ],
   exports:[
     MenuManagementMainComponent, MenuFormComponent, MenuUpdateComponent

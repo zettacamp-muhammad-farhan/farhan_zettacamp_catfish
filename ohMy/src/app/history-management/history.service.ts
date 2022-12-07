@@ -41,4 +41,47 @@ export class HistoryService {
       fetchPolicy: "network-only"
     })
   }
+
+  getIncome(){
+    return this.apollo.query({
+      query:gql `
+      query GetIncome {
+        getIncome {
+          balance
+          count
+          sold
+        }
+      }
+      `
+    })
+  }
+
+  getHistoryAd(pagination:any){
+    return this.apollo.watchQuery({
+      query:gql`
+      query succes($pagination: Paging) {
+        getSuccessTransactions(pagination: $pagination) {
+          count
+          sold
+          total
+          menu {
+            recipe_id {
+              recipe_name
+            }
+            amount
+          }
+          _id
+          order_date
+          user_id {
+            email
+          }
+        }
+      }
+      `,
+      variables:{
+        pagination
+      },
+      fetchPolicy: "network-only"
+    })
+  }
 }

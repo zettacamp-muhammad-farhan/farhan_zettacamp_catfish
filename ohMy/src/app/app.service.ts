@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { Apollo, gql } from 'apollo-angular';
+
 
 export interface Nav {
   name:string,
@@ -151,7 +153,9 @@ export class AppService {
 
   login$:BehaviorSubject<Log> = new BehaviorSubject<Log>({name:"Logout", "icon":"supervisor_account"})
 
-  constructor() { }
+  constructor(
+    private apollo:Apollo
+  ) { }
 
   changeAdmin(){
     this.nav$.next(this.navAd);
@@ -171,6 +175,33 @@ export class AppService {
   }
   changeStatus(value:Log){
     this.login$.next(value)
+  }
+
+
+  getWallet(){
+    const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
+
+    let email = ""
+    if(usr !== false){
+      email = JSON.parse(usr).email
+    }
+
+    console.log(email);
+    
+    return this.apollo.query({
+      query:gql`
+      query Query($filter: OneUserFilter) {
+        getOneUser(filter: $filter) {
+          wallet
+        }
+      }
+      `, 
+      variables : {
+        "filter": {
+          email
+        }
+      }
+    })
   }
 }
 

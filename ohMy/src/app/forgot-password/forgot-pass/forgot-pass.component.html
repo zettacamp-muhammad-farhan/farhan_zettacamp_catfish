@@ -1,0 +1,65 @@
+<main>
+    <div class="container">
+        <h2>{{ "Forgot Password" | translate }}</h2>
+
+        <h4>{{ "Your email is confirmed, pelase set a new password" | translate }}</h4>
+
+        <form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
+        
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{ "Email" | translate }}</mat-label>
+                <input matInput type="email" formControlName="email" />
+              </mat-form-field>
+              <mat-error
+                *ngIf="
+                  !formMenu.get('email')?.valid &&
+                  formMenu.get('email')?.touched
+                "
+                class="help-block"
+              >
+            <mat-error
+                  *ngIf="formMenu.get('email')?.errors?.['required']"
+                  >{{ "Email must fill" | translate }}
+            </mat-error>
+            <mat-error
+                  *ngIf="formMenu.get('email')?.errors?.['email']"
+                  >email must fill with email format
+            </mat-error>
+
+
+            </mat-error>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{ "Password" | translate }}</mat-label>
+                <input matInput type="{{ showPass? 'text' : 'password' }}" formControlName="password" readonly />
+                <div class="eye">
+                  <mat-icon (click)="show()" >remove_red_eye</mat-icon>
+                </div>
+              </mat-form-field>
+              <mat-error
+                *ngIf="
+                  !formMenu.get('password')?.valid &&
+                  formMenu.get('password')?.touched
+                "
+                class="help-block"
+              >
+            <mat-error
+                  *ngIf="formMenu.get('password')?.errors?.['required']"
+                  >{{ "Password must fill" | translate }}
+            </mat-error>
+            <mat-error
+                  *ngIf="formMenu.get('password')?.errors?.['minlength']"
+                  >{{ "fill password at least 6 character" | translate }}
+            </mat-error>
+
+
+            </mat-error>
+        
+            <div [class]="formMenu.invalid ? 'btn-login-gray' : 'btn-login' ">
+              <button type="submit" [disabled]="formMenu.invalid" mat-button>
+                {{ "RESET PASSWORD" | translate }}
+              </button>
+            </div>
+          </form>
+    </div>
+</main>

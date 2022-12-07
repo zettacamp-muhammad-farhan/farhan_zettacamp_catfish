@@ -9,6 +9,7 @@ import { StockFormComponent } from '../stock-form/stock-form.component';
 import { StockUpdateComponent } from '../stock-update/stock-update.component';
 import Swal from 'sweetalert2';
 import { FormControl, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-stcok-management-main',
@@ -40,7 +41,8 @@ export class StcokManagementMainComponent implements OnInit {
 
   constructor(
     private stockServ : StockService,
-    private dialog : MatDialog
+    private dialog : MatDialog,
+    private translate : TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -75,7 +77,7 @@ export class StcokManagementMainComponent implements OnInit {
             (data:any) => {
               if(data){
                 this.loaded = true
-                console.log(this.loaded);
+                // console.log(this.loaded);
                 
 
                 this.dataSource = data.data.getAllIngredients.data;
@@ -100,7 +102,7 @@ export class StcokManagementMainComponent implements OnInit {
         if(data){
           this.loaded = true
         }
-        console.log(data.data.getAllIngredients.TotalDocument);
+        // console.log(data.data.getAllIngredients.TotalDocument);
 
         // set paginator
         this.paginator.length = data.data.getAllIngredients.TotalDocument
@@ -121,7 +123,7 @@ export class StcokManagementMainComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(StockFormComponent, {
-      width: "70%",
+      width: "30%",
       data: {
         "nama" : "siapa"
       }
@@ -145,13 +147,14 @@ export class StcokManagementMainComponent implements OnInit {
     let status = 'deleted'
     let data = {id}
     Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      title: this.translate.instant('Are you sure?'),
+      text: this.translate.instant("You won't be able to revert this!"),
       icon: 'warning',
       showCancelButton: true,
+      cancelButtonText: this.translate.instant('Cancel') ,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: this.translate.instant('Yes, delete it!')
     }).then((result) => {
       if (result.isConfirmed) {
         this.stockServ.deleteIngirdient(data).subscribe(
@@ -180,7 +183,7 @@ export class StcokManagementMainComponent implements OnInit {
 
   updateData(id:string, name:string, stock:any){
     const dialogRef = this.dialog.open(StockUpdateComponent, {
-      width: "70%",
+      width: "30%",
       data:{
         id : id,
         name: name,
