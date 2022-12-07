@@ -21,10 +21,11 @@
                 <mat-card-subtitle>
                     Note : {{ item.note }}
                 </mat-card-subtitle>
+                <h3  >a{{ item.recipe_id.discount }}</h3>
+
 
                 <h3>{{ item.recipe_id.price | currency:"Rp. " }}  ({{ item.amount }})</h3> 
                 <h3  >{{ item.recipe_id.price - (item.recipe_id.price * (item.recipe_id.discount/100)) | currency:"Rp. " }}</h3>
-                <h3  >{{ item.recipe_id.discount }}</h3>
 
                 <form>
                     <div class="value-button" id="decrease" disable (click)="decreaseItem(item.amount, item._id)" value="Decrease Value">-</div>

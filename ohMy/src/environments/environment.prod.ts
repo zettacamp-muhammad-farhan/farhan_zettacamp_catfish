@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://011a-103-236-192-220.ap.ngrok.io/graphql',
+  apiUrl: 'https://kind-plum-panther-gear.cyclic.app/graphql',
   tokenKey:
     'token',
 };
