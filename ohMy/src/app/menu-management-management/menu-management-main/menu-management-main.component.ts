@@ -144,7 +144,7 @@ export class MenuManagementMainComponent implements OnInit {
     )
   }
 
-  openEdit(id:string, name:string, price:string, image:string, ingredient:any){
+  openEdit(id:string, name:string, price:string, image:string, ingredient:any, disc:any){
     // console.log(ingredient);
     
     const dialogRef = this.dialog.open(MenuUpdateComponent, {
@@ -154,7 +154,8 @@ export class MenuManagementMainComponent implements OnInit {
         name:name,
         price:price,
         image:image,
-        ingredient:ingredient
+        ingredient:ingredient,
+        dicount:disc
       }
     })
     dialogRef.afterClosed().subscribe(

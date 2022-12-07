@@ -23,12 +23,13 @@ export class MenuUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // console.log(this.data.ingredient);
+    console.log(this.data);
     
     this.formMenu = new FormGroup({
       newName : new FormControl(this.data.name, Validators.required),
       price : new FormControl(this.data.price, Validators.required),
       image : new FormControl(this.data.image,),
+      discount: new FormControl(this.data.dicount, Validators.required),
       newIngredient : new FormArray([])
     });
 

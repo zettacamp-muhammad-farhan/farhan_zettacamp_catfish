@@ -56,6 +56,23 @@
         >
     </mat-error>
 
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "Discount" | translate }}</mat-label>
+        <input matInput type="number" formControlName="discount"/>
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('discount')?.valid &&
+          formMenu.get('discount').touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('discount')?.errors?.['required']"
+          >{{ "discount must fill" | translate }}</mat-error
+        >
+    </mat-error>
+
     <div formArrayName="newIngredient" >
         <h2>{{ "Ingredients" | translate }}</h2>
 

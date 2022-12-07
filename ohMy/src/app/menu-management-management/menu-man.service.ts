@@ -32,6 +32,7 @@ export class MenuManService {
                 stock_used
               }
               recipe_name
+              discount
               price
               status
               highlight

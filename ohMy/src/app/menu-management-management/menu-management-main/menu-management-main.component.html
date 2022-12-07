@@ -126,7 +126,7 @@
                 <input type="text" value="{{ element.price }}" hidden #price>
                 <input type="text" value="{{ element.image }}" hidden #image>
 
-              <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients)" mat-raised-button color="primary">
+              <button [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients, element.discount)" mat-raised-button color="primary">
                   <mat-icon>edit</mat-icon>
               </button>
               <button [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" mat-raised-button color="warn">
