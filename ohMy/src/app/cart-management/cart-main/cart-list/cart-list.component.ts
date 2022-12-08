@@ -151,7 +151,7 @@ export class CartListComponent implements OnInit {
               this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
                 'Deleted!',
-                'Your file has been deleted, because you do not checkout in 5 minutes',
+                'Your file has been deleted',
                 'success'
               )
 

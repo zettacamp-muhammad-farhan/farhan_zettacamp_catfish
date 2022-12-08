@@ -42,6 +42,7 @@ export class AppComponent {
   wallet:any
 
   statusCheckout:boolean = false
+  time:any
 
   constructor(
     private login:LoginService,
@@ -58,12 +59,30 @@ export class AppComponent {
       (data:any)=>{
         console.log(data);
         this.statusCheckout = data
+
+        clearTimeout(this.time)
+
+        // let time:any
+        // if(this.statusCheckout){
+        //   time = setTimeout(()=>{
+        //     Swal.fire(
+        //       'Your item has been deleted, because you not checkout in 5 minutes',
+        //       'You not checkout',
+        //       'success'
+        //     )
+        //   }, 20000)
+        //   // this.setAlertDel()
+        // } else {
+        //   console.log('clear');
+        //   clearTimeout(time)
+        // }
       }
     )
 
     setInterval(()=>{
       if(this.statusCheckout == true){
-        setTimeout(()=>{
+
+        this.time = setTimeout(()=>{
           if(this.statusCheckout == true){
             Swal.fire(
               'Your item has been deleted',
@@ -73,18 +92,12 @@ export class AppComponent {
             this.statusCheckout = false
           }
         }, 20000)
+      }else {
+        clearTimeout(this.time)
       }
     }, 1)
 
-    // if(this.statusCheckout){
-    //   setTimeout(()=>{
-    //     Swal.fire(
-    //       'Your item has been deleted',
-    //       'You not checkout',
-    //       'success'
-    //     )
-    //   }, 10000)
-    // }
+
 
     this.getWallet()
 
@@ -126,6 +139,16 @@ export class AppComponent {
     this.loged = data;
   
     
+  }
+
+  setAlertDel(){
+      let time = setTimeout(()=>{
+        Swal.fire(
+          'Your item has been deleted, because you not checkout in 5 minutes',
+          'You not checkout',
+          'success'
+        )
+      }, 20000)
   }
 
   // get wallet
