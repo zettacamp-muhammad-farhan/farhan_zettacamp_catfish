@@ -4,22 +4,26 @@ import { CartMainComponent } from './cart-main/cart-main.component';
 import { CartListComponent } from './cart-main/cart-list/cart-list.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartUpdateComponent } from './cart-update/cart-update.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
 @NgModule({
   declarations: [
     CartMainComponent,
-    CartListComponent
+    CartListComponent,
+    CartUpdateComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   exports:[
-    CartMainComponent, CartListComponent
+    CartMainComponent, CartListComponent, CartUpdateComponent
   ]
 })
 export class CartManagementModule { }

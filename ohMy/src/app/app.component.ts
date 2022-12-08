@@ -9,6 +9,9 @@ import { AppService, Nav, Log } from './app.service';
 import { AuthguardServiceService } from './authguard-service.service';
 import { LoginService } from './login-management/login.service';
 
+//dialog
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

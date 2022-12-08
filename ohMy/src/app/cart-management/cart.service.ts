@@ -155,4 +155,20 @@ export class CartService {
       }
     })
   }
+
+  updateTranscation(input:any){
+    return this.apollo.mutate({
+      mutation:gql `
+      mutation updateTrans($input: UpdateAmount) {
+        updateAmount(input: $input) {
+          _id
+          count
+        }
+      }
+      `,
+      variables:{
+        input
+      }
+    })
+  }
 }

@@ -175,7 +175,7 @@ export class MenuManService {
 
   updateSpecial(input:any){
     this.query = gql `
-    mutation Mutation($input: DataUpdateRecipe) {
+    mutation updateSpecial($input: DataUpdateRecipe) {
       updateRecipe(input: $input) {
         _id
         recipe_name
@@ -192,7 +192,7 @@ export class MenuManService {
 
   updateHightlight(input:any){
     this.query = gql `
-    mutation Mutation($input: DataUpdateRecipe) {
+    mutation updatehighlight($input: DataUpdateRecipe) {
       updateRecipe(input: $input) {
         _id
         recipe_name
@@ -202,7 +202,9 @@ export class MenuManService {
 
     return this,this.apollo.mutate({
       mutation: this.query,
-      variables:{input}
+      variables:{
+        input
+      }
     })
   }
 

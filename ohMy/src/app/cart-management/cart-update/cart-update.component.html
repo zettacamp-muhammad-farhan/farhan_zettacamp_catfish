@@ -1,0 +1,49 @@
+<h2>{{ "Add Menu Data" | translate }}</h2>
+<div class="close" (click)="close()">
+  <strong>X</strong>
+</div>
+<main>
+<form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "Amount" | translate }}</mat-label>
+        <input matInput type="text" formControlName="amount" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('amount')?.valid &&
+          formMenu.get('amount')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('amount')?.errors?.['required']"
+          >{{ "amount must fill" | translate }}</mat-error
+        >
+    </mat-error>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "note" | translate }}</mat-label>
+        <input matInput type="text" formControlName="note" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('note')?.valid &&
+          formMenu.get('note')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('note')?.errors?.['required']"
+          >note must fill</mat-error
+        >
+    </mat-error>
+
+
+    <div class="btn">
+      <button mat-raised-button color="accent" type="submit" mat-button>
+        {{ "SUBMIT" | translate }}
+      </button>
+    </div>
+  </form>
+</main>

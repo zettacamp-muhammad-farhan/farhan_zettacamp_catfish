@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { HistoryService } from 'src/app/history-management/history.service';
 import Swal from 'sweetalert2';
 import { CartService } from '../../cart.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CartUpdateComponent } from '../../cart-update/cart-update.component';
 
 @Component({
   selector: 'app-cart-list',
@@ -20,7 +22,8 @@ export class CartListComponent implements OnInit {
 
   constructor(
     private cartServ:CartService,
-    private historyServ:HistoryService
+    private historyServ:HistoryService,
+    private dialog:MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +41,26 @@ export class CartListComponent implements OnInit {
       }
     )
     
+  }
+
+  openDialog(input:any){
+    // console.log(input);
+    const dialogRef = this.dialog.open(CartUpdateComponent, {
+      width:"50%",
+      data: {
+        amount:input.amount,
+        id:input.id,
+        note:input.note
+      }
+    })
+    dialogRef.afterClosed().subscribe(
+      res=>{
+        if(res){
+          this.cartServ.getCart({limit:5, page:0}).refetch()
+        }
+        
+      }
+    )
   }
   
 

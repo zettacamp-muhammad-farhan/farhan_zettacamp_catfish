@@ -196,6 +196,48 @@ export class MenuManagementMainComponent implements OnInit {
   }
 
   updateStatus(input:any){
+
+    if(input.status == 'draft'){
+      console.log(input);
+
+      let data = {special:false, id:input.id}
+
+      //update menu  special
+      this.menuServ.updateSpecial(data).subscribe(
+        (res:any)=>{
+          if(res){
+            this.getData()
+            // homepage
+            this.home.getRecipesSpecial({limit:5, page:0})
+          }
+        }, (error:any)=>{
+          Swal.fire(
+            "you can't set because this food in cart",
+            'You clicked the button!',
+            'error'
+          )
+        }
+      )
+
+      let datHigh = {highlight:false, id:input.id}
+
+      //update highlight
+      this,this.menuServ.updateHightlight(datHigh).subscribe(
+        (res:any)=>{
+          if(res){
+            this.getData()
+            this.home.getRecipesHighlight({limit:5, page:0})
+          }
+        }, (error:any)=>{
+          Swal.fire(
+            "you can't set because this food in cart",
+            'You clicked the button!',
+            'error'
+          )
+        }
+      )
+    }
+
     this.menuServ.updateStatus(input).subscribe(
       (res:any)=>{
         if(res){

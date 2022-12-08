@@ -3,6 +3,9 @@ import { SubSink } from 'subsink';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { CartService } from '../cart.service';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { CartUpdateComponent } from '../cart-update/cart-update.component';
+
 
 @Component({
   selector: 'app-cart-main',
@@ -26,7 +29,8 @@ export class CartMainComponent implements OnInit {
   recipes:{}[] = []
 
   constructor(
-    private cartServ:CartService
+    private cartServ:CartService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -44,24 +48,22 @@ export class CartMainComponent implements OnInit {
     // this.initPaginator()
   }
 
-  // initPaginator() {
-  //   this.cartServ
-  //     .getCartLength()
-  //     .subscribe((length: number) => {
-  //         // update paginator length
-  //         this.paginator.length = length;
-  //         this.paginator.pageSize = this.pageSizeOptions[0]; // 5
-  //     });
+  // openDialog(input:any){
+  //   const dialogRef = this.dialog.open(CartUpdateComponent, {
+  //     width:"50%",
+  //     data: {
+  //       hola:"test"
+  //     }
+  //   })
+  //   dialogRef.afterClosed().subscribe(
+  //     res=>{
+  //       if(res){
+  //         this.cartServ.getCart(this.pagination).refetch()
+  //       }
+        
+  //     }
+  //   )
   // }
-
-  // onPaginatorChange(event: PageEvent) {
-    
-  //   this.pagination.limit = event.pageSize;
-  //   this.pagination.page = event.pageIndex;
-
-  //   // refetch data
-  //   this.refetchData();
-  // } 
 
   refetchData() {
     const pagination = this.pagination;
