@@ -5,10 +5,6 @@ form {
 mat-form-field {
     width: 100%;
 }
-main {
-    overflow-y: scroll;
-    height: 500px;
-}
 main::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
@@ -28,14 +24,11 @@ button {
 
 .btn-top {
     background-color: #7CCDF4;
-    width: 45%;
+    width: 40%;
     display: inline-block;
     border-radius: 10px;
     margin-left: 10px; margin-right: 10px;
     box-sizing: border-box;
-}
-.btn-top button {
-    width: 100%;
 }
 
 .cancel {

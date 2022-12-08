@@ -1,0 +1,39 @@
+<h2>{{ "Top Up Balance" | translate }}</h2>
+<div class="close" (click)="close()">
+  <strong>X</strong>
+</div>
+<main>
+<form [formGroup]="formMenu" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>{{ "Balance" | translate }}</mat-label>
+        <input matInput type="text" formControlName="balance" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="
+          !formMenu.get('balance')?.valid &&
+          formMenu.get('balance')?.touched
+        "
+        class="help-block"
+      >
+    <mat-error
+          *ngIf="formMenu.get('balance')?.errors?.['required']"
+          >{{ "balance must fill" | translate }}</mat-error
+        >
+    </mat-error>
+
+
+
+    <div class="btn-top">
+      <button type="submit" mat-button>
+        {{ "TOP UP" | translate }}
+      </button>
+    </div>
+    <div class="btn-top cancel">
+      <button type="button" (click)="close()" mat-button>
+        {{ "CANCEL" | translate }}
+      </button>
+    </div>
+  </form>
+</main>
+

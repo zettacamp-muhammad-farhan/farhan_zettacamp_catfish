@@ -45,11 +45,11 @@ export class LoginMainComponent implements OnInit {
         
         this.router.navigate(['/']);
         window.location.href = "/"
-        Swal.fire({
-          icon: 'success',
-          title: 'Horray...',
-          text: `now you're loged as ${payload.email}`
-        })
+        // Swal.fire({
+        //   icon: 'success',
+        //   title: 'Horray...',
+        //   text: `now you're loged as ${payload.email}`
+        // })
       }
     }, error => {
       console.log(error.errors);

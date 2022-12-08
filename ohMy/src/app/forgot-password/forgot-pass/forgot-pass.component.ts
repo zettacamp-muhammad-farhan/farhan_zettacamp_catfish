@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ForgotService } from '../forgot.service';
 import { Route, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forgot-pass',
@@ -17,7 +18,8 @@ export class ForgotPassComponent implements OnInit {
 
   constructor(
     private forgot:ForgotService,
-    private router:Router
+    private router:Router,
+    private translate:TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +28,7 @@ export class ForgotPassComponent implements OnInit {
     this.forgot.getTemp().subscribe(
       (email:string)=>{
         if(email == ""){
-          // this.router.navigate(['/forgot'])
+          this.router.navigate(['/forgot'])
         } else {
           emaill = email
           console.log(emaill);
@@ -42,24 +44,41 @@ export class ForgotPassComponent implements OnInit {
   }
 
   onSubmit(){
-    const result = this.formMenu.value
-    this.forgot.changePass(result).subscribe(
-      data=>{
-        console.log(data);
-        Swal.fire(
-          'Good job!',
-          'Success to reset Password',
-          'success'
-        )
-        
-      }, err => {
-        Swal.fire(
-          'Good job!',
-          'fail reset password',
-          'error'
+    const res = this.formMenu.value
+
+    Swal.fire({
+      title: this.translate.instant('Are you sure to reset password with curent password?'),
+      text: this.translate.instant("Your password will reset to new password"),
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: this.translate.instant("Yes, Reset!"),
+      cancelButtonText: this.translate.instant("No")
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.forgot.changePass(res).subscribe(
+          data=>{
+            console.log(data);
+            this.router.navigate(['/login'])
+            Swal.fire(
+              this.translate.instant("Good job!"),
+              this.translate.instant("Success to reset Password"),
+              'success'
+            )
+            
+          }, err => {
+            Swal.fire(
+              this.translate.instant("Oh No"),
+              this.translate.instant("fail reset password !"),
+              'error'
+            )
+          }
         )
       }
-    )
+    })
+
+
     
   }
 

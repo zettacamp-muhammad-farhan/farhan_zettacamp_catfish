@@ -30,7 +30,7 @@ export class MenuFormComponent implements OnInit {
     this.formMenu = new FormGroup({
       recipe_name : new FormControl(null, Validators.required),
       price : new FormControl(null, Validators.required),
-      image : new FormControl(null,),
+      image : new FormControl(null, Validators.required),
       ingredients : new FormArray([])
     });
 

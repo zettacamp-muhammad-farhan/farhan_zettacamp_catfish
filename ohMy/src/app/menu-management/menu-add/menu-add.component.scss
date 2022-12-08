@@ -5,8 +5,25 @@ mat-form-field{
 .btn-submit {
     background-color: #BCE3FA;
     border-radius: 10px;
+    width: 43%;
+    display: inline-block;
+    border-radius: 10px; 
+    margin-left: 10px; margin-right: 10px;
+    box-sizing: border-box;
 }
 .btn-submit button {
     background-color: transparent;
     width: 100%;
+
+}
+
+.close {
+    float: right;
+    margin-top: -60px;
+    cursor: pointer;
+}
+
+.cancel {
+    color: white;
+    background-color: #2C4268;
 }

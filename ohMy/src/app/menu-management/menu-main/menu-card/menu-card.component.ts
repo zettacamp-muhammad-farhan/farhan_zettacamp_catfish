@@ -10,6 +10,11 @@ import { MenuService } from '../../menu.service';
   styleUrls: ['./menu-card.component.scss']
 })
 export class MenuCardComponent implements OnInit {
+
+  adm!:boolean
+  loged!:boolean|null;
+  user:any
+
   @Input() recipe:any
 
   canBuy = false
@@ -22,6 +27,17 @@ export class MenuCardComponent implements OnInit {
   ngOnInit(): void {
     let user = localStorage.getItem('user') ? true : false
     this.canBuy = user
+
+    const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
+    if(usr !== false) {
+      const user = JSON.parse(usr)
+      this.user = user
+      console.log(this.user);
+      this.adm = user.user_type[4].view // if admin true
+    }
+
+    let data = localStorage.getItem('token') ? true : false
+    this.loged = data;
   }
 
   openDialog(id:any){
@@ -29,7 +45,7 @@ export class MenuCardComponent implements OnInit {
 
     if(this.canBuy){
       const dialogRef = this.dialog.open(MenuAddComponent, {
-        width:"70%",
+        width:"400px",
         data: {
           hola:"test",
           id:id

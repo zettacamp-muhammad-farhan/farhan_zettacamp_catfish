@@ -27,10 +27,10 @@
           </mat-form-field>
 
           <mat-error *ngIf="
-                !signUp.get('firstName')?.valid &&
-                signUp.get('firstName')?.touched
+                !signUp.get('first_name')?.valid &&
+                signUp.get('first_name')?.touched
               " class="help-block">
-            <mat-error *ngIf="signUp.get('firstName')?.errors?.['required']">{{ "first name must fill" | translate }}</mat-error>
+            <mat-error *ngIf="signUp.get('first_name')?.errors?.['required']">{{ "first name must fill" | translate }}</mat-error>
           </mat-error>
 
         </div>
@@ -41,10 +41,10 @@
           </mat-form-field>
 
           <mat-error *ngIf="
-                !signUp.get('lastName')?.valid &&
-                signUp.get('lastName')?.touched
+                !signUp.get('last_name')?.valid &&
+                signUp.get('last_name')?.touched
               " class="help-block">
-            <mat-error *ngIf="signUp.get('lastName')?.errors?.['required']">{{ "Last Name must fill" | translate }}</mat-error>
+            <mat-error *ngIf="signUp.get('last_name')?.errors?.['required']">{{ "Last Name must fill" | translate }}</mat-error>
           </mat-error>
 
         </div>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="msg">
-        <span class="" >{{ "Already have an account ?" | translate }} <a (click)="login()">{{ "Login" | translate }}</a></span>
+        <span class="" >{{ "Already have an account ?" | translate }} <a class="link" (click)="login()">{{ "Login" | translate }}</a></span>
       </div>
 
 

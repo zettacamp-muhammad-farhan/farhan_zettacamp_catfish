@@ -131,7 +131,38 @@
     "price must fill" : "le prix doit remplir",
     "Ingredients" : "Ingrédients",
     "Add Ingredient" : "Ajouter un ingrédient",
-    "Delete Ingridient Form" : "Supprimer le formulaire d'ingrédients"
+    "Delete Ingridient Form" : "Supprimer le formulaire d'ingrédients",
+
+    "CANCEL" : "ANNULER",
+    "TOP UP" : "RECHARGER",
+    "balance must fill" : "le solde doit remplir",
+    "Balance" : "Solde",
+    "Top Up Balance" : "Solde de recharge",
+
+    "Top Up" : "Recharger",
+    "Log Out" : "Se déconnecter",
+
+    "Are you sure to logout?" : "Êtes-vous sûr de vous déconnecter ?",
+    "Yes" : "Oui",
+    "No" : "Non",
+
+    "Are you sure to reset password with curent password?" : "Êtes-vous sûr de réinitialiser le mot de passe avec le mot de passe actuel ?",
+    "Your password will reset to new password" :"Votre mot de passe sera réinitialisé avec le nouveau mot de passe",
+    "Good job!" : "Bon travail!",
+    "Success to reset Password" : "Réinitialisation réussie du mot de passe",
+    "Oh No" : "Oh non",
+    "fail reset password !" : "fail réchec de la réinitialisation du mot de passe !eset password !",
+
+    "Add Recipes" : "Ajouter des recettes",
+    "Search" : "Chercher",
+    "find recipes" : "trouver des recettes...",
+    "Publish" : "Publier",
+    "Unpublish" : "Annuler la publication",
+
+    "Set to Publish" : "Définir pour publier",
+    "Set to Unpublish" : "Définir sur Annuler la publication",
+    "Edit Food and Drink" : "Modifier la nourriture et les boissons",
+    "Delete Food and Drink" : "Supprimer Nourriture et boisson"
 
 
 

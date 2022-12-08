@@ -42,7 +42,7 @@
               
               <h3>{{ recipe.price | currency:"Rp. " }} </h3>
               <div class="btn-price">
-                <button [disabled]="recipe.available == 0" (click)="openDialog( recipe._id )">
+                <button [disabled]="recipe.available == 0 || !loged || adm" (click)="openDialog( recipe._id )">
                     {{ "add to cart" | translate }}
                 </button>
               </div>

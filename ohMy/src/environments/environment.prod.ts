@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://kind-plum-panther-gear.cyclic.app/graphql',
+  apiUrl: 'api.team-8.zettacamp-upn.zetta-demo.space/graphql',
   tokenKey:
     'token',
 };

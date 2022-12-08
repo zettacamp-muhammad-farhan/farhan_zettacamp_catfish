@@ -17,7 +17,7 @@
                         <div class="price">
                             {{!loaded ? "XXX.XXX" : specialOffer[0].price | currency:"Rp. " }}, -
                         </div>
-                        <button  (click)="openDialog( specialOffer[0]._id, specialOffer[0].available)" class="btn-big" >{{ "add to cart" | translate }}</button>
+                        <button [disabled]="!loged || adm" (click)="openDialog( specialOffer[0]._id, specialOffer[0].available)" class="btn-big" >{{ "add to cart" | translate }}</button>
                     </div>
 
                     <h2>{{ "special offer" | translate }}</h2>

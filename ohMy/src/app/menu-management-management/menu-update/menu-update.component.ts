@@ -23,12 +23,12 @@ export class MenuUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
+    // console.log(this.data);
     
     this.formMenu = new FormGroup({
       newName : new FormControl(this.data.name, Validators.required),
       price : new FormControl(this.data.price, Validators.required),
-      image : new FormControl(this.data.image,),
+      image : new FormControl(this.data.image, Validators.required),
       discount: new FormControl(this.data.dicount, Validators.required),
       newIngredient : new FormArray([])
     });
@@ -75,45 +75,57 @@ export class MenuUpdateComponent implements OnInit {
   }
 
   removeIngredient(val:any){
-    (<FormArray>this.formMenu.get('ingredients')).removeAt(val)
+    (<FormArray>this.formMenu.get('newIngredient')).removeAt(val)
   }
 
   onSubmit(){
-    
-    this.formMenu.value.id = this.data.id
-    this.formMenu.value.price = parseInt(this.formMenu.value.price)
-    let stock = (this.formMenu.value.ingredient)
-    // console.log(stock);
-    
-    // console.log(this.formMenu.value);
-    this.formMenu.value.newIngredient.map((data:any) => {
-      data.stock_used = parseInt(data.stock_used)
-    })
 
-    this.menuServ.updateRecipes(this.formMenu.value).subscribe(
-      ({data})=>{
-        // console.log(data);
-        this.menuServ.getRecipes({page:0, limit:5}, "", null)
-        this.dialogRef.close()
-        Swal.fire({
-          position:'center',
-          icon: 'success',
-          title : "Success update",
-          confirmButtonText : 'okay'
-        })
-        
-      }, error => {
+    if(this.formMenu.valid){
+      this.formMenu.value.id = this.data.id
+      this.formMenu.value.price = parseInt(this.formMenu.value.price)
+      let stock = (this.formMenu.value.ingredient)
+      // console.log(stock);
+      
+      // console.log(this.formMenu.value);
+      this.formMenu.value.newIngredient.map((data:any) => {
+        data.stock_used = parseInt(data.stock_used)
+      })
 
-        // console.log(error);
-        
-        Swal.fire({
-          position:'center',
-          icon: 'error',
-          title : error,
-          confirmButtonText : 'okay'
-        })
-      }
-    )
+      this.menuServ.updateRecipes(this.formMenu.value).subscribe(
+        ({data})=>{
+          // console.log(data);
+          this.menuServ.getRecipes({page:0, limit:5}, "", null)
+          this.dialogRef.close()
+          Swal.fire({
+            position:'center',
+            icon: 'success',
+            title : "Success update",
+            confirmButtonText : 'okay'
+          })
+          
+        }, error => {
+
+          // console.log(error);
+          
+          Swal.fire({
+            position:'center',
+            icon: 'error',
+            title : error,
+            confirmButtonText : 'okay'
+          })
+        }
+      )
+
+    } else {
+      Swal.fire({
+        position:'center',
+        icon: 'error',
+        title : 'Fill form before submit !!!',
+        confirmButtonText : 'okay'
+      })
+    }
+    
+    
 
  
   }

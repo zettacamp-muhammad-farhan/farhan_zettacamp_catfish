@@ -80,7 +80,7 @@ export class MenuMainComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(MenuAddComponent, {
-      width:"70%",
+      width:"400px",
       data: {
         hola:"test"
       }

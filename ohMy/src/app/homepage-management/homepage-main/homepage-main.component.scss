@@ -260,8 +260,8 @@ footer{
 }
 .contain-option{
     margin-top: 20px; margin-left: -260px;
-    width: 1000px;
-    /* background-color: red; */
+    width: 900px;
+    position: absolute;
     height: 300px;
     overflow-x:scroll;
     overflow-y: hidden;
@@ -281,13 +281,13 @@ footer{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #23233B; 
+    background: #9a9acb; 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #23233ba4; 
+    background: #7070d7a4; 
   }
 // .contain-option::-webkit-scrollbar { 
 //     // display: none;  /* Safari and Chrome */

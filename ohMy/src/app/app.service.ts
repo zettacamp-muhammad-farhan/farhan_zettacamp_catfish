@@ -19,6 +19,7 @@ export interface Log {
 })
 export class AppService {
 
+
   nav:Nav[] = [
     {
       route:"",
@@ -148,6 +149,8 @@ export class AppService {
     }
   ]
 
+  // to allert checkout > 5 min will delete
+  deleteCheckout:BehaviorSubject<any> = new BehaviorSubject<any>(false)
  
   nav$:BehaviorSubject<Nav[]> = new BehaviorSubject<Nav[]>(this.nav);
 
@@ -186,9 +189,9 @@ export class AppService {
       email = JSON.parse(usr).email
     }
 
-    console.log(email);
+    // console.log(email);
     
-    return this.apollo.query({
+    return this.apollo.watchQuery({
       query:gql`
       query Query($filter: OneUserFilter) {
         getOneUser(filter: $filter) {
@@ -200,8 +203,16 @@ export class AppService {
         "filter": {
           email
         }
-      }
+      },
+      fetchPolicy:'network-only'
     })
+  }
+
+  setTo(val:any){
+    this.deleteCheckout.next(val)
+  }
+  getStatusCheckout(){
+    return this.deleteCheckout.asObservable()
   }
 }
 

@@ -9,7 +9,12 @@ import { AppService, Nav, Log } from './app.service';
 import { AuthguardServiceService } from './authguard-service.service';
 import { LoginService } from './login-management/login.service';
 
+
+
 //dialog
+import { MatDialog } from '@angular/material/dialog';
+import { TopupWalletService } from './topup/topup-wallet.service';
+import { TopupWalletComponent } from './topup/topup-wallet/topup-wallet.component';
 
 
 @Component({
@@ -36,25 +41,52 @@ export class AppComponent {
 
   wallet:any
 
+  statusCheckout:boolean = false
+
   constructor(
     private login:LoginService,
     private router:Router,
     private appServ:AppService,
     private guard:AuthguardServiceService,
-    private translate:TranslateService
+    private translate:TranslateService,
+    private dialog:MatDialog
   ) { }
 
   ngOnInit(){
 
-    this.appServ.getWallet().subscribe(
+    this.appServ.getStatusCheckout().subscribe(
       (data:any)=>{
         console.log(data);
-        this.wallet = data.data.getOneUser.wallet
-        
+        this.statusCheckout = data
       }
     )
 
+    setInterval(()=>{
+      if(this.statusCheckout == true){
+        setTimeout(()=>{
+          if(this.statusCheckout == true){
+            Swal.fire(
+              'Your item has been deleted',
+              'You not checkout',
+              'success'
+            )
+            this.statusCheckout = false
+          }
+        }, 20000)
+      }
+    }, 1)
 
+    // if(this.statusCheckout){
+    //   setTimeout(()=>{
+    //     Swal.fire(
+    //       'Your item has been deleted',
+    //       'You not checkout',
+    //       'success'
+    //     )
+    //   }, 10000)
+    // }
+
+    this.getWallet()
 
     const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
     if(usr !== false){
@@ -62,7 +94,6 @@ export class AppComponent {
       
       const user = JSON.parse(usr)
       this.user = user
-      console.log(this.user);
       this.adm = user.user_type[4].view // if admin true
 
       //if user(not admin)
@@ -97,6 +128,16 @@ export class AppComponent {
     
   }
 
+  // get wallet
+  getWallet(){
+    this.appServ.getWallet().valueChanges.subscribe(
+      (data:any)=>{
+        this.wallet = data.data.getOneUser.wallet
+        
+      }
+    )
+  }
+
   // change localization
   changeLang(){
     if(this.language == "en"){
@@ -124,25 +165,46 @@ export class AppComponent {
 
   logOut(){
     Swal.fire({
-      title: 'Are you sure to logout?',
+      title: this.translate.instant('Are you sure to logout?'),
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes'
-    }).then((result) => {
+      confirmButtonText: this.translate.instant('Yes'),
+      cancelButtonText : this.translate.instant("No")
+    })
+    
+    .then((result) => {
       if (result.isConfirmed) {
         this.router.navigate(['/'])
         window.location.href = "/"
         localStorage.removeItem(environment.tokenKey);
         localStorage.removeItem('user');
-        Swal.fire(
-          'Log Out',
-          'You success to logout',
-          'success'
-        )
+        // Swal.fire(
+        //   'Log Out',
+        //   'You success to logout',
+        //   'success'
+        // )
       }
     })
+  }
+
+
+  openDialog(){
+    const dialogRef = this.dialog.open(TopupWalletComponent, {
+      width:"300px",
+      data: {
+        hola:"test"
+      }
+    })
+    dialogRef.afterClosed().subscribe(
+      res=>{
+        if(res){
+          this.getWallet()
+        }
+        
+      }
+    )
   }
 
 

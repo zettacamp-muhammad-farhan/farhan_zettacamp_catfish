@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { CartService } from '../../cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CartUpdateComponent } from '../../cart-update/cart-update.component';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-cart-list',
@@ -23,7 +24,8 @@ export class CartListComponent implements OnInit {
   constructor(
     private cartServ:CartService,
     private historyServ:HistoryService,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private appServ:AppService
   ) { }
 
   ngOnInit(): void {
@@ -88,7 +90,7 @@ export class CartListComponent implements OnInit {
             }
           }
         )
-
+          this.appServ.setTo(false)
       }
     })
   }
@@ -114,6 +116,8 @@ export class CartListComponent implements OnInit {
                 'Item has been Bought.',
                 'success'
               )
+              this.appServ.setTo(false)
+              
             }
           }, (error)=>{
             this.historyServ.getHistory({page:0, limit:5}, "failed")
@@ -147,9 +151,12 @@ export class CartListComponent implements OnInit {
               this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
                 'Deleted!',
-                'Your file has been deleted.',
+                'Your file has been deleted, because you do not checkout in 5 minutes',
                 'success'
               )
+
+              this.appServ.setTo(false)
+
             }
           }
         )

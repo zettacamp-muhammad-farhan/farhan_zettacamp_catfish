@@ -133,7 +133,39 @@
     "Add Ingredient" : "Add Ingredient",
     "Delete Ingridient Form" : "Delete Ingridient Form",
 
-    "Edit Menu Data" : "Edit Menu Data"
+    "Edit Menu Data" : "Edit Menu Data",
+
+    "CANCEL" : "CANCEL",
+    "TOP UP" : "TOP UP",
+    "balance must fill" : "balance must fill",
+    "Balance" : "Balance",
+    "Top Up Balance" : "Top Up Balance",
+
+    "Top Up" : "Top Up",
+    "Log Out" : "Log Out",
+
+    "Are you sure to logout?" : "Are you sure to logout?",
+    "Yes" : "Yes",
+    "No" : "No",
+
+    "Are you sure to reset password with curent password?" : "Are you sure to reset password with curent password?",
+    "Your password will reset to new password" :"Your password will reset to new password",
+    "Good job!" : "Good job!",
+    "Success to reset Password" : "Success to reset Password",
+    "Oh No" : "Oh No",
+    "fail reset password !" : "fail reset password !",
+
+    "Add Recipes" : "Add Recipes",
+    "Search" : "Search",
+    "find recipes" : "find recipes ...",
+    "Publish" : "Publish",
+    "Unpublish" : "Unpublish",
+
+    "Set to Publish" : "Set to Publish",
+    "Set to Unpublish" : "Set to Unpublish",
+    "Edit Food and Drink" : "Edit Food and Drink",
+    "Delete Food and Drink" : "Delete Food and Drink"
+
 
 
 

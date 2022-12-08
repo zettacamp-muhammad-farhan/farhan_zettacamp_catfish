@@ -5,6 +5,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import Swal from 'sweetalert2';
 import { MenuService } from '../menu.service';
 import { CartService } from 'src/app/cart-management/cart.service';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-menu-add',
@@ -20,7 +21,8 @@ export class MenuAddComponent implements OnInit {
     public dialogRef:MatDialogRef<MenuAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any,
     private cartServ:CartService,
-    private router : Router
+    private router : Router, 
+    private appServ:AppService
   ) { }
 
   ngOnInit(): void {
@@ -40,8 +42,12 @@ export class MenuAddComponent implements OnInit {
         data=>{
           this.cartServ.getCart({page:0, limit:10}).refetch();
           Swal.fire(
-            'Gotcha!!!', 'success'
+            'You success add menu to cart',
+            'You have 5 minutes to checkout your menu, if you not checkout item will be failed',
+            'success'
           )
+          this.appServ.setTo(false)
+          this.appServ.setTo(true)
         }, (error:any) => {
           console.log(error.message);
 
@@ -77,6 +83,10 @@ export class MenuAddComponent implements OnInit {
         text: 'You must fill field'
       })
     }
+  }
+
+  close(){
+    this.dialogRef.close(true)
   }
 
 }

@@ -25,6 +25,7 @@ export class HistoryService {
               image
               recipe_name
               price
+              discount
             }
           }
           order_status
@@ -67,6 +68,7 @@ export class HistoryService {
           menu {
             recipe_id {
               recipe_name
+              discount
             }
             amount
           }

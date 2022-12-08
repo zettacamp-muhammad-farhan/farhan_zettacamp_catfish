@@ -1,33 +1,3 @@
-<!-- <mat-card class="example-card">
-    <div class="img">
-      <img mat-card-image [src]="recipe.image" alt="Photo of a Shiba Inu">
-    </div>
-    <mat-card-content>
-        <h2>{{ recipe.recipe_name }}</h2>
-        <mat-card-subtitle>Available : {{ recipe.available }}</mat-card-subtitle>
-        
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <div class="price" >
-        <h2>Rp. {{ recipe.price }}</h2>
-      </div>
-        <button [disabled]="recipe.available == 0" (click)="openDialog( recipe._id )" mat-button>
-            <mat-icon color='warn' aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
-            <span>Add to cart</span>
-        </button>
-    </mat-card-actions>
-
-    <div *ngIf="recipe.available == 0" class="gray">
-      <img src="https://batampos.co.id/wp-content/uploads/2018/11/sold-out-logo-png-2.png" alt="">
-    </div>
-</mat-card> -->
-
-
 <div class="card">
   <div class="img">
       <img [src]="recipe.image || 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png'" alt="">
@@ -40,7 +10,7 @@
       
       <h3>Rp. {{ recipe.price }}</h3>
       <div class="btn-price">
-        <button [disabled]="recipe.available == 0" (click)="openDialog( recipe._id )">
+        <button [disabled]="recipe.available == 0 || !loged || adm" (click)="openDialog( recipe._id )">
             ADD TO CART
         </button>
       </div>

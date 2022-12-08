@@ -40,7 +40,7 @@ export class MenuManagementMainComponent implements OnInit {
 
   subs = new SubSink();
 
-  status = [null, "active", "deleted", "draft"]
+  status = [{val:null, show:"All"}, {val:"active", show:"Publish"}, {val:"draft", show:"Unpublish"}]
 
   recipes:any
 
@@ -129,7 +129,7 @@ export class MenuManagementMainComponent implements OnInit {
 
   openDialog(){
     const dialogRef = this.dialog.open(MenuFormComponent, {
-      width:"50%",
+      width:"500px",
       data: {
         hola:"test"
       }
@@ -148,7 +148,7 @@ export class MenuManagementMainComponent implements OnInit {
     // console.log(ingredient);
     
     const dialogRef = this.dialog.open(MenuUpdateComponent, {
-      width:"50%",
+      width:"500px",
       data:{
         id:id,
         name:name,

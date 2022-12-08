@@ -20,6 +20,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomepageMainComponent implements OnInit {
 
+  adm!:boolean
+  loged!:boolean|null;
+  user:any
+
   loaded = false
   
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -67,6 +71,17 @@ export class HomepageMainComponent implements OnInit {
 
     // console.log(this.menuBig);
     // console.log('atest');
+
+    const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
+    if(usr !== false) {
+      const user = JSON.parse(usr)
+      this.user = user
+      // console.log(this.user);
+      this.adm = user.user_type[4].view // if admin true
+    }
+
+    let data = localStorage.getItem('token') ? true : false
+    this.loged = data;
     
 
   }
@@ -104,7 +119,7 @@ export class HomepageMainComponent implements OnInit {
   }
 
   openDialog(id:any, available:any){
-    console.log(available);
+    // console.log(available);
     if(available == 0){
       Swal.fire({
         icon: 'error',
@@ -116,7 +131,7 @@ export class HomepageMainComponent implements OnInit {
     
     if(this.canBuy){
       const dialogRef = this.dialog.open(MenuAddComponent, {
-        width:"30%",
+        width:"400px",
         data:{
           id:id
         }

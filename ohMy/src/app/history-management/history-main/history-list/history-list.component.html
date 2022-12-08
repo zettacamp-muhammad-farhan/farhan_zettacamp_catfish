@@ -14,16 +14,16 @@
                     </div>
                     <div class="note">
                         <p>
-                            {{ trans.note }}
+                            <strong>Note :</strong> {{ trans.note }}
                         </p>
                     </div>
                     <div class="price">
-                        <h3>Rp. {{ trans.recipe_id.price }}</h3>
+                        <h3>Rp. {{ trans.recipe_id.price - (trans.recipe_id.price * (trans.recipe_id.discount/100))}} ({{ trans.amount }})</h3>
                     </div>
                 </div>
                 <div class="col">
                     <div class="ammount">
-                        <h3>{{ trans.amount }}</h3>
+                        <!-- <h3>{{ trans.amount }}</h3> -->
                     </div>
                     
                 </div>

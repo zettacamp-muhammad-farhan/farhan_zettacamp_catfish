@@ -13,13 +13,16 @@
       <div class="btn-adm" *ngIf="loged&&!adm">
         <!-- for not admin -->
         <button>D-Wallet : {{ wallet | currency:"Rp. " }}</button>
+        <div class="btn-top">
+          <button class="" (click)="openDialog()" > {{ "Top Up" | translate }} </button>
+        </div>
       </div>
 
 
       <div class="user-info">
         <h4>{{ user?.email }}</h4>
         <p>({{ adm? "Admin" : "User" }})</p>
-        <button mat-raised-button (click)="logOut()" color="warn">Log Out</button>
+        <button mat-raised-button (click)="logOut()" color="warn">{{ "Log Out" | translate }}</button>
       </div>
     </mat-menu>
   </li>
@@ -42,17 +45,19 @@
 
 
   <li class="" matTooltip="{{ 'Food and Drink menu' | translate }}" ><a routerLinkActive="active" *ngIf="true" routerLink="/menu"><mat-icon> restaurant_menu</mat-icon></a></li>
-  <li class="float-right" matTooltip="{{ 'Cart and History' | translate }}" ><a routerLinkActive="active" *ngIf="loged" routerLink="/cart" [matMenuTriggerFor]="cart"><mat-icon>add_shopping_cart</mat-icon></a></li>
+  <li class="float-right" matTooltip="{{ 'Cart and History' | translate }}" ><a routerLinkActive="active" *ngIf="loged&&!adm"  [matMenuTriggerFor]="cart"><mat-icon>add_shopping_cart</mat-icon></a></li>
   <mat-menu #cart="matMenu">
     <button class="list" routerLink="/cart" routerLinkActive="active" >{{ 'Cart' | translate }}</button>
     <button class="list" routerLink="/cart/history" routerLinkActive="active" >{{ "History" | translate }}</button>
   </mat-menu>
 
-  <li class="float-right" matTooltip="{{ 'Management Food and Stock' | translate }}" ><a routerLinkActive="active" *ngIf="loged&&adm" routerLink="/menu-management" [matMenuTriggerFor]="management"><mat-icon> restaurant</mat-icon></a></li>
+  <li class="float-right" matTooltip="{{ 'Management Food and Stock' | translate }}" ><a routerLinkActive="active" *ngIf="loged&&adm"  [matMenuTriggerFor]="management"><mat-icon> restaurant</mat-icon></a></li>
   <mat-menu #management="matMenu" >
     <button class="list" routerLink="/menu-management" routerLinkActive="active" >{{ "Management F n D" | translate }}</button>
     <button class="list" routerLink="/menu-management/stock-management" routerLinkActive="active" >{{ "Management Stock" | translate }}</button>
   </mat-menu>
+
+  
 
 </ul>
 <main>

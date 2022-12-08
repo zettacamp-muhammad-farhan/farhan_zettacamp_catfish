@@ -13,6 +13,10 @@ import { HomepageService } from '../../homepage.service';
 })
 export class HomepageCardComponent implements OnInit {
 
+  adm!:boolean
+  loged!:boolean|null;
+  user:any
+
   @Input() recipe:any
 
   canBuy = false
@@ -25,12 +29,23 @@ export class HomepageCardComponent implements OnInit {
   ngOnInit(): void {
     let user = localStorage.getItem('user') ? true : false
     this.canBuy = user
+
+    const usr:any = localStorage.getItem('user') ? localStorage.getItem('user') : false
+    if(usr !== false) {
+      const user = JSON.parse(usr)
+      this.user = user
+      // console.log(this.user);
+      this.adm = user.user_type[4].view // if admin true
+    }
+
+    let data = localStorage.getItem('token') ? true : false
+    this.loged = data;
   }
 
   openDialog(id:any){
     if(this.canBuy){
       const dialogRef = this.dialog.open(MenuAddComponent, {
-        width:"30%",
+        width:"400px",
         data:{
           id:id
         }

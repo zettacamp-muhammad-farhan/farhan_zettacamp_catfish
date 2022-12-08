@@ -8,7 +8,7 @@
         
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>{{ "Email" | translate }}</mat-label>
-                <input matInput type="email" formControlName="email" />
+                <input matInput type="email" formControlName="email" readonly />
               </mat-form-field>
               <mat-error
                 *ngIf="
@@ -31,7 +31,7 @@
 
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>{{ "Password" | translate }}</mat-label>
-                <input matInput type="{{ showPass? 'text' : 'password' }}" formControlName="password" readonly />
+                <input matInput type="{{ showPass? 'text' : 'password' }}" formControlName="password" />
                 <div class="eye">
                   <mat-icon (click)="show()" >remove_red_eye</mat-icon>
                 </div>

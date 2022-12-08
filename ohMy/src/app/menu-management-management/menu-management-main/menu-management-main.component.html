@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="title" >{{ "Food & Drink Management" | translate }}</h1>
 
-        <button class="btn-add" (click)="openDialog()">{{ "Add Menu" | translate }}</button>
+        <button class="btn-add" (click)="openDialog()">{{ "Add Recipes" | translate }}</button>
 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <!--- Note that these columns can be defined in any order.
@@ -15,12 +15,12 @@
                   {{ "Name" | translate }}
                   <div>
                     <mat-form-field class="example-full-width" >
-                      <mat-label>{{ "Name" | translate }}</mat-label>
-                      <input matInput type="text" formControlName="name" placeholder="find name ..."  />
+                      <mat-label>{{ "Search" | translate }}</mat-label>
+                      <input matInput type="text" formControlName="name" placeholder="{{ 'find recipes' | translate }}"  />
                     </mat-form-field>
                   </div>
                 </th>
-                <td mat-cell *matCellDef="let element">{{ element.recipe_name }}</td>
+                <td mat-cell class="start" *matCellDef="let element">{{ element.recipe_name }}</td>
               </ng-container>
 
             <ng-container matColumnDef="status">
@@ -30,15 +30,15 @@
                   <mat-form-field >
                     <mat-label>{{ "Status" | translate }}</mat-label>
                     <mat-select formControlName="status">
-                      <mat-option *ngFor="let item of status" [value]="item">
-                        {{item == null ? "All" : item | translate}}
+                      <mat-option *ngFor="let item of status" [value]="item.val">
+                        {{item.show == null ? "All" : item.show | translate}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                 </div>
               </th>
               <td mat-cell *matCellDef="let element">
-                <button matTooltip="{{ element.status ? 'Set to un status' : 'Set to status' }}" mat-raised-button [color]="element.status == 'active' ? 'primary' : 'warn' " (click)="updateStatus({'id' : element._id,  'status' : element.status == 'draft' ? 'active' : 'draft'})">
+                <button matTooltip="{{ element.status == 'active' ? 'Set to Unpublish' : 'Set to Publish' | translate }}" mat-raised-button [color]="element.status == 'active' ? 'primary' : 'warn' " (click)="updateStatus({'id' : element._id,  'status' : element.status == 'draft' ? 'active' : 'draft'})">
                   <mat-icon *ngIf="element.status == 'active' " >check</mat-icon> 
                   <mat-icon *ngIf="element.status == 'draft' " >panorama_fish_eye</mat-icon> 
                 </button>
@@ -81,7 +81,7 @@
             <!-- Position Column -->
             <ng-container matColumnDef="image">
               <th mat-header-cell *matHeaderCellDef>{{ "Image" | translate }}</th>
-              <td mat-cell *matCellDef="let element">
+              <td mat-cell class="start" *matCellDef="let element">
                 <div class="img">
                   <img [src]="element.image" alt="">
                 </div>
@@ -95,7 +95,7 @@
             <!-- Weight Column -->
             <ng-container matColumnDef="ingredients">
                 <th mat-header-cell *matHeaderCellDef>{{ "Ingrediets" | translate }}</th>
-                <td mat-cell *matCellDef="let element">
+                <td mat-cell class="start" *matCellDef="let element">
                     <div *ngFor="let item of element.ingredients">
                         <td mat-cell>{{ item.ingredient_id.name }} ( {{ item.stock_used }} )</td>
                     </div>
@@ -104,14 +104,14 @@
             <!-- Name Column -->
             <ng-container matColumnDef="price">
               <th mat-header-cell *matHeaderCellDef>Price</th>
-              <td mat-cell *matCellDef="let element">
+              <td mat-cell class="start" *matCellDef="let element">
                 Rp. {{ element.price }}
               </td>
             </ng-container>
 
             <ng-container matColumnDef="available">
               <th mat-header-cell *matHeaderCellDef>{{ "Available" | translate }}</th>
-              <td mat-cell *matCellDef="let element">
+              <td mat-cell class="" *matCellDef="let element">
                 {{ element.available }}
               </td>
             </ng-container>
@@ -127,10 +127,10 @@
                 <input type="text" value="{{ element.price }}" hidden #price>
                 <input type="text" value="{{ element.image }}" hidden #image>
 
-              <button matTooltip="Edit Food and Drink" [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients, element.discount)" mat-raised-button color="primary">
+              <button matTooltip="{{ 'Edit Food and Drink' | translate }}" [disabled]="element.status == 'active'" (click)="openEdit(_id.value, name.value, price.value, image.value, element.ingredients, element.discount)" mat-raised-button color="primary">
                   <mat-icon>edit</mat-icon>
               </button>
-              <button matTooltip="Delete Food and Drink" [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" mat-raised-button color="warn">
+              <button matTooltip="{{ 'Delete Food and Drink' | translate }}" [disabled]="element.status == 'active'" (click)="deleteRecipe(_id.value)" mat-raised-button color="warn">
                   <mat-icon>delete</mat-icon>
               </button>
 

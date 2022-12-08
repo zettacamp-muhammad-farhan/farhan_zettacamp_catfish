@@ -8,7 +8,7 @@
         <s><h3 class="price" >{{ recipes.price | currency:"Rp. " }}</h3></s>
         <h2>{{ recipes.price - (recipes.price * (recipes.discount/100)) | currency:"Rp. " }}</h2>
     </div>
-    <button class="add-cart" (click)="openDialog( recipes._id )">{{ "add to cart" | translate }}</button>
+    <button [disabled]="recipes.available == 0 || !loged || adm" class="add-cart" (click)="openDialog( recipes._id )">{{ "add to cart" | translate }}</button>
 </div>
 <div class="disscount">
     <h1>{{ recipes.discount }}%</h1>

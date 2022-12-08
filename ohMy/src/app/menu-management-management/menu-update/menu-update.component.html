@@ -7,7 +7,7 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>{{ "Name" | translate }}</mat-label>
-        <input matInput type="text" formControlName="newName" />
+        <input matInput type="text" formControlName="newName" readonly />
       </mat-form-field>
       <mat-error
         *ngIf="
@@ -96,10 +96,20 @@
                     </mat-select>
                   </mat-form-field>
 
+                  <mat-error *ngIf="!formMenu.get('newIngredient').controls[i].get('ingredient_id')?.valid && formMenu.get('newIngredient').controls[i].get('ingredient_id')?.touched" class="help-block">
+                    <mat-error *ngIf="formMenu.get('newIngredient').controls[i].get('ingredient_id').hasError('required')"> ingredient must fill </mat-error>
+                    
+                  </mat-error>
+
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>{{ "Stock" | translate }}</mat-label>
-                    <input matInput type="text" formControlName="stock_used" placeholder="{{ 'Stock' | translate }}" />
+                    <input matInput type="number" formControlName="stock_used" placeholder="{{ 'Stock' | translate }}" />
                 </mat-form-field>
+
+                <mat-error *ngIf="!formMenu.get('newIngredient').controls[i].get('stock_used')?.valid && formMenu.get('newIngredient').controls[i].get('stock_used')?.touched" class="help-block">
+                  <mat-error *ngIf="formMenu.get('newIngredient').controls[i].get('stock_used').hasError('required')"> stock used must fill </mat-error>
+  
+                </mat-error>
             </div>
         </div>
 
@@ -107,9 +117,14 @@
 
     </div>
 
-    <div class="btn">
-      <button mat-raised-button color="accent" type="submit" mat-button>
+    <div class="btn-top">
+      <button  type="submit" mat-button>
         {{ "SUBMIT" | translate }}
+      </button>
+    </div>
+    <div class="btn-top cancel">
+      <button  type="button" (click)="close()" mat-button>
+        {{ "CANCEL" | translate }}
       </button>
     </div>
   </form>

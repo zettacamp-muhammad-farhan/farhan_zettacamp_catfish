@@ -1,4 +1,7 @@
 <h2>{{ "Add Menu" | translate }}</h2>
+<div class="close" (click)="close()">
+  <strong>X</strong>
+</div>
 <main>
 <form [formGroup]="formCart" (ngSubmit)="onSubmit()">
 
@@ -39,6 +42,11 @@
     <div class="btn-submit">
       <button type="submit" mat-button>
         {{ "SUBMIT" | translate }}
+      </button>
+    </div>
+    <div class="btn-submit cancel">
+      <button type="button" (click)="close()" mat-button>
+        {{ "CLOSE" | translate }}
       </button>
     </div>
   </form>

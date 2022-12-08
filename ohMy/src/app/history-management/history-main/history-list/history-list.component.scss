@@ -12,14 +12,14 @@ main{
     flex-basis: 30%;
 }
 .card {
-    background-color: #815B5B;
+    background-color: #EBEBEB;
     margin-bottom: 20px;
     padding: 20px;
-    color: #FFF8EA;
+    color: black;
 }
 .img{
-    width: 80%;
-    height: 100px;
+    width: 87%;
+    height: 150px;
     overflow: hidden;
 }
 .img img {
@@ -27,6 +27,8 @@ main{
 }
 .contain-item {
     margin-bottom: 20px;
+    background-color: #B2B0B0;
+    padding: 10px;
 }
 .col .ammount {
     text-align: center;
@@ -34,5 +36,5 @@ main{
 .totalPrice{
     float: right;
     margin-bottom: 60px;
-    margin-top: -30px;
+    margin-top: -20px;
 }
