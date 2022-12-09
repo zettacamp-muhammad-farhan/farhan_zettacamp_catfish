@@ -22,11 +22,11 @@
                     Note : {{ item.note }}
                 </mat-card-subtitle>
 
-                <span *ngIf="item.recipe_id.discount !== 0">
+                <span *ngIf="item.recipe_id.special_offers">
                     <h3><s> {{ item.recipe_id.price | currency:"Rp. " }}</s></h3> 
-                    <h3 *ngIf="item.recipe_id.discount !== 0" >{{ item.recipe_id.price - (item.recipe_id.price * (item.recipe_id.discount/100)) | currency:"Rp. " }} ({{ item.amount }})</h3>
+                    <h3 *ngIf="item.recipe_id.special_offers" >{{ item.recipe_id.price - (item.recipe_id.price * (item.recipe_id.discount/100)) | currency:"Rp. " }} ({{ item.amount }})</h3>
                 </span>
-                <span *ngIf="item.recipe_id.discount == 0">
+                <span *ngIf="item.recipe_id.special_offers">
                     <h3>{{ item.recipe_id.price | currency:"Rp. " }}  ({{ item.amount }})</h3> 
                 </span>
 

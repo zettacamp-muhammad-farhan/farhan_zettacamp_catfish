@@ -31,6 +31,7 @@ export class CartService {
               image
               price
               discount
+              special_offers
             }
             amount
             note
