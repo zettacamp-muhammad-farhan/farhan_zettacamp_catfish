@@ -91,7 +91,7 @@ export class AppComponent {
             )
             this.statusCheckout = false
           }
-        }, 20000)
+        }, 300000)
       }else {
         clearTimeout(this.time)
       }
