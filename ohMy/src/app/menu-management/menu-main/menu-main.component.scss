@@ -22,21 +22,14 @@ main {
     justify-content: center;
 }
 .col {
-    flex-basis: 30%;
+    flex-basis: 23%;
 }
 mat-spinner {
     width: 1500px;
     height: 1500px;
     margin-right: auto; margin-left: auto;
 }
-.title {
-    position: sticky;
-    top: 64px;
-    z-index: 3;
-    background-color: #2c426882;
-    padding: 20px;
-    // color: wheat;
-}
-.title h2 {
+
+.title h1 {
     text-align: center;
 }

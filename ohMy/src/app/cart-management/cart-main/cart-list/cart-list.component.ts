@@ -6,6 +6,11 @@ import { CartService } from '../../cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CartUpdateComponent } from '../../cart-update/cart-update.component';
 import { AppService } from 'src/app/app.service';
+import { TopupWalletComponent } from 'src/app/topup/topup-wallet/topup-wallet.component';
+import { TranslateService } from '@ngx-translate/core';
+
+
+
 
 @Component({
   selector: 'app-cart-list',
@@ -25,7 +30,8 @@ export class CartListComponent implements OnInit {
     private cartServ:CartService,
     private historyServ:HistoryService,
     private dialog:MatDialog,
-    private appServ:AppService
+    private appServ:AppService,
+    private translate:TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -69,13 +75,13 @@ export class CartListComponent implements OnInit {
 
   deleteItem(id:any){
     Swal.fire({
-      title: 'Are you sure to delete item?',
-      text: "You won't be able to revert this!",
+      title: this.translate.instant('Are you sure to delete item?'),
+      text: this.translate.instant("You won't be able to revert this!"),
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: this.translate.instant('Yes, delete it!')
     }).then((result) => {
       if (result.isConfirmed) {
         this.cartServ.deleteItem(id).subscribe(
@@ -83,8 +89,8 @@ export class CartListComponent implements OnInit {
             if(data){
               this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
+                this.translate.instant('Deleted!'),
+                this.translate.instant('Your file has been deleted.'),
                 'success'
               )
             }
@@ -97,13 +103,13 @@ export class CartListComponent implements OnInit {
 
   buyItem(){
     Swal.fire({
-      title: 'Are you sure?',
-      text: "buy item",
+      title: this.translate.instant('Are you sure?'),
+      text: this.translate.instant("buy item"),
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, buy it!'
+      confirmButtonText: this.translate.instant('Yes, buy it!')
     }).then((result) => {
       if (result.isConfirmed) {
         this.cartServ.buy().subscribe(
@@ -113,7 +119,7 @@ export class CartListComponent implements OnInit {
               this.historyServ.getHistory({page:0, limit:5}, "success")
               Swal.fire(
                 'Horray!',
-                'Item has been Bought.',
+                this.translate.instant('Item has been Bought.'),
                 'success'
               )
               this.appServ.setTo(false)
@@ -123,8 +129,28 @@ export class CartListComponent implements OnInit {
             this.historyServ.getHistory({page:0, limit:5}, "failed")
             Swal.fire({
               icon: 'error',
-              title: 'Failed...',
-              text: 'your transaction failed because amount limit less than your order!'
+              title: this.translate.instant('your transaction failed because amount limit less than your order!'),
+              text: this.translate.instant('do you want to top up ?'),
+              showCancelButton: true, 
+              showCloseButton:true,
+              confirmButtonText:"yes"
+            }).then((result) => {
+              if(result.isConfirmed){
+                const dialogRef = this.dialog.open(TopupWalletComponent, {
+                  width:"300px",
+                  data: {
+                    hola:"test"
+                  }
+                })
+                dialogRef.afterClosed().subscribe(
+                  res=>{
+                    if(res){
+                      this.appServ.getWallet().refetch()
+                    }
+                    
+                  }
+                )
+              }
             })
           }
         )
@@ -136,13 +162,13 @@ export class CartListComponent implements OnInit {
 
   deleteCart(id:string){
     Swal.fire({
-      title: 'Are you sure?',
+      title: this.translate.instant('Are you sure?'),
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: this.translate.instant('Yes, delete it!')
     }).then((result) => {
       if (result.isConfirmed) {
         this.cartServ.deleteCart(id).subscribe(
@@ -150,8 +176,8 @@ export class CartListComponent implements OnInit {
             if(data){
               this.cartServ.getCart({page:0, limit:5}).refetch()
               Swal.fire(
-                'Deleted!',
-                'Your file has been deleted',
+                this.translate.instant('Deleted!'),
+                this.translate.instant('Your file has been deleted'),
                 'success'
               )
 

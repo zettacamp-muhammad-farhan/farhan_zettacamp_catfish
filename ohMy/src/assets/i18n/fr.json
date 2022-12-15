@@ -59,7 +59,7 @@
     "No data matching the filter" : "Aucune donnée correspondant au filtre",
     "find name" : "trouver le nom...",
 
-    "SUBMIT" : "NOUS FAIRE PARVENIR",
+    "SUBMIT" : "NOUS FAIRE PARVE",
     "Add Stock Data" : "Ajouter des données boursières",
     "name must fill" : "le nom doit remplir",
     "stock must fill" : "le stock doit se remplir",
@@ -162,7 +162,39 @@
     "Set to Publish" : "Définir pour publier",
     "Set to Unpublish" : "Définir sur Annuler la publication",
     "Edit Food and Drink" : "Modifier la nourriture et les boissons",
-    "Delete Food and Drink" : "Supprimer Nourriture et boisson"
+    "Delete Food and Drink" : "Supprimer Nourriture et boisson",
+
+    "Income Recap" : "récapitulatif des revenus",
+    "Add New Ingredient" : "Ajouter de nouveaux ingrédients",
+
+    "Edit Stock" : "Modifier l'action",
+    "Delete Stock" : "Supprimer les actions",
+
+    "Edit Ingredient Stock" : "Modifier le stock d'ingrédients",
+    "set new Password" : "definir un nouveau mot de passe",
+    "Yes, Reset!" : "Oui, réinitialisez !",
+
+    "Food Cart" : "Chariot alimentaire",
+    "You have no Item at the cart" : "Vous n'avez pas d'article dans le panier",
+    "Delete all Transaction" : "Supprimer toutes les transactions",
+    "Amount price" : "Montant prix",
+    "CHECKOUT" : "VÉRIFIER",
+    "Are you sure to delete item?" : "Voulez-vous vraiment supprimer l'élément ?",
+    "Deleted!" : "Supprimé !",
+    "Your file has been deleted." : "Votre fichier a été supprimé.",
+    "buy item" : "acheter un article",
+    "Yes, buy it!" : "Oui, achetez-le !",
+    "Item has been Bought." : "L'article a été acheté.",
+    "your transaction failed because amount limit less than your order!" : "votre transaction a échoué car le montant limite est inférieur à votre commande !",
+    "do you want to top up ?" : "voulez-vous recharger ?",
+    "you cant decrease when 0 item" : "you cant decrease when 0 item",
+    "Our Special Menu" : "Notre menu spécial",
+    "ADD TO CART" : "AJOUTER AU PANIER"
+    
+    
+
+
+
 
 
 

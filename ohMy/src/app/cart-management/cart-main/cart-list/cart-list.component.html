@@ -3,7 +3,7 @@
       <mat-card-title>{{ recipe.order_date }} </mat-card-title>
     </mat-card-title-group>
 
-    <span (click)="deleteCart(recipe._id)" class="delete-all" matTooltip="Delete all Transaction"><strong>X</strong></span>
+    <span (click)="deleteCart(recipe._id)" class="delete-all" matTooltip="{{ 'Delete all Transaction' | translate }}"><strong>X</strong></span>
 
     <div class="contain" *ngFor="let item of recipes">
         <div class="w-full item-mini"  >
@@ -19,15 +19,15 @@
                 <h2>{{ item.recipe_id.recipe_name }}</h2>
 
                 <mat-card-subtitle>
-                    Note : {{ item.note }}
+                    {{ "Note" | translate }} : {{ item.note }}
                 </mat-card-subtitle>
 
-                <span *ngIf="item.recipe_id.special_offers">
+                <span *ngIf="item.recipe_id.special_offers > 0">
                     <h3><s> {{ item.recipe_id.price | currency:"Rp. " }}</s></h3> 
-                    <h3 *ngIf="item.recipe_id.special_offers" >{{ item.recipe_id.price - (item.recipe_id.price * (item.recipe_id.discount/100)) | currency:"Rp. " }} ({{ item.amount }})</h3>
+                    <h3 *ngIf="item.recipe_id.special_offers" >{{ item.recipe_id.price - (item.recipe_id.price * (item.recipe_id.discount/100)) | currency:"Rp. " }}</h3>
                 </span>
-                <span *ngIf="item.recipe_id.special_offers">
-                    <h3>{{ item.recipe_id.price | currency:"Rp. " }}  ({{ item.amount }})</h3> 
+                <span *ngIf="item.recipe_id.special_offers == 0">
+                    <h3>{{ item.recipe_id.price | currency:"Rp. " }} </h3> 
                 </span>
 
 
@@ -59,13 +59,13 @@
         </div>
         <div class="" >
             <div>
-                <strong>Amount price :{{ recipe.total | currency:"Rp. " }}</strong>
+                <strong>{{ "Amount price" | translate }} :{{ recipe.total | currency:"Rp. " }}</strong>
             </div>
         </div>
     </mat-card-content>
 
     <div class="btn-order">
-        <button  (click)="buyItem()" color="primary"><strong>CHECKOUT</strong></button>
+        <button  (click)="buyItem()" color="primary"><strong>{{ "CHECKOUT" | translate }}</strong></button>
     </div>
 
   </mat-card>

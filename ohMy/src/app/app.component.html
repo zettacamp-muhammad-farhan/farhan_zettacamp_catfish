@@ -8,7 +8,7 @@
         <img src="../assets/img/user.png" alt="">
       </div>
       <div class="btn-adm" *ngIf="loged&&adm">
-        <a routerLink="/history-success"><button>Income</button></a>
+        <a routerLink="/history-success"><button>{{ "Income Recap" | translate }}</button></a>
       </div>
       <div class="btn-adm" *ngIf="loged&&!adm">
         <!-- for not admin -->
@@ -29,7 +29,7 @@
   <li class="float-right login" *ngIf="!loged" matTooltip="{{ 'Login' | translate }}"><a class="active" routerLinkActive="active" routerLink="/login" [matMenuTriggerFor]="login"><mat-icon> vpn_key</mat-icon></a></li>
   <mat-menu #login="matMenu">
     <button class="list" routerLink="/login" routerLinkActive="active" >{{ "Login" | translate }}</button>
-    <button class="list" routerLink="/login/signup" routerLinkActive="active" >{{ "Signup" | translate }}</button>
+    <button class="list" routerLink="/login/signup" routerLinkActive="active" >{{ "Register" | translate }}</button>
   </mat-menu>
 
 

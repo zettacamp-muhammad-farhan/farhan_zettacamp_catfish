@@ -1,6 +1,6 @@
 <main>
-    <div class="title">
-        <h2>Food Cart</h2>
+    <div class="">
+        <h1>{{ "Food Cart" | translate }}</h1>
     </div>
     <mat-spinner *ngIf="!loaded" ></mat-spinner>
     <div class="container">
@@ -13,7 +13,7 @@
                     <img src="../../../assets/img/cart/empty.webp" alt="">
                 </div>
                 <div class="cart-msg">
-                    <h2>You have no Item at the cart</h2>
+                    <h2>{{ "You have no Item at the cart" | translate }}</h2>
                 </div>
             </div>
         </div>

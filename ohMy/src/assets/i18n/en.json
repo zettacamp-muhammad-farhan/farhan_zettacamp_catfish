@@ -31,10 +31,10 @@
     "available" : "Available",
     "Logout" : "Logout",
 
-    "Food and Drink menu" : "Food and Drink menu",
+    "Food and Drink menu" : "Food & Drink",
     "Cart and History" : "Cart and History",
-    "Management Food and Stock" : "Management Food and Stock",
-    "Home" : "Home",
+    "Management Food and Stock" : "F&D Management",
+    "Home" : "Homepage",
     "Change language" : "Change language",
 
     "ABOUT" : "ABOUT",
@@ -126,14 +126,14 @@
     "deleted" : "Delete",
     "draft" : "Draft",
 
-    "Add Menu Data" : "Add Menu Data",
+    "Add Menu Data" : "Add Recipe",
     "Price" : "Price",
     "price must fill" : "price must fill",
     "Ingredients" : "Ingredients",
     "Add Ingredient" : "Add Ingredient",
     "Delete Ingridient Form" : "Delete Ingridient Form",
 
-    "Edit Menu Data" : "Edit Menu Data",
+    "Edit Menu Data" : "Edit Recipe",
 
     "CANCEL" : "CANCEL",
     "TOP UP" : "TOP UP",
@@ -164,9 +164,35 @@
     "Set to Publish" : "Set to Publish",
     "Set to Unpublish" : "Set to Unpublish",
     "Edit Food and Drink" : "Edit Food and Drink",
-    "Delete Food and Drink" : "Delete Food and Drink"
+    "Delete Food and Drink" : "Delete Food and Drink",
 
+    "Income Recap" : "Income Recap",
+    "Add New Ingredient" : "Add New Ingredient",
 
+    "Edit Stock" : "Edit Stock",
+    "Delete Stock" : "Delete Stock",
+
+    "Edit Ingredient Stock" : "Edit Ingredient Stock",
+
+    "set new Password" : "set new Password",
+    "Yes, Reset!" : "Yes, Reset!",
+
+    "Food Cart" : "Food Cart",
+    "You have no Item at the cart" : "You have no Item at the cart",
+    "Delete all Transaction" : "Delete all Transaction",
+    "Amount price" : "Amount price",
+    "CHECKOUT" : "CHECKOUT",
+    "Are you sure to delete item?" : "Are you sure to delete item?",
+    "Deleted!" : "Deleted!",
+    "Your file has been deleted." : "Your file has been deleted.",
+    "buy item" : "buy item",
+    "Yes, buy it!" : "Yes, buy it!",
+    "Item has been Bought." : "Item has been Bought.",
+    "your transaction failed because amount limit less than your order!" : "your transaction failed because amount limit less than your order!",
+    "do you want to top up ?" : "do you want to top up ?",
+    "you cant decrease when 0 item" : "you cant decrease when 0 item",
+    "Our Special Menu" : "Our Special Menu",
+    "ADD TO CART" : "ADD TO CART"
 
 
 

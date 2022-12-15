@@ -23,4 +23,21 @@ button {
     border-radius: 10px;
 }
 
+.btn-top {
+    background-color: #7CCDF4;
+    width: 45%;
+    display: inline-block;
+    border-radius: 10px;
+    margin-left: 10px; margin-right: 10px;
+    box-sizing: border-box;
+}
+.btn-top button {
+    width: 100%;
+}
+
+.cancel {
+    color: white;
+    background-color: #2C4268;
+}
+
 

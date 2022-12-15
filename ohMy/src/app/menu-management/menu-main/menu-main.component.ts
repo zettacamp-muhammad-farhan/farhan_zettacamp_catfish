@@ -15,10 +15,10 @@ export class MenuMainComponent implements OnInit {
 
   @ViewChild('paginator') paginator!: MatPaginator;
   length = 6
-  pageSizeOptions: number[] = [6, 10, 16, 20];
+  pageSizeOptions: number[] = [8, 10, 16, 20];
   pagination:any = {
     page: 0,
-    limit: 6
+    limit: 8
   }
 
   subs = new SubSink();

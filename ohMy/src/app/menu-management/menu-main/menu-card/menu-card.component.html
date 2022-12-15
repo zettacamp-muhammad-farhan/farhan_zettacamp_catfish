@@ -4,14 +4,14 @@
   </div>
   <div class="content">
       <h3>{{ recipe.recipe_name }}</h3>
-      <h4>Available : {{ recipe.available }}</h4>
+      <h4>{{ "Available" | translate }} : {{ recipe.available }}</h4>
 
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, saepe.</p>
       
       <h3>Rp. {{ recipe.price }}</h3>
       <div class="btn-price">
         <button [disabled]="recipe.available == 0 || !loged || adm" (click)="openDialog( recipe._id )">
-            ADD TO CART
+            {{ "ADD TO CART" | translate }}
         </button>
       </div>
   </div>

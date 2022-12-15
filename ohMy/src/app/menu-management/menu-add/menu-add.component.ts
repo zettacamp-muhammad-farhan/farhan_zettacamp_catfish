@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { MenuService } from '../menu.service';
 import { CartService } from 'src/app/cart-management/cart.service';
 import { AppService } from 'src/app/app.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu-add',
@@ -22,13 +23,14 @@ export class MenuAddComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any,
     private cartServ:CartService,
     private router : Router, 
-    private appServ:AppService
+    private appServ:AppService,
+    private translate:TranslateService
   ) { }
 
   ngOnInit(): void {
     this.formCart = new FormGroup({
       amount: new FormControl(null, [Validators.required]),
-      note: new FormControl(null, Validators.required)
+      note: new FormControl(null)
     })
   }
 
@@ -86,7 +88,22 @@ export class MenuAddComponent implements OnInit {
   }
 
   close(){
-    this.dialogRef.close(true)
+
+    // this.dialogRef.close(true)
+
+    Swal.fire({
+      title: 'Whoaa',
+      text: "Are you sure to close ?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+          this.dialogRef.close(true) 
+      }
+    })
   }
 
 }

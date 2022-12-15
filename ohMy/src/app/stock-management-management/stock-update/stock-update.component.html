@@ -1,4 +1,4 @@
-<h2>Edit Stock Data</h2>
+<h2>{{ "Edit Ingredient Stock" | translate }}</h2>
 <div class="close" (click)="close()">
   <strong>X</strong>
 </div>
@@ -39,9 +39,16 @@
     </mat-error>
 
 
-    <div class="btn-sub">
-      <button type="submit" mat-button>
+
+
+    <div class="btn-top">
+      <button   type="submit" mat-button>
         {{ "SUBMIT" | translate }}
+      </button>
+    </div>
+    <div class="btn-top cancel">
+      <button   type="button" (click)="close()" mat-button>
+        {{ "CANCEL" | translate }}
       </button>
     </div>
   </form>

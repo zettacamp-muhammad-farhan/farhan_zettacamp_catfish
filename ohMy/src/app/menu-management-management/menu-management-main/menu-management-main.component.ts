@@ -209,6 +209,13 @@ export class MenuManagementMainComponent implements OnInit {
             this.getData()
             // homepage
             this.home.getRecipesSpecial({limit:5, page:0})
+
+            Swal.fire(
+              "Horray",
+              'the recipes special status is changed',
+              'success'
+            )
+
           }
         }, (error:any)=>{
           Swal.fire(
@@ -227,6 +234,12 @@ export class MenuManagementMainComponent implements OnInit {
           if(res){
             this.getData()
             this.home.getRecipesHighlight({limit:5, page:0})
+
+            Swal.fire(
+              "Horray",
+              'the recipes special status is changed',
+              'success'
+            )
           }
         }, (error:any)=>{
           Swal.fire(
@@ -243,6 +256,23 @@ export class MenuManagementMainComponent implements OnInit {
         if(res){
           this.getData();
           this.menu.getRecipes({limit:5, page:0})
+
+          if(input.status == 'draft'){
+            Swal.fire(
+              "Horray",
+              'the recipes is now unpublish',
+              'success'
+            )
+
+          } else {
+            Swal.fire(
+              "Horray",
+              'the recipes is now unpublish',
+              'success'
+            )
+          }
+
+
         } 
       }, (error:any)=>{
         Swal.fire(
