@@ -263,7 +263,7 @@ footer{
     width: 900px;
     position: absolute;
     height: 300px;
-    overflow-x:auto;
+    overflow-x:scroll;
     overflow-y: hidden;
 }
 
@@ -306,7 +306,7 @@ footer{
     flex: 20%;
     position: relative;
     height: 300px;
-    // max-width: 500px;
+    max-width: 500px;
 }
 .img-list {
     width: 100%;

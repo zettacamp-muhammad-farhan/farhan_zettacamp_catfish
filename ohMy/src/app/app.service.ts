@@ -214,5 +214,48 @@ export class AppService {
   getStatusCheckout(){
     return this.deleteCheckout.asObservable()
   }
+
+  getTransaction(){
+    return this.apollo.watchQuery({
+      query:gql`
+      query Query($pagination: Paging) {
+        getAllTransactions(pagination: $pagination) {
+          _id
+          order_status
+          confirm
+        }
+      }
+      `,
+      variables:{
+        "pagination": {
+          "page": 0,
+          "limit": 3
+        }
+      },
+      fetchPolicy:'network-only'
+    })
+  }
+
+  confirm(id:any){
+    return this.apollo.mutate({
+      mutation:gql`
+      mutation changeconfirm($input: Cancel) {
+        cancelConfirmation(input: $input) {
+          menu {
+            _id
+            recipe_id {
+              recipe_name
+            }
+          }
+        }
+      }
+      `,
+      variables:{
+        "input": {
+          "id": id
+        }
+      }
+    })
+  }
 }
 

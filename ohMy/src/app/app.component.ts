@@ -47,6 +47,9 @@ export class AppComponent {
   statusCheckout:boolean = false
   time:any
 
+  order_status = "pending"
+  confirm = false
+
   constructor(
     private login:LoginService,
     private router:Router,
@@ -59,12 +62,18 @@ export class AppComponent {
 
   ngOnInit(){
 
+    this.getTransaction()
+
+    setInterval(()=>{
+      this.getTransaction()
+    }, 30000)
+
     //check jwt expired
     this.stockServ.getIngridients({limit:5, page:0}, name).subscribe(
       data=>{
         // console.log(data);
       }, err=>{
-        console.log(err);
+        // console.log(err);
 
       let data = localStorage.getItem('token') ? true : false
 
@@ -83,7 +92,7 @@ export class AppComponent {
 
     this.appServ.getStatusCheckout().subscribe(
       (data:any)=>{
-        console.log(data);
+        // console.log(data);
         this.statusCheckout = data
 
         clearTimeout(this.time)
@@ -175,6 +184,65 @@ export class AppComponent {
           'success'
         )
       }, 20000)
+  }
+
+  // get transaction
+  getTransaction(){
+
+    this.appServ.getTransaction().valueChanges.subscribe(
+      (data:any)=>{
+        // console.log(data.data.getAllTransactions[0]);
+        const res = data.data.getAllTransactions[0]
+
+        const order_status = res.order_status
+
+        this.order_status = order_status
+
+        const confirm = res.confirm
+
+        this.confirm = confirm
+
+        if(this.order_status == 'failed' && !this.confirm){
+          // console.log('aha');
+          
+          Swal.fire({
+            title: 'Whoaa',
+            text: "Your item at cart has been deleted because you didnt checkout within 5 minutes",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ok'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              let id = ""
+              this.appServ.getTransaction().valueChanges.subscribe(
+                (data:any)=>{
+                  const res = data.data.getAllTransactions[0]
+                  id = res._id
+                  // console.log(id);
+                  this.appServ.confirm(id).subscribe(
+                    data=>{
+                      // console.log(data);
+                    }
+                  )
+                }
+              )
+              // console.log(id);
+                
+              Swal.fire(
+                'oho',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
+        }
+        
+        
+      }
+    )
+
   }
 
   // get wallet
