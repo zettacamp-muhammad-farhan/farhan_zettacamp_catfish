@@ -15,6 +15,9 @@ import { LoginService } from './login-management/login.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TopupWalletService } from './topup/topup-wallet.service';
 import { TopupWalletComponent } from './topup/topup-wallet/topup-wallet.component';
+import { StockService } from './stock-management-management/stock.service';
+
+// service 
 
 
 @Component({
@@ -50,10 +53,33 @@ export class AppComponent {
     private appServ:AppService,
     private guard:AuthguardServiceService,
     private translate:TranslateService,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private stockServ : StockService
   ) { }
 
   ngOnInit(){
+
+    //check jwt expired
+    this.stockServ.getIngridients({limit:5, page:0}, name).subscribe(
+      data=>{
+        // console.log(data);
+      }, err=>{
+        console.log(err);
+
+      let data = localStorage.getItem('token') ? true : false
+
+
+        if(data){
+          this.router.navigate(['/login'])
+          // window.location.href = "/login"
+          localStorage.removeItem(environment.tokenKey);
+          localStorage.removeItem('user');
+
+        }
+
+        
+      }
+    )
 
     this.appServ.getStatusCheckout().subscribe(
       (data:any)=>{
