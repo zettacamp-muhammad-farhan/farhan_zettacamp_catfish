@@ -262,7 +262,7 @@ export class AppService {
     })
   }
 
-  getOneTrans(){
+  getOneTrans(id:any){
     return this.apollo.watchQuery({
       query:gql`
             query getOneTrans($filter: OneFilterTransaction) {
@@ -275,12 +275,14 @@ export class AppService {
                 note
                 amount
               }
+              confirm
+              order_status
             }
           }
       `,
       variables:{
                   "filter": {
-                    "id": "639ae336adef2b67c983c445"
+                    "id": id
                   }
                 }
     })

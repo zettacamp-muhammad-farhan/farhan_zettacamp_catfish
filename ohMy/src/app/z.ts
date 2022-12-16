@@ -50,6 +50,9 @@ export class AppComponent {
   order_status = "pending"
   confirm = false
 
+  //id trans pending
+  id_pend:string|null = null
+
   constructor(
     private login:LoginService,
     private router:Router,
@@ -66,7 +69,7 @@ export class AppComponent {
 
     setInterval(()=>{
       this.getTransaction()
-    }, 20000)
+    }, 15000)
 
     //check jwt expired
     this.stockServ.getIngridients({limit:5, page:0}, name).subscribe(
@@ -188,60 +191,87 @@ export class AppComponent {
 
   // get transaction
   getTransaction(){
+    console.log(this.id_pend);
+    
 
-    this.appServ.getTransaction().valueChanges.subscribe(
+    // get id form transaction status pending
+    this.appServ.getPending().valueChanges.subscribe(
       (data:any)=>{
-        // console.log(data.data.getAllTransactions[0]);
-        const res = data.data.getAllTransactions[0]
-
-        const order_status = res.order_status
-
-        this.order_status = order_status
-
-        const confirm = res.confirm
-
-        this.confirm = confirm
-
-        if(this.order_status == 'failed' && !this.confirm){
-          // console.log('aha');
+        console.log(data);
+        
+        if(data.data.getAllTransactions.length !== 0){
+          console.log(data.data.getAllTransactions[0]._id);
+          const id = data.data.getAllTransactions[0]._id
+          this.id_pend = data.data.getAllTransactions[0]._id
+          console.log(this.id_pend);
+        } else {
+          console.log('not');
           
-          Swal.fire({
-            title: 'Whoaa',
-            text: "Your item at cart has been deleted because you didnt checkout within 5 minutes",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ok'
-          }).then((result) => {
-            if (result.isConfirmed) {
-              let id = ""
-              this.appServ.getTransaction().valueChanges.subscribe(
-                (data:any)=>{
-                  const res = data.data.getAllTransactions[0]
-                  id = res._id
-                  // console.log(id);
-                  this.appServ.confirm(id).subscribe(
-                    data=>{
-                      // console.log(data);
-                    }
-                  )
-                }
-              )
-              // console.log(id);
-                
-              Swal.fire(
-                'oho',
-                'Your file has been deleted.',
-                'success'
-              )
-            }
-          })
         }
-        
-        
+
       }
     )
+
+
+    if(this.id_pend !== null){
+      console.log('yaho');
+      
+      this.appServ.getOneTrans(this.id_pend).valueChanges.subscribe(
+        (data:any)=>{
+          console.log(data.data.getOneTransactions);
+          const res = data.data.getOneTransactions
+  
+          const order_status = res.order_status
+  
+          this.order_status = order_status
+  
+          const confirm = res.confirm
+  
+          this.confirm = confirm
+  
+          if(this.order_status == 'failed' && !this.confirm){
+            // console.log('aha');
+            
+            Swal.fire({
+              title: 'Whoaa',
+              text: "Your item at cart has been deleted because you didnt checkout within 5 minutes",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Ok'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                let id = ""
+                this.appServ.getOneTrans(this.id_pend).valueChanges.subscribe(
+                  (data:any)=>{
+                    const res = data.data.getOneTransactions[0]
+                    id = res._id
+                    // console.log(id);
+                    this.appServ.confirm(this.id_pend).subscribe(
+                      data=>{
+                        // console.log(data);
+                      }
+                    )
+                  }
+                )
+                // console.log(id);
+                  
+                Swal.fire(
+                  'oho',
+                  'Your file has been deleted.',
+                  'success'
+                )
+              }
+            })
+          }
+          
+          
+        }
+      )
+    }
+
+
 
   }
 

@@ -38,7 +38,7 @@ export class MenuAddComponent implements OnInit {
     if(this.formCart.valid){
       this.formCart.value.amount = parseInt(this.formCart.value.amount)
       this,this.formCart.value.recipe_id = this.data.id
-      console.log(this.formCart.value);
+      // console.log(this.formCart.value);
       
       this.menuServ.addCart(this.formCart.value).subscribe(
         data=>{
@@ -51,7 +51,7 @@ export class MenuAddComponent implements OnInit {
           this.appServ.setTo(false)
           this.appServ.setTo(true)
         }, (error:any) => {
-          console.log(error.message);
+          // console.log(error.message);
 
           if(error.message == "Amount cannot below 0"){
             Swal.fire(

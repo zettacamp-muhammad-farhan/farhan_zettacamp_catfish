@@ -32,7 +32,7 @@ export class MenuCardComponent implements OnInit {
     if(usr !== false) {
       const user = JSON.parse(usr)
       this.user = user
-      console.log(this.user);
+      // console.log(this.user);
       this.adm = user.user_type[4].view // if admin true
     }
 
