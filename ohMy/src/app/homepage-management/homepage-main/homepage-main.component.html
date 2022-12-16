@@ -15,7 +15,12 @@
                     <div class="description-main">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus numquam assumenda, voluptate harum ratione explicabo. Eum magni voluptatum beatae doloribus veniam perspiciatis, vitae culpa fugiat quaerat! Aperiam ipsam dignissimos asperiores molestiae ad expedita, placeat quod inventore, reprehenderit voluptate quo sint.</p>
                         <div class="price">
-                            {{!loaded ? "XXX.XXX" : specialOffer[0].price | currency:"Rp. " }}, -
+                             <s> {{!loaded ? "XXX.XXX" : specialOffer[0].price | currency:"Rp. " }}, - </s>
+                           
+                            <!-- {{ recipes.price - (recipes.price * (recipes.discount/100)) | currency:"Rp. " }} -->
+                        </div>
+                        <div class="price">
+                            {{!loaded ? "XXX.XXX" : specialOffer[0].price - (specialOffer[0].price * (specialOffer[0].discount/100)) | currency:"Rp. " }}
                         </div>
                         <button [disabled]="!loged || adm" (click)="openDialog( specialOffer[0]._id, specialOffer[0].available)" class="btn-big" >{{ "add to cart" | translate }}</button>
                     </div>
