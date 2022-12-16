@@ -228,13 +228,7 @@ export class AppComponent {
                   )
                 }
               )
-              // console.log(id);
-                
-              Swal.fire(
-                'oho',
-                'Your file has been deleted.',
-                'success'
-              )
+   
             }
           })
         }
