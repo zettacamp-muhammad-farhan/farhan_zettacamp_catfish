@@ -236,6 +236,56 @@ export class AppService {
     })
   }
 
+  getPending(){
+    return this.apollo.watchQuery({
+      query:gql`
+        query getPending($filter: DataFilterTransaction) {
+          getAllTransactions(filter: $filter) {
+            _id
+            menu {
+              _id
+              recipe_id {
+                _id
+                available
+                recipe_name
+              }
+            }
+            order_status
+          }
+        }
+      `,
+      variables:{
+                  "filter": {
+                    "order_status": "pending"
+                  }
+                }
+    })
+  }
+
+  getOneTrans(){
+    return this.apollo.watchQuery({
+      query:gql`
+            query getOneTrans($filter: OneFilterTransaction) {
+            getOneTransactions(filter: $filter) {
+              _id
+              menu {
+                recipe_id {
+                  recipe_name
+                }
+                note
+                amount
+              }
+            }
+          }
+      `,
+      variables:{
+                  "filter": {
+                    "id": "639ae336adef2b67c983c445"
+                  }
+                }
+    })
+  }
+
   confirm(id:any){
     return this.apollo.mutate({
       mutation:gql`

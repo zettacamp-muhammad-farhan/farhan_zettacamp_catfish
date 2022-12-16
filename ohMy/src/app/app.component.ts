@@ -66,7 +66,7 @@ export class AppComponent {
 
     setInterval(()=>{
       this.getTransaction()
-    }, 30000)
+    }, 15000)
 
     //check jwt expired
     this.stockServ.getIngridients({limit:5, page:0}, name).subscribe(
@@ -119,11 +119,11 @@ export class AppComponent {
 
         this.time = setTimeout(()=>{
           if(this.statusCheckout == true){
-            Swal.fire(
-              'Your item has been deleted',
-              'You not checkout',
-              'success'
-            )
+            // Swal.fire(
+            //   'Your item has been deleted',
+            //   'You not checkout',
+            //   'success'
+            // )
             this.statusCheckout = false
           }
         }, 300000)
